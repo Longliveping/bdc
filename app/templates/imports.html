@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Words{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <H1> Import dictionary </H1>
+</div>
+
+{{wtf.quick_form(form)}}
+
+<br>
+<form action="/updatedict" method="POST">
+    <button type="submit" name="Update" class="btn btn-success" value="update dictionary">Update dictionary</button>
+</form>
+
+{% endblock %}
