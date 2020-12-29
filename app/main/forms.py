@@ -7,16 +7,20 @@ class KnownForm(FlaskForm):
     blurry = SubmitField(label='Blurry')
     unknown = SubmitField(label='Unknown')
     noshow = SubmitField(label='No show')
+    query = SubmitField(label='Query')
     exit = SubmitField()
 
 class ImportsForm(FlaskForm):
-    # name = StringField("What's your name?",validators=[DataRequired()])
-    # select_file = SelectMultipleField(choices=['a','b','c'])
-    importdict = SubmitField(label="Import dictionary")
+    importfolder = SubmitField(label="Import folder")
     exit = SubmitField()
 
 class TryingForm(FlaskForm):
     index = StringField()
+    submit = SubmitField()
+    exit = SubmitField()
+
+class QueryForm(FlaskForm):
+    querystring = StringField(label='Word')
     submit = SubmitField()
     exit = SubmitField()
 

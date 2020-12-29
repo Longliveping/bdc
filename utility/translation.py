@@ -4,7 +4,7 @@ import re
 import time
 from functools import reduce
 import json
-
+from translate import Translator
 
 
 #获得页面数据
@@ -41,7 +41,6 @@ def get_yingbiao(html_selector):
         it=item.xpath('div')
         if len(it)>0:
             ddd = ['a']
-            print(ddd[0])
             try:
                 ddd=reobj1.findall(it[1].xpath('a')[0].get('onmouseover',None))
                 yingbiao.append({"phonetic":f'US {it[0].text[2:]}',"audio":ddd[0]})
@@ -77,7 +76,6 @@ def get_word(word):
         "pronunciation": [{'phonetic': '', 'audio': ''}],
         "sentence": []
     }
-    print(word)
     #获得页面
     pagehtml=get_page(word)
     selector = etree.HTML(pagehtml.decode('utf-8'))
@@ -93,6 +91,21 @@ def get_word(word):
 
     return aword
 
+def get_sentence(sentences, word):
+    translator = Translator(provider='mymemory',to_lang='zh',email='liping.long@me.com')
+    translation = translator.translate(sentences)
+    sents = sentences.split('\n')
+    if '&#10;' in translation:
+        trans = translation.split('&#10;')
+    elif '\n' in translation:
+        trans = translation.split('\n')
+    else:
+        trans = [translation]
+    sen_trans = []
+    for s,t in zip(sents,trans):
+        s = s.replace(word, word.upper())
+        sen_trans.append((s,t))
+    return sen_trans
 
 
 if __name__ == '__main__':

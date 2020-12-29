@@ -8,11 +8,38 @@
     <H1> Import dictionary </H1>
 </div>
 
-{{wtf.quick_form(form)}}
+<div>
+    <H3>Import a file</H3>
+    <form enctype="multipart/form-data" action="/importfile" method="POST">
+        <input type="file" name="filename">
+        <br>
+        <button type="submit" name="importfile" class="btn btn-success" value="import file">Import file</button>
+    </form>
+<!--    <H3>Import sentence</H3>-->
+<!--    <form enctype="multipart/form-data" action="/importsentence" method="POST">-->
+<!--        <input type="file" name="filename">-->
+<!--        <br>-->
+<!--        <button type="submit" name="importsentence" class="btn btn-success" value="import sentence">Import sentence</button>-->
+<!--    </form>-->
+</div>
 
-<br>
-<form action="/updatedict" method="POST">
-    <button type="submit" name="Update" class="btn btn-success" value="update dictionary">Update dictionary</button>
-</form>
+<div>
+    <H3>Import my dictionary</H3>
+    <form action="/importdict" method="POST">
+        <button type="submit" name="importdict" class="btn btn-success" value="import my dictionary">Import my dictionary</button>
+    </form>
+</div>
 
+
+<div>
+    <H3>Export my dictionary</H3>
+    <form action="/exportdict" method="POST">
+        <button type="submit" name="exportdict" class="btn btn-success" value="export my dictionary">Export my dictionary</button>
+    </form>
+</div>
+
+<div>
+    <H3>Import batch initially</H3>
+    {{wtf.quick_form(form)}}
+</div>
 {% endblock %}

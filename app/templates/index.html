@@ -4,15 +4,33 @@
 {% block title %}Words{% endblock %}
 
 {% block page_content %}
-<div class="page-header">
-    <H1> Deck </H1>
-    {%for d in deck%}
-        <a href="/study/{{d[0]}}">Episode {{d[0]}}</a> <p>Total words: {{ d[1] }} </p>
-    {%endfor%}
+<div class="page-header w3-container w3-left  w3-light-grey w3-middle">
+    <H1 > Deck </H1><br>
+    <ul class="w3-ul w3-card-4">
+        {%for d in deck%}
+        <li class="w3-bar">
+            <div class="w3-bar-item">
+                <span class="w3-justify w3-large"><a href="/study/{{d[0]}}">Episode {{d[0]}}</a></span><br>
+                <span class="w3-opacity">Words: {{ d[1] }}</span>
+            </div>
+        </li>
+        {%endfor%}
+    </ul>
+</div>
+<div class=" w3-container w3-flat-concrete w3-light-grey">
+    <br>
+    <p><a href="/imports">Import dictionary</a></p>
+    <p><a href="/query/study">Quering</a></p>
+    <p><a href="/trying">Test index</a></p>
 </div>
 
-<a href="/imports">Import dictionary</a>
-
-<br><br>
-<a href="/trying">test index</a>
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <p class="w3-medium">Powered by <a href="" target="_blank">words</a></p>
+</footer>
 {% endblock %}

@@ -5,10 +5,10 @@
 
 <body>
 {% block page_content %}
-
+{{ wtf.quick_form(form) }}
 <div class="page-header">
     <div class="w3-container w3-content  w3-padding-64 w3-light-grey w3-card" style="max-width:1200px" id="Sentences">
-        <H1 class="w3-wide"> {{ word.word }} </H1>
+        <H1 class="w3-wide"> {{ word }} </H1>
         <h4 class="w3-wide">{{ translation['chinese'][0] }}</h4>
         <br>
         <audio controls autoplay>
@@ -20,11 +20,7 @@
         <p class="w3-opacity">{{s[1]}}</p>
         {%endfor%}
     </div>
-
-    <br>
-    <p>Studying: {{ next_item_index }}</p>
 </div>
-{{ wtf.quick_form(form) }}
 
 {% endblock %}
 </body>

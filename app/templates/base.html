@@ -6,6 +6,17 @@
 {{ super() }}
 <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
 <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+a {
+    color:DodgerBlue;
+}
+</style>
 {% endblock %}
 
 {% block navbar %}
@@ -30,6 +41,8 @@
 {% endblock %}
 
 {% block content %}
+
+
 <div class="container">
     {% for message in get_flashed_messages() %}
     <div class="alert alert-warning">
