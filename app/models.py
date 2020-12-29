@@ -10,6 +10,7 @@ from app.exceptions import ValidationError
 from . import db #, login_manager
 import csv
 import os
+<<<<<<< HEAD
 import re
 from utility.words import get_sentence, create_txt, create_token, update_target
 from pprint import pprint
@@ -20,6 +21,9 @@ def db_update_record(r):
         db.session.commit()
     except:
         db.session.rollback()
+=======
+from utility.words import get_text, create_token, get_sentence
+>>>>>>> update with sentence
 
 class Word(db.Model):
     __tablename__ = 'words'
@@ -90,6 +94,61 @@ class Word(db.Model):
                          )
             db_update_record(w)
 
+    @staticmethod
+    def importfile(file):
+        basedir = os.path.dirname(file)
+        filename = os.path.basename(file)
+        txtfilename = filename.split(".")[0]+'.txt'
+        csvfilename = filename.split(".")[0]+'.csv'
+        csvfile = os.path.join(basedir, csvfilename)
+        wfile = os.path.join(basedir, txtfilename)
+        with open(wfile, 'a') as f:
+            lines = get_text(file)
+            f.write(lines)
+        create_token(wfile)
+
+        print(csvfile)
+        if os.path.exists(csvfile):
+            reader = csv.reader(open(csvfile))
+            data = list(reader)
+            for d in data:
+                w = Word.query.filter_by(word=d[0]).first()
+                if not w:
+                    w = Word(word=d[0])
+                db.session.add(w)
+            try:
+                db.session.commit()
+            except:
+                db.session.rollback()
+
+            for d in data:
+                w = Word.query.filter_by(word=d[0]).first()
+                wh = Wheres(word_id=w.id,wheres=filename[:20],frequency=d[1])
+                db.session.add(wh)
+            try:
+                db.session.commit()
+            except:
+                db.session.rollback()
+
+    @staticmethod
+    def updatebymydict():
+        mydict = Mydict.query.all()
+        for d in mydict:
+            w = Word.query.filter_by(word=d.word).first()
+            if w:
+                w.noshow=True
+                w.noshow_timestamp=datetime.utcnow()
+            else:
+                w = Word(word=d.word,
+                         noshow=True,
+                         noshow_timestamp=datetime.utcnow()
+                         )
+            db.session.add(w)
+        try:
+            db.session.commit()
+        except:
+            db.session.rollback()
+
     def to_json(self):
         json_word = {
             'url': url_for('api.get_word', id=self.id),
@@ -113,6 +172,7 @@ class Sentence(db.Model):
     wheres = db.Column(db.String(256))
 
     @staticmethod
+<<<<<<< HEAD
     def import_sentence(file):
         basename = os.path.basename(file)
         filename = basename.split('.')[0]
@@ -121,17 +181,52 @@ class Sentence(db.Model):
             exist = Sentence.query.filter_by(wheres=filename).filter_by(sentence=s).first()
             if not exist:
                 sen = Sentence(sentence=s,  wheres=filename)
+=======
+    def importfile(file):
+        basedir = os.path.dirname(file)
+        filename = os.path.basename(file)
+        txtfilename = filename.split(".")[0]+'.txt'
+        # csvfilename = filename.split(".")[0]+'.csv'
+        # csvfile = os.path.join(basedir, csvfilename)
+        wfile = os.path.join(basedir, txtfilename)
+        with open(wfile, 'a') as f:
+            lines = get_text(file)
+            f.write(lines)
+        # create_token(wfile)
+        #
+        # if os.path.exists(csvfile):
+        #     reader = csv.reader(open(csvfile))
+        #     data = list(reader)
+        #     for d in data:
+        #         w = Word.query.filter_by(word=d[0]).first()
+        #         if not w:
+        #             w = Word(word=d[0])
+        #             db.session.add(w)
+        #     try:
+        #         db.session.commit()
+        #     except:
+        #         db.session.rollback()
+
+        sentences = get_sentence(wfile)
+        for s in sentences:
+            exist = Sentence.query.filter_by(wheres=filename[:20]).filter_by(sentence=s).first()
+            if not exist:
+                sen = Sentence(sentence=s,  wheres=filename[:20])
+>>>>>>> update with sentence
                 db.session.add(sen)
         try:
             db.session.commit()
         except:
             db.session.rollback()
 
+<<<<<<< HEAD
     @staticmethod
     def importfile(file):
         txtfile = create_txt(file)
         Sentence.import_sentence(txtfile)
 
+=======
+>>>>>>> update with sentence
     def __init__(self, **kwargs):
         super(Sentence, self).__init__(**kwargs)
 
@@ -183,9 +278,17 @@ class Mydict(db.Model):
             data = list(reader)
             for d in data:
                 w = Mydict(word=d[0])
+<<<<<<< HEAD
                 db_update_record(w)
 
         Word.update_noshow()
+=======
+                db.session.add(w)
+                try:
+                    db.session.commit()
+                except:
+                    db.session.rollback()
+>>>>>>> update with sentence
 
 
     def __init__(self, **kwargs):

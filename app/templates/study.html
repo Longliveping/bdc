@@ -7,6 +7,7 @@
 {% block page_content %}
 
 <div class="page-header">
+<<<<<<< HEAD
     <div class="w3-container w3-content  w3-padding-64 w3-light-grey w3-card" style="max-width:1200px" id="Sentences">
         <H1 class="w3-wide"> {{ word.word }} </H1>
         <h4 class="w3-wide">{{ translation['chinese'][0] }}</h4>
@@ -21,6 +22,18 @@
         {%endfor%}
     </div>
 
+=======
+    <H1> {{ word.word }} </H1>
+    <p>{{ translation['chinese'][0] }}</p>
+    <audio controls autoplay>
+        <source src={{ translation['pronunciation'][0]['audio'] }} type="audio/mpeg">
+    </audio>
+    <br><br>
+    <p>Sentences:</p>
+    {%for s in sentences%}
+    <p> {{s.sentence}}</p>
+    {%endfor%}
+>>>>>>> update with sentence
     <br>
     <p>Studying: {{ next_item_index }}</p>
 </div>

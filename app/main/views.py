@@ -4,11 +4,17 @@ from ..models import Word, Sentence, Mydict, Wheres, db_update_record
 from . import main
 from .forms import KnownForm, ImportsForm, TryingForm, QueryForm
 from datetime import datetime
+<<<<<<< HEAD
 from utility.translation import get_word, get_sentence
 from utility.words import update_target,split_sentence
 from werkzeug import secure_filename
 import os
 
+=======
+from utility.translation import get_word
+from werkzeug import secure_filename
+import os
+>>>>>>> update with sentence
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
@@ -34,6 +40,7 @@ def study(where):
     while wheres[next_item_index].word.noshow and next_item_index < count-1:
         next_item_index += 1
     word = wheres[next_item_index].word
+<<<<<<< HEAD
     word_trans = ''
     sent_trans = ''
     if request.method == 'GET':
@@ -49,6 +56,14 @@ def study(where):
         if form.exit.data:
             Word.update_noshow(noshow_count)
             session['noshow'] = 0
+=======
+    translation = get_word(word.word)
+    sentences = Sentence.query.filter(Sentence.wheres.like(f'%{where}%')).filter(Sentence.sentence.like(f'%{word.word}%')).distinct()
+    print(word.wheres)
+    if form.validate_on_submit():
+        if form.exit.data:
+            Word.updatebymydict()
+>>>>>>> update with sentence
             session['index'] = 0
             return redirect(url_for('main.index'))
         if form.query.data:
@@ -68,6 +83,7 @@ def study(where):
         if session['index'] >= count -1: session['index'] = count -1
         return redirect(url_for('main.study', where=where))
     return render_template('study.html', form=form, word=word,
+<<<<<<< HEAD
                            translation=word_trans, sentences=sent_trans,
                            next_item_index=next_item_index)
 
@@ -93,6 +109,11 @@ def query(word):
     return render_template('query.html', form=form, word=word,
                            translation=word_trans, sentences=sent_trans)
 
+=======
+                           translation=translation, sentences = sentences,
+                           next_item_index=next_item_index)
+
+>>>>>>> update with sentence
 @main.route('/imports', methods=['GET', 'POST'])
 def imports():
     form = ImportsForm()
@@ -108,6 +129,7 @@ def importdict():
     Mydict.imports()
     return redirect(url_for('main.imports'))
 
+<<<<<<< HEAD
 @main.route('/exportdict', methods=['GET', 'POST'])
 def exportdict():
     dict = Mydict.query.all()
@@ -121,6 +143,12 @@ def exportdict():
 @main.route('/importfolder', methods=['GET'])
 def importfolder():
     Word.imports()
+=======
+@main.route('/importfolder', methods=['GET'])
+def importfolder():
+    # Word.imports()
+    print('import folder')
+>>>>>>> update with sentence
     return redirect(url_for('main.imports'))
 
 @main.route('/importfile', methods=['POST'])
