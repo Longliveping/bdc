@@ -8,7 +8,6 @@
     <H1> Import dictionary </H1>
 </div>
 
-<<<<<<< HEAD
 <div>
     <H3>Import a file</H3>
     <form enctype="multipart/form-data" action="/importfile" method="POST">
@@ -43,30 +42,4 @@
     <H3>Import batch initially</H3>
     {{wtf.quick_form(form)}}
 </div>
-=======
-<p>Import a file</p>
-<form enctype="multipart/form-data" action="/importfile" method="POST">
-    <input type="file" name="filename">
-    <br>
-    <button type="submit" name="importfile" class="btn btn-success" value="import file">Import file</button>
-</form>
-<br>
-<p>Import my dictionary</p>
-<form action="/importdict" method="POST">
-    <button type="submit" name="importdict" class="btn btn-success" value="import my dictionary">Import my dictionary</button>
-</form>
-<br>
-<p>Import sentence</p>
-<form enctype="multipart/form-data" action="/importsentence" method="POST">
-    <input type="file" name="filename">
-    <br>
-    <button type="submit" name="importsentence" class="btn btn-success" value="import sentence">Import sentence</button>
-</form>
-<!--<form action="/updatedict" method="POST">-->
-<!--    <button type="submit" name="Update" class="btn btn-success" value="update dictionary">Update dictionary</button>-->
-<!--</form>-->
-<br>
-<p>Import folder</p>
-{{wtf.quick_form(form)}}
->>>>>>> update with sentence
 {% endblock %}

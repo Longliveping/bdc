@@ -95,12 +95,15 @@ def get_sentence(sentences, word):
     translator = Translator(provider='mymemory',to_lang='zh',email='liping.long@me.com')
     translation = translator.translate(sentences)
     sents = sentences.split('\n')
-    if '&#10;' in translation:
-        trans = translation.split('&#10;')
-    elif '\n' in translation:
-        trans = translation.split('\n')
-    else:
-        trans = [translation]
+
+    pattern = re.compile(f'&#10;|\n')
+    trans = pattern.split(translation)
+    # if '&#10;' in translation:
+    #     trans = translation.split('&#10;')
+    # elif '\n' in translation:
+    #     trans = translation.split('\n')
+    # else:
+    #     trans = [translation]
     sen_trans = []
     for s,t in zip(sents,trans):
         s = s.replace(word, word.upper())

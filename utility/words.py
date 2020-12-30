@@ -39,35 +39,6 @@ def get_text(filename):
                 fullText.append(pageObj.extractText().lower())
         return '\n'.join(fullText)
 
-<<<<<<< HEAD
-=======
-
-ALLOWED_EXTENSIONS = {'txt', 'pdf', 'docx'}
-
-def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
-
-def get_text(filename):
-    if filename =='' or not allowed_file(filename):
-        return ''
-    fullText = []
-    if filename[-4:] == '.txt':
-        with open(filename,'r') as f:
-            fullText = f.readlines()
-        return '\n'.join(fullText)
-
-    if filename[-4:] == '.pdf':
-        with open(filename,'rb') as f:
-            pdfReader = pdf.PdfFileReader(f)
-            print(pdfReader.numPages)
-            for pagenumber in range(pdfReader.numPages):
-                pageObj = pdfReader.getPage(pagenumber)
-                fullText.append(pageObj.extractText().lower())
-        return '\n'.join(fullText)
-
->>>>>>> update with sentence
     if filename[-4:] == 'docx':
         doc = docx.Document(filename)
 
@@ -83,18 +54,10 @@ def read_text(filename):
     return text
 
 def get_sentence(file):
-<<<<<<< HEAD
-=======
-    # print(file)
->>>>>>> update with sentence
     with open(file, 'r') as f:
         text = f.read()
     pttn = re.compile(r"[a-zA-Z].*", re.I)
     sentences = re.findall(pttn, text)
-<<<<<<< HEAD
-=======
-    # print(sentences)
->>>>>>> update with sentence
     return sentences
 
 
@@ -204,7 +167,6 @@ def create_txt(file):
 def create_txt_from_target():
     basedir = os.path.abspath(os.path.dirname(__file__))
     sourcedir = os.path.join(basedir, 'source')
-<<<<<<< HEAD
     dirs = folder_sub(sourcedir, [])
     for dir in dirs:
         print('dir', dir)
@@ -219,18 +181,6 @@ def create_txt_from_target():
                     pttn = f'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s'
                     sentences = re.split(pttn, lines)
                     f.write('\n'.join(sentences))
-=======
-    for dir in folder_sub(sourcedir):
-        for file in os.listdir(dir):
-            if file[-4:] == 'docx':
-                filename = file[:3]
-                wfile = os.path.join(dir,'target', filename+'.txt')
-                with open(wfile, 'a') as f:
-                    lines = get_text(os.path.join(dir, file))
-                    f.write(lines)
->>>>>>> update with sentence
-
-
 
 def create_token_target():
     basedir = os.path.abspath(os.path.dirname(__file__))
@@ -242,7 +192,6 @@ def create_token_target():
                 wfile = os.path.join(target_dir, file)
                 create_token(wfile)
 
-<<<<<<< HEAD
 def update_target():
     update_target_folder()
     create_txt_from_target()
@@ -255,14 +204,4 @@ if __name__ == '__main__':
     # pttn = f'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s'
     # split = re.split(pttn, str)
     # print(split)
-=======
-if __name__ == '__main__':
-    pass
-    # update_target_folder()
-    # create_txt_from_docx()
-    # create_token_target()
-    get_sentence('/Users/longliping/Developer/PyCharmProject/bdc/utility/upload/conv.txt', 'you')
-
-
->>>>>>> update with sentence
 
