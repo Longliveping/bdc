@@ -166,7 +166,6 @@ def create_txt(file):
 def create_txt_from_target(sourcedir):
     dirs = folder_sub(sourcedir, [])
     for dir in dirs:
-        print('dir', dir)
         for basename in os.listdir(dir):
             file = os.path.join(dir, basename)
             if os.path.isfile(file):

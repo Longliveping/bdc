@@ -9,6 +9,7 @@ bootstrap = Bootstrap()
 moment = Moment()
 
 def create_app(config_name):
+    print(f' * Running under config: {config_name}')
     app = Flask(__name__)
     app.config.from_object(config[config_name])
     config[config_name].init_app(app)

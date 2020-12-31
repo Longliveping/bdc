@@ -21,6 +21,21 @@ def db_update_record(r):
     except:
         db.session.rollback()
 
+sentences_words_relations = db.Table('sentences_words',
+                                     db.Column('sentence_id', db.Integer, db.ForeignKey('sentences.id')),
+                                     db.Column('word_id', db.Integer, db.ForeignKey('words.id'))
+                                     )
+
+words_wheres_relations = db.Table('words_wheres',
+                                     db.Column('word_id', db.Integer, db.ForeignKey('words.id')),
+                                     db.Column('wheres_id', db.Integer, db.ForeignKey('wheres.id'))
+                                     )
+
+sentences_wheres_relations = db.Table('sentences_wheres',
+                                  db.Column('sentence_id', db.Integer, db.ForeignKey('sentences.id')),
+                                  db.Column('wheres_id', db.Integer, db.ForeignKey('wheres.id'))
+                                  )
+
 class Word(db.Model):
     __tablename__ = 'words'
     id = db.Column(db.Integer, primary_key=True)
@@ -32,7 +47,8 @@ class Word(db.Model):
     blurry = db.Column(db.Boolean, default=False)
     review_timestamp = db.Column(db.DateTime, default=datetime.utcnow)
     noshow_timestamp = db.Column(db.DateTime, default=datetime.utcnow)
-    wheres =db.relationship('Wheres', backref='word', lazy='dynamic')
+    wheres = db.relationship('Wheres', secondary=words_wheres_relations)
+    # wheres =db.relationship('Wheres', backref='word', lazy='dynamic')
 
     def __init__(self, **kwargs):
         super(Word, self).__init__(**kwargs)
@@ -118,7 +134,10 @@ class Sentence(db.Model):
     __tablename__ = 'sentences'
     id = db.Column(db.Integer, primary_key=True)
     sentence = db.Column(db.Text())
-    wheres = db.Column(db.String(256))
+    words = db.relationship('Sentence', secondary=sentences_words_relations)
+    # wheres = db.Column(db.String(256))
+    wheres = db.relationship('Wheres', secondary=sentences_wheres_relations)
+
 
     @staticmethod
     def import_sentence(file):
@@ -126,9 +145,23 @@ class Sentence(db.Model):
         filename = basename.split('.')[0]
         sentences = get_sentence(file)
         for s in sentences:
-            exist = Sentence.query.filter_by(wheres=filename).filter_by(sentence=s).first()
+            exist = Sentence.query.filter_by(sentence=s).first()
             if not exist:
-                sen = Sentence(sentence=s,  wheres=filename)
+                sen = Sentence(sentence=s)
+                db.session.add(sen)
+        try:
+            db.session.commit()
+        except:
+            db.session.rollback()
+
+    def import_sentence_to_words(file):
+        basename = os.path.basename(file)
+        filename = basename.split('.')[0]
+        sentences = get_sentence(file)
+        for s in sentences:
+            sen = Sentence.query.filter_by(sentence=s).first()
+            if sen:
+                sen.words = []
                 db.session.add(sen)
         try:
             db.session.commit()
@@ -149,12 +182,18 @@ class Sentence(db.Model):
 class Wheres(db.Model):
     __tablename__ = 'wheres'
     id = db.Column(db.Integer, primary_key=True)
-    word_id = db.Column(db.Integer, db.ForeignKey('words.id'))
-    frequency = db.Column(db.Integer)
+    # word_id = db.Column(db.Integer, db.ForeignKey('words.id'))
+    # frequency = db.Column(db.Integer)
     wheres = db.Column(db.String(256))
 
     @staticmethod
     def import_wheres(file):
+        basename = os.path.basename(file)
+        filename = basename.split('.')[0]
+        w = Wheres(wheres=filename)
+        db_update_record(w)
+
+    def add_wheres_to_words(file):
         basename = os.path.basename(file)
         filename = basename.split('.')[0]
         data = list(csv.reader(open(file)))
