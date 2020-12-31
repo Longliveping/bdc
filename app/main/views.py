@@ -79,7 +79,7 @@ def query(word):
     word_trans = ''
     sent_trans = ''
     word_trans = get_word(word)
-    sentences = Sentence.query.filter(Sentence.sentence.like(f'%{word}%')).limit(5).distinct()
+    sentences = Sentence.query.filter(Sentence.sentence.like(f'%{word}%')).limit(3).distinct()
     sents = []
     for s in sentences:
         sents.append(s.sentence)
@@ -111,8 +111,7 @@ def importdict():
 @main.route('/exportdict', methods=['GET', 'POST'])
 def exportdict():
     dict = Mydict.query.all()
-    app = current_app._get_current_object()
-    file = os.path.join(app.config['UPLOAD_FOLDER'],'mydict.csv')
+    file = os.path.join(current_app.config.get('UPLOAD_FOLDER'),'mydict.csv')
     with open(file,'w') as f:
         for d in dict:
             f.write(d.word+'\n')
@@ -125,18 +124,16 @@ def importfolder():
 
 @main.route('/importfile', methods=['POST'])
 def importfile():
-    app = current_app._get_current_object()
     f = request.files['filename']
-    filename = os.path.join(app.config['UPLOAD_FOLDER'],secure_filename(f.filename))
+    filename = os.path.join(current_app.config.get('UPLOAD_FOLDER'),secure_filename(f.filename))
     f.save(filename)
     Word.importfile(filename)
     return redirect(url_for('main.imports'))
 
 @main.route('/importsentence', methods=['POST'])
 def importsentence():
-    app = current_app._get_current_object()
     f = request.files['filename']
-    filename = os.path.join(app.config['UPLOAD_FOLDER'],secure_filename(f.filename))
+    filename = os.path.join(current_app.config.get('UPLOAD_FOLDER'),secure_filename(f.filename))
     f.save(filename)
     Sentence.importfile(filename)
     return redirect(url_for('main.imports'))

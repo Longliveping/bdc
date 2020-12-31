@@ -52,8 +52,15 @@ class Word(db.Model):
 
     @staticmethod
     def imports():
-        update_target()
-        target_path = os.path.join(os.getcwd(), 'utility/source/friends/season_01/target')
+        if current_app.config.get('TESTING'):
+            sourcedir = current_app.config.get('TESTING_FOLDER')
+            target_path = os.path.join(sourcedir, 'target')
+        else:
+            sourcedir = current_app.config.get('SOURCE_FOLDER')
+            target_path = os.path.join(sourcedir, 'friends/season_01/target')
+
+        update_target(sourcedir)
+
         for basename in os.listdir(target_path):
             file = os.path.join(target_path, basename)
             extname = basename.split('.')[1]
@@ -62,6 +69,7 @@ class Word(db.Model):
                 Wheres.import_wheres(file)
             elif extname == 'txt':
                 Sentence.import_sentence(file)
+
         Word.update_noshow()
 
     @staticmethod
@@ -168,7 +176,7 @@ class Wheres(db.Model):
         return '<Wheres %r>' % self.wheres
 
 class Mydict(db.Model):
-    __tablename__ = 'mydicts'
+    __tablename__ = 'mydict'
     id = db.Column(db.Integer, primary_key=True)
     word = db.Column(db.String(64), unique=True)
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
@@ -176,7 +184,10 @@ class Mydict(db.Model):
 
     @staticmethod
     def imports():
-        basedir = os.path.join(os.getcwd(), 'utility/mydict')
+        basedir = current_app.config.get('MYDICT_FOLDER')
+        if current_app.config.get('TESTING'):
+            basedir = os.path.join(basedir, 'testing')
+
         for filename in os.listdir(basedir):
             f = open(os.path.join(basedir, filename))
             reader = csv.reader(f)
@@ -185,7 +196,9 @@ class Mydict(db.Model):
                 w = Mydict(word=d[0])
                 db_update_record(w)
 
+
         Word.update_noshow()
+
 
 
     def __init__(self, **kwargs):

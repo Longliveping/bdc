@@ -4,6 +4,7 @@ import PyPDF2 as pdf
 import os
 import docx
 from werkzeug import secure_filename
+from flask import current_app
 
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'docx'}
 
@@ -118,9 +119,7 @@ def generate(file):
         statement = generate_statement(token, file)
         generate_sentence(token, statement, file)
 
-def update_target_folder():
-    basedir = os.path.abspath(os.path.dirname(__file__))
-    sourcedir = os.path.join(basedir, 'source')
+def update_target_folder(sourcedir):
     enddirs = folder_sub(sourcedir)
     for dir in enddirs:
         path = os.path.join(dir, 'target')
@@ -164,9 +163,7 @@ def create_txt(file):
         f.write(ss)
     return wfile
 
-def create_txt_from_target():
-    basedir = os.path.abspath(os.path.dirname(__file__))
-    sourcedir = os.path.join(basedir, 'source')
+def create_txt_from_target(sourcedir):
     dirs = folder_sub(sourcedir, [])
     for dir in dirs:
         print('dir', dir)
@@ -182,9 +179,7 @@ def create_txt_from_target():
                     sentences = re.split(pttn, lines)
                     f.write('\n'.join(sentences))
 
-def create_token_target():
-    basedir = os.path.abspath(os.path.dirname(__file__))
-    sourcedir = os.path.join(basedir, 'source')
+def create_token_target(sourcedir):
     for dir in folder_sub(sourcedir):
         target_dir = os.path.join(dir,'target')
         for file in os.listdir(target_dir):
@@ -192,10 +187,10 @@ def create_token_target():
                 wfile = os.path.join(target_dir, file)
                 create_token(wfile)
 
-def update_target():
-    update_target_folder()
-    create_txt_from_target()
-    create_token_target()
+def update_target(sourcedir):
+    update_target_folder(sourcedir)
+    create_txt_from_target(sourcedir)
+    create_token_target(sourcedir)
 
 if __name__ == '__main__':
     pass

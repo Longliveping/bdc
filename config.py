@@ -6,10 +6,19 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'hard to guess string'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     UPLOAD_FOLDER = os.path.join(basedir, 'utility/upload')
+    TESTING_FOLDER = os.path.join(basedir, 'utility/testing')
+    SOURCE_FOLDER = os.path.join(basedir, 'utility/source')
+    MYDICT_FOLDER = os.path.join(basedir, 'utility/mydict')
 
     @staticmethod
     def init_app(app):
         pass
+
+class TestingConfig(Config):
+    """Configurations for Testing."""
+    TESTING = True
+    SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/test_db'
+    DEBUG = True
 
 class DevelopmentConfig(Config):
     DEBUG = True
@@ -18,5 +27,6 @@ class DevelopmentConfig(Config):
 
 config = {
     'development': DevelopmentConfig,
+    'testing': TestingConfig,
     'default': DevelopmentConfig
 }
