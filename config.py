@@ -1,5 +1,6 @@
 import os
 
+
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config:
@@ -17,7 +18,7 @@ class Config:
 class TestingConfig(Config):
     """Configurations for Testing."""
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/test_db'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://localhost/test_db'
     DEBUG = True
 
 class DevelopmentConfig(Config):

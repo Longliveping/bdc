@@ -1,9 +1,18 @@
 import unittest
 from flask import current_app
 from app import create_app, db
-from app.models import Word, Wheres, Sentence, Mydict, sentences_words_relations
+from app.models import Word, Wheres, Sentence, Mydict, sentences_words_relations, Sequence, Annotation
 import os
+import time
 
+
+class Timer:
+    def __enter__(self):
+        self.start = time.time()
+        return self
+
+    def __exit__(self, exc_type, value, tb):
+        self.duration = time.time() - self.start
 
 def drop_everything():
     """(On a live db) drops all foreign key constraints before dropping all tables.
@@ -55,15 +64,12 @@ def get_file(filetype):
 
 class WordsTestCase(unittest.TestCase):
 
-
     @classmethod
     def setUpClass(cls):
         cls.app = create_app('testing')
         cls.app_context = cls.app.app_context()
         cls.app_context.push()
         db.create_all()
-        # Word.importfile(get_file())
-        # Mydict.imports()
 
 
     @classmethod
@@ -72,10 +78,24 @@ class WordsTestCase(unittest.TestCase):
         # drop_everything()
         cls.app_context.pop()
 
+    # def test_sequence(self):
+    #     for i in range(0,1000):
+    #         sequence = Sequence(name=f's{i}')
+    #         annotation = Annotation(name=f'a{i}', sequence=sequence)
+    #         db.session.add_all([sequence, annotation])
+    #     with Timer() as timer:
+    #         db.session.commit()
+    #     print(timer.duration, 'seconds')
+    #     count_s = Sequence.query.count()
+    #     count_a = Annotation.query.count()
+    #     self.assertTrue(count_s>0)
+    #     self.assertTrue(count_a>0)
+
     def test_sentences_to_words(self):
-        Sentence.import_sentence_to_words(get_file())
-        count = sentences_words_relations.query.count()
-        self.assertTrue(count>0)
+        # Sentence.import_sentence_to_words(get_file())
+        # count = sentences_words_relations.query.count()
+        # self.assertTrue(count>0)
+        pass
 
     def test_import_mydict(self):
         Mydict.imports()

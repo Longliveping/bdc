@@ -245,3 +245,28 @@ class Mydict(db.Model):
 
     def __repr__(self):
         return '<Mydict %r>' % self.word
+
+
+class Sequence(db.Model):
+    __tablename__ = 'sequences'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64), unique=True)
+
+    def __init__(self, **kwargs):
+        super(Sequence, self).__init__(**kwargs)
+
+    def __repr__(self):
+        return '<Sequence %r>' % self.name
+
+class Annotation(db.Model):
+    __tablename__ = 'annotations'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64), unique=True)
+    sequence_id = db.Column(db.Integer, db.ForeignKey('sequences.id'))
+    sequence = db.relationship('Sequence')
+
+    def __init__(self, **kwargs):
+        super(Annotation, self).__init__(**kwargs)
+
+    def __repr__(self):
+        return '<Annotation %r>' % self.name
