@@ -1,6 +1,6 @@
 from flask import render_template, session, redirect, url_for, current_app,request
 from .. import db
-from ..models import Word, Sentence, Mydict, Wheres, db_update_record
+from ..models import Word, Sentence, Mydict, Article, db_update_record
 from . import main
 from .forms import KnownForm, ImportsForm, TryingForm, QueryForm
 from datetime import datetime
@@ -13,16 +13,16 @@ import os
 @main.route('/', methods=['GET', 'POST'])
 def index():
     deck=[]
-    wheres = Wheres.query.group_by('wheres').all()
+    wheres = Article.query.group_by('wheres').all()
     for wh in wheres:
-        deck.append([wh.wheres, Wheres.query.filter_by(wheres=wh.wheres).count()])
+        deck.append([wh.article, Article.query.filter_by(wheres=wh.article).count()])
     return render_template('index.html', deck=deck)
 
 @main.route('/study/<where>', methods=['GET', 'POST'])
 def study(where):
     form = KnownForm()
-    wheres = Wheres.query.filter_by(wheres=where).all()
-    count = Wheres.query.filter_by(wheres=where).count()
+    wheres = Article.query.filter_by(wheres=where).all()
+    count = Article.query.filter_by(wheres=where).count()
     if session.get('index'):
         next_item_index = int(session.get('index'))
     else:
@@ -38,7 +38,7 @@ def study(where):
     sent_trans = ''
     if request.method == 'GET':
         word_trans = get_word(word.word)
-        sentences = Sentence.query.filter(Sentence.wheres.like(f'%{where}%')).filter(Sentence.sentence.like(f'%{word.word}%')).limit(3).distinct()
+        sentences = Sentence.query.filter(Sentence.articles.like(f'%{where}%')).filter(Sentence.sentence.like(f'%{word.word}%')).limit(3).distinct()
         sents = []
         for s in sentences:
             sents.append(s.sentence)
