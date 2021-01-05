@@ -45,6 +45,9 @@ class Word(db.Model):
     def __init__(self, **kwargs):
         super(Word, self).__init__(**kwargs)
 
+    def __repr__(self):
+        return '<Word %r>' % self.word
+
     @staticmethod
     def import_words(file):
         data = list(csv.reader(open(file)))
@@ -102,8 +105,7 @@ class Word(db.Model):
             raise ValidationError('post does not have a body')
         return Word(word=word)
 
-    def __repr__(self):
-        return '<Word %r>' % self.word
+
 
 class Review(db.Model):
     __tablename__ = 'reviews'
@@ -304,7 +306,6 @@ class Item(db.Model):
     __tablename__ = 'items'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), unique=True)
-    name = db.Column(db.String(200), nullable=False)
     cost_price = db.Column(db.Numeric(10, 2), nullable=False)
     selling_price = db.Column(db.Numeric(10, 2),  nullable=False)
     quantity = db.Column(db.Integer(), nullable=False)
@@ -322,7 +323,7 @@ class Order(db.Model):
     customer_id = db.Column(db.Integer, db.ForeignKey('customers.id'))
     date_placed = db.Column( db.DateTime(), default=datetime.now)
     date_shipped = db.Column(db.DateTime())
-    customer = db.relationship('Customer')
+    customer = db.relationship('Customer', backref='orders')
 
     def __init__(self, **kwargs):
         super(Order, self).__init__(**kwargs)
@@ -336,8 +337,8 @@ class OrderLine(db.Model):
     order_id = db.Column(db.Integer, db.ForeignKey('orders.id'))
     item_id = db.Column(db.Integer, db.ForeignKey('items.id'))
     quantity = db.Column(db.Integer)
-    order = db.relationship('Order')
-    item = db.relationship('Item')
+    order = db.relationship('Order', backref='orderlines')
+    item = db.relationship('Item', backref='orderlines')
 
     def __init__(self, **kwargs):
         super(OrderLine, self).__init__(**kwargs)
