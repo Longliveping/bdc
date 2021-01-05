@@ -26,32 +26,27 @@ sentences_words_relations = db.Table('sentences_words',
                                      db.Column('word_id', db.Integer, db.ForeignKey('words.id'))
                                      )
 
-words_wheres_relations = db.Table('words_wheres',
-                                     db.Column('word_id', db.Integer, db.ForeignKey('words.id')),
-                                     db.Column('wheres_id', db.Integer, db.ForeignKey('wheres.id'))
-                                     )
+words_articles_relations = db.Table('words_articles',
+                                    db.Column('word_id', db.Integer, db.ForeignKey('words.id')),
+                                    db.Column('articles_id', db.Integer, db.ForeignKey('articles.id'))
+                                    )
 
-sentences_wheres_relations = db.Table('sentences_wheres',
-                                  db.Column('sentence_id', db.Integer, db.ForeignKey('sentences.id')),
-                                  db.Column('wheres_id', db.Integer, db.ForeignKey('wheres.id'))
-                                  )
+sentences_articles_relations = db.Table('sentences_articles',
+                                        db.Column('sentence_id', db.Integer, db.ForeignKey('sentences.id')),
+                                        db.Column('articles_id', db.Integer, db.ForeignKey('articles.id'))
+                                        )
 
 class Word(db.Model):
     __tablename__ = 'words'
     id = db.Column(db.Integer, primary_key=True)
     word = db.Column(db.String(64), unique=True)
-    chinese = db.Column(db.String(64))
-    noshow = db.Column(db.Boolean, default=False)
-    known = db.Column(db.Boolean, default=False)
-    unknown = db.Column(db.Boolean, default=True)
-    blurry = db.Column(db.Boolean, default=False)
-    review_timestamp = db.Column(db.DateTime, default=datetime.utcnow)
-    noshow_timestamp = db.Column(db.DateTime, default=datetime.utcnow)
-    wheres = db.relationship('Wheres', secondary=words_wheres_relations)
-    # wheres =db.relationship('Wheres', backref='word', lazy='dynamic')
+    articles = db.relationship('Article', secondary=words_articles_relations)
 
     def __init__(self, **kwargs):
         super(Word, self).__init__(**kwargs)
+
+    def __repr__(self):
+        return '<Word %r>' % self.word
 
     @staticmethod
     def import_words(file):
@@ -82,7 +77,7 @@ class Word(db.Model):
             extname = basename.split('.')[1]
             if extname == 'csv':
                 Word.import_words(file)
-                Wheres.import_wheres(file)
+                Article.import_articles(file)
             elif extname == 'txt':
                 Sentence.import_sentence(file)
 
@@ -93,26 +88,9 @@ class Word(db.Model):
         txtfile = create_txt(file)
         csvfile = create_token(txtfile)
         Word.import_words(csvfile)
-        Wheres.import_wheres(csvfile)
+        Article.import_articles(csvfile)
         Sentence.import_sentence(txtfile)
 
-    @staticmethod
-    def update_noshow(count=-1):
-        if count == -1:
-            mydict = Mydict.query.all()
-        else:
-            mydict = Mydict.query.order_by(Mydict.timestamp.desc()).limit(count).all()
-        for d in mydict:
-            print("update no show", count, d)
-            w = Word.query.filter_by(word=d.word).first()
-            if w:
-                w.noshow = True
-            else:
-                w = Word(word=d.word,
-                         noshow=True,
-                         noshow_timestamp=datetime.utcnow()
-                         )
-            db_update_record(w)
 
     def to_json(self):
         json_word = {
@@ -127,16 +105,51 @@ class Word(db.Model):
             raise ValidationError('post does not have a body')
         return Word(word=word)
 
+
+
+class Review(db.Model):
+    __tablename__ = 'reviews'
+    id = db.Column(db.Integer, primary_key=True)
+    word_id = db.Column(db.Integer, db.ForeignKey('words.id'))
+    chinese = db.Column(db.String(64))
+    noshow = db.Column(db.Boolean, default=False)
+    known = db.Column(db.Boolean, default=False)
+    unknown = db.Column(db.Boolean, default=True)
+    blurry = db.Column(db.Boolean, default=False)
+    review_timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+    noshow_timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+    word = db.relationship('Word')
+
+    @staticmethod
+    def update_noshow(count=-1):
+        if count == -1:
+            mydict = Mydict.query.all()
+        else:
+            mydict = Mydict.query.order_by(Mydict.timestamp.desc()).limit(count).all()
+        for d in mydict:
+            print("update no show", count, d)
+            # w = Review.query.filter_by(word=d.word).first()
+            # if w:
+            #     w.noshow = True
+            # else:
+            #     w = Word(word=d.word,
+            #              noshow=True,
+            #              noshow_timestamp=datetime.utcnow()
+            #              )
+            # db_update_record(w)
+
+    def __init__(self, **kwargs):
+        super(Review, self).__init__(**kwargs)
+
     def __repr__(self):
-        return '<Word %r>' % self.word
+        return '<Review %r>' % self.id
 
 class Sentence(db.Model):
     __tablename__ = 'sentences'
     id = db.Column(db.Integer, primary_key=True)
     sentence = db.Column(db.Text())
     words = db.relationship('Sentence', secondary=sentences_words_relations)
-    # wheres = db.Column(db.String(256))
-    wheres = db.relationship('Wheres', secondary=sentences_wheres_relations)
+    articles = db.relationship('Article', secondary=sentences_articles_relations)
 
 
     @staticmethod
@@ -179,29 +192,29 @@ class Sentence(db.Model):
     def __repr__(self):
         return '<Sentence %r>' % self.sentence
 
-class Wheres(db.Model):
-    __tablename__ = 'wheres'
+class Article(db.Model):
+    __tablename__ = 'articles'
     id = db.Column(db.Integer, primary_key=True)
     # word_id = db.Column(db.Integer, db.ForeignKey('words.id'))
     # frequency = db.Column(db.Integer)
-    wheres = db.Column(db.String(256))
+    article = db.Column(db.String(256))
 
     @staticmethod
-    def import_wheres(file):
+    def import_articles(file):
         basename = os.path.basename(file)
         filename = basename.split('.')[0]
-        w = Wheres(wheres=filename)
+        w = Article(article=filename)
         db_update_record(w)
 
-    def add_wheres_to_words(file):
+    def add_articles_to_words(file):
         basename = os.path.basename(file)
         filename = basename.split('.')[0]
         data = list(csv.reader(open(file)))
         for d in data:
             w = Word.query.filter_by(word=d[0]).first()
-            exist = Wheres.query.filter_by(wheres=filename).filter_by(word_id=w.id).first()
+            exist = Article.query.filter_by(article=filename).filter_by(word_id=w.id).first()
             if not exist:
-                wh = Wheres(word_id=w.id,wheres=filename,frequency=d[1])
+                wh = Article(word_id=w.id, article=filename, frequency=d[1])
                 db.session.add(wh)
         try:
             db.session.commit()
@@ -209,10 +222,10 @@ class Wheres(db.Model):
             db.session.rollback()
 
     def __init__(self, **kwargs):
-        super(Wheres, self).__init__(**kwargs)
+        super(Article, self).__init__(**kwargs)
 
     def __repr__(self):
-        return '<Wheres %r>' % self.wheres
+        return '<Article %r>' % self.article
 
 class Mydict(db.Model):
     __tablename__ = 'mydict'
@@ -236,7 +249,7 @@ class Mydict(db.Model):
                 db_update_record(w)
 
 
-        Word.update_noshow()
+        Review.update_noshow()
 
 
 
@@ -245,3 +258,90 @@ class Mydict(db.Model):
 
     def __repr__(self):
         return '<Mydict %r>' % self.word
+
+
+class Sequence(db.Model):
+    __tablename__ = 'sequences'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64), unique=True)
+
+    def __init__(self, **kwargs):
+        super(Sequence, self).__init__(**kwargs)
+
+    def __repr__(self):
+        return '<Sequence %r>' % self.name
+
+class Annotation(db.Model):
+    __tablename__ = 'annotations'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64), unique=True)
+    sequence_id = db.Column(db.Integer, db.ForeignKey('sequences.id'))
+    sequence = db.relationship('Sequence')
+
+    def __init__(self, **kwargs):
+        super(Annotation, self).__init__(**kwargs)
+
+    def __repr__(self):
+        return '<Annotation %r>' % self.name
+
+class Customer(db.Model):
+    __tablename__ = 'customers'
+    id = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.String(100), nullable=False)
+    last_name = db.Column(db.String(100), nullable=False)
+    username = db.Column(db.String(50), nullable=False)
+    email = db.Column(db.String(200), nullable=False)
+    address = db.Column(db.String(200), nullable=False)
+    town = db.Column(db.String(50), nullable=False)
+    created_on = db.Column(db.DateTime(), default=datetime.now)
+    updated_on = db.Column(db.DateTime(), default=datetime.now, onupdate=datetime.now)
+
+    def __init__(self, **kwargs):
+        super(Customer, self).__init__(**kwargs)
+
+    def __repr__(self):
+        return '<Customer %r>' % self.id
+
+class Item(db.Model):
+    __tablename__ = 'items'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64), unique=True)
+    cost_price = db.Column(db.Numeric(10, 2), nullable=False)
+    selling_price = db.Column(db.Numeric(10, 2),  nullable=False)
+    quantity = db.Column(db.Integer(), nullable=False)
+    db.CheckConstraint('quantity > 0', name='quantity_check')
+
+    def __init__(self, **kwargs):
+        super(Item, self).__init__(**kwargs)
+
+    def __repr__(self):
+        return '<Item %r>' % self.name
+
+class Order(db.Model):
+    __tablename__ = 'orders'
+    id = db.Column(db.Integer, primary_key=True)
+    customer_id = db.Column(db.Integer, db.ForeignKey('customers.id'))
+    date_placed = db.Column( db.DateTime(), default=datetime.now)
+    date_shipped = db.Column(db.DateTime())
+    customer = db.relationship('Customer', backref='orders')
+
+    def __init__(self, **kwargs):
+        super(Order, self).__init__(**kwargs)
+
+    def __repr__(self):
+        return '<Order %r>' % self.id
+
+class OrderLine(db.Model):
+    __tablename__ = 'orderlines'
+    id = db.Column(db.Integer, primary_key=True)
+    order_id = db.Column(db.Integer, db.ForeignKey('orders.id'))
+    item_id = db.Column(db.Integer, db.ForeignKey('items.id'))
+    quantity = db.Column(db.Integer)
+    order = db.relationship('Order', backref='orderlines')
+    item = db.relationship('Item', backref='orderlines')
+
+    def __init__(self, **kwargs):
+        super(OrderLine, self).__init__(**kwargs)
+
+    def __repr__(self):
+        return '<OrderLine %r>' % self.quantity

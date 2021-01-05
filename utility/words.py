@@ -62,14 +62,14 @@ def get_sentence(file):
     return sentences
 
 
-def tokens(text):
+def get_tokens(text):
     token = re.findall('[a-z]+', text.lower())
     return token
 
 def create_token(file):
     csvfile = f'{file.split(".")[0]}.csv'
     text = read_text(file)
-    token = tokens(text)
+    token = get_tokens(text)
     count = Counter(token)
 
     token_new = []
@@ -84,7 +84,7 @@ def create_token(file):
 def read_tokens(file):
     with open(file, 'r') as f:
         text = f.read()
-    return tokens(text)
+    return get_tokens(text)
 
 def generate_sentence(key, statements ,file):
     text = read_text(file)
