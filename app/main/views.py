@@ -1,6 +1,7 @@
 from flask import render_template, session, redirect, url_for, current_app,request
+from sqlalchemy import distinct
 from .. import db
-from ..models import Word, Sentence, Mydict, Article
+from ..models import Word, Sentence, Mydict, Article, SentenceWord
 from . import main
 from .forms import KnownForm, ImportsForm, TryingForm, QueryForm
 from datetime import datetime
@@ -12,17 +13,33 @@ import os
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
-    deck=[]
-    wheres = Article.query.group_by('wheres').all()
-    for wh in wheres:
-        deck.append([wh.article, Article.query.filter_by(wheres=wh.article).count()])
+    deck = []
+    articles = db.session.query(Article).all()
+    for a in articles:
+        count = db.session.query(
+            Article, Word
+        ).join(Sentence).join(SentenceWord).join(Word).filter(
+            Article.article == a.article,
+        ).distinct().count()
+        deck.append([a.article, count])
+
     return render_template('index.html', deck=deck)
 
-@main.route('/study/<where>', methods=['GET', 'POST'])
-def study(where):
+@main.route('/study/<article>', methods=['GET', 'POST'])
+def study(article):
     form = KnownForm()
-    wheres = Article.query.filter_by(wheres=where).all()
-    count = Article.query.filter_by(wheres=where).count()
+    articles = db.session.query(
+            Article, Word.word
+        ).join(Sentence).join(SentenceWord).join(Word).filter(
+            Article.article == article,
+        ).distinct().all()
+    words = [a[1] for a in articles]
+
+    count = db.session.query(
+            Article, Word
+        ).join(Sentence).join(SentenceWord).join(Word).filter(
+            Article.article == article,
+        ).distinct().count()
     if session.get('index'):
         next_item_index = int(session.get('index'))
     else:
@@ -31,14 +48,18 @@ def study(where):
         noshow_count = int(session.get('noshow'))
     else:
         noshow_count = 0
-    while wheres[next_item_index].word.noshow and next_item_index < count-1:
+    while words[next_item_index].word.noshow and next_item_index < count-1:
         next_item_index += 1
     word = wheres[next_item_index].word
     word_trans = ''
     sent_trans = ''
     if request.method == 'GET':
         word_trans = get_word(word.word)
-        sentences = Sentence.query.filter(Sentence.articles.like(f'%{where}%')).filter(Sentence.sentence.like(f'%{word.word}%')).limit(3).distinct()
+        sentences = Sentence.query.filter(
+            Sentence.articles.like(f'%{article}%')
+        ).filter(
+            Sentence.sentence.like(f'%{word.word}%')
+        ).limit(3).distinct()
         sents = []
         for s in sentences:
             sents.append(s.sentence)

@@ -31,3 +31,4 @@ PyPDF2==1.26.0
 python-docx==0.8.10
 translate==3.5.0
 python-dotenv
+psycopg2

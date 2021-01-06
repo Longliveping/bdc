@@ -163,7 +163,7 @@ class WordsTestCase(unittest.TestCase):
         self.assertTrue(count>0)
 
     def test_import_big_txt(self):
-        import_word('big')
+        import_word('103_')
         count = db.session.query(Word).count()
         self.assertTrue(count>0)
 
