@@ -63,7 +63,8 @@ def get_sentence(file):
 
 
 def get_tokens(text):
-    token = re.findall('[a-z]+', text.lower())
+    tokens = re.findall('[a-z]+', text.lower())
+    token = list(dict.fromkeys(tokens))
     return token
 
 def create_token(file):
@@ -85,6 +86,26 @@ def read_tokens(file):
     with open(file, 'r') as f:
         text = f.read()
     return get_tokens(text)
+
+
+def get_file_by_type(filetype):
+    sourcedir = current_app.config.get('TESTING_FOLDER')
+    for basename in os.listdir(sourcedir):
+        file = os.path.join(sourcedir, basename)
+        basename = os.path.basename(file)
+        extention = basename.split('.')[1]
+        if extention == filetype:
+            return file
+
+def get_file_by_name(filename):
+    sourcedir = current_app.config.get('TESTING_FOLDER')
+    for basename in os.listdir(sourcedir):
+        file = os.path.join(sourcedir, basename)
+        basename = os.path.basename(file)
+        if basename.startswith(filename):
+            return file
+    return file
+
 
 def generate_sentence(key, statements ,file):
     text = read_text(file)
