@@ -1,10 +1,11 @@
 import unittest
 from flask import current_app
 from app import create_app, db
-from app.models import Word, Article, Sentence, Mydict, sentences_words_relations, \
-    Sequence, Annotation, Customer, Order, Item, OrderLine
+from app.models import Word, Article, Sentence, Mydict, Review, SentenceWord
 import os
+import re
 import time
+from utility.words import get_sentence, get_tokens, read_text, get_file_by_name
 
 
 class Timer:
@@ -15,6 +16,14 @@ class Timer:
     def __exit__(self, exc_type, value, tb):
         self.duration = time.time() - self.start
 
+def delete_table_records():
+    db.session.query(SentenceWord).delete()
+    db.session.query(Sentence).delete()
+    db.session.query(Mydict).delete()
+    db.session.query(Word).delete()
+    db.session.query(Article).delete()
+    db.session.commit()
+
 def drop_everything():
     """(On a live db) drops all foreign key constraints before dropping all tables.
     Workaround for SQLAlchemy not doing DROP ## CASCADE for drop_all()
@@ -24,6 +33,7 @@ def drop_everything():
     from sqlalchemy.schema import DropConstraint, DropTable, MetaData, Table
 
     con = db.engine.connect()
+    print(con)
     trans = con.begin()
     inspector = Inspector.from_engine(db.engine)
 
@@ -54,14 +64,81 @@ def drop_everything():
 
     trans.commit()
 
-def get_file(filetype):
-    sourcedir = current_app.config.get('TESTING_FOLDER')
-    for basename in os.listdir(sourcedir):
-        file = os.path.join(sourcedir, basename)
-        basename = os.path.basename(file)
-        extention = basename.split('.')[1]
-        if extention == filetype:
-            return file
+def import_article(filename):
+    basename = os.path.basename(get_file_by_name(filename))
+    filename = basename.split('.')[0]
+    a = db.session.query(Article).filter(Article.article == filename).first()
+    if not a:
+        a1 = Article(article=filename)
+        db.session.add(a1)
+        db.session.commit()
+
+def import_word(filename):
+    with Timer() as timer:
+        tokens = set(get_tokens(read_text(get_file_by_name(filename))))
+        exist = db.session.query(Word.word).all()
+        exist =  set([e[0] for e in exist])
+        not_exist = tokens - exist
+        for n in not_exist:
+            w = Word(word=n)
+            db.session.add(w)
+        db.session.new
+        db.session.commit()
+    print("took", timer.duration, "seconds")
+
+def import_sentence(filename):
+    basename = os.path.basename(get_file_by_name(filename))
+    filename = basename.split('.')[0]
+    a = db.session.query(Sentence).join(Article).filter(Article.article == filename).first()
+    if a:
+        return
+
+    with Timer() as timer:
+        # insert SentenceWords
+        db.session.remove()
+        article = db.session.query(Article).first()
+
+        sl = []
+        sentences = get_sentence(get_file_by_name(filename))
+        tokens_all = get_tokens(read_text(get_file_by_name(filename)))
+        words_all = db.session.query(Word).filter(Word.word.in_(tokens_all)).all()
+        for sentence in sentences:
+            tokens = get_tokens(sentence)
+            s = Sentence(sentence=sentence, article=article)
+            w = [w for w in words_all if w.word in tokens]
+            sw = [SentenceWord(word=i) for i in w]
+            s.sentencewords = sw
+            sl.append(s)
+        db.session.add_all(sl)
+        db.session.commit()
+
+    print("took", timer.duration, "seconds")
+
+def import_dict():
+    with Timer() as timer:
+        sourcedir = current_app.config.get('MYDICT_FOLDER')
+        file = os.path.join(sourcedir, 'mydict.csv' )
+
+        tokens = set(get_tokens(read_text((file))))
+        exist = db.session.query(Word.word).join(Mydict).all()
+        exist =  set([e[0] for e in exist])
+        not_exist = tokens - exist
+        for t in not_exist:
+            m = db.session.query(Word).join(Mydict).filter(Word.word==t).first()
+            if not m:
+                w = db.session.query(Word).filter(Word.word == t).first()
+                if not w:
+                    w = Word(word=t)
+                    m = Mydict(word=w)
+                    db.session.add(w)
+                    db.session.add(m)
+                else:
+                    m = Mydict(word=w)
+                    db.session.add(m)
+        db.session.new
+        db.session.commit()
+    print("took", timer.duration, "seconds")
+
 
 class WordsTestCase(unittest.TestCase):
 
@@ -72,150 +149,37 @@ class WordsTestCase(unittest.TestCase):
         cls.app_context.push()
         db.create_all()
 
-
     @classmethod
     def tearDownClass(cls):
+        # delete_table_records()
+        # db.drop_all()
+        # drop_everything()
         db.session.remove()
-        drop_everything()
         cls.app_context.pop()
 
-    def test_orderline(self):
-        pass
+    def test_import_article(self):
+        import_article('103_')
+        count = db.session.query(Article).count()
+        self.assertTrue(count>0)
 
-    def test_customer_item(self):
-        # c1 = Customer(first_name='Toby',
-        #               last_name='Miller',
-        #               username='tmiller',
-        #               email='tmiller@example.com',
-        #               address='1662 Kinney Street',
-        #               town='Wolfden'
-        #               )
-        #
-        c2 = Customer(first_name='Scott',
-                      last_name='Harvey',
-                      username='scottharvey',
-                      email='scottharvey@example.com',
-                      address='424 Patterson Street',
-                      town='Beckinsdale'
-                      )
-        # c3 = Customer(
-        #     first_name="John",
-        #     last_name="Lara",
-        #     username="johnlara",
-        #     email="johnlara@mail.com",
-        #     address="3073 Derek Drive",
-        #     town="Norfolk"
-        # )
-        #
-        # c4 = Customer(
-        #     first_name = "Sarah",
-        #     last_name = "Tomlin",
-        #     username = "sarahtomlin",
-        #     email = "sarahtomlin@mail.com",
-        #     address = "3572 Poplar Avenue",
-        #     town = "Norfolk"
-        # )
-        #
-        # c5 = Customer(first_name = 'Toby',
-        #               last_name = 'Miller',
-        #               username = 'tmiller',
-        #               email = 'tmiller@example.com',
-        #               address = '1662 Kinney Street',
-        #               town = 'Wolfden'
-        #               )
-        #
-        # c6 = Customer(first_name = 'Scott',
-        #               last_name = 'Harvey',
-        #               username = 'scottharvey',
-        #               email = 'scottharvey@example.com',
-        #               address = '424 Patterson Street',
-        #               town = 'Beckinsdale'
-        #               )
-        #
-        # db.session.add_all([c1, c2, c3, c4, c5, c6])
-        # db.session.commit()
-        #
-        i1 = Item(name = 'Chair', cost_price = 9.21, selling_price = 10.81, quantity = 5)
-        i2 = Item(name = 'Pen', cost_price = 3.45, selling_price = 4.51, quantity = 3)
-        # i3 = Item(name = 'Headphone', cost_price = 15.52, selling_price = 16.81, quantity = 50)
-        # i4 = Item(name = 'Travel Bag', cost_price = 20.1, selling_price = 24.21, quantity = 50)
-        # i5 = Item(name = 'Keyboard', cost_price = 20.1, selling_price = 22.11, quantity = 50)
-        # i6 = Item(name = 'Monitor', cost_price = 200.14, selling_price = 212.89, quantity = 50)
-        # i7 = Item(name = 'Watch', cost_price = 100.58, selling_price = 104.41, quantity = 50)
-        # i8 = Item(name = 'Water Bottle', cost_price = 20.89, selling_price = 25, quantity = 50)
-        #
-        # db.session.add_all([i1, i2, i3, i4, i5, i6, i7, i8])
-        # db.session.commit()
-        #
-        # o1 = Order(customer = c1)
-        # o2 = Order(customer = c1)
-        #
-        # line_item1 = OrderLine(order = o1, item = i1, quantity =  3)
-        # line_item2 = OrderLine(order = o1, item = i2, quantity =  2)
-        # line_item3 = OrderLine(order = o2, item = i1, quantity =  1)
-        # line_item4 = OrderLine(order = o2, item = i2, quantity =  4)
-        #
-        # db.session.add_all([o1, o2])
-        # db.session.add_all([line_item1, line_item2,line_item3,line_item4])
-        #
-        # # db.session.new
-        # db.session.commit()
-
-        o3 = Order(customer = c2)
-        orderline1 = OrderLine(item = i1, quantity = 5)
-        orderline2 = OrderLine(item = i2, quantity = 10)
-
-        o3.orderlines.append(orderline1)
-        o3.orderlines.append(orderline2)
-
-        db.session.add_all([o3])
-        db.session.commit()
-
-    # def test_sequence(self):
-    #     for i in range(1000,2000):
-    #         sequence = Sequence(name=f's{i}')
-    #         sequence.annotations = [Annotation(name=f'a{i}', sequence=sequence),
-    #                                 Annotation(name=f'b{i}', sequence=sequence)]
-    #         db.session.add(sequence)
-    #         db.session.add_all(sequence.annotations)
-    #         # annotation = Annotation(name=f'a{i}', sequence=sequence)
-    #         # db.session.add_all([sequence, annotation])
-    #     with Timer() as timer:
-    #         db.session.commit()
-    #     print(timer.duration, 'seconds')
-    #     count_s = Sequence.query.count()
-    #     count_a = Annotation.query.count()
-    #     self.assertTrue(count_s>0)
-    #     self.assertTrue(count_a>0)
-
-    def test_sentences_to_words(self):
-        # Sentence.import_sentence_to_words(get_file())
-        # count = sentences_words_relations.query.count()
-        # self.assertTrue(count>0)
-        pass
+    def test_import_big_txt(self):
+        import_word('big')
+        count = db.session.query(Word).count()
+        self.assertTrue(count>0)
 
     def test_import_mydict(self):
-        Mydict.imports()
-        count = Mydict.query.count()
+        import_dict()
+        count = db.session.query(Mydict).count()
         self.assertTrue(count>0)
 
     def test_import_sentence(self):
-        Sentence.import_sentence(get_file('txt'))
-        count = Sentence.query.count()
+        import_word('103_')
+        import_sentence('103_')
+        count = db.session.query(Sentence).count()
         self.assertTrue(count>0)
 
-    def test_create_words_to_wheres(self):
-        pass
 
-    def test_import_articles(self):
-        Article.import_articles(get_file('txt'))
-        count = Article.query.count()
-        self.assertTrue(count>0)
 
-    def test_import_word(self):
-        Word.import_words(get_file('csv'))
-        count = Word.query.count()
-        self.assertTrue(count>0)
 
 
 

@@ -1,6 +1,6 @@
 from flask import render_template, session, redirect, url_for, current_app,request
 from .. import db
-from ..models import Word, Sentence, Mydict, Article, db_update_record
+from ..models import Word, Sentence, Mydict, Article
 from . import main
 from .forms import KnownForm, ImportsForm, TryingForm, QueryForm
 from datetime import datetime
