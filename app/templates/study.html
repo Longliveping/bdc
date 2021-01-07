@@ -8,12 +8,14 @@
 
 <div class="page-header">
     <div class="w3-container w3-content  w3-padding-64 w3-light-grey w3-card" style="max-width:1200px" id="Sentences">
-        <H1 class="w3-wide"> {{ word.word }} </H1>
+        <H1 class="w3-wide"> {{ word }} </H1>
+
         <h4 class="w3-wide">{{ translation['chinese'][0] }}</h4>
         <br>
         <audio controls autoplay>
             <source src={{ translation['pronunciation'][0]['audio'] }} type="audio/mpeg">
         </audio>
+
         <br><br>
         {%for s in sentences%}
         <p class="w3-justify">{{s[0]}}</p>

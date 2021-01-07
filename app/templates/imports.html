@@ -5,7 +5,7 @@
 
 {% block page_content %}
 <div class="page-header">
-    <H1> Import dictionary </H1>
+    <H1> Import </H1>
 </div>
 
 <div>
@@ -15,26 +15,20 @@
         <br>
         <button type="submit" name="importfile" class="btn btn-success" value="import file">Import file</button>
     </form>
-<!--    <H3>Import sentence</H3>-->
-<!--    <form enctype="multipart/form-data" action="/importsentence" method="POST">-->
-<!--        <input type="file" name="filename">-->
-<!--        <br>-->
-<!--        <button type="submit" name="importsentence" class="btn btn-success" value="import sentence">Import sentence</button>-->
-<!--    </form>-->
 </div>
 
 <div>
-    <H3>Import my dictionary</H3>
-    <form action="/importdict" method="POST">
-        <button type="submit" name="importdict" class="btn btn-success" value="import my dictionary">Import my dictionary</button>
+    <H3>Import my word</H3>
+    <form action="/importmyword" method="POST">
+        <button type="submit" name="importmyword" class="btn btn-success" value="import my word">Import my word</button>
     </form>
 </div>
 
 
 <div>
-    <H3>Export my dictionary</H3>
-    <form action="/exportdict" method="POST">
-        <button type="submit" name="exportdict" class="btn btn-success" value="export my dictionary">Export my dictionary</button>
+    <H3>Export my word</H3>
+    <form action="/exportmyword" method="POST">
+        <button type="submit" name="exportmyword" class="btn btn-success" value="export my word">Export my word</button>
     </form>
 </div>
 

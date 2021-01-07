@@ -61,6 +61,9 @@ def get_sentence(file):
     sentences = re.findall(pttn, text)
     return sentences
 
+def get_file_tokens(filename):
+    tokens = get_tokens(read_text(get_file_by_name(filename)))
+    return tokens
 
 def get_tokens(text):
     tokens = re.findall('[a-z]+', text.lower())
@@ -98,13 +101,17 @@ def get_file_by_type(filetype):
             return file
 
 def get_file_by_name(filename):
-    sourcedir = current_app.config.get('TESTING_FOLDER')
+    if current_app.config.get('DEVELOPMENT'):
+        sourcedir = current_app.config.get('UPLOAD_FOLDER')
+    elif current_app.config.get('TEST'):
+        sourcedir = current_app.config.get('TESTING_FOLDER')
     for basename in os.listdir(sourcedir):
-        file = os.path.join(sourcedir, basename)
-        basename = os.path.basename(file)
-        if basename.startswith(filename):
-            return file
-    return file
+        if basename.endswith('txt'):
+            file = os.path.join(sourcedir, basename)
+            basename = os.path.basename(file)
+            if basename.startswith(filename):
+                return file
+    return None
 
 
 def generate_sentence(key, statements ,file):

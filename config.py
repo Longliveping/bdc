@@ -9,7 +9,7 @@ class Config:
     UPLOAD_FOLDER = os.path.join(basedir, 'utility/upload')
     TESTING_FOLDER = os.path.join(basedir, 'utility/testing')
     SOURCE_FOLDER = os.path.join(basedir, 'utility/source')
-    MYDICT_FOLDER = os.path.join(basedir, 'utility/mydict')
+    MYWORD_FOLDER = os.path.join(basedir, 'utility/myword')
 
     @staticmethod
     def init_app(app):
@@ -22,6 +22,7 @@ class TestingConfig(Config):
     DEBUG = True
 
 class DevelopmentConfig(Config):
+    DEVELOPMENT = True
     DEBUG = True
     # SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or \
     #                           'sqlite:///' + os.path.join(basedir, 'venv/bdc-dev.sqlite')
