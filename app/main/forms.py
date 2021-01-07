@@ -11,6 +11,15 @@ class KnownForm(FlaskForm):
     exit = SubmitField()
     check = BooleanField('Show Sentence')
 
+class SentenceKnownForm(FlaskForm):
+    known = SubmitField(label='Known')
+    blurry = SubmitField(label='Blurry')
+    unknown = SubmitField(label='Unknown')
+    noshow = SubmitField(label='No show')
+    query = SubmitField(label='Query')
+    exit = SubmitField()
+    check = BooleanField('Show Sentence')
+
 class ImportsForm(FlaskForm):
     importfolder = SubmitField(label="Import folder")
     exit = SubmitField()

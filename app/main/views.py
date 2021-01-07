@@ -1,10 +1,10 @@
 from flask import render_template, session, redirect, url_for, current_app,request
 from sqlalchemy import distinct
 from .. import db
-from ..models import Word, Sentence, Article, SentenceWord, WordReview, MyWord
+from ..models import Word, Sentence, Article, SentenceWord, WordReview, MyWord, SentenceReview, MySentence
 from ..controller import show_artile_words, import_myword, import_file
 from . import main
-from .forms import KnownForm, ImportsForm, TryingForm, QueryForm
+from .forms import KnownForm, ImportsForm, TryingForm, QueryForm, SentenceKnownForm
 from datetime import datetime
 from utility.translation import get_word, get_sentence
 from utility.words import update_target,split_sentence
@@ -36,8 +36,6 @@ def study(article):
     else:
         next_item_index = 0
 
-
-
     word = words[next_item_index]
 
     word_trans = ''
@@ -48,7 +46,7 @@ def study(article):
         if session.get('check'):
             ss = db.session.query(Sentence.sentence).join(SentenceWord).join(Word).join(Article).filter(
                 Article.article == article,
-                Word.word == 'part').all()
+                Word.word == word).all()
             sentences = [s[0] for s in ss]
             sents = []
             for s in sentences[:2]:
@@ -82,6 +80,56 @@ def study(article):
     form.check.data = bool(session.get('check'))
     return render_template('study.html', form=form, word=word, translation=word_trans, sentences=sent_trans,
                            next_item_index=next_item_index)
+
+@main.route('/studysentence/<article>', methods=['GET', 'POST'])
+def study_sentence(article):
+    form = SentenceKnownForm()
+    ss = db.session.query(Sentence.sentence).join(Article).filter(Article.article == article).all()
+    sentences = [s[0] for s in ss]
+    count = len(sentences)
+
+    if session.get('index'):
+        next_item_index = min(int(session.get('index')), count-1)
+    else:
+        next_item_index = 0
+
+    sentence = sentences[next_item_index]
+
+    sent_trans = ''
+    if request.method == 'GET' :
+        if session.get('check'):
+            sents = []
+            for s in sentences[:2]:
+                sents.append(s)
+            sents = '\n'.join(sents)
+            sent_trans = get_sentence(sents,'i')
+
+    if form.validate_on_submit():
+        if form.exit.data:
+            return redirect(url_for('main.index'))
+        if form.query.data:
+            session['study'] = article
+            return redirect(url_for('main.query', word='i'))
+
+        session['check'] = bool(form.check.data)
+        s = db.session.query(Sentence).filter(Sentence.sentence==sentence).first()
+        print(s)
+        sentencereview = SentenceReview(Sentence=s)
+        sentencereview.timestamp = datetime.utcnow()
+        sentencereview.known = bool(form.known.data)
+        sentencereview.unknown = bool(form.unknown.data)
+        sentencereview.blurry = bool(form.blurry.data)
+        sentencereview.noshow = bool(form.noshow.data)
+        db.session.add(sentencereview)
+        db.session.commit()
+        if form.noshow.data:
+            mw = MySentence(Sentence=sentence)
+            db.session.add(mw)
+            db.session.commit()
+        session['index'] = next_item_index+1
+        return redirect(url_for('main.study_sentence', article=article))
+    form.check.data = bool(session.get('check'))
+    return render_template('study_sentence.html', form=form, sentence=sentence, sentences=sent_trans, next_item_index=next_item_index)
 
 @main.route('/query/<word>', methods=['GET', 'POST'])
 def query(word):
