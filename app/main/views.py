@@ -14,7 +14,6 @@ import os
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
-    session['index'] = 0
     session['check'] = False
     deck = []
     articles = db.session.query(Article).all()
@@ -32,8 +31,11 @@ def study(article):
     words = show_artile_words(article)
     count = len(words)
 
-    if session.get('index'):
-        next_item_index = min(int(session.get('index')), count-1)
+    if session.get(f'index_{article}'):
+        if int(session.get(f'index_{article}')) > count-1:
+            next_item_index = 0
+        else:
+            next_item_index = int(session.get(f'index_{article}'))
     else:
         next_item_index = 0
 
@@ -76,7 +78,7 @@ def study(article):
             mw = MyWord(word=word)
             db.session.add(mw)
             db.session.commit()
-        session['index'] = next_item_index+1
+        session[f'index_{article}'] = next_item_index+1
         return redirect(url_for('main.study', article=article))
     form.check.data = bool(session.get('check'))
     return render_template('study.html', form=form, word=word, translation=word_trans, sentences=sent_trans,
@@ -89,8 +91,11 @@ def study_sentence(article):
     sentences = [s[0] for s in ss]
     count = len(sentences)
 
-    if session.get('index'):
-        next_item_index = min(int(session.get('index')), count-1)
+    if session.get(f'index_s{article}'):
+        if int(session.get(f'index_s{article}')) > count-1:
+            next_item_index = 0
+        else:
+            next_item_index = int(session.get(f'index_s{article}'))
     else:
         next_item_index = 0
 
@@ -122,7 +127,7 @@ def study_sentence(article):
             mw = MySentence(sentence=sentence)
             db.session.add(mw)
             db.session.commit()
-        session['index'] = next_item_index+1
+        session[f'index_s{article}'] = next_item_index+1
         return redirect(url_for('main.study_sentence', article=article))
     return render_template('study_sentence.html', form=form, sentences=sent_trans, next_item_index=next_item_index)
 
