@@ -18,10 +18,11 @@ def index():
     session['check'] = False
     deck = []
     articles = db.session.query(Article).all()
-    for a in articles:
+    for a in articles[::-1]:
         words = show_artile_words(a.article)
-        count = len(words)
-        deck.append([a.article, count])
+        cw = len(words)
+        cs = db.session.query(Sentence).join(Article).filter(Article.article==a.article).count()
+        deck.append([a.article, cw, cs])
 
     return render_template('index.html', deck=deck)
 
@@ -97,12 +98,9 @@ def study_sentence(article):
 
     sent_trans = ''
     if request.method == 'GET' :
-        if session.get('check'):
-            sents = []
-            for s in sentences[:2]:
-                sents.append(s)
-            sents = '\n'.join(sents)
-            sent_trans = get_sentence(sents,'i')
+        sents = [sentence]
+        sents = '\n'.join(sents)
+        sent_trans = get_sentence(sents.title(),'i')
 
     if form.validate_on_submit():
         if form.exit.data:
@@ -111,10 +109,8 @@ def study_sentence(article):
             session['study'] = article
             return redirect(url_for('main.query', word='i'))
 
-        session['check'] = bool(form.check.data)
         s = db.session.query(Sentence).filter(Sentence.sentence==sentence).first()
-        print(s)
-        sentencereview = SentenceReview(Sentence=s)
+        sentencereview = SentenceReview(sentence=s)
         sentencereview.timestamp = datetime.utcnow()
         sentencereview.known = bool(form.known.data)
         sentencereview.unknown = bool(form.unknown.data)
@@ -123,13 +119,12 @@ def study_sentence(article):
         db.session.add(sentencereview)
         db.session.commit()
         if form.noshow.data:
-            mw = MySentence(Sentence=sentence)
+            mw = MySentence(sentence=sentence)
             db.session.add(mw)
             db.session.commit()
         session['index'] = next_item_index+1
         return redirect(url_for('main.study_sentence', article=article))
-    form.check.data = bool(session.get('check'))
-    return render_template('study_sentence.html', form=form, sentence=sentence, sentences=sent_trans, next_item_index=next_item_index)
+    return render_template('study_sentence.html', form=form, sentences=sent_trans, next_item_index=next_item_index)
 
 @main.route('/query/<word>', methods=['GET', 'POST'])
 def query(word):

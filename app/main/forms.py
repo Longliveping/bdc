@@ -18,7 +18,6 @@ class SentenceKnownForm(FlaskForm):
     noshow = SubmitField(label='No show')
     query = SubmitField(label='Query')
     exit = SubmitField()
-    check = BooleanField('Show Sentence')
 
 class ImportsForm(FlaskForm):
     importfolder = SubmitField(label="Import folder")

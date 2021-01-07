@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Words{% endblock %}
+
+<body>
+{% block page_content %}
+
+<div class="page-header">
+    <div class="w3-container w3-content  w3-padding-64 w3-light-grey w3-card" style="max-width:1200px" id="Sentences">
+        {%for s in sentences%}
+        <H4 class="w3-wide">{{s[0]}}</H4>
+        <H5 class="w3-opacity">{{s[1]}}</H5>
+        {%endfor%}
+    </div>
+
+    <br>
+    <p>Studying: {{ next_item_index }}</p>
+</div>
+{{ wtf.quick_form(form) }}
+
+{% endblock %}
+</body>

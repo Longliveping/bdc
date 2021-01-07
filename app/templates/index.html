@@ -10,9 +10,9 @@
         {%for d in deck%}
         <li class="w3-bar">
             <div class="w3-bar-item">
-                <span class="w3-justify w3-large"><a href="/study/{{d[0]}}">Word: {{d[0]}}</a></span><br>
-                <span class="w3-justify w3-large"><a href="/studysentence/{{d[0]}}">Sentence: {{d[0]}}</a></span><br>
-                <span class="w3-opacity">Words: {{ d[1] }}</span>
+                <p class="w3-justify w3-large">{{d[0]}}</p>
+                <span class="w3-justify "><a href="/study/{{d[0]}}">Word: {{ d[1] }}</a></span><br>
+                <span class="w3-justify "><a href="/studysentence/{{d[0]}}">Sentence: {{d[2]}}</a></span><br>
             </div>
         </li>
         {%endfor%}
