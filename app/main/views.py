@@ -2,15 +2,32 @@ from flask import render_template, session, redirect, url_for, current_app,reque
 from sqlalchemy import distinct
 from .. import db
 from ..models import Word, Sentence, Article, SentenceWord, WordReview, MyWord, SentenceReview, MySentence
-from ..controller import show_artile_words, import_myword, import_file
+from ..controller import show_artile_words, import_myword, import_file, words_upper
 from . import main
 from .forms import KnownForm, ImportsForm, TryingForm, QueryForm, SentenceKnownForm
 from datetime import datetime
 from utility.translation import get_word, get_sentence
-from utility.words import update_target,split_sentence
 from werkzeug import secure_filename
-import os
+import os, time
+import pyttsx3
+from threading import Thread
 
+def speak(sentence, rate):
+    engine = pyttsx3.init()
+    # print(engine.getProperty('rate'))
+    # print(engine.getProperty('voice'))
+    try:
+        engine.setProperty('rate',int(rate))
+    except:
+        pass
+    def onEnd():
+        engine.endLoop()
+    engine.connect('finished-utterance', onEnd)
+    engine.say(sentence)
+    try:
+        engine.startLoop()
+    except:
+        engine.endLoop()
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
@@ -74,6 +91,8 @@ def study(article):
         wordreview.noshow = bool(form.noshow.data)
         db.session.add(wordreview)
         db.session.commit()
+
+
         if form.noshow.data:
             mw = MyWord(word=word)
             db.session.add(mw)
@@ -100,20 +119,22 @@ def study_sentence(article):
         next_item_index = 0
 
     sentence = sentences[next_item_index]
+    sentence = words_upper(sentence)
 
-    sent_trans = ''
-    if request.method == 'GET' :
+    sent_trans = []
+    if request.method == 'GET' and session.get('show'):
         sents = [sentence]
         sents = '\n'.join(sents)
         sent_trans = get_sentence(sents.title(),'i')
 
     if form.validate_on_submit():
+        session['show'] = bool(form.show.data)
+        session['speed'] = form.speed.data
         if form.exit.data:
             return redirect(url_for('main.index'))
         if form.query.data:
             session['study'] = article
             return redirect(url_for('main.query', word='i'))
-
         s = db.session.query(Sentence).filter(Sentence.sentence==sentence).first()
         sentencereview = SentenceReview(sentence=s)
         sentencereview.timestamp = datetime.utcnow()
@@ -123,13 +144,22 @@ def study_sentence(article):
         sentencereview.noshow = bool(form.noshow.data)
         db.session.add(sentencereview)
         db.session.commit()
+        if form.repeat.data:
+            return redirect(url_for('main.study_sentence', article=article))
         if form.noshow.data:
             mw = MySentence(sentence=sentence)
             db.session.add(mw)
-            db.session.commit()
+            try:
+                db.session.commit()
+            except:
+                pass
         session[f'index_s{article}'] = next_item_index+1
         return redirect(url_for('main.study_sentence', article=article))
-    return render_template('study_sentence.html', form=form, sentences=sent_trans, next_item_index=next_item_index)
+    form.show.data = bool(session.get('show'))
+    rate = form.speed.data = session.get('speed')
+    speaker = Thread(target=speak,args=(sentence,rate,))
+    speaker.start()
+    return render_template('study_sentence.html', form=form, sentence=sentence, sentences=sent_trans, next_item_index=next_item_index)
 
 @main.route('/query/<word>', methods=['GET', 'POST'])
 def query(word):

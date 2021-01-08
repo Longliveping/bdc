@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, widgets, IntegerField, validators, HiddenField, SelectMultipleField, BooleanField
-from wtforms.validators import DataRequired
+from wtforms import StringField, SubmitField, widgets, SelectField, BooleanField
+from wtforms.validators import DataRequired, Length
 
 class KnownForm(FlaskForm):
     known = SubmitField(label='Known')
@@ -16,8 +16,13 @@ class SentenceKnownForm(FlaskForm):
     blurry = SubmitField(label='Blurry')
     unknown = SubmitField(label='Unknown')
     noshow = SubmitField(label='No show')
+    repeat = SubmitField(label='Repeat')
     query = SubmitField(label='Query')
     exit = SubmitField()
+    show = BooleanField('Show translation')
+    speed = SelectField(label='Speed',
+                        choices=[('200','1x'),('100','0.5x'),('300','1.5x'),('400','2x'),('600','3x')],
+                        validators=[DataRequired(), Length(1,64)])
 
 class ImportsForm(FlaskForm):
     importfolder = SubmitField(label="Import folder")

@@ -203,8 +203,24 @@ def show_artile_words(article_name):
     ).all()
 
     article_words = [w[0] for w in article_word]
+    print(article_words[:10])
 
     return article_words
+
+
+def show_my_words():
+    myword = db.session.query(MyWord.word).all()
+    mywords = set([w[0] for w in myword])
+    return mywords
+
+
+def words_upper(sentence):
+    mywords = show_my_words()
+    sw = set(get_tokens(sentence))
+    words = sw - mywords
+    for w in words:
+        sentence = sentence.replace(w, w.upper())
+    return sentence
 
 def import_file(file):
     create_txt(file)
