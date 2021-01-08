@@ -200,11 +200,9 @@ def show_artile_words(article_name):
     article_word = db.session.query(Word.word).join(ArticleWord).join(Article).filter(
         Article.article == article_name,
         Word.word.notin_(mywords)
-    ).all()
+    ).order_by(Word.id).all()
 
     article_words = [w[0] for w in article_word]
-    print(article_words[:10])
-
     return article_words
 
 
