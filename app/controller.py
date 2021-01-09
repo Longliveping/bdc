@@ -210,12 +210,22 @@ def show_artile_words(article_name):
     article_words = [w[0] for w in article_word]
     return article_words
 
+def show_artile_sentences(article_name):
+    mysentence = db.session.query(MySentence.sentence).all()
+    mysentences = set([w[0] for w in mysentence])
+
+    article_sentence = db.session.query(Sentence.sentence).join(Article).filter(
+        Article.article == article_name,
+        Sentence.sentence.notin_(mysentences)
+    ).order_by(Sentence.id).all()
+
+    article_sentences = [w[0] for w in article_sentence]
+    return article_sentences
 
 def show_my_words():
     myword = db.session.query(MyWord.word).all()
     mywords = set([w[0] for w in myword])
     return mywords
-
 
 def words_upper(sentence):
     mywords = show_my_words()

@@ -2,7 +2,7 @@ from flask import render_template, session, redirect, url_for, current_app,reque
 from sqlalchemy import distinct
 from .. import db
 from ..models import Word, Sentence, Article, SentenceWord, WordReview, MyWord, SentenceReview, MySentence
-from ..controller import show_artile_words, import_myword, import_file, words_upper, update_myword
+from ..controller import show_artile_words,show_artile_sentences, import_myword, import_file, words_upper, update_myword
 from . import main
 from .forms import KnownForm, ImportsForm, TryingForm, QueryForm, SentenceKnownForm, UpdateMywordForm
 from datetime import datetime
@@ -37,8 +37,11 @@ def index():
     for a in articles[::-1]:
         words = show_artile_words(a.article)
         cw = len(words)
-        cs = db.session.query(Sentence).join(Article).filter(Article.article==a.article).count()
-        deck.append([a.article, cw, cs])
+        sentences = show_artile_sentences(a.article)
+        cs = len(sentences)
+        # cs = db.session.query(Sentence).join(Article).filter(Article.article==a.article).count()
+        if cw > 0 or cs > 0:
+            deck.append([a.article, cw, cs])
 
     return render_template('index.html', deck=deck)
 
@@ -47,6 +50,8 @@ def study(article):
     form = KnownForm()
     words = show_artile_words(article)
     count = len(words)
+    if count == 0:
+        return redirect(url_for('main.index'))
 
     if session.get(f'index_{article}'):
         if int(session.get(f'index_{article}')) > count-1:
@@ -55,6 +60,9 @@ def study(article):
             next_item_index = int(session.get(f'index_{article}'))
     else:
         next_item_index = 0
+
+    if count:
+        redirect(url_for('main.index'))
 
     word = words[next_item_index]
 
@@ -92,23 +100,24 @@ def study(article):
         db.session.add(wordreview)
         db.session.commit()
 
-
         if form.noshow.data:
             mw = MyWord(word=word)
             db.session.add(mw)
             db.session.commit()
         session[f'index_{article}'] = next_item_index+1
         return redirect(url_for('main.study', article=article))
-    form.check.data = bool(session.get('check'))
-    return render_template('study.html', form=form, word=word, translation=word_trans, sentences=sent_trans,
+    else:
+        form.check.data = bool(session.get('check'))
+        return render_template('study.html', form=form, word=word, translation=word_trans, sentences=sent_trans,
                            next_item_index=next_item_index)
 
 @main.route('/studysentence/<article>', methods=['GET', 'POST'])
 def study_sentence(article):
     form = SentenceKnownForm()
-    ss = db.session.query(Sentence.sentence).join(Article).filter(Article.article == article).all()
-    sentences = [s[0] for s in ss]
+    sentences = show_artile_sentences(article)
     count = len(sentences)
+    if count == 0:
+        return redirect(url_for('main.index'))
 
     if session.get(f'index_s{article}'):
         if int(session.get(f'index_s{article}')) > count-1:
@@ -155,11 +164,12 @@ def study_sentence(article):
                 pass
         session[f'index_s{article}'] = next_item_index+1
         return redirect(url_for('main.study_sentence', article=article))
-    form.show.data = bool(session.get('show'))
-    rate = form.speed.data = session.get('speed')
-    speaker = Thread(target=speak,args=(sentence,rate,))
-    speaker.start()
-    return render_template('study_sentence.html', form=form, sentence=sentence, sentences=sent_trans, next_item_index=next_item_index)
+    else:
+        form.show.data = bool(session.get('show'))
+        rate = form.speed.data = session.get('speed')
+        speaker = Thread(target=speak,args=(sentence,rate,))
+        speaker.start()
+        return render_template('study_sentence.html', form=form, sentence=sentence, sentences=sent_trans, next_item_index=next_item_index)
 
 @main.route('/query/<word>', methods=['GET', 'POST'])
 def query(word):
