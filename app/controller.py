@@ -163,7 +163,7 @@ def import_sentence(filename):
 def import_myword():
     with Timer() as timer:
         sourcedir = current_app.config.get('MYWORD_FOLDER')
-        file = os.path.join(sourcedir, 'myword.csv' )
+        file = os.path.join(sourcedir, 'import/myword.txt' )
         tokens = set(get_tokens(read_text((file))))
         exist = db.session.query(MyWord.word).all()
         exists = set([e[0] for e in exist])
@@ -171,6 +171,11 @@ def import_myword():
         for t in not_exists:
             m = MyWord(word=t)
             db.session.add(m)
+        db.session.commit()
+
+        file = os.path.join(sourcedir, 'import/remove.txt' )
+        remove_tokens = set(get_tokens(read_text((file))))
+        db.session.query(MyWord).filter(MyWord.word.in_(remove_tokens)).delete(synchronize_session='fetch')
         db.session.commit()
     print("took", timer.duration, "seconds")
 
@@ -231,11 +236,9 @@ def import_file(file):
 
 def update_myword(file):
     create_txt(file)
-    basename = os.path.basename(file)
-    filename = basename.split('.')[0]
-    tokens = set(get_file_tokens(filename))
+    tokens = set(get_tokens(read_text(file)))
     myword = db.session.query(MyWord.word).all()
-    mywords =  set([e[0] for e in myword])
+    mywords =  set([w[0] for w in myword])
     un_known = tokens - mywords
     known = tokens - un_known
     return (list(un_known), list(known))

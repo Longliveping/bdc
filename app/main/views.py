@@ -77,9 +77,9 @@ def study(article):
     if form.validate_on_submit():
         if form.exit.data:
             return redirect(url_for('main.index'))
-        if form.query.data:
-            session['study'] = article
-            return redirect(url_for('main.query', word=word))
+        # if form.query.data:
+        #     session['study'] = article
+        #     return redirect(url_for('main.query', word=word))
 
         session['check'] = bool(form.check.data)
         w = db.session.query(Word).filter(Word.word==word).first()
@@ -132,9 +132,9 @@ def study_sentence(article):
         session['speed'] = form.speed.data
         if form.exit.data:
             return redirect(url_for('main.index'))
-        if form.query.data:
-            session['study'] = article
-            return redirect(url_for('main.query', word='i'))
+        # if form.query.data:
+        #     session['study'] = article
+        #     return redirect(url_for('main.query', word='i'))
         s = db.session.query(Sentence).filter(Sentence.sentence==sentence).first()
         sentencereview = SentenceReview(sentence=s)
         sentencereview.timestamp = datetime.utcnow()
@@ -178,9 +178,10 @@ def query(word):
 
     if form.validate_on_submit():
         if form.exit.data:
-            return redirect(url_for('main.study', where=session.get('study')))
-        return redirect(url_for('main.query', word=form.querystring.data))
-    return render_template('query.html', form=form, word=word,
+            # return redirect(url_for('main.study', where=session.get('study')))
+            return redirect(url_for('main.index'))
+    else:
+        return render_template('query.html', form=form, word=word,
                            translation=word_trans, sentences=sent_trans)
 
 @main.route('/imports', methods=['GET', 'POST'])
@@ -195,13 +196,14 @@ def imports():
 
 @main.route('/importmyword', methods=['GET', 'POST'])
 def importmyword():
-    import_myword()
-    return redirect(url_for('main.imports'))
+    file = os.path.join(current_app.config.get('MYWORD_FOLDER'), 'import/myword.txt')
+    session['upload_file'] = file
+    return redirect(url_for('main.updatemyword'))
 
 @main.route('/exportmyword', methods=['GET', 'POST'])
-def exportdict():
+def exportmyword():
     myword = db.session.query(MyWord).all()
-    file = os.path.join(current_app.config.get('UPLOAD_FOLDER'),'myword.csv')
+    file = os.path.join(current_app.config.get('MYWORD_FOLDER'),'export/myword.txt')
     with open(file,'w') as f:
         for w in myword:
             f.write(w.word+'\n')
@@ -233,10 +235,15 @@ def updatemyword():
             return redirect(url_for('main.imports'))
         current_app.logger.debug(form.choices.data)
         sourcedir = current_app.config.get('MYWORD_FOLDER')
-        file = os.path.join(sourcedir, 'myword.csv' )
-        with open(file, 'a') as f:
+        file = os.path.join(sourcedir, 'import/myword.txt' )
+        with open(file, 'w') as f:
             for c in choice:
                 if c[0] in form.choices.data:
+                    f.write(c[1]+'\n')
+        file = os.path.join(sourcedir, 'import/remove.txt' )
+        with open(file, 'w') as f:
+            for c in choice:
+                if c[0] not in form.choices.data:
                     f.write(c[1]+'\n')
         import_myword()
         return redirect(url_for('main.updatemyword'))
