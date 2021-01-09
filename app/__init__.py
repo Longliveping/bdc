@@ -5,6 +5,7 @@ from flask_moment import Moment
 from config import config
 from sqlalchemy_batch_inserts import enable_batch_inserting
 from flask_sqlalchemy import SignallingSession
+import logging
 
 db = SQLAlchemy()
 enable_batch_inserting(SignallingSession)
@@ -12,6 +13,7 @@ bootstrap = Bootstrap()
 moment = Moment()
 
 def create_app(config_name):
+    logging.basicConfig(filename="app.log", level=logging.DEBUG)
     print(f' * Running under config: {config_name}')
     app = Flask(__name__)
     app.config.from_object(config[config_name])

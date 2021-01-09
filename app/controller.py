@@ -124,8 +124,8 @@ def import_word(filename):
     with Timer() as timer:
         tokens = set(get_file_tokens(filename))
         exist = db.session.query(Word.word).all()
-        exist =  set([e[0] for e in exist])
-        not_exist = tokens - exist
+        exists =  set([e[0] for e in exist])
+        not_exist = tokens - exists
         for n in not_exist:
             w = Word(word=n)
             db.session.add(w)
@@ -228,3 +228,14 @@ def import_file(file):
     import_word(filename)
     import_sentence(filename)
     import_articleword(filename)
+
+def update_myword(file):
+    create_txt(file)
+    basename = os.path.basename(file)
+    filename = basename.split('.')[0]
+    tokens = set(get_file_tokens(filename))
+    myword = db.session.query(MyWord.word).all()
+    mywords =  set([e[0] for e in myword])
+    un_known = tokens - mywords
+    known = tokens - un_known
+    return (list(un_known), list(known))

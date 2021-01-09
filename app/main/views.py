@@ -2,9 +2,9 @@ from flask import render_template, session, redirect, url_for, current_app,reque
 from sqlalchemy import distinct
 from .. import db
 from ..models import Word, Sentence, Article, SentenceWord, WordReview, MyWord, SentenceReview, MySentence
-from ..controller import show_artile_words, import_myword, import_file, words_upper
+from ..controller import show_artile_words, import_myword, import_file, words_upper, update_myword
 from . import main
-from .forms import KnownForm, ImportsForm, TryingForm, QueryForm, SentenceKnownForm
+from .forms import KnownForm, ImportsForm, TryingForm, QueryForm, SentenceKnownForm, UpdateMywordForm
 from datetime import datetime
 from utility.translation import get_word, get_sentence
 from werkzeug import secure_filename
@@ -217,8 +217,32 @@ def importfile():
     file = os.path.join(current_app.config.get('UPLOAD_FOLDER'),secure_filename(f.filename))
     f.save(file)
     import_file(file)
-    return redirect(url_for('main.imports'))
+    session['upload_file'] = file
+    return redirect(url_for('main.updatemyword'))
 
+@main.route('/updatemyword', methods=['GET', 'POST'])
+def updatemyword():
+    form = UpdateMywordForm()
+    (un_known, known) = update_myword(session.get('upload_file'))
+    choices = un_known + known
+    choice = [(id, value) for id,value in enumerate(choices)]
+    form.choices.choices = choice
+
+    if form.validate_on_submit():
+        if form.exit.data:
+            return redirect(url_for('main.imports'))
+        current_app.logger.debug(form.choices.data)
+        sourcedir = current_app.config.get('MYWORD_FOLDER')
+        file = os.path.join(sourcedir, 'myword.csv' )
+        with open(file, 'a') as f:
+            for c in choice:
+                if c[0] in form.choices.data:
+                    f.write(c[1]+'\n')
+        import_myword()
+        return redirect(url_for('main.updatemyword'))
+    else:
+        form.choices.data = [len(un_known)+id for id,value in enumerate(known)]
+        return render_template('updatemyword.html', form=form)
 
 @main.route('/trying', methods=['GET', 'POST'])
 def trying():

@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, widgets, SelectField, BooleanField
+from wtforms import StringField, SubmitField, widgets, SelectField, BooleanField, FieldList, SelectMultipleField
 from wtforms.validators import DataRequired, Length
 
 class KnownForm(FlaskForm):
@@ -39,6 +39,13 @@ class QueryForm(FlaskForm):
     submit = SubmitField()
     exit = SubmitField()
 
+class MultiCheckboxField(SelectMultipleField):
+    widget = widgets.ListWidget(prefix_label=False)
+    option_widget = widgets.CheckboxInput()
 
+class UpdateMywordForm(FlaskForm):
+    choices = MultiCheckboxField('Routes', coerce=int)
+    submit = SubmitField("Update my word")
+    exit = SubmitField("Exit")
 
 
