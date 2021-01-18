@@ -8,6 +8,33 @@ from flask import current_app
 
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'docx'}
 
+def remove_empty_lines(file):
+    if not os.path.isfile(file):
+        print("{} does not exist ".format(file))
+        return
+
+    with open(file) as filehandle:
+        lines = filehandle.readlines()
+
+    lines = filter(lambda x: x.strip(), lines)
+    lines = [x.lstrip() for x in lines]
+    lines = [x for x in lines if not x.startswith('CHAPTER')]
+
+    with open(file, 'w') as filehandle:
+        filehandle.writelines(lines)
+
+def get_english_chinese(file):
+    if not os.path.isfile(file):
+        print("{} does not exist ".format(file))
+        return
+    with open(file, 'r') as f:
+        lines = f.read()
+    lines = lines.split('\n')
+    pttn = re.compile(r'(.*)[\s.!?]([\u4e00-\u9fa5].*)')
+    line = [re.search(pttn,x).groups() for x in lines]
+    return line
+
+
 def split_sentence(string):
     pttn = f'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s'
     sentences = re.split(pttn, string)
