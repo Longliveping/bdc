@@ -202,6 +202,7 @@ def imports():
             return redirect(url_for('main.index'))
         if form.importfolder.data:
             return redirect(url_for('main.importfolder'))
+
     return render_template('imports.html', form=form)
 
 @main.route('/importmyword', methods=['GET', 'POST'])
@@ -231,6 +232,24 @@ def importfile():
     import_file(file)
     session['upload_file'] = file
     return redirect(url_for('main.updatemyword'))
+
+@main.route('/importurl', methods=['POST'])
+def importurl():
+    url = request.form["url"]
+    import urllib3
+    import certifi
+    import textract
+    http = urllib3.PoolManager(ca_certs=certifi.where())
+    req = http.request('GET', url)
+    htmlfile = os.path.join(current_app.config.get('UPLOAD_FOLDER'),f"{url.split('/')[-1]}.html")
+    with open(htmlfile, 'wb') as f:
+        f.write(req.data)
+    text = textract.process(htmlfile)
+    textfile = os.path.join(current_app.config.get('UPLOAD_FOLDER'),f"{url.split('/')[-1]}.txt")
+    with open(textfile,'wb') as f:
+        f.write(text)
+    import_file(textfile)
+    return redirect(url_for('main.imports'))
 
 @main.route('/updatemyword', methods=['GET', 'POST'])
 def updatemyword():
