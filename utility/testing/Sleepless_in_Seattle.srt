@@ -1,0 +1,8658 @@
+﻿4
+00:00:00,000 --> 00:00:05,000
+{\pos(192.56,246.454)}经典放映室
+
+11
+00:00:05,500 --> 00:00:10,000
+{\pos(99,242)}原创翻译  双语字幕
+
+12
+00:00:06,000 --> 00:00:10,000
+{\pos(235.108,242)}最新连载海外影视剧下载
+请登陆 www.YYeTs.com
+仅供交流学习  禁止商用盈利
+
+15
+00:00:10,020 --> 00:00:14,420
+{\an4}{\pos(35,235)}翻译     暴走小罐头  RiverSide152  伊森泽生
+
+16
+00:00:14,420 --> 00:00:18,080
+{\an4}{\pos(35,235)}校对     暴走小罐头  RiverSide152  伊森泽生
+
+17
+00:00:18,080 --> 00:00:21,750
+{\an4}{\pos(27,235)}时间轴     紫夏  无关风粤  岁半  coco
+
+20
+00:00:22,300 --> 00:00:25,000
+{\an4}{\pos(35,235)}后期     8T
+
+21
+00:00:25,000 --> 00:00:29,070
+{\an4}{\pos(26.2,235)}友情支持   @少年影视派
+
+22
+00:00:29,070 --> 00:00:33,450
+{\an4}{\pos(35,235)}总监     RiverSide152  暴走小罐头
+
+23
+00:00:35,640 --> 00:00:39,220
+{\an8}{\pos(192.8,182.4)}芝加哥
+
+24
+00:00:39,940 --> 00:00:41,120
+妈妈生病了
+Mummy got sick.
+
+25
+00:00:42,600 --> 00:00:44,470
+病魔来得猝不及防
+And it happened just like that.
+
+26
+00:00:45,730 --> 00:00:47,730
+大家都无能为力
+There's nothing anybody could do.
+
+27
+00:00:49,150 --> 00:00:50,150
+这不公平
+It isn't fair.
+
+28
+00:00:51,250 --> 00:00:52,440
+没有任何理由
+There's no reason.
+
+29
+00:00:53,120 --> 00:00:55,720
+但如果我们开始追根究底
+And if we start asking why,
+
+30
+00:00:56,540 --> 00:00:57,860
+我们就会走火入魔
+we'll go crazy.
+
+31
+00:01:21,350 --> 00:01:23,020
+在微波炉里热五分钟
+Five minutes in the microwave.
+
+32
+00:01:23,020 --> 00:01:26,430
+随便哪盒  热五分钟  就可以吃了
+Any one of them. Five minutes, and done, ready to eat.
+
+33
+00:01:28,230 --> 00:01:29,640
+你知道怎么榨果汁吗
+Do you know how to make juice?
+
+34
+00:01:34,160 --> 00:01:35,820
+微波炉  热五分钟
+Microwave. Five minutes.
+
+35
+00:01:53,800 --> 00:01:54,630
+给
+Here.
+
+36
+00:01:55,930 --> 00:01:58,250
+这是我的心理医生  联系他吧
+It's my shrink. Call him.
+
+37
+00:02:07,400 --> 00:02:09,970
+丧偶互助小组
+Loss of Spouse Support Group.
+
+38
+00:02:11,860 --> 00:02:14,270
+芝加哥癌症家庭网
+Chicago Cancer Family Network.
+
+39
+00:02:14,910 --> 00:02:17,360
+失去配偶的父母  失去父母的配偶
+Parents without Partners. Partners without Parents.
+
+40
+00:02:17,370 --> 00:02:19,670
+"拥抱自己"  "拥抱朋友"
+"Hug Yourself," "Hug a Friend",
+
+41
+00:02:19,670 --> 00:02:21,690
+"拥抱心理医生"  或者工作
+"Hug a Shrink", or work.
+
+42
+00:02:21,910 --> 00:02:24,120
+努力工作吧  工作会拯救你
+Work hard, work will save you.
+
+43
+00:02:24,120 --> 00:02:27,320
+只有工作能陪你渡过难关
+Work is the only thing that will see you through this.
+
+44
+00:02:32,880 --> 00:02:35,420
+不必介怀  他只是个失去妻子的男人
+Don't mind him, he's just a guy who's lost his wife.
+
+45
+00:02:42,100 --> 00:02:46,180
+我想我们真正需要的是  改变
+What I think we really need is change.
+
+46
+00:02:46,390 --> 00:02:48,810
+好主意  休几周的假
+Good idea. Take a couple of weeks off,
+
+47
+00:02:48,810 --> 00:02:50,970
+晒晒太阳  带乔纳去钓钓鱼
+get some sun, take Jonah fishing.
+
+48
+00:02:53,860 --> 00:02:55,110
+不  我说的是真正的改变
+No, real change.
+
+49
+00:02:56,380 --> 00:02:57,690
+一座新城市
+A new city.
+
+50
+00:02:59,410 --> 00:03:01,030
+一个能让我每次走过街角
+Some place where every time I go around a corner
+
+51
+00:03:01,030 --> 00:03:02,650
+不会想起玛姬的地方
+I don't think of Maggie.
+
+52
+00:03:05,120 --> 00:03:13,130
+{\an8}瑞格利球场
+芝加哥小熊队主场
+
+53
+00:03:12,090 --> 00:03:13,250
+你要去哪里
+Where are you gonna go?
+
+54
+00:03:18,590 --> 00:03:20,210
+我想去西雅图
+I was thinking about Seattle.
+
+55
+00:03:21,470 --> 00:03:23,390
+最终  几个月之后
+Eventually, in a few months,
+
+56
+00:03:23,390 --> 00:03:25,170
+你会开始和其他女人约会
+you'll start seeing women.
+
+57
+00:03:25,680 --> 00:03:26,430
+你会遇到某个人
+You'll meet someone.
+
+58
+00:03:26,430 --> 00:03:30,100
+没错  向前看  没错  我就该这么做
+Right, right. Move on, right, that's what I'm gonna do.
+
+59
+00:03:30,110 --> 00:03:31,060
+然后几个月之后
+And then in a few months,
+
+60
+00:03:31,060 --> 00:03:31,980
+我一下子就没事了
+boom, I'll be fine.
+
+61
+00:03:31,980 --> 00:03:33,560
+我就会长出一颗新的心
+I'll just grow a new heart.
+
+62
+00:03:33,820 --> 00:03:35,150
+-萨姆  对不起...  -她不是那个意思
+- Sam, I'm sorry... - She didn't mean that.
+
+63
+00:03:35,150 --> 00:03:39,810
+我知道  但我不可能再遇见真爱了
+I know, I know. Look, it just doesn't happen twice.
+
+64
+00:03:40,410 --> 00:03:45,950
+{\an9}♪你必须记住  一吻仍为一吻♪
+♪ You must remember this, a kiss is still a kiss ♪
+
+65
+00:03:46,500 --> 00:03:49,200
+{\an9}♪一叹仅为一叹♪
+♪ A sigh is just a sigh ♪
+
+66
+00:03:49,660 --> 00:03:54,750
+{\an8}{\pos(130.8,88.533)}西雅图夜未眠
+
+67
+00:03:52,460 --> 00:03:56,540
+{\an9}♪纵然光阴流转♪
+♪ The fundamental things apply ♪
+
+68
+00:03:57,550 --> 00:03:59,580
+{\an9}♪有些事永远不变♪
+♪ As time goes by ♪
+
+69
+00:04:04,220 --> 00:04:06,840
+{\an9}♪当有情人尚未成眷属♪
+♪ And when two lovers woo ♪
+
+70
+00:04:07,430 --> 00:04:10,010
+{\an9}♪他们仍要甜言蜜语♪
+♪ They still say "I love you" ♪
+
+71
+00:04:10,190 --> 00:04:12,930
+{\an9}♪你可信赖于此♪
+♪ On that you can rely ♪
+
+72
+00:04:16,190 --> 00:04:20,270
+{\an9}♪无论未来如何♪
+♪ No matter what the future brings ♪
+
+73
+00:04:21,410 --> 00:04:23,690
+{\an9}♪任凭光阴流转♪
+♪ As time goes by ♪
+
+74
+00:04:28,160 --> 00:04:31,330
+{\an9}♪月光和情歌♪
+♪ Moonlight and love songs ♪
+
+75
+00:04:31,330 --> 00:04:33,700
+{\an9}♪永不过时♪
+♪ Never out of date ♪
+
+76
+00:04:34,290 --> 00:04:36,580
+{\an9}♪那些充满热情♪
+♪ Hearts full of passion ♪
+
+77
+00:04:37,130 --> 00:04:39,500
+{\an9}♪嫉妒与恨的心♪
+♪ Jealousy and hate ♪
+
+78
+00:04:39,930 --> 00:04:42,550
+{\an9}♪女大当嫁男♪
+♪ Woman needs man ♪
+
+79
+00:04:42,550 --> 00:04:45,170
+{\an9}♪男人得有伴♪
+♪ And man must have his mate ♪
+
+80
+00:04:45,350 --> 00:04:49,760
+{\an9}♪这点不可否认♪
+♪ That no one can deny ♪
+
+81
+00:04:51,100 --> 00:04:54,010
+{\an9}♪仍是同样的老旧故事♪
+♪ It's still the same old story ♪
+
+82
+00:04:54,110 --> 00:04:57,060
+{\an9}♪为了爱和荣耀而拼搏♪
+♪ A fight for love and glory ♪
+
+83
+00:04:57,070 --> 00:04:59,810
+{\an9}♪不成功  便成仁♪
+♪ A case of do or die ♪
+
+84
+00:05:03,240 --> 00:05:08,490
+{\an9}♪世界永远欢迎情人♪
+♪ The world will always welcome lovers ♪
+
+85
+00:05:09,290 --> 00:05:16,240
+{\an9}♪任凭光阴流转♪
+♪ As time goes by ♪
+
+86
+00:05:19,500 --> 00:05:24,050
+{\an8}{\pos(192,140.8)}巴尔的摩
+18个月之后
+
+87
+00:05:29,470 --> 00:05:32,180
+那个红发的高个子姑娘是你的表妹艾琳
+The tall one with red hair is your cousin Irene.
+
+88
+00:05:32,190 --> 00:05:34,440
+从她失望的表情你就能认出她来
+You'll recognise her by the disappointed look on her face.
+
+89
+00:05:34,440 --> 00:05:37,690
+她嫁给了哈罗德  而他跟秘书跑了
+Who was married to Harold, who ran off with the secretary.
+
+90
+00:05:37,690 --> 00:05:38,270
+他又回来了
+Who came back
+
+91
+00:05:38,270 --> 00:05:41,530
+因为艾琳威胁他  如果他不回来就把狗安乐死
+because Irene threatened to put the dog to sleep if he didn't.
+
+92
+00:05:41,530 --> 00:05:45,230
+你哥哥丹尼斯是约翰·霍普金斯大学的教授
+Your brother Dennis is professor at Johns Hopkins.
+
+93
+00:05:46,830 --> 00:05:49,650
+他娶了  贝琪
+He's married to, Betsy.
+
+94
+00:05:50,120 --> 00:05:52,070
+全世界最好胜的女人
+The most competitive woman in the world.
+
+95
+00:05:52,290 --> 00:05:54,330
+我实在没办法把这些全都记住
+I don't see how I'm gonna remember all this.
+
+96
+00:05:54,330 --> 00:05:57,410
+沃尔特  你会记住的
+Oh, well, Walter, you will!
+
+97
+00:06:09,220 --> 00:06:11,800
+你叔叔米尔顿损失了所有的钱
+Your Uncle Milton lost all of his money.
+
+98
+00:06:12,020 --> 00:06:13,520
+还有其他人的钱
+And some other people's.
+
+99
+00:06:13,520 --> 00:06:15,010
+因为一场金字塔骗局
+In a pyramid scheme.
+
+100
+00:06:15,560 --> 00:06:18,150
+所以不要提及国税局或联邦监狱系统
+Don't mention the IRS or the federal prisons system.
+
+101
+00:06:18,150 --> 00:06:20,310
+你妈叫芭芭拉  你爸叫克里夫
+Your mother's Barbara, your father's Cliff
+
+102
+00:06:22,070 --> 00:06:24,730
+-我爸有电动火车  -是吗
+- My father has electric trains. - Really?
+
+103
+00:06:26,240 --> 00:06:27,940
+我会是他们的理想女婿吗
+Am I what they had in mind?
+
+104
+00:06:30,080 --> 00:06:32,240
+沃尔特  他们会爱死你的
+Oh, Walter, they're gonna love you!
+
+105
+00:06:36,080 --> 00:06:39,950
+各位  安妮有事要宣布
+Everybody, Annie has an announcement.
+
+106
+00:06:41,300 --> 00:06:44,370
+沃尔特和我订婚了
+Walter and I are engaged.
+
+107
+00:06:49,010 --> 00:06:51,800
+谢谢  谢谢
+Thank you. Thank you.
+
+108
+00:06:52,640 --> 00:06:55,510
+妈妈事先知道  爸爸  妈妈知道的
+Mum knew. Dad, Mum knew.
+
+109
+00:06:55,600 --> 00:06:57,600
+我没看见戒指  安妮
+I don't see a ring, Annie.
+
+110
+00:06:57,600 --> 00:07:00,680
+祝贺你  沃尔特
+Congratulations, Walter.
+
+111
+00:07:02,730 --> 00:07:04,100
+老天保佑  老天保佑
+Bless you. Bless you!
+
+112
+00:07:02,730 --> 00:07:04,100
+{\an3}{\pos(374,247)}西方习俗  
+在有人打喷嚏时要说bless you
+
+113
+00:07:06,530 --> 00:07:08,440
+-天呐  -你没事吧
+- Oh, my god. - Are you all right?
+
+114
+00:07:08,740 --> 00:07:10,320
+没事  没事
+It's nothing. It's nothing.
+
+115
+00:07:10,330 --> 00:07:11,410
+可能是花粉过敏吧
+Maybe it's the flowers.
+
+116
+00:07:11,410 --> 00:07:12,620
+-我来拿走  -我们把花拿走
+- I'll get them . - We'll move them.
+
+117
+00:07:12,990 --> 00:07:14,030
+不  别碰
+No, don't touch!
+
+118
+00:07:14,790 --> 00:07:17,160
+我很过意不去  在这种时候打喷嚏
+I feel terrible, sneezing at a time like this.
+
+119
+00:07:17,580 --> 00:07:19,420
+这可是我人生中的重要时刻
+This is a very important moment for me.
+
+120
+00:07:19,420 --> 00:07:21,790
+他对什么都过敏  不用担心
+He's allergic to everything, don't worry about him.
+
+121
+00:07:21,800 --> 00:07:24,710
+蜜蜂  我对蜜蜂过敏
+Bees. I'm allergic to bees.
+
+122
+00:07:24,760 --> 00:07:27,210
+哈罗德对所有品种的蜜蜂都过敏
+Harold is allergic to every type of bee.
+
+123
+00:07:27,760 --> 00:07:31,140
+我们走到哪都得带上一针肾上腺素
+We always have to carry a hypodermic of adrenalin wherever we go.
+
+124
+00:07:31,140 --> 00:07:34,140
+只要他吃一点点坚果...
+If he eats even one tiny piece of a nut...
+
+125
+00:07:34,140 --> 00:07:37,470
+我的头就会肿得跟西瓜一样  然后我就会暴毙
+My head swells up like a watermelon and I drop dead.
+
+126
+00:07:37,690 --> 00:07:39,900
+哈罗德碰上蜜蜂也这样
+It's the same with Harold and bees.
+
+127
+00:07:39,900 --> 00:07:42,020
+你妈妈和我的婚宴上有三文鱼
+Your mother and I had salmon at our wedding.
+
+128
+00:07:42,020 --> 00:07:45,150
+婚礼上没有三文鱼冷盘那可真是...
+I really think a wedding without cold salmon is...
+
+129
+00:07:45,150 --> 00:07:46,730
+我对三文鱼不过敏
+I'm not allergic to salmon.
+
+130
+00:07:46,730 --> 00:07:48,990
+-他对三文鱼不过敏  -我觉得应该不过敏
+- Oh, he's not allergic to salmon. - I don't think.
+
+131
+00:07:49,440 --> 00:07:51,070
+不过谁知道呢
+But you never know.
+
+132
+00:07:51,120 --> 00:07:54,410
+-真的很难说  -哈罗德也不总是对蜜蜂过敏
+- You never know. - Harold wasn't always allergic to bees.
+
+133
+00:07:54,410 --> 00:07:55,660
+亲爱的  真可惜
+Oh, honey, what a shame.
+
+134
+00:07:55,660 --> 00:07:58,410
+我们还喝了香槟  当时是为了庆祝什么
+We had some champagne. What did we use it for?
+
+135
+00:07:58,410 --> 00:07:59,670
+米尔顿叔叔的假释
+Uncle Milton's parole.
+
+136
+00:07:59,670 --> 00:08:02,580
+-真的很好喝  -确实  不是吗  米尔顿
+- And it was delicious. - It was, wasn't it, Milton?
+
+137
+00:08:03,170 --> 00:08:04,550
+你们什么时候完婚  安妮
+When are you getting married, Annie?
+
+138
+00:08:05,440 --> 00:08:07,670
+六月初吧  在花园里办
+In early June, in the garden.
+
+139
+00:08:10,050 --> 00:08:13,250
+-那哈罗德和蜜蜂怎么办  -我对蜜蜂过敏
+- What about Harold and bees? - I'm allergic to bees.
+
+140
+00:08:13,260 --> 00:08:14,800
+我们会给你喷喷雾的
+We'll spray you.
+
+141
+00:08:14,890 --> 00:08:19,600
+三文鱼冷盘  美味的黄瓜沙拉  草莓
+Cold salmon, a lovely cucumber salad, strawberries.
+
+142
+00:08:19,600 --> 00:08:22,760
+恐怕我确实对草莓过敏
+I'm afraid I am allergic to strawberries.
+
+143
+00:08:25,400 --> 00:08:26,810
+你能接受这个安排吗  沃尔特
+Is this all right with you, Walter?
+
+144
+00:08:28,190 --> 00:08:29,820
+今天  我认为自己是
+Today, I'm consider myself
+
+145
+00:08:29,820 --> 00:08:31,490
+地地地球表面面面
+the luckiest man-man-man
+
+146
+00:08:31,490 --> 00:08:33,360
+最幸运的人人人
+on the face-face-face of the earth-earth-earth.
+
+147
+00:08:34,530 --> 00:08:36,440
+那是电影里卢·格里克的台词
+The Lou Gehrig line from...
+
+148
+00:08:34,530 --> 00:08:36,440
+{\an3}{\pos(374,247)}美国著名棒球运动员  罹患渐冻症
+
+149
+00:08:36,490 --> 00:08:39,330
+记得吗  爸爸  这是那部电影里卢·格里克的台词
+Remember, Dad, the Lou Gehrig line from...
+
+150
+00:08:39,330 --> 00:08:40,790
+-《扬基的骄傲》  -《扬基的骄傲》
+- Pride of the Yankees. - Pride of the Yankees.
+
+151
+00:08:39,330 --> 00:08:40,790
+{\an3}{\pos(374,247)}《扬基的骄傲》为卢·格里克的传记片
+
+152
+00:08:40,790 --> 00:08:42,280
+-《扬基的骄傲》  -没错
+- Pride of the Yankees! - Yeah. Yeah.
+
+153
+00:08:43,330 --> 00:08:46,290
+棒球  是关于棒球的玩笑  历史典故
+Baseball. It's baseball. Historical reference.
+
+154
+00:08:46,380 --> 00:08:47,800
+我想请大家举杯
+I would like to propose a toast.
+
+155
+00:08:47,800 --> 00:08:49,310
+-来吧  来吧  -来吧  来吧
+- Hear, hear. - Hear, hear.
+
+156
+00:08:49,310 --> 00:08:50,790
+敬我的妹妹
+To my kid sister.
+
+157
+00:08:51,050 --> 00:08:53,250
+敬沃尔特和我的宝贝女儿
+To Walter and my baby.
+
+158
+00:08:53,430 --> 00:08:55,000
+敬沃尔特和安妮
+To Walter and Annie.
+
+159
+00:08:58,140 --> 00:09:01,390
+各位快吃吧  免得饭菜凉了
+Everyone, please eat before it gets cold.
+
+160
+00:09:04,650 --> 00:09:05,680
+找到了
+Here it is.
+
+161
+00:09:06,420 --> 00:09:08,780
+历史协会一直想要这个
+The Historical Society wanted this
+
+162
+00:09:08,780 --> 00:09:10,610
+我才不会给他们
+and I never would give it to them.
+
+163
+00:09:10,610 --> 00:09:12,820
+妈妈...
+Oh, Mum...
+
+164
+00:09:12,820 --> 00:09:15,320
+我注意到现在流行复古风
+I noticed these things are back in fashion.
+
+165
+00:09:15,580 --> 00:09:16,780
+外婆的婚纱
+Grandmother's dress.
+
+166
+00:09:16,780 --> 00:09:18,090
+亲爱的
+Oh, honey.
+
+167
+00:09:20,080 --> 00:09:22,450
+他是个不错的小伙子  安妮
+He's a lovely man, Annie.
+
+168
+00:09:22,500 --> 00:09:25,660
+我也觉得  他很棒  不是吗
+I know, he is wonderful, isn't he?
+
+169
+00:09:26,250 --> 00:09:29,090
+-他还是个很出色的运动员  -他家人待你好吗
+- And he's such a wonderful athlete. - Are his folks nice?
+
+170
+00:09:29,090 --> 00:09:29,960
+你会喜欢他们的
+You'll love them.
+
+171
+00:09:29,960 --> 00:09:32,760
+我们今晚要去华盛顿跟他们共度圣诞清晨
+We're going down to DC tonight to be with them Christmas morning.
+
+172
+00:09:32,760 --> 00:09:36,420
+-你们是怎么认识的  -其实挺傻的
+- How did it happen? - Well, it's silly, really.
+
+173
+00:09:37,220 --> 00:09:39,180
+我在办公室见过他
+I mean, I'd seen him at the office.
+
+174
+00:09:39,180 --> 00:09:42,090
+我当然见过他  他是副出版人
+Obviously I'd seen him. He's the associate publisher.
+
+175
+00:09:42,230 --> 00:09:45,940
+然后有一天  我们都点了同一家店的三明治
+And then one day we both ordered sandwiches from the same place
+
+176
+00:09:45,940 --> 00:09:48,480
+他拿了我的生菜番茄全麦三明治
+and he got my lettuce and tomato on whole wheat,
+
+177
+00:09:48,480 --> 00:09:50,350
+当然  他对麸皮过敏
+which, of course, he was allergic to.
+
+178
+00:09:50,490 --> 00:09:52,690
+我拿了他的生菜番茄白面包三明治
+And I got his lettuce and tomato on white.
+
+179
+00:09:52,700 --> 00:09:55,200
+-真不可思议  -是啊
+- How amazing. - It is, isn't it?
+
+180
+00:09:55,200 --> 00:09:57,410
+你做了无数个无意义的决定
+You make a million decisions that mean nothing
+
+181
+00:09:57,410 --> 00:10:00,240
+然后有天你点了份外卖  却因此改变了命运
+and then one day you order takeout that changes your life.
+
+182
+00:10:00,250 --> 00:10:02,360
+命中注定啊
+Destiny takes a hand.
+
+183
+00:10:02,460 --> 00:10:05,170
+妈妈  命运只是我们编来自欺欺人的东西
+Mum, destiny is something we've invented
+
+184
+00:10:05,170 --> 00:10:06,460
+因为我们无法忍受
+because we can't stand the fact
+
+185
+00:10:06,460 --> 00:10:09,000
+凡事皆为偶然的事实
+that everything that happens is accidental.
+
+186
+00:10:09,000 --> 00:10:10,090
+那你要怎么解释
+Then how do you explain
+
+187
+00:10:10,090 --> 00:10:12,670
+你们俩点了一模一样的口味
+that you both ordered exactly the same sandwich
+
+188
+00:10:12,670 --> 00:10:14,080
+只有面包不同的三明治
+except for the bread?
+
+189
+00:10:14,340 --> 00:10:16,130
+这世界上有多少人
+How many people in this world
+
+190
+00:10:16,140 --> 00:10:17,840
+喜欢只放生菜和番茄的三明治
+like lettuce and tomato
+
+191
+00:10:17,840 --> 00:10:20,460
+而不是再加点别的东西  比如金枪鱼呢
+without something else, like tuna?
+
+192
+00:10:20,970 --> 00:10:24,930
+这也算不上命运的预兆  不过是巧合罢了
+Well, it wasn't a sign. It was a coincidence.
+
+193
+00:10:25,770 --> 00:10:29,430
+我当时和我的家人在大西洋城  克里夫是服务员
+I was in Atlantic City with my family, Cliff was a waiter.
+
+194
+00:10:29,940 --> 00:10:32,100
+他那晚本来不该上班的  
+He wasn't even supposed to work that night.
+
+195
+00:10:32,100 --> 00:10:33,850
+想想看他要真没来会怎样呢
+Suppose he hadn't?
+
+196
+00:10:34,650 --> 00:10:38,270
+他邀请我去钢铁码头午夜漫步
+He asked me to take a midnight walk on the Steel Pier.
+
+197
+00:10:38,530 --> 00:10:41,570
+这故事我大概跟你说了很多遍了吧  但我不在乎
+I probably told you this a million times, but I don't care.
+
+198
+00:10:43,080 --> 00:10:44,780
+然后他牵了我的手
+Then he held my hand.
+
+199
+00:10:45,540 --> 00:10:46,870
+有那么一刻我向下望去
+At one point I looked down
+
+200
+00:10:46,870 --> 00:10:50,410
+我都分不清哪根是他的手指  哪根是我的
+and I couldn't tell which fingers were his and which were mine.
+
+201
+00:10:51,340 --> 00:10:52,660
+我当时就知道
+And I knew.
+
+202
+00:10:54,220 --> 00:10:55,250
+知道什么
+What?
+
+203
+00:10:55,550 --> 00:10:56,670
+你知道的
+You know.
+
+204
+00:10:57,800 --> 00:10:58,920
+知道什么
+What?
+
+205
+00:10:59,180 --> 00:11:02,800
+魔法  那是魔法
+Magic. It was magic.
+
+206
+00:11:04,140 --> 00:11:05,220
+魔法
+Magic.
+
+207
+00:11:05,480 --> 00:11:07,510
+我知道我们会永远在一起
+I knew we'd be together forever.
+
+208
+00:11:07,690 --> 00:11:09,680
+我知道一切都会无比美妙
+And that everything would be wonderful.
+
+209
+00:11:09,810 --> 00:11:12,100
+正如你对沃尔特的感觉
+Just the way you feel about Walter.
+
+210
+00:11:12,570 --> 00:11:16,230
+沃尔特  这名字真正式  不是吗
+Walter. It's quite a formal name, isn't it?
+
+211
+00:11:17,820 --> 00:11:19,700
+我确切知道的事情之一
+One of the things I truly knew
+
+212
+00:11:19,700 --> 00:11:21,920
+就是你爸爸和我
+was that your father and I were going to
+
+213
+00:11:21,920 --> 00:11:26,110
+会很"性"福  你们是这么说的吧
+have a wonderful time in the sack, I believe you call it.
+
+214
+00:11:26,790 --> 00:11:27,580
+妈
+Mum.
+
+215
+00:11:27,580 --> 00:11:29,670
+不过确实要花上几年
+Of course it took several years before everything
+
+216
+00:11:29,670 --> 00:11:31,840
+那方面才会和谐
+worked like clockwork in that department.
+
+217
+00:11:31,840 --> 00:11:33,920
+所以如果暂时默契不够  不必担心
+So don't be worried if it takes a while.
+
+218
+00:11:33,920 --> 00:11:38,920
+-我们已经...  -好吧好吧  你们怎么样
+- We already... - Fine, fine. Fiddly-dee. How's it working?
+
+219
+00:11:39,510 --> 00:11:40,840
+很和谐了
+Like clockwork.
+
+220
+00:11:42,010 --> 00:11:43,880
+亲爱的...
+Oh, honey...
+
+221
+00:11:46,930 --> 00:11:50,510
+-这是个预兆  -你不相信预兆的
+- It's a sign. - You don't believe in signs.
+
+222
+00:11:56,530 --> 00:11:59,320
+他们很喜欢你  我说了他们会喜欢你的
+They loved you. I told you they would love you,
+
+223
+00:11:59,320 --> 00:12:00,610
+果不其然吧
+and they loved you.
+
+224
+00:12:01,030 --> 00:12:02,020
+我爱你
+I love you.
+
+225
+00:12:02,240 --> 00:12:03,860
+我爱你  沃尔特
+I love you, Walter.
+
+226
+00:12:06,370 --> 00:12:08,820
+每个人都叫你沃尔特吗  没有别的昵称吗
+Did anyone ever call you anything other than Walter?
+
+227
+00:12:09,330 --> 00:12:10,280
+没有
+No.
+
+228
+00:12:11,920 --> 00:12:13,330
+你小时候也没有小名吗
+Not even when you were young?
+
+229
+00:12:13,880 --> 00:12:15,790
+没有  小时候也没有
+No, not even when I was young.
+
+230
+00:12:18,380 --> 00:12:20,010
+你确定我们俩要各自开车吗
+You sure you don't want to drive with me?
+
+231
+00:12:20,010 --> 00:12:22,630
+不然我周五怎么赶回巴尔的摩
+Oh, how will I get back to Baltimore on Friday?
+
+232
+00:12:23,100 --> 00:12:24,260
+我把礼物忘了  沃尔特
+I forgot the present. Walter,
+
+233
+00:12:24,260 --> 00:12:27,340
+我不小心把给你继母准备的礼物忘在里面了
+I left your stepmother's present inside by accident.
+
+234
+00:12:27,430 --> 00:12:29,060
+我发誓  等我老了  头发白了
+I swear, when we're old and grey
+
+235
+00:12:29,060 --> 00:12:30,940
+你得提醒我把假牙戴上
+you gonna have to remind me to put my teeth in.
+
+236
+00:12:30,940 --> 00:12:33,560
+否则我会瘪着嘴满城跑
+I'll be walking all over town smacking my gums together,
+
+237
+00:12:33,560 --> 00:12:34,810
+丝毫没注意自己没戴假牙
+not even noticing.
+
+238
+00:12:35,530 --> 00:12:36,440
+我等你
+I'll wait.
+
+239
+00:12:36,640 --> 00:12:38,600
+你要等我吗  对了
+You'll wait? Oh, right.
+
+240
+00:12:38,610 --> 00:12:39,900
+不  不必等我  沃尔特
+No, don't wait, Walter.
+
+241
+00:12:39,900 --> 00:12:41,030
+真的  这太蠢了  你先走吧
+Really, it's silly, you go ahead.
+
+242
+00:12:41,030 --> 00:12:41,780
+反正我们也迟到了
+We're late anyway.
+
+243
+00:12:41,780 --> 00:12:43,480
+我大概就比你晚到十分钟
+I'll be ten minutes behind you.
+
+244
+00:12:45,330 --> 00:12:47,410
+{\an9}♪雪橇铃叮叮叮叮叮♪
+♪ Sleigh bells jingle-ing Ring ting tingle-ing too ♪
+
+245
+00:12:47,410 --> 00:12:49,330
+{\an9}♪马儿跑  马儿跑♪
+♪ Horses, horses ♪
+
+246
+00:12:49,330 --> 00:12:51,460
+{\an9}♪这是和你一起坐雪橇的好天气♪
+♪ It's lovely weather for a sleigh ride together with you ♪
+
+247
+00:12:51,460 --> 00:12:53,420
+{\an9}♪驾  驾♪
+♪ Giddy-up, giddy-up ♪
+
+248
+00:12:52,460 --> 00:12:55,210
+{\an8}{\pos(142,38.933)}华盛顿方向
+
+249
+00:12:53,420 --> 00:12:55,750
+{\an9}♪雪花飘落  朋友欢呼♪
+♪ The snow is falling and friends are calling "Yoo Hoo" ♪
+
+250
+00:12:55,750 --> 00:12:57,630
+{\an9}♪马儿跑  马儿跑  马儿跑  铃儿响♪
+♪ Horses, horses, horses, Ding ling ling♪
+
+251
+00:12:56,710 --> 00:12:59,870
+♪朋友欢呼  铃儿响♪
+♪ Friends are calling "Yoo Hoo" Ding-a-ling-a-ling ♪
+
+252
+00:12:57,670 --> 00:12:59,800
+{\an9}♪这是和你一起坐雪橇的好天气♪
+♪ It's lovely weather for a sleigh ride together with you ♪
+
+253
+00:12:59,800 --> 00:13:03,790
+{\an9}♪马儿跑  马儿跑♪
+♪ Horses, horses ♪
+
+254
+00:13:02,930 --> 00:13:04,340
+♪马儿跑  马儿跑♪
+♪ Horses, horses ♪
+
+255
+00:13:03,800 --> 00:13:07,970
+{\an9}♪叮叮当  叮叮当  铃儿响叮当♪
+♪ Jingle bells, jingle bells Jingle all the way ♪
+
+256
+00:13:05,100 --> 00:13:07,970
+♪叮叮当  叮叮当  铃儿响叮当♪
+♪ Jingle bells, jingle bells Jingle all the way ♪
+
+257
+00:13:07,970 --> 00:13:12,190
+♪今晚滑雪多快乐  我们坐在雪橇上♪
+♪ Oh, what fun, it is to ride in a one horse open sleigh, hey ♪
+
+258
+00:13:07,970 --> 00:13:12,190
+{\an9}♪今晚滑雪多快乐  我们坐在雪橇上♪
+♪ Oh, what fun, it is to ride in a one horse open sleigh, hey ♪
+
+259
+00:13:12,190 --> 00:13:13,390
+{\an9}♪叮叮当♪
+♪ Jingle bells ♪
+
+260
+00:13:12,190 --> 00:13:13,390
+♪叮叮当♪
+♪ Jingle bells ♪
+
+261
+00:13:14,230 --> 00:13:16,690
+♪马儿跑  马儿跑♪
+♪ Horse, horses ♪
+
+262
+00:13:14,650 --> 00:13:17,270
+{\an9}欢迎回到"电台心情"
+Welcome back to "You and Your Emotions."
+
+263
+00:13:16,690 --> 00:13:18,430
+♪铃儿响叮当♪
+♪ Nothing all the way ♪
+
+264
+00:13:17,280 --> 00:13:18,700
+{\an9}我是玛夏·菲尔斯通医生
+I'm Dr. Marcia Fieldstone,
+
+265
+00:13:18,700 --> 00:13:20,990
+此刻我正在芝加哥希尔斯大厦顶层
+broadcasting live across America
+
+266
+00:13:20,990 --> 00:13:23,570
+向全美听众直播
+from the top of the Sears Tower in Chicago.
+
+267
+00:13:23,570 --> 00:13:27,360
+今晚  我们来聊聊愿望与梦想
+Tonight we're talking about wishes and dreams.
+
+268
+00:13:27,410 --> 00:13:29,370
+你在这个平安夜许下了什么愿望
+What's your wish this Christmas Eve?
+
+269
+00:13:29,370 --> 00:13:33,700
+你的愿望是什么  我的愿望就是换台
+What's your wish? My wish is to turn the radio station.
+
+270
+00:13:29,750 --> 00:13:33,280
+{\an9}也许你能给自己的最好礼物就是向我致电
+Maybe the best present you can give yourself is a call to me
+.
+
+271
+00:13:33,370 --> 00:13:34,290
+{\an9}芝加哥的电话是
+The number in Chi--
+
+272
+00:13:34,290 --> 00:13:36,590
+今晚健康讲堂的主题是
+Subject of this evening's medical update is:
+
+273
+00:13:36,590 --> 00:13:37,840
+"你和你的脾脏"
+"You and your spleen."
+
+274
+00:13:37,840 --> 00:13:39,550
+-今晚的主讲人是...  -想都别想
+- And your host is... - Not on your life.
+
+275
+00:13:39,550 --> 00:13:40,460
+接下来您将听到的是
+Coming up,
+
+276
+00:13:40,470 --> 00:13:41,970
+倒放版《铃儿响叮当》
+"Jingle Bells" backwards,
+
+277
+00:13:41,970 --> 00:13:44,250
+演唱者是新泽西的凯特·梅耶兹
+sung by the New Jersey Kate Mayze.
+
+278
+00:13:44,720 --> 00:13:45,940
+来自西雅图的听众  说吧
+Seattle, go ahead.
+
+279
+00:13:45,940 --> 00:13:48,130
+你好  我是乔纳...
+Hello, this is Jonah...
+
+280
+00:13:48,390 --> 00:13:50,220
+不要把姓说出来  乔纳
+No last names, Jonah.
+
+281
+00:13:50,220 --> 00:13:52,010
+你的声音听起来比我们一般的来电听众要年轻
+You sound younger than our usual callers.
+
+282
+00:13:52,010 --> 00:13:53,090
+你多大了
+How old are you?
+
+283
+00:13:53,770 --> 00:13:54,640
+我八岁了
+I'm 8.
+
+284
+00:13:54,650 --> 00:13:56,680
+八岁吗  怎么这么晚还不睡觉
+Eight? How come you're up so late?
+
+285
+00:13:56,770 --> 00:13:58,480
+西雅图还没那么晚
+It's not that late in Seattle.
+
+286
+00:13:56,770 --> 00:13:58,480
+{\an3}{\pos(374,247)}芝加哥的时间比西雅图早两小时
+
+287
+00:13:58,480 --> 00:14:00,560
+当然了  你说得没错
+Oh, of course, you're absolutely right.
+
+288
+00:14:00,570 --> 00:14:02,600
+好了  你的圣诞愿望是什么  乔纳
+All right, what's your Christmas wish, Jonah?
+
+289
+00:14:02,740 --> 00:14:04,650
+这个愿望不是为我自己许的  是为了我爸爸
+It's not for me, it's for my dad.
+
+290
+00:14:04,700 --> 00:14:06,360
+我觉得他需要一个新妻子
+I think he needs a new wife.
+
+291
+00:14:06,950 --> 00:14:08,620
+你不喜欢他现在的妻子吗
+You don't like the one he has now?
+
+292
+00:14:08,620 --> 00:14:11,330
+他现在没有妻子  这就是问题所在
+He doesn't have one now. That's the problem.
+
+293
+00:14:11,330 --> 00:14:12,530
+你妈妈呢
+Where's your mum?
+
+294
+00:14:12,620 --> 00:14:13,820
+她去世了
+She died.
+
+295
+00:14:13,960 --> 00:14:17,780
+-我很遗憾  -真是难以置信
+- Oh, I'm so sorry to hear that. - Well, who can believe this?
+
+296
+00:14:18,750 --> 00:14:21,790
+我很难过  但我觉得我爸爸更伤心
+I've been pretty sad, but I think my Dad's worse.
+
+297
+00:14:21,880 --> 00:14:24,080
+你跟你爸爸聊过这事吗
+Have you talked to your dad about this?
+
+298
+00:14:24,550 --> 00:14:26,420
+-没有  -为什么呢
+- No. - Why not?
+
+299
+00:14:26,890 --> 00:14:28,430
+这样好像会让他更伤心
+It's like it makes him sadder.
+
+300
+00:14:28,730 --> 00:14:30,300
+我可以理解
+I can understand that.
+
+301
+00:14:30,390 --> 00:14:32,130
+乔纳  你爸爸现在在家吗
+Jonah, is your dad home right now?
+
+302
+00:14:32,230 --> 00:14:34,890
+-在的  -他在干什么  他忙吗
+- Yeah. - What's he doing? Is he busy?
+
+303
+00:14:34,890 --> 00:14:36,800
+不忙吧  他在外面的露天平台上
+Not really, he's out on the deck.
+
+304
+00:14:36,810 --> 00:14:38,520
+我相信我可以帮到他
+I'm sure that I can help.
+
+305
+00:14:38,520 --> 00:14:41,090
+但我需要你的协助
+But I'm gonna need you to help me to help him.
+
+306
+00:14:41,090 --> 00:14:42,470
+-这个坏女人  -所以我希望你做的就是
+- Wretched woman! - So what I want you do
+
+307
+00:14:42,470 --> 00:14:44,000
+-把你爸爸带到电话前  -快挂电话  乔纳  
+- is bring your dad to the phone. - Hang up, Jonah!
+
+308
+00:14:44,000 --> 00:14:44,760
+别听她的
+Don't listen to her.
+
+309
+00:14:44,860 --> 00:14:46,810
+不可能  他会杀了我的
+No way, he'd kill me.
+
+310
+00:14:46,950 --> 00:14:48,030
+相信我  乔纳
+Trust me, Jonah.
+
+311
+00:14:48,030 --> 00:14:52,200
+当他发现你有多担心他时  他不会生气的
+He won't be angry when he realises how concerned you are about him.
+
+312
+00:14:52,200 --> 00:14:54,100
+-想赌一把吗  -好吧  但如果我被骂了
+- Wanna bet? - Okay, but if I get yelled at,
+
+313
+00:14:54,100 --> 00:14:55,960
+我就再也没法听你的节目了
+I'm never gonna listen to your show again.
+
+314
+00:14:55,960 --> 00:14:57,660
+好吧  有道理
+Okay, fair enough.
+
+315
+00:14:59,790 --> 00:15:02,410
+-爸爸  -怎么了
+- Dad? - Yeah.
+
+316
+00:15:02,880 --> 00:15:04,710
+有人打电话找你
+There's someone on the phone for you.
+
+317
+00:15:08,390 --> 00:15:10,420
+-他叫萨姆  -萨姆
+- His name is Sam. - Sam.
+
+318
+00:15:10,970 --> 00:15:13,720
+如果您刚开始收听  我是玛夏·菲尔斯通医生
+If you've just tuned in, this is Dr. Marcia Fieldstone
+
+319
+00:15:13,980 --> 00:15:16,180
+今晚的主题是你的愿望和梦想
+and tonight's topic is your wishes and dreams.
+
+320
+00:15:16,190 --> 00:15:16,770
+我来接吧
+Okay, I got it.
+
+321
+00:15:16,770 --> 00:15:19,470
+我们现在正在和某位西雅图的听众连线
+We're on the line now with someone from Seattle.
+
+322
+00:15:20,020 --> 00:15:20,610
+你好
+Hello.
+
+323
+00:15:20,610 --> 00:15:24,600
+你好  萨姆  我是美国电台的菲尔斯通医生
+Hello, Sam, this is Dr. Fieldstone on Network America.
+
+324
+00:15:25,400 --> 00:15:27,030
+好吧  今晚你要推销什么
+Okay. What are you selling tonight?
+
+325
+00:15:27,280 --> 00:15:29,860
+微波烤肉炉还是日本银座刀
+The micro-hibachis or the Ginza knives?
+
+326
+00:15:29,870 --> 00:15:33,240
+不  我不是来推销的  我只想帮忙
+No, I'm not selling anything. I just wanna help.
+
+327
+00:15:33,240 --> 00:15:35,200
+我想让你知道你儿子打来了电话
+I want you to know that your son called
+
+328
+00:15:35,290 --> 00:15:38,910
+他向我咨询如何才能让你另觅新欢
+and he asked me for some advice on how you might find a new wife.
+
+329
+00:15:39,210 --> 00:15:40,280
+你是哪位
+Who is this?
+
+330
+00:15:40,750 --> 00:15:44,710
+美国电台的玛夏·菲尔斯通医生
+Dr. Marcia Fieldstone of Network America.
+
+331
+00:15:44,710 --> 00:15:46,300
+我们正在直播
+And you are on the air.
+
+332
+00:15:46,300 --> 00:15:47,720
+你给电台打电话了
+You called a radio station?
+
+333
+00:15:47,720 --> 00:15:50,680
+萨姆  萨姆  萨姆  你在听吗
+Sam, Sam, Sam, are you with me?
+
+334
+00:15:50,680 --> 00:15:52,210
+在的  在听
+Yeah. Yes.
+
+335
+00:15:52,510 --> 00:15:54,470
+你儿子觉得自从你妻子过世后
+Your son feels that since your wife's death
+
+336
+00:15:54,470 --> 00:15:56,930
+你一直都很不开心
+you've been very, very unhappy.
+
+337
+00:15:57,140 --> 00:15:59,850
+他真的很担心你
+And he is genuinely worried about you.
+
+338
+00:16:01,060 --> 00:16:02,940
+过来  过来
+Get out here. Get out here.
+
+339
+00:16:02,940 --> 00:16:05,190
+快点  我才不要一个人接这通电话
+Come on, now, I'm not gonna go through this alone.
+
+340
+00:16:05,190 --> 00:16:09,400
+我认为对他来说  跟你谈论这件事非常艰难
+I think it's very hard for him to talk to you about all this.
+
+341
+00:16:09,410 --> 00:16:10,980
+我想也许你和我可以谈谈
+I thought maybe you and I could talk,
+
+342
+00:16:10,990 --> 00:16:14,450
+这会让乔纳心里更好受一些  萨姆
+it would make Jonah feel a little better. Sam?
+
+343
+00:16:14,450 --> 00:16:16,710
+跟她谈谈吧  爸爸  她是个医生
+Talk to her, Dad. She's a doctor.
+
+344
+00:16:17,120 --> 00:16:18,240
+哪方面的医生
+Of what?
+
+345
+00:16:18,370 --> 00:16:20,200
+万一她名字就叫医生呢
+Her first name could be Doctor.
+
+346
+00:16:20,460 --> 00:16:21,490
+拜托嘛
+Please.
+
+347
+00:16:21,490 --> 00:16:25,910
+萨姆  这是他的圣诞愿望
+Sam. Sam, it's his Christmas wish.
+
+348
+00:16:27,050 --> 00:16:29,500
+-好吧  -很好
+- Okay. - Okay. Good.
+
+349
+00:16:30,720 --> 00:16:32,420
+我知道这不容易
+Now, I know this is difficult.
+
+350
+00:16:32,510 --> 00:16:34,670
+不过尊夫人是多久前去世的
+But how long ago did your wife die?
+
+351
+00:16:36,600 --> 00:16:38,090
+大概一年半前
+About a year and a half ago.
+
+352
+00:16:38,890 --> 00:16:41,090
+从那以后你谈过恋爱吗
+Have you had any relationships since?
+
+353
+00:16:42,860 --> 00:16:46,640
+-没有  -没有吗  为什么
+- No. - No? Why not?
+
+354
+00:16:49,240 --> 00:16:52,140
+玛夏  还是我该叫你菲尔斯通医生
+Marcia, or should I call you Dr. Fieldstone?
+
+355
+00:16:52,150 --> 00:16:53,490
+叫我玛夏医生好了
+Dr. Marcia.
+
+356
+00:16:53,490 --> 00:16:56,950
+-玛夏医生  -玛夏医生  我无意冒犯
+- Dr. Marcia. - Dr. Marcia. I don't mean to be rude...
+
+357
+00:16:56,950 --> 00:16:59,530
+我也不想侵犯你的个人隐私
+And I don't want to invade your privacy...
+
+358
+00:16:59,580 --> 00:17:00,700
+-你明明太想了  -你明明太想了
+- Sure you do. - Sure you do.
+
+359
+00:17:01,500 --> 00:17:04,960
+继续说吧  萨姆  我在听
+Go on, Sam. I'm listening.
+
+360
+00:17:04,960 --> 00:17:05,870
+萨姆
+Sam.
+
+361
+00:17:07,840 --> 00:17:11,580
+一开始的日子很煎熬
+We had a pretty tough time there at first.
+
+362
+00:17:12,470 --> 00:17:14,960
+但我们在慢慢接受
+But we're dealing with it.
+
+363
+00:17:15,640 --> 00:17:20,220
+乔纳和我会好好生活下去
+And Jonah and I will get along just fine again,
+
+364
+00:17:20,770 --> 00:17:22,760
+等我砸了他的收音机就行
+as soon as I break his radio.
+
+365
+00:17:24,810 --> 00:17:27,860
+毫无疑问  你是个好爸爸
+I have no doubt that you're a wonderful father.
+
+366
+00:17:27,860 --> 00:17:30,490
+其实  从一个人的声音里可以听出很多东西
+You know, you can tell a lot from a person's voice.
+
+367
+00:17:30,490 --> 00:17:31,700
+确实如此
+You certainly can.
+
+368
+00:17:31,700 --> 00:17:33,280
+但如果乔纳仍觉得你闷闷不乐
+But something must be missing
+
+369
+00:17:33,280 --> 00:17:36,360
+那你心里一定还残缺着什么
+if Jonah still feels that you're under a cloud.
+
+370
+00:17:36,450 --> 00:17:39,360
+我就问你几个问题  你晚上能入睡吗
+Just a few questions: Are you sleeping at night?
+
+371
+00:17:40,120 --> 00:17:41,700
+他完全睡不着
+He doesn't sleep at all.
+
+372
+00:17:42,080 --> 00:17:44,740
+-你怎么知道  -我住在这里  爸爸
+- How do you know that? - I live here, Dad.
+
+373
+00:17:48,420 --> 00:17:51,290
+圣诞节快到了
+Look, it's Christmas.
+
+374
+00:17:55,930 --> 00:17:59,170
+玛姬  我妻子
+Maggie, my wife.
+
+375
+00:17:59,310 --> 00:18:01,930
+她真的...
+She really did it...
+
+376
+00:18:01,930 --> 00:18:05,440
+我是说  她很喜欢...
+I mean, she loved...
+
+377
+00:18:05,440 --> 00:18:07,680
+她让一切都如此美好
+She made everything beautiful.
+
+378
+00:18:09,690 --> 00:18:12,740
+因此每年的圣诞都会很难熬
+It's just tough this time of year.
+
+379
+00:18:12,740 --> 00:18:15,190
+哪个孩子不需要妈妈呢
+Every kid needs a mother.
+
+380
+00:18:15,200 --> 00:18:19,730
+有没有可能你和乔纳一样  都需要某人的陪伴
+Could it be that you need someone just as much as Jonah does?
+
+381
+00:18:23,160 --> 00:18:25,460
+-是的  -不必回答
+- Yes. - Don't answer that.
+
+382
+00:18:25,460 --> 00:18:27,500
+等听完听众反馈后我们再继续
+Let's get into that right after these messages.
+
+383
+00:18:27,500 --> 00:18:30,000
+萨姆  乔纳  不要挂断
+Sam, Jonah, don't go away.
+
+384
+00:18:30,090 --> 00:18:31,500
+如果您刚开始收听
+If you've have just tuned in,
+
+385
+00:18:31,510 --> 00:18:34,380
+我们正在跟一位来自西雅图的夜未眠先生连线
+we are talking to Sleepless in Seattle.
+
+386
+00:18:34,380 --> 00:18:38,880
+我们将倾听一些听众反馈 休息之后马上回来
+And we'll be right back after this break with your listener response.
+
+387
+00:18:39,390 --> 00:18:40,510
+她在说什么
+What is she talking about?
+
+388
+00:18:40,510 --> 00:18:42,140
+这时候其他人可以打电话进来
+This is when other people get to call in
+
+389
+00:18:42,140 --> 00:18:43,840
+评论你刚刚说的话
+and dump on what you said.
+
+390
+00:18:45,850 --> 00:18:48,970
+这还挺有意思  也挺有帮助
+Well, this is really fun. And helpful.
+
+391
+00:18:49,310 --> 00:18:55,190
+{\an8}首都餐厅
+
+392
+00:18:55,280 --> 00:18:57,440
+我敢说他人又高  屁股又翘
+I bet he's tall with a cute butt.
+
+393
+00:18:57,450 --> 00:18:59,910
+我敢说他好几周都没洗澡  身上臭得要命
+I bet he hasn't bathed in weeks and he stinks.
+
+394
+00:18:59,910 --> 00:19:02,390
+哈莉叶  闭嘴吧  您好  您要点什么
+Harriet, shut up. Hi, can I help you?
+
+395
+00:19:02,390 --> 00:19:03,740
+给我一杯茶  不要茶包
+Tea, with the bag out.
+
+396
+00:19:04,250 --> 00:19:06,410
+也许我该直接去西雅图
+You know, maybe I'll just hustle myself up to Seattle,
+
+397
+00:19:06,420 --> 00:19:08,250
+送他一个除夕夜的小礼物
+give him a little gift for New Year's Eve.
+
+398
+00:19:08,250 --> 00:19:10,170
+随你  你要去就去吧
+Yeah, you go on out there if you want to.
+
+399
+00:19:10,170 --> 00:19:12,250
+但别打开他的冰箱
+But don't open his refrigerator.
+
+400
+00:19:12,250 --> 00:19:14,260
+他们把东西放进冰箱时什么都不盖
+They don't cover anything when they put it in the fridge
+
+401
+00:19:14,260 --> 00:19:15,630
+他们只是把东西放在里面  然后离开
+they just stick it in there and leave it
+
+402
+00:19:15,630 --> 00:19:17,670
+直到东西自己走出去
+till it walks out by itself.
+
+403
+00:19:17,990 --> 00:19:19,510
+我的意思是  就算他在我床上吃零食
+All I'm saying is I wouldn't kick this guy
+
+404
+00:19:19,510 --> 00:19:20,930
+我也不会把他踹下去
+out of my bed for eating crackers.
+
+405
+00:19:20,930 --> 00:19:23,140
+你懂我意思吧  65美分
+You know what I'm saying? Sixty five cents.
+
+406
+00:19:23,140 --> 00:19:26,260
+在接回西雅图之前  让我们来接听一通电话
+Let's take a call before we get back to Sleepless.
+
+407
+00:19:26,390 --> 00:19:29,600
+来自田纳西州诺克斯维尔的这位听众  请说吧
+Knoxville, Tennessee, you are on the air. Talk to me.
+
+408
+00:19:29,770 --> 00:19:31,980
+好的  我只是想知道
+Yes, I would just like to know
+
+409
+00:19:31,980 --> 00:19:34,230
+我从哪里可以得知这位先生的住址
+where I could get this man's address.
+
+410
+00:19:34,780 --> 00:19:36,140
+亲爱的  先去排队吧
+Honey, get in line.
+
+411
+00:19:37,070 --> 00:19:38,610
+下一位听众  请讲
+Next caller, go ahead.
+
+412
+00:19:40,120 --> 00:19:43,490
+请允许我问一个问题...
+If there was one question I was allowed to ask...
+
+413
+00:19:44,120 --> 00:19:45,200
+问吧
+Oh, go ahead.
+
+414
+00:19:45,500 --> 00:19:49,620
+真正爱过的人  更有可能再次陷入爱河
+People who truly loved once are far more likely to love again.
+
+415
+00:19:49,670 --> 00:19:52,880
+萨姆  你觉得你还能像爱你妻子一样
+Sam, do you think that there is someone out there you could love
+
+416
+00:19:52,880 --> 00:19:54,410
+爱另一个人吗
+as much as your wife?
+
+417
+00:19:56,880 --> 00:20:00,880
+玛夏·菲尔斯通医生  这很难想象
+Well, Dr. Marcia Fieldstone, that's hard to imagine.
+
+418
+00:20:01,800 --> 00:20:03,210
+那你打算怎么办
+What are you going to do?
+
+419
+00:20:04,520 --> 00:20:08,890
+我打算每天早上起床
+Well, I'm going to get out of bed every morning
+
+420
+00:20:09,770 --> 00:20:12,140
+一整天都保持呼吸
+and breathe in and out all day long.
+
+421
+00:20:12,690 --> 00:20:16,900
+一段时间过后  我就不必再提醒自己
+And after a while I won't have to remind myself
+
+422
+00:20:16,900 --> 00:20:20,810
+每天早上要起床  要保持呼吸
+to get out of bed every morning and breathe in and out.
+
+423
+00:20:22,410 --> 00:20:25,080
+再过一段时间  我就不会再想着
+And then after a while I won't have to think about
+
+424
+00:20:25,080 --> 00:20:29,910
+我也曾拥有过一段精彩而完美的人生
+how I had it great and perfect for a while.
+
+425
+00:20:30,460 --> 00:20:33,830
+萨姆  告诉我你的妻子究竟有何特别之处
+Sam, tell me what was so special about your wife.
+
+426
+00:20:35,170 --> 00:20:37,120
+你的节目有多长时间
+Well, how long is your programme?
+
+427
+00:20:41,310 --> 00:20:45,220
+其实是无数件小事
+Well, it was a million tiny, little things.
+
+428
+00:20:45,220 --> 00:20:46,970
+当这些小事积少成多
+When you added them all up,
+
+429
+00:20:47,980 --> 00:20:49,880
+这就意味着我们注定在一起
+it just meant we were supposed to be together.
+
+430
+00:20:50,480 --> 00:20:51,390
+我知道
+And I knew it,
+
+431
+00:20:52,010 --> 00:20:54,390
+当我第一次触碰她时我就知道了
+I knew it the very first time I touched her.
+
+432
+00:20:55,480 --> 00:20:56,830
+感觉就像回家
+It was like coming home,
+
+433
+00:20:57,870 --> 00:21:00,480
+我不曾知晓的那个家
+only to no home I'd ever known.
+
+434
+00:21:01,110 --> 00:21:03,020
+我当时只是牵着她的手
+I was just taking her hand
+
+435
+00:21:04,200 --> 00:21:06,000
+扶她下车
+to help her out of a car.
+
+436
+00:21:07,960 --> 00:21:09,240
+于是我就知道了
+And I knew it.
+
+437
+00:21:10,290 --> 00:21:11,340
+那感觉就像...
+It was like...
+
+438
+00:21:12,880 --> 00:21:14,390
+-魔法  -魔法
+- Magic. - Magic.
+
+439
+00:21:16,090 --> 00:21:19,130
+听众朋友们  节目是时候结束了
+Well, folks, it's time to wrap it up.
+
+440
+00:21:19,130 --> 00:21:21,840
+我是芝加哥的玛夏·菲尔斯通医生
+I'm Dr. Marcia Fieldstone in Chicago.
+
+441
+00:21:21,840 --> 00:21:26,300
+祝各位听众朋友们度过一个魔法般的美妙圣诞
+And to all my listeners, a magical and merry Christmas.
+
+442
+00:21:26,390 --> 00:21:29,430
+至于你  这位来自西雅图的夜未眠先生
+And to you, Sleepless in Seattle,
+
+443
+00:21:29,430 --> 00:21:33,720
+我们希望你能尽快再次来电  让我们知晓后续
+we hope you'll call again soon and let us know how it's going.
+
+444
+00:21:33,650 --> 00:21:40,020
+{\an9}♪你将在那里找到我♪
+♪ It's where you find me ♪
+
+445
+00:21:33,730 --> 00:21:35,310
+那是一定的
+Oh, you can count on it.
+
+446
+00:21:40,610 --> 00:21:50,360
+{\an9}♪我知道在彩虹之上♪
+♪ I know somewhere over the rainbow ♪
+
+447
+00:21:52,290 --> 00:21:56,950
+{\an9}♪有蓝鸟飞翔♪
+♪ The blue birds fly ♪
+
+448
+00:22:01,260 --> 00:22:03,710
+{\an9}♪蓝鸟飞翔♪
+♪ Birds fly ♪
+
+449
+00:22:05,180 --> 00:22:08,090
+{\an9}♪飞翔在彩虹之上♪
+♪ Over the rainbow ♪
+
+450
+00:22:09,600 --> 00:22:18,770
+{\an9}♪那么为何  为何我不能飞翔♪
+♪ Why then, oh why can't I? ♪
+
+451
+00:22:19,310 --> 00:22:24,530
+{\an8}巴尔的摩太阳报报社
+
+452
+00:22:25,200 --> 00:22:27,570
+这家伙卖的汤一定是你喝过的最好喝的
+This man sells the greatest soup you've ever eaten,
+
+453
+00:22:27,570 --> 00:22:29,940
+却又是全美国最刻薄的人
+and he is the meanest man in America.
+
+454
+00:22:29,950 --> 00:22:33,570
+我有强烈的预感  贝琪  不仅仅是汤
+I feel very strongly about this, Becky. It's not just about soup.
+
+455
+00:22:33,580 --> 00:22:34,750
+写吧  还有什么素材吗
+Do it. What else?
+
+456
+00:22:34,750 --> 00:22:37,290
+除夕  拜托别让我写这个主题
+New Year's Eve. Please don't make me write it.
+
+457
+00:22:37,290 --> 00:22:38,280
+听听这个
+Listen to this:
+
+458
+00:22:38,460 --> 00:22:40,840
+"大芝加哥地区的通讯于平安夜
+"Phone service in the greater Chicago area was tied up
+
+459
+00:22:40,840 --> 00:22:42,170
+中断两小时
+for two hours Christmas Eve
+
+460
+00:22:42,170 --> 00:22:44,220
+只因某个孩子给电台节目打电话
+when some kid calls a phone in radio show
+
+461
+00:22:44,220 --> 00:22:46,420
+说他爸爸需要一位新妻子"
+and says that his dad needs a new wife."
+
+462
+00:22:46,550 --> 00:22:48,420
+两千名女性打电话给电台
+Two thousand women called the station
+
+463
+00:22:48,430 --> 00:22:49,880
+索要那位先生的电话号码
+asking for the guy's number.
+
+464
+00:22:50,060 --> 00:22:51,190
+-天哪  -我听到了
+- Jesus. - I heard it.
+
+465
+00:22:51,200 --> 00:22:53,850
+那孩子来电说  "我爸爸需要一位妻子"
+This kid calls up and says, "My dad needs a wife."
+
+466
+00:22:53,850 --> 00:22:56,640
+那个心理医生几乎是逼他来接电话  然后说
+And the shrink head practically forces the guy on the phone and says,
+
+467
+00:22:56,650 --> 00:22:57,690
+"你想聊聊这事吗"
+"Do you want to talk about it? "
+
+468
+00:22:57,690 --> 00:23:00,100
+他说  "不  其实我不想"
+And he says, "No, as a matter of fact, I don't."
+
+469
+00:23:00,110 --> 00:23:01,950
+然后突然间  毫无缘由地
+And then suddenly for no reason at all
+
+470
+00:23:01,950 --> 00:23:03,820
+他就开始说他有多爱他妻子
+he start to talk about how much he loved his wife
+
+471
+00:23:03,820 --> 00:23:05,530
+他是如何爱上了她
+and how he just fell in love with her
+
+472
+00:23:05,530 --> 00:23:07,610
+就好像他是密歇根的那些奶牛之一
+like he was one of those cows in Michigan.
+
+473
+00:23:08,160 --> 00:23:09,440
+什么密歇根的奶牛
+What cows in Michigan?
+
+474
+00:23:09,530 --> 00:23:10,530
+《时事60分钟》上播过
+It was on 60 Minutes
+
+475
+00:23:10,530 --> 00:23:12,580
+那些奶牛被杂散电压电死了
+over those cows that got zapped by stray voltage.
+
+476
+00:23:12,580 --> 00:23:15,070
+没人知道原因  也许是在威斯康辛州吧
+No one knows why. And maybe it was Wisconsin.
+
+477
+00:23:15,660 --> 00:23:17,420
+不过  无论如何
+But, anyway,
+
+478
+00:23:17,510 --> 00:23:19,790
+我当时听着他说他有多爱妻子
+I was listening to him talk about how much he loved his wife
+
+479
+00:23:19,790 --> 00:23:21,410
+忽然我就哭了
+and suddenly I was crying.
+
+480
+00:23:22,460 --> 00:23:24,590
+我看那些电话公司的广告时也会这样
+It's like what happens when I watch those phone company ads.
+
+481
+00:23:24,590 --> 00:23:25,730
+都不用全部看完  
+I don't have to see the whole thing,
+
+482
+00:23:25,730 --> 00:23:28,090
+只要看女儿把冰箱送给妈妈那一段
+just the part where the daughter gives the mother the refrigerator
+
+483
+00:23:28,090 --> 00:23:29,970
+-上面还系着个红蝴蝶结  -红蝴蝶结
+- with the big red bow. - ... big red bow
+
+484
+00:23:29,970 --> 00:23:31,800
+没错  还有宝丽来的广告
+Yes. The Polaroid commercial,
+
+485
+00:23:31,810 --> 00:23:34,060
+两个五岁小孩在他们祖父的生日派对上
+two 5-year-olds at their grandfather's birthday party.
+
+486
+00:23:34,060 --> 00:23:37,640
+-他们在用胶水往相册上贴照片  -太戳心了
+- They're making the album with the glue. - That kills me!
+
+487
+00:23:39,860 --> 00:23:41,470
+你应该写写这事
+You should write something about this.
+
+488
+00:23:41,690 --> 00:23:42,490
+写什么事
+About what?
+
+489
+00:23:42,830 --> 00:23:43,980
+管它算什么事  写就是了
+Whatever it is.
+
+490
+00:23:43,980 --> 00:23:45,140
+我告诉你这算什么事
+I tell you what it is:
+
+491
+00:23:45,150 --> 00:23:47,690
+两千个女人给电台打电话就为了找老公
+Two thousand women calling a radio station for a husband?
+
+492
+00:23:47,820 --> 00:23:49,910
+如今急不可耐要追寻爱情的女人真是一抓一大把
+There are a lot of desperate women out there looking for love.
+
+493
+00:23:49,910 --> 00:23:51,780
+尤其在过了某个特定的年龄之后
+Especially over a certain age.
+
+494
+00:23:51,780 --> 00:23:53,330
+你要知道  被恐怖分子杀掉的几率
+You know it's easier to be killed by a terrorist
+
+495
+00:23:53,330 --> 00:23:55,080
+都比在四十岁之后成功结婚要高
+than it is to get married over 40.
+
+496
+00:23:55,080 --> 00:23:57,080
+不是这样的  这个统计结果是假的
+That is not true. That statistic is not true.
+
+497
+00:23:57,080 --> 00:23:59,620
+确实如此  不是真的  但感觉像真的
+That's right, it's not true. But it feels true.
+
+498
+00:23:59,630 --> 00:24:01,420
+感觉像真的  因为这就是真的
+It feels true because it's true.
+
+499
+00:24:01,420 --> 00:24:02,380
+其实还有人写了本书
+There is practically a whole book
+
+500
+00:24:02,380 --> 00:24:04,090
+来论证这项统计结果有多假
+about how that statistic is not true.
+
+501
+00:24:04,090 --> 00:24:05,650
+冷静点  是你挑起的话头
+Calm down, you brought it up.
+
+502
+00:24:05,650 --> 00:24:07,220
+我才没有  怀亚特
+I did not, Wyatt.
+
+503
+00:24:07,220 --> 00:24:08,260
+你读过那本书吗
+Did you even read that book?
+
+504
+00:24:08,260 --> 00:24:10,430
+有谁读完过那本书吗
+Did anybody read that book all the way through?
+
+505
+00:24:10,430 --> 00:24:11,590
+你俩吵完了吗
+Are you two finished?
+
+506
+00:24:12,360 --> 00:24:13,840
+行  我们刚刚说到哪儿了
+Fine, now where were we?
+
+507
+00:24:14,310 --> 00:24:15,690
+如果某人是个鳏夫
+If someone's a widower,
+
+508
+00:24:15,690 --> 00:24:17,760
+为什么人们要说他是"寡居"
+why do they say that he was "widowed"?
+
+509
+00:24:17,940 --> 00:24:19,800
+为什么不说他是"鳏居"呢
+Why don't they say he was "widowered"?
+
+510
+00:24:22,480 --> 00:24:23,810
+我只是好奇罢了
+I was just wondering.
+
+511
+00:24:25,980 --> 00:24:27,360
+刚刚是怎么回事
+What was that about up there?
+
+512
+00:24:27,360 --> 00:24:28,260
+什么怎么回事
+What was what?
+
+513
+00:24:29,150 --> 00:24:30,150
+你怎么了
+What's with you?
+
+514
+00:24:30,360 --> 00:24:31,520
+我没事啊
+Nothing's with me.
+
+515
+00:24:32,660 --> 00:24:33,940
+你肯定有事
+Something's with you.
+
+516
+00:24:34,830 --> 00:24:35,840
+你什么意思
+What are you saying?
+
+517
+00:24:36,040 --> 00:24:37,740
+不管什么事  你都可以告诉我
+Whatever it is, you can tell me.
+
+518
+00:24:37,910 --> 00:24:39,410
+西雅图夜未眠先生
+Sleepless in Seattle?
+
+519
+00:24:39,410 --> 00:24:42,030
+她在节目中就这么称呼他的  因为他晚上会失眠
+That's what she called him on the show because he can't sleep.
+
+520
+00:24:42,290 --> 00:24:44,660
+于是现在有两千个女人想要他的电话号码
+And now 2000 women want his number.
+
+521
+00:24:45,380 --> 00:24:46,790
+那家伙可能是个疯子
+The guy could be a crackhead,
+
+522
+00:24:46,880 --> 00:24:51,180
+异装癖者  暴露狂  瘾君子  电锯杀人狂
+a transvestite, a flasher, a junkie, a chainsaw murderer
+
+523
+00:24:51,180 --> 00:24:54,460
+或者是个死变态  就像我家里克
+or someone really sick, someone like my Rick.
+
+524
+00:24:56,100 --> 00:24:57,760
+其实  他听上去像是个很好的人
+Actually, he sounded nice.
+
+525
+00:25:00,070 --> 00:25:02,010
+是吗
+Oh, really?
+
+526
+00:25:02,060 --> 00:25:04,560
+终于说到点子上了
+Now we're getting down to it.
+
+527
+00:25:04,860 --> 00:25:07,610
+拜托  贝琪  我正和沃尔特热恋
+Please, Becky. I'm madly in love with Walter.
+
+528
+00:25:07,610 --> 00:25:09,320
+那天晚上他做了一件超疯狂的事
+He did the craziest thing the other night.
+
+529
+00:25:09,320 --> 00:25:10,350
+是什么事来着
+What was that?
+
+530
+00:25:12,410 --> 00:25:15,650
+特别有意思  我们都笑疯了  是什么事来着
+Oh, it was so funny, we were hysterical, what was that?
+
+531
+00:25:28,510 --> 00:25:30,420
+我在想着
+You know, I was thinking,
+
+532
+00:25:30,420 --> 00:25:33,790
+我不是得去波士顿参加生物分析学家大会吗
+I've gotta go to Boston for the AAB convention, right?
+
+533
+00:25:33,800 --> 00:25:35,180
+之后我还要去温斯顿·休斯公司
+And then I gotta visit Winston-Hughes
+
+534
+00:25:35,180 --> 00:25:37,510
+谈谈更换电脑的相关事宜
+about switching over our computers...
+
+535
+00:25:38,180 --> 00:25:40,320
+我们何不在纽约见面
+Why don't we meet in New York
+
+536
+00:25:40,320 --> 00:25:42,340
+共度情人节周末呢
+for Valentine's Day weekend.
+
+537
+00:25:42,560 --> 00:25:45,050
+沃尔特  我很愿意
+Walter, I'd love to!
+
+538
+00:25:45,730 --> 00:25:47,810
+我们可以住在广场酒店
+We can stay at the Plaza.
+
+539
+00:25:48,570 --> 00:25:50,230
+在中央公园滑冰
+Ice skate in Central Park.
+
+540
+00:25:50,940 --> 00:25:52,060
+登记
+Register.
+
+541
+00:25:53,240 --> 00:25:54,400
+登记吗
+Register?
+
+542
+00:25:55,120 --> 00:25:59,530
+是啊  登记盘子  玻璃杯  银器  所有想要的礼品
+Yeah, for dishes, glasses, silver, everything.
+
+543
+00:26:02,790 --> 00:26:03,950
+怎么样
+How about it?
+
+544
+00:26:07,090 --> 00:26:09,370
+我要带你去唐人街吃点心
+I'll take you to Chinatown for dim sum.
+
+545
+00:26:09,960 --> 00:26:11,370
+里面有小麦吗
+Does it have wheat in it?
+
+546
+00:26:11,420 --> 00:26:12,540
+应该没有
+I don't think so.
+
+547
+00:26:16,430 --> 00:26:19,120
+♪点心  点心♪
+♪ Dim sum, dim sum ♪
+
+548
+00:26:21,770 --> 00:26:26,430
+十  九  八  七  六
+Ten, nine, eight, seven, six
+
+549
+00:26:26,440 --> 00:26:30,810
+五  四  三  二  一
+five, four, three, two, one.
+
+550
+00:26:30,940 --> 00:26:34,310
+乔纳  醒醒  水晶球要降落了
+Hey, Jonah, wake up, wake up. The ball's dropping.
+
+551
+00:26:30,940 --> 00:26:34,310
+{\an3}{\pos(374,247)}纽约时代广场新年夜传统
+倒计时和跨年水晶球
+
+552
+00:26:35,070 --> 00:26:36,360
+新年快乐
+Happy New Year!
+
+553
+00:26:44,080 --> 00:26:46,870
+来  我抱你
+Okay, pal. I got ya.
+
+554
+00:26:47,000 --> 00:26:48,010
+没事
+It's okay.
+
+555
+00:26:48,840 --> 00:26:50,100
+走喽
+There we go.
+
+556
+00:27:23,440 --> 00:27:24,710
+新年快乐
+Happy New Year.
+
+557
+00:27:26,080 --> 00:27:27,460
+新年快乐
+Happy New Year.
+
+558
+00:27:31,390 --> 00:27:32,630
+给霍华德一个晚安吻
+Kiss Howard.
+
+559
+00:27:33,650 --> 00:27:34,870
+晚安  霍华德
+Good night, Howard.
+
+560
+00:27:50,080 --> 00:27:55,070
+{\an9}♪有时我会想♪
+♪ Sometimes I wonder ♪
+
+561
+00:27:55,520 --> 00:27:58,130
+{\an9}♪我为何♪
+♪ why I spend ♪
+
+562
+00:27:58,660 --> 00:28:02,950
+{\an9}♪用许多孤独的夜♪
+♪ the lonely nights ♪
+
+563
+00:28:03,070 --> 00:28:05,730
+{\an9}♪去想一首歌♪
+♪ dreaming of a song ♪
+
+564
+00:28:06,660 --> 00:28:09,270
+{\an9}♪那旋律♪
+♪ The melody ♪
+
+565
+00:28:09,320 --> 00:28:11,890
+{\an9}♪萦绕在我的幻想中♪
+♪ haunts my reverie ♪
+
+566
+00:28:13,040 --> 00:28:17,440
+{\an9}♪让我再次伴你身旁♪
+♪ And I am once again with you ♪
+
+567
+00:28:18,310 --> 00:28:21,300
+{\an9}♪当你我初恋♪
+♪ When our love was new ♪
+
+568
+00:28:23,580 --> 00:28:27,130
+{\an9}♪每个吻都妙不可言♪
+♪ And each kiss an inspiration ♪
+
+569
+00:28:31,040 --> 00:28:34,220
+{\an9}♪但那已是多年以前♪
+♪ But that was long ago ♪
+
+570
+00:28:35,250 --> 00:28:38,000
+{\an9}♪如今我的慰藉♪
+♪ Now my consolation ♪
+
+571
+00:28:38,420 --> 00:28:42,790
+{\an9}♪在一曲星尘之中♪
+♪ is in the stardust of a song ♪
+
+572
+00:28:43,840 --> 00:28:48,820
+{\an9}♪在花园的围墙边♪
+♪ Beside a garden wall ♪
+
+573
+00:28:49,590 --> 00:28:53,020
+{\an9}♪当星星仍闪烁♪
+♪ When stars are bright ♪
+
+574
+00:28:53,920 --> 00:28:57,180
+{\an9}♪我拥你入怀♪
+♪ you are in my arms ♪
+
+575
+00:28:57,600 --> 00:28:59,970
+{\an9}♪夜莺啼声婉转♪
+♪ The nightingale ♪
+
+576
+00:29:00,500 --> 00:29:03,380
+{\an9}♪诉说他的童话♪
+♪ tells his fairytale ♪
+
+577
+00:29:03,990 --> 00:29:08,050
+{\an9}♪关于盛开着玫瑰的天堂♪
+♪ of paradise where roses grew ♪
+
+578
+00:29:08,050 --> 00:29:09,480
+我能喝一半你的啤酒吗
+Can I have half your beer?
+
+579
+00:29:11,170 --> 00:29:12,700
+能啊  喝吧
+Sure, go ahead.
+
+580
+00:29:15,570 --> 00:29:17,130
+我以前经常怎么说的来着
+What did I used to say?
+
+581
+00:29:18,600 --> 00:29:19,930
+"这杯敬你"
+"Here's looking at you"?
+
+582
+00:29:20,960 --> 00:29:22,340
+"干杯"
+"Here's mud in your eye."
+
+583
+00:29:22,930 --> 00:29:24,180
+"敬我们"
+"Here's to us."
+
+584
+00:29:26,430 --> 00:29:28,450
+你以前经常说的是  "敬我们"
+You used to say, "Here's to us."
+
+585
+00:29:33,200 --> 00:29:34,600
+亲爱的
+Oh, babe.
+
+586
+00:29:34,840 --> 00:29:36,580
+我想你想到心痛
+I miss you so much it hurts.
+
+587
+00:29:54,990 --> 00:29:56,960
+-你要干什么  -等他来的时候告诉他
+- What do you wanna do? - Well, tell him, tell him when he gets here.
+
+588
+00:29:56,960 --> 00:29:59,230
+-你想告诉他吗  我不介意  -你能告诉他吗
+- You want to tell him? I don't mind telling him. - You can tell him?
+
+589
+00:29:59,430 --> 00:30:01,390
+-她来了 -她回来了  她有别的想法
+- She's here. - She's back. She has another idea.
+
+590
+00:30:01,390 --> 00:30:02,740
+-别走别走  -我可没这功夫
+- No, no, no. - I don't need this.
+
+591
+00:30:02,740 --> 00:30:05,230
+-萨姆  很高兴你来了  -你还好吗  克莱尔
+- Sam, I'm so glad you're here. - Claire, how are you?
+
+592
+00:30:05,230 --> 00:30:08,810
+我听到你在节目里说的话了  我已经跟大家说了
+I heard you on the radio. I told everyone about it.
+
+593
+00:30:08,810 --> 00:30:11,070
+-我们已经知道了  -你们是怎么...
+- We already knew. - How did you...?
+
+594
+00:30:11,070 --> 00:30:12,670
+-格蕾丝  -那个调度员
+- Grace. - The dispatcher?
+
+595
+00:30:12,670 --> 00:30:14,090
+-没错  -那全西雅图都知道了
+- Yeah. - All of Seattle knows.
+
+596
+00:30:14,090 --> 00:30:16,590
+我当时正在刷牙  忽然我就听到了你的声音
+I was brushing my teeth and, suddenly, there you were.
+
+597
+00:30:16,590 --> 00:30:17,680
+我不敢相信自己的耳朵
+I just couldn't believe my ears.
+
+598
+00:30:17,680 --> 00:30:19,770
+我给我妈打了电话  她在拉斯维加斯
+I called my mother in Las Vegas.
+
+599
+00:30:19,770 --> 00:30:22,510
+我说  "妈  打开收音机
+I said, "Mother, turn on the radio.
+
+600
+00:30:22,510 --> 00:30:24,710
+节目里的人是我的建筑师"
+That's my architect."
+
+601
+00:30:24,710 --> 00:30:30,990
+一个男人能吐露内心的感受真的很好
+You know, it's so nice when a man can express his feelings.
+
+602
+00:30:30,990 --> 00:30:33,680
+-真的很棒  -没错  我也希望自己能表达内心
+- It's wonderful. - Yeah, I wish I could express my feelings.
+
+603
+00:30:33,680 --> 00:30:35,590
+那么  克莱尔  有什么问题吗
+So, Claire, is there a problem?
+
+604
+00:30:35,590 --> 00:30:37,950
+昨晚我辗转反侧
+I was tossing and turning last night.
+
+605
+00:30:38,050 --> 00:30:39,370
+你知道那是什么感觉  萨姆
+You know what that's like, Sam.
+
+606
+00:30:39,370 --> 00:30:42,830
+因为我意识到我们订的那个冰箱
+Because I realise I'm never going to fit my platters
+
+607
+00:30:42,830 --> 00:30:44,810
+绝对装不下我那些大盘子
+in that refrigerator we ordered.
+
+608
+00:30:44,810 --> 00:30:46,820
+当我办派对时  总是会用大盘子
+And when I give parties, I always put in platters.
+
+609
+00:30:46,820 --> 00:30:49,680
+所以我觉得还是订零下的那个冰箱好了
+So I thought I would get the sub-zero refrigerator instead.
+
+610
+00:30:49,680 --> 00:30:50,540
+唯一的问题就是...
+And the only problem...
+
+611
+00:30:50,540 --> 00:30:53,000
+我们得重做所有的橱柜
+We have to redo all the cabinets.
+
+612
+00:30:53,000 --> 00:30:55,110
+我们得...  得打进这堵墙
+We're gonna... We'll be into this wall.
+
+613
+00:30:55,110 --> 00:30:57,890
+-那是承重墙  -克莱尔  那样就得延工...
+- That's bearing wall. - That's a delay, Claire, of...
+
+614
+00:30:58,530 --> 00:31:00,820
+-两  三...  -五  六...
+- Two, three... - Five, six...
+
+615
+00:31:00,820 --> 00:31:02,450
+-十二周  -我不介意
+- Twelve weeks. - I don't mind.
+
+616
+00:31:02,450 --> 00:31:05,160
+重要的是搞定这事
+The important thing is to get it right.
+
+617
+00:31:05,160 --> 00:31:06,870
+-保证搞定  -你说话要算话
+- Absolutely. - Your words.
+
+618
+00:31:06,870 --> 00:31:09,820
+我得走了  室内装潢师来电话了
+Oh, I've gotta rush. La décorateur calls.
+
+619
+00:31:09,880 --> 00:31:12,050
+-再见  -再见
+- Bye. - Bye.
+
+620
+00:31:15,850 --> 00:31:17,140
+这就是命运
+Well, this is fate.
+
+621
+00:31:17,320 --> 00:31:18,180
+她离婚了
+She's divorced,
+
+622
+00:31:18,180 --> 00:31:20,790
+我们不想重做橱柜  而你缺个老婆
+we don't wanna redo the cabinets, and you need a wife.
+
+623
+00:31:20,790 --> 00:31:23,390
+当这一切交织在一起时  那叫什么来着
+What do they call that, when everything intersects?
+
+624
+00:31:23,390 --> 00:31:24,970
+百慕大三角
+The Bermuda Triangle.
+
+625
+00:31:34,820 --> 00:31:37,760
+还有一个  你还拿得下吗
+And here's another one. Do you got room for one more here?
+
+626
+00:31:38,740 --> 00:31:40,450
+给你  在这签名
+Here you go. Right there.
+
+627
+00:31:40,450 --> 00:31:42,130
+看看  爸爸  这些都是寄给你的
+Look at this, Dad. They're all for you.
+
+628
+00:31:42,130 --> 00:31:43,530
+没错  先生  拿着
+Yes, sir. Here you go.
+
+629
+00:31:47,830 --> 00:31:48,900
+"西雅图夜未眠先生"
+"Sleepless in Seattle,"
+
+630
+00:31:48,900 --> 00:31:50,450
+玛夏·菲尔斯通医生转交
+C/o Dr. Marcia Fieldstone.
+
+631
+00:31:50,450 --> 00:31:52,720
+如果你睡不着  你可以试试
+If you're having trouble sleeping, you might wanna try
+
+632
+00:31:52,720 --> 00:31:55,290
+从杯子远离嘴的那面喝水
+drinking a glass of water from the other side.
+
+633
+00:31:55,360 --> 00:31:57,840
+-我还以为这办法是用来治打嗝的  -能治打嗝吗
+- I thought that was for hiccups. - Does it work for hiccups?
+
+634
+00:31:57,840 --> 00:31:59,850
+要治打嗝的话  舀一勺糖
+For hiccups, take a spoonful of sugar,
+
+635
+00:31:59,850 --> 00:32:01,580
+含在嘴里一分钟
+hold it in your mouth for a minute.
+
+636
+00:32:01,580 --> 00:32:02,570
+真的吗
+Really?
+
+637
+00:32:03,360 --> 00:32:04,400
+谢谢
+Thank you.
+
+638
+00:32:05,570 --> 00:32:07,920
+你为什么把我们的地址给他们
+What possessed you to give them our address?
+
+639
+00:32:07,920 --> 00:32:09,820
+他们打电话过来问了
+They called and asked for it.
+
+640
+00:32:11,710 --> 00:32:13,370
+"亲爱的西雅图夜未眠先生
+"Dear Sleepless in Seattle
+
+641
+00:32:13,370 --> 00:32:17,380
+你是我听过的最有魅力的男人"
+you're the most attractive man I ever lay ears on."
+
+642
+00:32:17,380 --> 00:32:19,570
+等等  他们打电话来了
+Wait, wait, wait. They called?
+
+643
+00:32:19,710 --> 00:32:21,020
+他们怎么会有我们的电话号码
+How did they get our number?
+
+644
+00:32:21,030 --> 00:32:23,150
+让我猜猜  你告诉他们的
+Oh, let me guess. You gave it to them.
+
+645
+00:32:23,150 --> 00:32:24,380
+你必须把电话号码给他们
+You have to give them your phone number
+
+646
+00:32:24,380 --> 00:32:26,210
+否则就不让你上节目
+or they won't let you on the air.
+
+647
+00:32:26,210 --> 00:32:29,240
+"亲爱的西雅图夜未眠先生  我住在塔尔萨"
+"Dear Sleepless in Seattle. I live in Tulsa."
+
+648
+00:32:29,360 --> 00:32:30,460
+那地方在哪里
+Where's that?
+
+649
+00:32:31,000 --> 00:32:32,380
+在俄克拉荷马州
+It's in Oklahoma.
+
+650
+00:32:32,850 --> 00:32:35,790
+-你知道俄克拉荷马在哪吗  -中部某个地方吧
+- You know where Oklahoma is? - Somewhere in the middle.
+
+651
+00:32:36,110 --> 00:32:37,070
+我都不愿意去想
+I'm not even gonna think
+
+652
+00:32:37,070 --> 00:32:38,850
+学校到底有多少东西没教你
+about what they're not teaching you in school.
+
+653
+00:32:38,850 --> 00:32:40,060
+我都不愿意去想
+I'm not even gonna think about it.
+
+654
+00:32:40,060 --> 00:32:42,060
+没错  是在中部某个地方  总的来说
+Yeah, somewhere in the middle. And, generally speaking
+
+655
+00:32:42,060 --> 00:32:46,280
+我们应该排除任何不住在这附近的人
+I think we should rule out anyone that doesn't live near here.
+
+656
+00:32:47,030 --> 00:32:48,990
+她愿意飞到任何地方
+She's willing to fly anywhere.
+
+657
+00:32:51,020 --> 00:32:52,750
+她长得像我三年级的老师
+She looks like my third-grade teacher.
+
+658
+00:32:52,760 --> 00:32:54,130
+我讨厌我三年级的老师
+I hated my third-grade teacher.
+
+659
+00:32:54,130 --> 00:32:55,040
+等等
+Wait a minute.
+
+660
+00:32:55,040 --> 00:32:57,230
+她就是我三年级的老师
+She is my third-grade teacher!
+
+661
+00:32:58,320 --> 00:32:59,830
+这些信你一封都不打算看吗
+Aren't you gonna read any of these?
+
+662
+00:32:59,830 --> 00:33:01,980
+不打算  因为事不是这样办的
+No. Cause this is not how it's done.
+
+663
+00:33:02,800 --> 00:33:03,930
+我更愿意
+I'd much rather just
+
+664
+00:33:04,720 --> 00:33:06,150
+见见我喜欢的人
+see somebody I like
+
+665
+00:33:07,150 --> 00:33:08,790
+面对面地感受她们
+and get a feeling about them,
+
+666
+00:33:09,590 --> 00:33:11,630
+问问她们想不想出去喝一杯
+ask them if they wanna have a drink.
+
+667
+00:33:11,830 --> 00:33:13,840
+-或者吃点披萨  -不吃晚餐
+- Or a slice of pizza? - Not dinner.
+
+668
+00:33:13,840 --> 00:33:15,270
+初次约会不一定要共进晚餐
+Not necessarily on the first date,
+
+669
+00:33:15,270 --> 00:33:16,130
+因为晚餐吃到一半
+because halfway through dinner,
+
+670
+00:33:16,130 --> 00:33:18,430
+你可能会很后悔约对方共进晚餐
+you could be really sorry you asked them to dinner.
+
+671
+00:33:18,430 --> 00:33:20,140
+不过  如果只是喝一杯的话
+Whereas, if it's just a drink
+
+672
+00:33:20,430 --> 00:33:22,770
+如果你喜欢对方  总有机会邀请她共进晚餐
+if you like them, you can always ask them to dinner.
+
+673
+00:33:22,770 --> 00:33:24,000
+但如果没感觉  你也可以直接说
+But if not, you can just say,
+
+674
+00:33:24,000 --> 00:33:25,730
+"嗯  今晚挺不错的"
+"Well, that was great,"
+
+675
+00:33:25,730 --> 00:33:27,070
+然后就各回各家
+And then you go home.
+
+676
+00:33:27,350 --> 00:33:28,610
+懂我的意思了吗
+You see what I mean?
+
+677
+00:33:30,970 --> 00:33:33,040
+我很好奇现在的约会方式还是不是这样
+I wonder if it still works this way.
+
+678
+00:33:33,050 --> 00:33:34,990
+不是了  女孩子会主动邀请你 
+It doesn't. They ask you.
+
+679
+00:33:34,990 --> 00:33:36,820
+我开始注意到了
+I'm starting to notice that.
+
+680
+00:33:37,360 --> 00:33:40,270
+如果你娶了个新老婆  你应该会跟她上床吧
+If you get a new wife, I guess you'll have sex with her, huh?
+
+681
+00:33:41,830 --> 00:33:43,160
+我当然希望如此
+I certainly hope so.
+
+682
+00:33:44,370 --> 00:33:45,960
+她会抓你的背吗
+Will she scratch up your back?
+
+683
+00:33:46,700 --> 00:33:47,740
+什么
+What?
+
+684
+00:33:48,820 --> 00:33:51,810
+电影里  女人总是抓着男人的背尖叫
+In movies, women always scratch up the man's back and screaming.
+
+685
+00:33:51,810 --> 00:33:53,630
+他们上床时就会这样
+Stuff when they are having sex.
+
+686
+00:33:53,630 --> 00:33:54,390
+你怎么会知道
+How do you know this?
+
+687
+00:33:54,810 --> 00:33:56,290
+杰德家有有线电视
+Jed's got cable.
+
+688
+00:33:56,740 --> 00:33:58,070
+杰德家有...
+Oh, Jed's got...
+
+689
+00:34:00,820 --> 00:34:02,360
+把你身后那条毛巾递给我
+Hand me that towel behind you.
+
+690
+00:34:07,990 --> 00:34:10,050
+-谢谢  -我也得擦擦
+- Thank you. - I need it too.
+
+691
+00:34:10,050 --> 00:34:11,380
+来  我来帮你擦
+Here, let me get you.
+
+692
+00:34:12,060 --> 00:34:14,310
+"杰德家有有线电视"  来吧
+"Jed's got cable!" Come on.
+
+693
+00:34:14,310 --> 00:34:18,730
+{\an9}♪又一对新婚夫妇♪
+♪ Another bride, another groom ♪
+
+694
+00:34:19,370 --> 00:34:24,260
+{\an9}♪又一个阳光灿烂的蜜月♪
+♪ Another sunny honeymoon ♪
+
+695
+00:34:24,840 --> 00:34:30,280
+{\an9}♪又一个季节  又一个理由♪
+♪ Another season, another reason ♪
+
+696
+00:34:30,280 --> 00:34:32,840
+{\an9}♪来寻欢作乐♪
+♪ For makin' whoopee ♪
+
+697
+00:34:47,390 --> 00:34:52,290
+{\an9}♪当午后艳阳高照♪
+♪ When the sun is high in the afternoon sky ♪
+
+698
+00:34:52,290 --> 00:34:56,880
+{\an9}♪你总能让自己忙碌起来♪
+♪ You can always find something to do ♪
+
+699
+00:34:57,210 --> 00:35:02,220
+{\an9}♪但从早到晚  时钟滴答♪
+♪ But from dusk till dawn as the clock ticks on ♪
+
+700
+00:35:02,760 --> 00:35:09,530
+{\an9}♪有些事悄然发生♪
+♪ Something happens to you ♪
+
+701
+00:35:09,680 --> 00:35:16,860
+{\an9}♪在凌晨时分♪
+♪ In the wee small hours of the morning ♪
+
+702
+00:35:17,950 --> 00:35:24,500
+{\an9}♪那时全世界仍在安睡♪
+♪ While the whole wide world is fast asleep ♪
+
+703
+00:35:25,870 --> 00:35:29,760
+{\an9}♪你独自清醒♪
+♪ You lie awake ♪
+
+704
+00:35:29,760 --> 00:35:33,490
+{\an9}♪想着那个男孩♪
+♪ And think about the boy ♪
+
+705
+00:35:33,870 --> 00:35:42,090
+{\an9}♪也没想过要数羊来使自己入睡♪
+♪ And never ever think of counting sheep ♪
+
+706
+00:35:42,090 --> 00:35:44,490
+欢迎回到玛夏·菲尔斯通医生的节目精选集
+Welcome back to the best of Dr. Marcia Fieldstone
+
+707
+00:35:44,500 --> 00:35:47,300
+她是一位临床心理学家  也是你从未有过的挚友
+clinical psychologist and the friend you never had.
+
+708
+00:35:47,300 --> 00:35:49,250
+还记得迈阿密的孤独小姐吗
+Remember Marooned in Miami?
+
+709
+00:35:49,290 --> 00:35:51,270
+他说他不再爱我了
+He says he doesn't love me anymore.
+
+710
+00:35:51,540 --> 00:35:54,340
+你为什么会想和一个不爱你的人在一起
+Why would you wanna be with someone who doesn't love you?
+
+711
+00:35:54,790 --> 00:35:56,410
+丹佛的失望女士
+Disappointed in Denver.
+
+712
+00:35:56,540 --> 00:35:58,490
+每次我快高潮的时候
+Every time I come close to orgasm,
+
+713
+00:35:58,490 --> 00:36:00,760
+他都会抽身去给自己做三明治吃
+he goes to make himself a sandwich.
+
+714
+00:36:00,760 --> 00:36:02,850
+你为什么不提前给他做个三明治呢
+Why don't you make him a sandwich beforehand.
+
+715
+00:36:02,850 --> 00:36:04,880
+西雅图的夜未眠先生
+Sleepless in Seattle.
+
+716
+00:36:04,910 --> 00:36:09,280
+我打算每天早上起床
+Well, I'm going to get out of bed every morning.
+
+717
+00:36:10,610 --> 00:36:13,070
+一整天都保持呼吸
+Breathe in and out all day long.
+
+718
+00:36:14,360 --> 00:36:18,670
+一段时间过后  我就不必再提醒自己
+And then after a while, I won't have to remind myself
+
+719
+00:36:18,670 --> 00:36:22,740
+每天早上要起床  要保持呼吸
+to get out of bed every morning and breathe in and out.
+
+720
+00:36:25,590 --> 00:36:28,040
+再过一段时间  我就不会再想着
+And then after a while, I won't have to think about
+
+721
+00:36:28,040 --> 00:36:33,260
+我也曾拥有过一段精彩而完美的人生
+how I had it great and perfect for a while.
+
+722
+00:36:34,580 --> 00:36:37,900
+萨姆  告诉我你的妻子究竟有何特别之处
+Sam, tell me what was so special about your wife?
+
+723
+00:36:39,380 --> 00:36:41,080
+你的节目有多长时间
+Well, how long is your programme?
+
+724
+00:36:43,920 --> 00:36:46,400
+其实...
+Oh, well, it was...
+
+725
+00:36:47,440 --> 00:36:49,520
+其实是无数件小事
+Oh, it was a million tiny, little things.
+
+726
+00:36:49,520 --> 00:36:51,320
+当这些小事积少成多
+When you added them all up
+
+727
+00:36:51,990 --> 00:36:54,050
+这就意味着我们注定在一起
+it just meant that we were supposed to be together.
+
+728
+00:36:54,670 --> 00:36:55,970
+我知道
+And I knew it.
+
+729
+00:36:56,290 --> 00:36:58,550
+当我第一次触碰她时我就知道了
+I knew it the first time I touched her.
+
+730
+00:36:59,650 --> 00:37:01,150
+感觉就像回家
+It was like coming home,
+
+731
+00:37:02,090 --> 00:37:04,660
+我不曾知晓的那个家
+only to no home I'd ever known.
+
+732
+00:37:05,210 --> 00:37:07,230
+我当时只是牵着她的手
+I was just taking her hand,
+
+733
+00:37:08,340 --> 00:37:10,070
+扶她下车
+to help her out of a car.
+
+734
+00:37:12,180 --> 00:37:13,430
+然后我就知道了
+And I knew it.
+
+735
+00:37:14,360 --> 00:37:15,540
+那感觉就像
+It was like...
+
+736
+00:37:17,110 --> 00:37:18,570
+魔法
+Magic.
+
+737
+00:37:40,550 --> 00:37:41,780
+我觉得我要疯了
+Well, I think I'm going crazy,
+
+738
+00:37:41,780 --> 00:37:44,250
+丹尼斯  我真的快疯了  你的婚姻幸福吗
+Dennis. I really do. Are you happily married?
+
+739
+00:37:44,500 --> 00:37:46,150
+-什么  -我是说...
+- What? - I mean...
+
+740
+00:37:46,650 --> 00:37:50,490
+你为什么要结婚  是因为那些乐队和烟火吗
+Why did you get married? Was it all trumpets and fireworks?
+
+741
+00:37:50,740 --> 00:37:53,910
+我结婚是因为贝琪说我们要么分手要么结婚
+I got married because Betsy said we had to break up or get married.
+
+742
+00:37:53,920 --> 00:37:55,130
+于是我们就结婚了
+So we got married.
+
+743
+00:37:55,880 --> 00:37:57,620
+但当你初次遇见她时
+But when you first met her,
+
+744
+00:37:57,620 --> 00:37:59,820
+你相不相信她就是你的真命天女
+did you believe that she was the only person for you,
+
+745
+00:37:59,830 --> 00:38:03,620
+而这一切都是命运神秘的安排
+that in some mystical, cosmic way it was fated?
+
+746
+00:38:03,980 --> 00:38:05,070
+安妮
+Annie,
+
+747
+00:38:05,840 --> 00:38:08,950
+当你被某人吸引  只能说在潜意识中
+when you're attracted to someone, it means your subconscious
+
+748
+00:38:08,950 --> 00:38:11,870
+你的潜意识被他们的潜意识吸引了
+is attracted to their subconscious, subconsciously.
+
+749
+00:38:12,220 --> 00:38:13,530
+我们所认为的命运
+What we think of as fate is
+
+750
+00:38:13,530 --> 00:38:16,130
+不过是两个疯子觉得他们是天造地设的一对罢了
+just two neuroses knowing they're a perfect match.
+
+751
+00:38:17,860 --> 00:38:19,120
+我甚至都不认识他
+I don't even know him.
+
+752
+00:38:19,340 --> 00:38:24,270
+我在幻想一个我未曾谋面的男人
+I'm having all of these fantasies about some man I've never even met,
+
+753
+00:38:24,270 --> 00:38:26,300
+他还住在西雅图
+who lives in Seattle!
+
+754
+00:38:26,490 --> 00:38:28,560
+西雅图一年之中有九个月都在下雨
+It rains nine months of the year in Seattle.
+
+755
+00:38:28,560 --> 00:38:30,600
+我知道  我知道
+I know. I know.
+
+756
+00:38:30,600 --> 00:38:32,700
+我不想搬去西雅图
+I do not wanna move to Seattle.
+
+757
+00:38:36,420 --> 00:38:38,300
+但我真正不希望的
+But what I really don't wanna do
+
+758
+00:38:38,360 --> 00:38:40,910
+是总幻想着可能会发生的一切
+is end up always wondering what might've happened
+
+759
+00:38:40,920 --> 00:38:42,820
+并明知自己本可以做些什么
+and knowing I could've done something.
+
+760
+00:38:43,280 --> 00:38:44,470
+你怎么看
+What do you think?
+
+761
+00:38:45,630 --> 00:38:47,560
+我只是临阵退缩  不是吗
+It's just cold feet, isn't it?
+
+762
+00:38:47,560 --> 00:38:49,760
+每个人在结婚前都会恐慌
+Everybody panics before they get married.
+
+763
+00:38:49,760 --> 00:38:50,700
+难道你没有过吗
+I mean, didn't you?
+
+764
+00:38:51,570 --> 00:38:52,370
+我有过
+Yes, I did.
+
+765
+00:38:52,670 --> 00:38:54,540
+没错  你有过  多谢你了  丹尼斯
+Yes, you did. Thank you very much, Dennis.
+
+766
+00:38:54,540 --> 00:38:57,380
+把这些话说出来之后我觉得好多了
+I feel so much better just having blown this off.
+
+767
+00:38:57,380 --> 00:38:58,440
+随时效劳
+Anytime.
+
+768
+00:38:58,870 --> 00:39:02,190
+桑迪有个闺蜜  格伦达  她是个举重运动员
+Sandy has a girlfriend, Glenda. She's a weightlifter.
+
+769
+00:39:02,360 --> 00:39:04,350
+那姑娘可不是什么脑袋大脖子粗的货色...
+Alright, it's not like her neck is bigger than her head...
+
+770
+00:39:04,350 --> 00:39:06,540
+不不不  我不是让你帮我介绍对象
+No, I'm not asking you to set me up.
+
+771
+00:39:06,540 --> 00:39:08,480
+我不需要你帮那种忙
+I don't need your help with that.
+
+772
+00:39:08,480 --> 00:39:11,620
+我只是想知道  现在的情场是怎样的
+I wanna know what it's like, you know, out there.
+
+773
+00:39:11,620 --> 00:39:12,750
+我就是想告诉你这个
+That's what I'm trying to tell you
+
+774
+00:39:12,750 --> 00:39:15,650
+女人们寻求的是什么  胸肌和翘臀
+what women are looking for: Pecs and a cute butt.
+
+775
+00:39:16,810 --> 00:39:19,490
+-比如"他的屁股超翘"吗  -没错
+- Well, you mean like, "He has the cutest butt." - Yeah.
+
+776
+00:39:19,490 --> 00:39:22,070
+-我最近是从哪儿听来的这话  -到处都在说
+- Where did I hear that recently? - Everywhere.
+
+777
+00:39:22,430 --> 00:39:24,530
+这年头你开个电视
+You can't even turn on the news nowadays
+
+778
+00:39:24,530 --> 00:39:28,090
+都免不了听见某些姑娘对男人的屁股评头论足
+without hearing some babe thought some guy's butt was cute.
+
+779
+00:39:28,100 --> 00:39:29,580
+我不知道是哪个女人起的头
+Who the first woman to say this was, I don't know,
+
+780
+00:39:29,580 --> 00:39:31,140
+但这话莫名其妙就火了
+but somehow it caught on.
+
+781
+00:39:31,660 --> 00:39:33,020
+那么我的屁股如何
+So how's my butt?
+
+782
+00:39:36,700 --> 00:39:38,230
+-还不错  -是吗
+- Not bad. - Really?
+
+783
+00:39:38,230 --> 00:39:39,840
+-是啊  -不过算得上翘吗
+- Yeah. - Is it cute though?
+
+784
+00:39:39,970 --> 00:39:42,570
+我不知道  是按曲线打分的吗
+I don't know. Are we grading on a curve?
+
+785
+00:39:43,850 --> 00:39:45,680
+你上次和人约会是什么时候
+When was the last time you were out there?
+
+786
+00:39:49,470 --> 00:39:51,900
+吉米·卡特当总统的时候  1978年
+Jimmy Carter, 1978.
+
+787
+00:39:53,410 --> 00:39:55,280
+现在情况有些不同了
+Things are a little different now.
+
+788
+00:39:55,820 --> 00:39:57,160
+首先  你们得做朋友
+First, you have to be friends.
+
+789
+00:39:57,420 --> 00:39:58,990
+你们得喜欢彼此
+You have to like each other.
+
+790
+00:39:59,400 --> 00:40:00,640
+然后你们会拥吻
+Then you neck.
+
+791
+00:40:00,640 --> 00:40:02,720
+这个阶段可能会持续好几年
+This could go on for years.
+
+792
+00:40:03,320 --> 00:40:06,260
+然后你们要去体检  接着你就可以戴套和她上床
+Then you have tests, then you get to do it with a condom.
+
+793
+00:40:06,340 --> 00:40:08,550
+好消息就是大家各付各的帐
+The good news is you split the cheque.
+
+794
+00:40:09,010 --> 00:40:11,600
+我觉得我是不会让女士付晚餐钱的
+I don't think I could let a woman pay for dinner.
+
+795
+00:40:11,630 --> 00:40:14,300
+真棒  她们会为你举办一个游行
+Great! They'll throw a parade in your honour.
+
+796
+00:40:14,300 --> 00:40:16,590
+你会是《西雅图杂志》上的年度男士
+You'll be Man of the Year in Seattle Magazine.
+
+797
+00:40:18,690 --> 00:40:20,110
+提拉米苏
+Tiramisu.
+
+798
+00:40:20,620 --> 00:40:23,100
+-什么是提拉米苏  -你会知道的
+- What is tiramisu? - You'll find out.
+
+799
+00:40:23,660 --> 00:40:25,460
+-到底是什么  -你会明白的
+- Well, what is it? - You'll see.
+
+800
+00:40:25,460 --> 00:40:27,150
+如果某个女人想让我对她做那个
+Some woman is gonna want me to do it to her,
+
+801
+00:40:27,150 --> 00:40:28,580
+但我却不知道那是什么  那怎么办
+and I'm not gonna know what it is.
+
+802
+00:40:28,630 --> 00:40:29,750
+你会喜欢的
+You'll love it.
+
+803
+00:40:30,720 --> 00:40:32,310
+这太难了
+Oh, this is gonna be tough.
+
+804
+00:40:32,840 --> 00:40:35,570
+太难了  太难了  重返情场比我想的要难多了
+Tough, tough. It's gonna be much tougher than I thought.
+
+805
+00:40:35,900 --> 00:40:38,710
+你觉得本内特雇的那个装潢师怎么样
+What about that decorator on the Bennett job?
+
+806
+00:40:39,070 --> 00:40:41,020
+-维多利亚吗  -没错  她很活泼
+- Victoria? - Yeah. She's perky.
+
+807
+00:40:42,550 --> 00:40:44,460
+-不  我不...  -怎么了
+- Oh, no, I don't... - What?
+
+808
+00:40:44,460 --> 00:40:46,610
+-这根本就不是我的风格  -什么  不
+- That's not I'm way. I'm far away from that. - What? No.
+
+809
+00:40:46,610 --> 00:40:48,850
+-我目前只是在收集信息...  -信息
+- I'm just assembling notes. I'm not... - Notes.
+
+810
+00:40:48,860 --> 00:40:50,790
+-我要怎么办  -什么叫你要怎么办
+- How would I do that? - What do you mean how do you do?
+
+811
+00:40:50,790 --> 00:40:51,400
+你给她打电话
+You call her up.
+
+812
+00:40:51,400 --> 00:40:53,680
+你就说  "我们见个面  看一下颜色板"
+You say, "Come, let's get together. We'll look at swatches."
+
+813
+00:40:53,680 --> 00:40:54,560
+给她打电话
+Call her on the phone
+
+814
+00:40:54,980 --> 00:40:56,520
+说  "来  我们看一下颜色板"
+to say, "Come, let's look at swatches"?
+
+815
+00:40:56,520 --> 00:40:57,830
+对啊  配色方案嘛
+Yeah, you know, colour schemes.
+
+816
+00:40:57,830 --> 00:40:59,310
+她难道不会看穿我的企图吗
+She's not gonna see right through that?
+
+817
+00:40:59,310 --> 00:41:00,690
+不  你不必学我的招数
+No, you don't do it like I do it.
+
+818
+00:41:00,690 --> 00:41:02,930
+你可以用你自己的那种温和方式
+You do it in your own suave way.
+
+819
+00:41:02,930 --> 00:41:04,670
+想想加里·格兰特[著名男演员]Think Cary Grant.
+
+820
+00:41:05,160 --> 00:41:07,520
+-加里·格兰特会打电话说...  -想想加里·格兰特
+- Cary Grant would call up and say, - Think Cary Grant.
+
+821
+00:41:07,520 --> 00:41:09,120
+-"过来看一下我的颜色板"吗  -拜托
+- "Come over and look at my swatches"? - Hello.
+
+822
+00:41:09,120 --> 00:41:10,250
+你怎么知道  也许他会呢
+How do you know? Maybe he did.
+
+823
+00:41:10,250 --> 00:41:12,480
+-他没有这么做  -我知道他没有在电影里这么做
+- He didn't do it. - I know he didn't do it in the movies.
+
+824
+00:41:12,480 --> 00:41:14,490
+-你是说《古庙战笳声》吗  他没有...  -不是
+- Gunga Din? He didn't call...? - No.
+
+825
+00:41:14,490 --> 00:41:17,420
+《古庙战笳声》不是那种爱情电影
+Gunga Din is not a swatch kind of movie.
+
+826
+00:41:17,780 --> 00:41:18,920
+谁知道他在现实生活中会怎么做
+Who knows what he did in real life.
+
+827
+00:41:19,210 --> 00:41:21,390
+但他对黛恩·坎农用了这招吗
+But he did that with Dyan Cannon?
+
+828
+00:41:19,210 --> 00:41:21,390
+{\an3}{\pos(374,247)}美国女演员  加里·格兰特前妻
+
+829
+00:41:21,390 --> 00:41:22,390
+可不是嘛
+Yeah, sure.
+
+830
+00:41:22,390 --> 00:41:24,940
+"你好  黛恩  来看看这些颜色板吧"
+"Hello, Dyan! Take a look at these swatches."
+
+831
+00:41:43,790 --> 00:41:45,210
+乔纳  我回来了
+Jonah, I'm home!
+
+832
+00:41:48,960 --> 00:41:50,330
+乔纳
+Hey, Jonah!
+
+833
+00:41:57,810 --> 00:41:58,930
+乔纳
+Jonah?
+
+834
+00:42:01,960 --> 00:42:03,180
+乔纳
+Hey, Jonah.
+
+835
+00:42:05,410 --> 00:42:06,540
+乔纳  人呢
+Hey, Jonah.
+
+836
+00:42:09,710 --> 00:42:11,460
+爸爸  这位是杰西卡
+Hi, Dad. This is Jessica.
+
+837
+00:42:13,600 --> 00:42:15,960
+很高兴认识你  杰西卡
+Well, it's nice to meet you, Jessica.
+
+838
+00:42:16,150 --> 00:42:17,720
+爸爸  这真的太不可思议了
+Dad, this is amazing.
+
+839
+00:42:17,720 --> 00:42:20,420
+如果你倒着放这张碟  听上去就像"保罗死了"
+If you play this backwards, it says "Paul is dead."
+
+840
+00:42:21,300 --> 00:42:23,710
+对  没错  我知道
+Yeah, yeah. I know.
+
+841
+00:42:24,490 --> 00:42:25,740
+你怎么会知道
+How do you know?
+
+842
+00:42:28,030 --> 00:42:29,890
+爸爸  你能把门关上吗
+Dad, could you shut the door?
+
+843
+00:42:30,560 --> 00:42:32,910
+当然  当然
+Sure. Sure.
+
+844
+00:42:33,450 --> 00:42:34,790
+你  再
+H and G.
+
+845
+00:42:36,130 --> 00:42:37,860
+你好  再见
+Hi and goodbye.
+
+846
+00:43:23,730 --> 00:43:27,270
+{\an9}♪我又重新跨上了马鞍♪
+♪ I'm back in the saddle again ♪
+
+847
+00:43:28,120 --> 00:43:31,880
+{\an9}♪去到那个地方  那里朋友都真心实意♪
+♪ Out where a friend is a friend ♪
+
+848
+00:43:32,000 --> 00:43:34,090
+{\an9}♪那里长角牛们都吃♪
+♪ Where the longhorn cattle feed ♪
+
+849
+00:43:34,090 --> 00:43:36,520
+{\an9}♪吃那低矮的石膏草♪
+♪ On the lowly gypsum weed ♪
+
+850
+00:43:36,590 --> 00:43:40,260
+{\an9}♪我重又跨上马鞍♪
+♪ Back in the saddle again ♪
+
+851
+00:43:40,890 --> 00:43:44,460
+{\an9}♪再一次驰骋原野♪
+♪ Ridin' the range once more ♪
+
+852
+00:43:45,100 --> 00:43:48,770
+{\an9}♪带着我那把老手枪♪
+♪ Totin' my old.44 ♪
+
+853
+00:43:48,990 --> 00:43:51,070
+{\an9}♪那里你每晚露宿旷野♪
+♪ Where you sleep out every night ♪
+
+854
+00:43:51,070 --> 00:43:53,200
+{\an9}♪唯一的法则就是正确♪
+♪ And the only law is right ♪
+
+855
+00:43:53,370 --> 00:43:56,660
+{\an9}♪我重又跨上马鞍♪
+♪ Back in the saddle again ♪
+
+856
+00:43:51,520 --> 00:43:52,810
+你好  是维多利亚吗
+Hello, Victoria?
+
+857
+00:43:54,720 --> 00:43:58,470
+我是萨姆·鲍德温  我不知道你是否记得我  但...
+This is Sam Baldwin. I don't know if you remember me, but...
+
+858
+00:44:00,010 --> 00:44:01,660
+太好了
+Oh, great.
+
+859
+00:44:04,380 --> 00:44:06,740
+我在想...
+I was wondering if...
+
+860
+00:44:06,860 --> 00:44:10,060
+你是否愿意和我喝一杯
+If you would like to have a drink with me?
+
+861
+00:44:11,250 --> 00:44:12,280
+晚餐吗
+Dinner?
+
+862
+00:44:14,240 --> 00:44:15,970
+晚餐那就更好了
+Dinner would be even better.
+
+863
+00:44:18,070 --> 00:44:20,430
+周五挺好的  没问题  没问题
+Friday would be great, yeah, yeah.
+
+864
+00:44:20,650 --> 00:44:23,570
+那要怎样...  我听说那里很不错
+How...? I hear that's a good place.
+
+865
+00:44:26,180 --> 00:44:28,550
+7点半可以
+7:30 would be fine.
+
+866
+00:44:28,550 --> 00:44:30,390
+那我就...
+And I'll...
+
+867
+00:44:32,830 --> 00:44:36,050
+好的  我们在那里见面  好的  没问题
+Okay, I'll meet you there. Okay. All right.
+
+868
+00:44:36,950 --> 00:44:42,140
+所以我们在周五晚7点半共进晚餐
+So it's Friday at 7:30 for dinner.
+
+869
+00:44:42,140 --> 00:44:43,400
+很好
+Great.
+
+870
+00:44:45,320 --> 00:44:47,050
+我也是  再见
+Me too. Bye.
+
+871
+00:44:47,070 --> 00:44:50,800
+{\an9}♪我重又跨上马鞍♪
+♪ Back in the saddle again ♪
+
+872
+00:44:54,330 --> 00:44:55,960
+你爱他吗
+Are you in love with him?
+
+873
+00:44:59,140 --> 00:45:00,650
+现在不爱
+I'm not now.
+
+874
+00:45:01,450 --> 00:45:05,260
+那时的人们还懂得如何去爱
+Now those were the days when people knew how to be in love.
+
+875
+00:45:05,560 --> 00:45:07,620
+-你没救了  -他们知道的
+- You're a basket case. - They knew it.
+
+876
+00:45:07,620 --> 00:45:11,780
+时间  距离  没什么能将他们分开  因为他们知道
+Time, distance, nothing could separate them because they knew.
+
+877
+00:45:11,780 --> 00:45:15,550
+-那是对的  那是真的  那是...  -一部电影
+- It was right. It was real. It was... - A movie.
+
+878
+00:45:16,080 --> 00:45:18,080
+这就是你的问题所在  你想的不是谈恋爱
+That's your problem. You don't wanna be in love.
+
+879
+00:45:18,080 --> 00:45:20,120
+你想的是在电影里谈恋爱
+You wanna be in love in a movie.
+
+880
+00:45:20,360 --> 00:45:21,570
+把写的信读给我听听
+Read it to me.
+
+881
+00:45:23,800 --> 00:45:25,250
+"亲爱的夜未眠先生及其子
+"Dear Sleepless and Son.
+
+882
+00:45:25,260 --> 00:45:27,930
+我此生从未写过这样一封信..."
+I've never written a letter like this in my life..."
+
+883
+00:45:27,930 --> 00:45:29,120
+大家在给陌生人写信的时候
+That's what everyone writes
+
+884
+00:45:29,130 --> 00:45:31,380
+都会千篇一律用这个开头
+at the beginning of letters to strangers.
+
+885
+00:45:31,540 --> 00:45:34,050
+我知道啊  你以为我不知道吗
+I know that. You think I don't know that?
+
+886
+00:45:34,990 --> 00:45:35,930
+沃尔特怎么办
+What about Walter?
+
+887
+00:45:36,680 --> 00:45:38,640
+沃尔特
+Oh, Walter.
+
+888
+00:45:38,850 --> 00:45:41,490
+只要能嫁给沃尔特  我愿意付出一切
+Oh, I'd give anything to marry Walter.
+
+889
+00:45:41,870 --> 00:45:43,990
+他是如此的出人意料
+He's so unexpected.
+
+890
+00:45:44,000 --> 00:45:46,440
+你以为你能看穿他的为人
+You think you can tell what he's like by just looking at him,
+
+891
+00:45:46,560 --> 00:45:47,840
+但你不能
+but you can't.
+
+892
+00:45:49,150 --> 00:45:51,610
+我应该在信里写点跟魔法有关的东西
+I should write something in this about magic.
+
+893
+00:45:51,730 --> 00:45:52,370
+什么
+What?
+
+894
+00:45:52,600 --> 00:45:54,320
+总要写点什么吧  万一我永远不会遇见他呢
+Something! What if I never meet him?
+
+895
+00:45:54,320 --> 00:45:57,140
+万一他是我的真命天子  而我却永远不会遇见他呢
+What if this man is my destiny, and I never meet him?
+
+896
+00:45:57,140 --> 00:45:59,900
+真命天子也有可能是命中灾星  看看我和里克
+Your destiny can be your doom. Look at me and Rick.
+
+897
+00:46:00,350 --> 00:46:01,730
+"我想见你..."
+"I want to meet you..."
+
+898
+00:46:01,730 --> 00:46:03,570
+在帝国大厦楼顶见面如何
+How about the top of the Empire State Building?
+
+899
+00:46:03,570 --> 00:46:05,820
+我想在帝国大厦楼顶见你
+On the top of the Empire State Building.
+
+900
+00:46:07,190 --> 00:46:09,610
+在情人节的黄昏
+Sunset, Valentine's Day.
+
+901
+00:46:11,170 --> 00:46:13,860
+我那时会和沃尔特一起待在纽约  我可以挤时间去
+I'll be in New York with Walter. I can squeeze it in.
+
+902
+00:46:15,510 --> 00:46:17,670
+我会和沃尔特一起待在纽约
+I'll be in New York with Walter!
+
+903
+00:46:25,410 --> 00:46:27,160
+你想听听什么叫命运弄人吗
+Do you wanna hear about destiny?
+
+904
+00:46:27,460 --> 00:46:29,000
+如果我没有嫁给马丁
+If I hadn't married Martin
+
+905
+00:46:29,000 --> 00:46:31,310
+我就不会买下那栋长着一棵死树的房子
+I never would've bought the house with the dead tree.
+
+906
+00:46:31,310 --> 00:46:33,450
+也正因此我才离婚
+On account of which I got divorced.
+
+907
+00:46:33,450 --> 00:46:35,310
+也正因此我才会撞到别的车
+On account of which I hit a car
+
+908
+00:46:35,310 --> 00:46:37,590
+并且在买颈托的时候遇到里克
+and met Rick while buying a neck brace.
+
+909
+00:46:37,740 --> 00:46:38,500
+等等
+Wait a minute.
+
+910
+00:46:38,800 --> 00:46:41,940
+你从没告诉过我你离婚是因为一棵死树
+You never told me you got a divorce because of a dead tree?
+
+911
+00:46:42,900 --> 00:46:43,800
+是因为那个绿化工
+The tree man.
+
+912
+00:46:44,620 --> 00:46:46,370
+你爱上了一个绿化工
+You fell in love with the tree man?
+
+913
+00:46:46,470 --> 00:46:47,880
+我没说"爱"
+I did not say "Love."
+
+914
+00:46:47,880 --> 00:46:49,130
+我说"爱"了吗
+Did I say "Love"?
+
+915
+00:46:49,790 --> 00:46:51,660
+这是我最喜欢的一段
+This is my favourite part.
+
+916
+00:46:53,790 --> 00:46:55,110
+机不可失  时不再来
+It's now or never.
+
+917
+00:46:56,770 --> 00:46:58,730
+时不再来  听着有些吓人
+Never is a frightening word.
+
+918
+00:47:00,220 --> 00:47:03,080
+傻子才会让幸福擦肩而过
+We'd be fools to let happiness pass us by.
+
+919
+00:47:06,160 --> 00:47:09,890
+对那些没有温暖回忆的人来说  冬天一定很冷
+Winter must be cold for those with no warm memories.
+
+920
+00:47:12,540 --> 00:47:15,190
+我们已经错过了春天
+We've already missed the spring.
+
+921
+00:47:15,300 --> 00:47:16,340
+是啊
+Yes.
+
+922
+00:47:17,620 --> 00:47:19,620
+男人永远看不懂这部电影
+Men never get this movie.
+
+923
+00:47:19,860 --> 00:47:21,120
+我也觉得
+I know.
+
+924
+00:47:23,630 --> 00:47:26,370
+妈妈  妈妈
+Mummy! Mummy!
+
+925
+00:47:28,780 --> 00:47:30,660
+-妈妈  -没事的  没事的
+- Mummy! - It's okay. It's okay.
+
+926
+00:47:30,660 --> 00:47:31,320
+我在呢  
+I'm here.
+
+927
+00:47:31,320 --> 00:47:33,180
+-爸爸  -我来了  
+- Dad! - I'm coming.
+
+928
+00:47:34,020 --> 00:47:36,090
+没事了  别怕  没事了
+It's all right. It's okay. It's okay.
+
+929
+00:47:37,020 --> 00:47:40,100
+没事的  不用怕  没事的
+It's okay, it's all right. It's okay.
+
+930
+00:47:40,190 --> 00:47:42,650
+-做什么噩梦了  -在下沉
+- What was that about, huh? - It was sinking.
+
+931
+00:47:43,020 --> 00:47:44,270
+-什么在下沉  -我们家
+- What was? - Our house.
+
+932
+00:47:44,270 --> 00:47:46,780
+每个窗口都有水涌进来
+There was water coming in all the windows.
+
+933
+00:47:48,820 --> 00:47:51,280
+现在没事了
+Well, it's okay now.
+
+934
+00:47:51,950 --> 00:47:52,560
+没事了
+It's all right.
+
+935
+00:47:54,790 --> 00:47:56,060
+那我们该怎么办呢
+So, what should we do?
+
+936
+00:47:56,060 --> 00:48:00,890
+你以前做噩梦的时候  妈妈会给你唱歌
+Your mother used to sing to you when you had bad dreams.
+
+937
+00:48:01,950 --> 00:48:03,640
+《再见黑鸟》
+"Bye Bye Blackbird."
+
+938
+00:48:05,670 --> 00:48:06,780
+是啊
+Yeah.
+
+939
+00:48:07,270 --> 00:48:08,480
+我想她了
+I miss her.
+
+940
+00:48:09,570 --> 00:48:12,490
+你觉得一个人死了之后  会发生些什么
+What do you think happens to someone after they die?
+
+941
+00:48:13,830 --> 00:48:17,170
+-我不知道  -比如  你相信有天堂吗
+- I don't know. - Like, do you believe in heaven?
+
+942
+00:48:21,120 --> 00:48:22,340
+我从未相信过
+I never did.
+
+943
+00:48:23,860 --> 00:48:26,950
+我也不相信会有死后的世界  但现在  我不知道了
+Or the whole idea of an afterlife. But now, I don't know.
+
+944
+00:48:28,580 --> 00:48:30,480
+因为我会做一些梦
+Because I have these dreams about...
+
+945
+00:48:32,280 --> 00:48:33,870
+梦到你妈妈
+about your mum.
+
+946
+00:48:35,990 --> 00:48:38,180
+没错  我们会聊上很久
+Yeah. And we have long talks.
+
+947
+00:48:40,350 --> 00:48:42,710
+聊聊你  你过得怎么样
+About you. How you're doing.
+
+948
+00:48:43,870 --> 00:48:47,580
+她应该也知道  不过我还是会告诉她
+Which she sort of knows, but I tell her anyway.
+
+949
+00:48:48,050 --> 00:48:49,490
+这是怎么回事呢
+So, what is that?
+
+950
+00:48:52,000 --> 00:48:54,070
+她应该就在死后的世界吧  不是吗
+It's sort of an afterlife, isn't it?
+
+951
+00:48:55,320 --> 00:48:57,230
+我开始忘记她了
+I'm starting to forget her.
+
+952
+00:49:13,410 --> 00:49:16,760
+她可以削完一个苹果
+She could peel an apple
+
+953
+00:49:18,160 --> 00:49:22,460
+长长卷卷的皮是完整的 
+in one long, curly strip.
+
+954
+00:49:24,710 --> 00:49:26,300
+削一整个苹果都不会断
+The whole apple.
+
+955
+00:49:25,840 --> 00:49:29,370
+{\an9}♪收起我所有的忧虑和悲伤♪
+♪ Pack up all my cares and woes ♪
+
+956
+00:49:30,700 --> 00:49:32,250
+{\an9}♪情绪依旧低落♪
+♪ Feeling low ♪
+
+957
+00:49:33,420 --> 00:49:34,980
+{\an9}♪我也应该离开♪
+♪ Here I go ♪
+
+958
+00:49:35,270 --> 00:49:36,710
+{\an9}♪我说了再见♪
+♪ I said bye ♪
+
+959
+00:49:38,020 --> 00:49:39,130
+{\an9}♪再见♪
+♪ Bye ♪
+
+960
+00:49:39,490 --> 00:49:40,750
+我爱你  乔纳
+I love you, Jonah.
+
+961
+00:49:41,970 --> 00:49:43,360
+我爱你  爸爸
+I love you, Dad.
+
+962
+00:49:48,360 --> 00:49:52,160
+{\an9}♪我要去那个有人在等我的地方♪
+♪ Where somebody waits for me ♪
+
+963
+00:49:50,390 --> 00:49:51,510
+明天见
+See you tomorrow.
+
+964
+00:49:53,920 --> 00:49:58,450
+{\an9}♪她甜如蜜糖♪
+♪ Sugar sweet so is she ♪
+
+965
+00:49:58,530 --> 00:50:00,190
+{\an9}♪再见  我说了再见♪
+♪ Bye I said bye ♪
+
+966
+00:50:01,160 --> 00:50:04,790
+{\an9}♪再见  黑鸟♪
+♪ Bye Blackbird ♪
+
+967
+00:50:11,880 --> 00:50:14,250
+{\an9}♪似乎没有人爱我♪
+♪ No one seems to love ♪
+
+968
+00:50:16,100 --> 00:50:20,110
+{\an9}♪或理解我♪
+♪ Or understand me ♪
+
+969
+00:50:23,730 --> 00:50:26,750
+{\an9}♪还有那些倒霉故事♪
+♪ And all the hard luck stories ♪
+
+970
+00:50:28,330 --> 00:50:30,050
+{\an9}♪他们总是不断地讲给我听♪
+♪ They keep handing me ♪
+
+971
+00:50:35,420 --> 00:50:38,630
+{\an9}♪若有人愿意给我一丝光明♪
+♪ Where somebody shines the light ♪
+
+972
+00:50:41,010 --> 00:50:43,890
+{\an9}♪今夜我将回到故乡♪
+♪ I'm be coming on home tonight now ♪
+
+973
+00:50:45,120 --> 00:50:50,080
+{\an9}♪再见  再见  我想说♪
+♪ Bye, bye, I wanna say ♪
+
+974
+00:50:50,620 --> 00:50:52,410
+{\an9}♪再见黑鸟♪
+♪ Blackbird ♪
+
+975
+00:50:53,480 --> 00:50:55,320
+{\an9}♪上帝慈悲♪
+♪ Lord have mercy ♪
+
+976
+00:50:56,470 --> 00:51:01,010
+{\an9}♪关于爱情♪
+♪ About loving now, yeah ♪
+
+977
+00:51:06,260 --> 00:51:07,280
+劳瑞
+Laurie?
+
+978
+00:51:07,700 --> 00:51:08,920
+你好  我是安妮
+Hi, it's Annie.
+
+979
+00:51:09,510 --> 00:51:11,440
+没事  没事  我挺好的
+Fine, fine. I'm fine.
+
+980
+00:51:11,640 --> 00:51:15,350
+我正在写一篇关于电台热线节目的文章
+Listen, I'm doing an article on call-in radio shows.
+
+981
+00:51:15,350 --> 00:51:17,140
+你认不认识什么人
+Do you know anyone who works for someone
+
+982
+00:51:17,140 --> 00:51:19,300
+在一个叫玛夏·菲尔斯通医生的手下工作
+named Dr. Marcia Fieldstone?
+
+983
+00:51:19,300 --> 00:51:20,650
+我是《巴尔的摩太阳报》的一位撰稿人
+I'm a writer for the Baltimore Sun,
+
+984
+00:51:20,650 --> 00:51:22,480
+也是劳瑞·约翰逊的朋友
+and a friend of Laurie Johnson's.
+
+985
+00:51:22,480 --> 00:51:25,160
+我在写一篇文章  关于人们如何承受丧亲之痛
+I'm doing a piece on how people handle bereavement.
+
+986
+00:51:25,160 --> 00:51:27,800
+我知道前几天晚上你们有一位听众
+And I understand you had a caller the other night,
+
+987
+00:51:27,810 --> 00:51:29,390
+是来自西雅图的一位先生
+some guy from Seattle.
+
+988
+00:51:37,660 --> 00:51:38,980
+我是乔纳·鲍德温
+This is Jonah Baldwin.
+
+989
+00:51:38,990 --> 00:51:41,100
+我们现在不在  但你可以...
+We're not in right now, but you can...
+
+990
+00:51:41,930 --> 00:51:42,890
+鲍德温
+Baldwin.
+
+991
+00:51:42,740 --> 00:51:52,290
+{\an7}{\pos(45.6,93.333)}欢迎来到市新闻局
+
+992
+00:51:43,780 --> 00:51:52,290
+{\an8}{\pos(134,118.933)}新闻搜索
+
+993
+00:51:45,040 --> 00:51:52,290
+{\an7}{\pos(44,160.533)}请输入需求
+
+994
+00:51:46,680 --> 00:51:52,290
+{\an7}{\pos(44,210.133)}查找  萨缪尔·鲍德温
+
+995
+00:51:56,170 --> 00:52:00,630
+{\an7}{\pos(42.4,75.733)}查找到216个萨缪尔·鲍德温
+按Y键打印或查看结果
+
+996
+00:52:04,760 --> 00:52:08,980
+{\an7}{\pos(56.8,84.266)}查找萨缪尔·鲍德温  乔纳·鲍德温
+
+997
+00:52:10,690 --> 00:52:13,100
+{\an7}{\pos(44.4,78.4)}查找到萨缪尔·鲍德温  乔纳·鲍德温
+按Y键打印或查看结果
+
+998
+00:52:14,650 --> 00:52:16,480
+{\an7}{\pos(38,123.2)}已故: 玛格丽特·艾伯特·鲍德温
+萨缪尔之爱妻  乔纳之慈母
+葬礼办于6月10日  上午10点
+
+999
+00:52:19,280 --> 00:52:24,950
+{\an7}{\pos(27.6,207.467)}已故: 玛格丽特·艾伯特·鲍德温
+萨缪尔之爱妻  乔纳之慈母
+葬礼办于6月10日  上午10点  周四
+天安教堂  纽约州110号
+花束将被转送至芝加哥园艺协会
+芝加哥新闻服务  1991年6月12日
+
+1000
+00:52:27,160 --> 00:52:32,580
+{\an7}{\pos(56.4,60.267)}查找萨缪尔·鲍德温  芝加哥
+
+1001
+00:52:33,000 --> 00:52:34,500
+{\an7}{\pos(45.6,39.467)}查找到萨缪尔·鲍德温
+按Y键打印或查看结果
+
+1002
+00:52:37,210 --> 00:52:43,720
+{\an7}{\pos(44.4,178.667)}查找到萨缪尔·鲍德温
+按Y键打印或查看结果
+萨缪尔·鲍德温  于1961年因重大偷窃罪被逮捕
+萨缪尔·鲍德温  市政委员  于1967年因贪污受贿被定罪
+萨缪尔·鲍德温  建筑师  建造过城市广场
+萨缪尔·鲍德温  标枪世界纪录保持者
+
+1003
+00:52:45,310 --> 00:52:46,970
+建筑师
+Architect.
+
+1004
+00:52:46,640 --> 00:52:48,810
+{\an7}{\pos(3.2,122.134)}萨缪尔·鲍德温  1961年因重大偷窃罪被逮捕
+萨缪尔·鲍德温  市政委员  于1967年因贪污受贿被定罪
+萨缪尔·鲍德温  建筑师  建造过城市广场
+萨缪尔·鲍德温  标枪世界纪录保持者
+
+1005
+00:52:52,140 --> 00:53:00,690
+{\an8}{\pos(172.8,30.933)}传真界面
+
+1006
+00:52:54,100 --> 00:53:00,690
+{\an7}{\pos(69.6,98.133)}AAA侦探事务所
+
+1007
+00:52:59,280 --> 00:53:00,690
+{\an7}{\pos(69.6,113.066)}西雅图
+
+1008
+00:53:03,740 --> 00:53:10,750
+{\an7}{\pos(69.6,123.2)}AAA侦探事务所
+西雅图  华盛顿州
+背景调查  包括照片
+调查对象为萨缪尔
+
+1009
+00:53:14,230 --> 00:53:19,210
+{\an7}{\pos(69.6,133.333)}AAA侦探事务所
+西雅图  华盛顿州
+背景调查  包括照片  调查对象为萨缪尔  现居西雅图
+建筑师  请秘密回复
+
+1010
+00:53:21,170 --> 00:53:22,340
+好了  克拉丽丝
+Okay, Clarise.
+
+1011
+00:53:22,340 --> 00:53:24,520
+要是一切顺利  我就午夜回来  
+I'm gonna be back either by midnight
+
+1012
+00:53:24,520 --> 00:53:27,180
+如果不顺利  就明早8点半回来
+or 8:30, if disaster strikes.
+
+1013
+00:53:27,180 --> 00:53:29,230
+这封信是写给我们俩的
+Here's one for the both of us.
+
+1014
+00:53:29,230 --> 00:53:30,830
+-"致夜未眠先生及其子"  -现在我把我要去的
+- "Sleepless and Son, - Now I left the number of the restaurant
+
+1015
+00:53:30,830 --> 00:53:31,840
+-"来自巴尔的摩"  -那家餐厅的号码留给你们
+- Baltimore." - where I'm gonna be at
+
+1016
+00:53:31,930 --> 00:53:34,320
+如果出事了  儿科医生的号码
+If there's any problem, here's the number to the paediatrician
+
+1017
+00:53:34,330 --> 00:53:35,520
+就在电话旁边
+and it's right about the phone.
+
+1018
+00:53:35,520 --> 00:53:37,900
+如果有人不小心喝了毒物  这里有一瓶催吐剂
+Here's a bottle of Ipecac if anybody drinks poison.
+
+1019
+00:53:37,900 --> 00:53:40,150
+就在果汁杯旁边
+It's right next to the juice glasses.
+
+1020
+00:53:40,150 --> 00:53:40,530
+好吧
+Fine.
+
+1021
+00:53:41,040 --> 00:53:42,960
+-我看上去怎么样  -挺好的
+- How do I look? How do I look? Huh? - Great.
+
+1022
+00:53:43,060 --> 00:53:45,680
+我看上去还好吗  还行吗
+Do I look okay? Do I look all right?
+
+1023
+00:53:45,700 --> 00:53:48,820
+我看上去好蠢  感觉这样打扮用力过猛了
+I look stupid. I look stupid. I look like I'm trying too hard.
+
+1024
+00:53:48,830 --> 00:53:49,780
+本来想去剪个头发
+I was gonna get a haircut,
+
+1025
+00:53:49,790 --> 00:53:51,450
+现在我看着就像已经剪过了头发
+but I'd just look like I got a haircut.
+
+1026
+00:53:51,450 --> 00:53:52,230
+这封信写得很不错  爸爸
+This is a good letter, Dad.
+
+1027
+00:53:52,230 --> 00:53:54,790
+这双鞋的鞋跟形状很奇怪
+Look, the heels on these shoes are grotesque.
+
+1028
+00:53:54,790 --> 00:53:57,590
+感觉就像我在穿增高鞋  我为什么要这么做呢
+I look like I'm trying to be tall. Why am I trying to be tall?
+
+1029
+00:53:57,590 --> 00:53:58,690
+-她的名字叫安妮  安妮·里德  -我已经很高了
+- Her name is Annie. Annie Reed. - I'm already tall.
+
+1030
+00:53:58,690 --> 00:54:00,200
+我要迟到了  再见
+Now I'm late. Bye.
+
+1031
+00:54:00,200 --> 00:54:01,250
+爸  看一下这封信
+Dad, read this.
+
+1032
+00:54:01,250 --> 00:54:02,490
+看一下
+Read this!
+
+1033
+00:54:05,010 --> 00:54:06,010
+"致夜未眠先生及其子...
+"Sleepless and Son...
+
+1034
+00:54:09,110 --> 00:54:10,300
+在所有人的印象中
+I have been an excellent third baseman
+
+1035
+00:54:10,310 --> 00:54:11,770
+我都一直是一个很出色的三垒手
+for as long as I or anyone else can remember
+
+1036
+00:54:11,770 --> 00:54:13,670
+既然谈到了这个话题  这么说吧
+and while we're on the subject, let's just say right now:
+
+1037
+00:54:13,890 --> 00:54:16,170
+布鲁克斯·罗宾森是有史以来最出色的三垒手
+Brooks Robinson was the best third baseman ever.
+
+1038
+00:54:16,440 --> 00:54:17,850
+你能同意这个观点  对我来说很重要
+It's important that you agree with me on that
+
+1039
+00:54:17,850 --> 00:54:18,850
+因为我是巴尔的摩人"
+because I'm from Baltimore."
+
+1040
+00:54:18,860 --> 00:54:21,520
+她认为布鲁克斯·罗宾森最出色  你也这么认为
+She thinks Brooks Robinson is the greatest. So do you.
+
+1041
+00:54:21,530 --> 00:54:24,810
+-大家都这么认为  -这是个预兆
+- Everyone thinks thinks Brooks Robinson is the greatest. - It's a sign.
+
+1042
+00:54:25,070 --> 00:54:25,810
+过来
+Come here.
+
+1043
+00:54:27,030 --> 00:54:28,040
+我让你看看什么叫预兆
+I'll show you a sign.
+
+1044
+00:54:28,690 --> 00:54:29,780
+这里就有个预兆
+Here's a sign.
+
+1045
+00:54:29,780 --> 00:54:31,020
+好了
+All right.
+
+1046
+00:54:31,910 --> 00:54:33,190
+西雅图在哪
+Where's Seattle?
+
+1047
+00:54:33,450 --> 00:54:35,400
+没错  巴尔的摩在哪
+Right. Where is Baltimore?
+
+1048
+00:54:37,120 --> 00:54:38,460
+在这  你看
+It's right there! Look!
+
+1049
+00:54:38,460 --> 00:54:39,880
+一  二  三  四
+One, two, three, four. There's, like,
+
+1050
+00:54:39,880 --> 00:54:43,380
+这两个地方之间隔了26个州  这才是预兆
+26 states between here and there. Now, that's a sign.
+
+1051
+00:54:43,380 --> 00:54:44,390
+我要出门了
+I'm out of here.
+
+1052
+00:54:44,390 --> 00:54:45,410
+再见
+Goodbye!
+
+1053
+00:54:45,420 --> 00:54:46,360
+晚安
+Good night!
+
+1054
+00:54:46,360 --> 00:54:47,580
+我爱你
+I love you.
+
+1055
+00:54:51,680 --> 00:54:53,460
+克拉丽丝  你把车挪开了吗
+Clarise, did you move your car?
+
+1056
+00:55:03,820 --> 00:55:05,850
+-谢谢  德里克  -不客气
+- Thank you, Derrick. - You're welcome.
+
+1057
+00:55:06,530 --> 00:55:08,110
+-我要...  -白葡萄酒
+- I'll have... - White wine spritzer?
+
+1058
+00:55:08,110 --> 00:55:09,320
+-没错  -你呢  先生
+- Yes. - And you, sir?
+
+1059
+00:55:09,320 --> 00:55:11,100
+我不用了  谢谢
+I'm fine. Thank you.
+
+1060
+00:55:11,160 --> 00:55:12,410
+-你好  -你好
+- Hi. - Hi.
+
+1061
+00:55:12,410 --> 00:55:15,820
+-你很漂亮  -你也很帅
+- You look good. - You look good yourself.
+
+1062
+00:55:20,830 --> 00:55:22,570
+我还以为你永远不会给我打电话
+I thought you'd never gonna call me.
+
+1063
+00:55:23,340 --> 00:55:24,880
+-你真的这么想  -我真的很希望你打电话
+- You did? - I really wanted you to.
+
+1064
+00:55:24,880 --> 00:55:26,830
+但我以为你永远不会给我打电话
+And I thought you were never going to.
+
+1065
+00:55:27,090 --> 00:55:29,010
+-打扰一下  鲍德温先生  -怎么了
+- Excuse me, Mr. Baldwin? - Yes.
+
+1066
+00:55:29,010 --> 00:55:30,790
+有你的电话
+There's a phone call for you.
+
+1067
+00:55:32,550 --> 00:55:33,630
+失陪
+Excuse me.
+
+1068
+00:55:38,390 --> 00:55:39,480
+谢谢
+Thank you.
+
+1069
+00:55:39,480 --> 00:55:40,140
+喂
+Hello.
+
+1070
+00:55:40,150 --> 00:55:43,890
+爸爸  我们能去纽约过情人节吗
+Dad, can we go to New York City for Valentine's Day?
+
+1071
+00:55:44,270 --> 00:55:45,100
+什么  
+What?
+
+1072
+00:55:45,430 --> 00:55:46,780
+来自巴尔的摩的安妮·里德
+Annie Reed from Baltimore
+
+1073
+00:55:46,780 --> 00:55:47,900
+想在情人节当天
+wants to meet us at the top
+
+1074
+00:55:47,900 --> 00:55:50,850
+和我们在帝国大厦楼顶见面
+of the Empire State Building on Valentine's Day.
+
+1075
+00:55:52,160 --> 00:55:54,060
+-乔纳  -怎么了
+- Jonah? - What?
+
+1076
+00:55:54,160 --> 00:55:56,810
+你跌倒了吗  在流血吗
+Have you fallen down? Are you bleeding?
+
+1077
+00:55:56,830 --> 00:55:58,790
+克拉丽丝在吗  她被勒死了吗
+Is Clarise there? Has she been strangled?
+
+1078
+00:55:58,790 --> 00:56:01,870
+-没有  -所以你打电话来就为了这个
+- No. - So this is the only reason for this phone call?
+
+1079
+00:56:01,880 --> 00:56:04,710
+如果我们现在订往返机票  可以享受优惠
+If we book now, we can get an excursion fare.
+
+1080
+00:56:04,710 --> 00:56:07,400
+杰西卡的父母是旅行代理人  杰西卡的...
+Jessica's parents are travel agents, and Jessica's...
+
+1081
+00:56:07,400 --> 00:56:09,880
+我现在不想和你谈论这个话题
+I'm not having this conversation right now.
+
+1082
+00:56:09,880 --> 00:56:11,760
+我们晚点再谈
+We'll talk about it at a later time.
+
+1083
+00:56:11,760 --> 00:56:13,760
+我不敢相信就这点破事我们居然能聊这么久
+I can't believe this conversation has lasted this long.
+
+1084
+00:56:13,760 --> 00:56:15,210
+你赶快上床睡觉
+You go to bed.
+
+1085
+00:56:22,900 --> 00:56:25,340
+-一切还好吧  -没事
+- Everything all right? - Oh, yeah.
+
+1086
+00:56:25,480 --> 00:56:27,190
+-你有孩子吗  -没有
+- Do you have kids? - No.
+
+1087
+00:56:27,190 --> 00:56:28,350
+想要我的孩子吗
+Do you want mine?
+
+1088
+00:56:31,530 --> 00:56:33,990
+我要一杯不加冰的绝对伏特加  谢谢
+I'll have an Absolut straight up, please.
+
+1089
+00:56:33,990 --> 00:56:34,500
+好
+Sure.
+
+1090
+00:56:53,050 --> 00:56:55,250
+放下  别玩了
+Hey, hey! Put that down. Stop it!
+
+1091
+00:56:56,140 --> 00:56:57,380
+她来了
+There she is.
+
+1092
+00:56:58,890 --> 00:57:00,310
+她为什么要带食材过来
+Why is she bringing those groceries?
+
+1093
+00:57:00,310 --> 00:57:02,770
+她要为我们下厨  你要做好准备
+She's gonna cook us something so be prepared.
+
+1094
+00:57:02,770 --> 00:57:04,400
+你好  萨姆  谢谢
+Hi, Sam. Thanks.
+
+1095
+00:57:04,400 --> 00:57:05,140
+谢谢
+Thanks.
+
+1096
+00:57:05,830 --> 00:57:06,690
+我猜猜
+And let me guess.
+
+1097
+00:57:06,690 --> 00:57:08,510
+你一定就是乔纳了
+You must be Jonah.
+
+1098
+00:57:10,740 --> 00:57:11,600
+你好
+Hi.
+
+1099
+00:57:12,740 --> 00:57:14,200
+-就这么多吗  -没错
+- So this it? - Yeah.
+
+1100
+00:57:14,200 --> 00:57:16,190
+-车在那边  -太好了
+- The car's down this way. - Great.
+
+1101
+00:57:17,740 --> 00:57:19,620
+这都是她换的第六个油漆工了
+She's on her sixth painter
+
+1102
+00:57:19,620 --> 00:57:21,900
+这活永远都干不完了
+and we are never going to finish this job.
+
+1103
+00:57:21,910 --> 00:57:24,290
+现在她又想把壁炉重新装一遍
+Now she wants the fireplace rebricked.
+
+1104
+00:57:24,290 --> 00:57:26,380
+我很了解她  我可以给她打个电话
+I know her pretty well. I could give her a call.
+
+1105
+00:57:26,380 --> 00:57:27,420
+不用了  我可以解决
+No, I've got it solved.
+
+1106
+00:57:27,420 --> 00:57:30,120
+我用那些壁炉砖头砸她就行了
+I'll just hit her with one of those bricks.
+
+1107
+00:57:33,800 --> 00:57:36,550
+太好笑了  你真风趣
+That's so funny. You're so funny.
+
+1108
+00:57:36,550 --> 00:57:39,470
+当她想装修的时候  她就会开始喋喋不休
+When she wants something done she goes this whole song and says,
+
+1109
+00:57:39,470 --> 00:57:40,950
+"我不知道  我好蠢
+"Oh, I don't know. I'm stupid.
+
+1110
+00:57:40,950 --> 00:57:42,930
+你告诉我吧  你比我清楚
+You tell me. You know better than I would.
+
+1111
+00:57:42,930 --> 00:57:44,940
+我们能不能直接把房子翻个面
+But couldn't we flip the house around
+
+1112
+00:57:44,940 --> 00:57:46,730
+这样的话  所有东西都会移动到另一边
+so that everything on one side is now on the other,
+
+1113
+00:57:46,730 --> 00:57:48,690
+本来在后面的东西会移动到前面
+everything in the back is now in front?
+
+1114
+00:57:48,690 --> 00:57:51,350
+能不能给房子的前门装上一个大铰链
+And could the whole front of the house open on one great big hinge
+
+1115
+00:57:51,350 --> 00:57:53,760
+这样我就能用车库开门器开门了"
+that I can get in with a garage opener."
+
+1116
+00:57:54,400 --> 00:57:58,260
+"当然  当然可以这么做  只是需要..."
+"Well. Yeah. Yeah, we can. We can do that. We'll just gonna have to..."
+
+1117
+00:57:58,260 --> 00:58:00,610
+"拆掉橱柜"
+"Move the kitchen cabinets."
+
+1118
+00:58:08,170 --> 00:58:10,320
+乔纳  你吃完之后把餐具拿过来  好吗
+Hey, Jonah, bring some of that stuff around, all right?
+
+1119
+00:58:11,880 --> 00:58:13,620
+你喜欢棒球吗
+Do you like baseball?
+
+1120
+00:58:15,130 --> 00:58:18,930
+喜欢  我公司有西雅图水手队的包厢票
+Yes, I do. In fact my firm has box seats to the Mariners.
+
+1121
+00:58:18,930 --> 00:58:20,790
+不如我们以后一起去看
+Why don't we all go some time.
+
+1122
+00:58:21,930 --> 00:58:24,670
+-那露营呢  -露营怎么了
+- What about camping? - What about it?
+
+1123
+00:58:24,890 --> 00:58:26,460
+你喜欢露营吗
+Do you like camping?
+
+1124
+00:58:26,650 --> 00:58:28,720
+我曾经露营过一次
+I went camping once.
+
+1125
+00:58:29,520 --> 00:58:32,190
+爸爸  我们以后应该经常去露营
+You know what, Dad, we ought to start camping more often.
+
+1126
+00:58:32,190 --> 00:58:35,640
+你说得对  露营很不错  上床时间到了
+You're right. Camping is good. Time for bed.
+
+1127
+00:58:35,650 --> 00:58:39,350
+-现在才10点  -没错  10点  上床时间
+- It's only 10:00. - Yeah, 10:00. Time for bed.
+
+1128
+00:58:40,200 --> 00:58:41,650
+晚安
+Good night.
+
+1129
+00:58:46,160 --> 00:58:49,120
+难道你不想感谢维多利亚为我们做了美味晚餐吗
+Hey, don't you wanna thank Victoria for this delicious dinner?
+
+1130
+00:58:49,130 --> 00:58:50,360
+谢谢你做的晚餐  
+Thanks for dinner.
+
+1131
+00:58:50,360 --> 00:58:53,120
+我第一次看见有人这么做土豆
+I never saw anybody cook potatoes that way.
+
+1132
+00:58:54,920 --> 00:58:56,710
+很高兴你喜欢
+I'm glad you liked it.
+
+1133
+00:58:56,710 --> 00:58:58,250
+晚安  乔纳
+Good night, Jonah.
+
+1134
+00:59:01,640 --> 00:59:06,340
+我们家不太吃土豆  我们比较喜欢吃米饭
+Yeah, we don't see a lot of potatoes around here. We're rice men.
+
+1135
+00:59:27,040 --> 00:59:28,820
+天哪
+Oh, God.
+
+1136
+01:00:01,360 --> 01:00:02,930
+-对不起  沃尔特  -对不起
+- I'm sorry, Walter. - I'm sorry.
+
+1137
+01:00:02,930 --> 01:00:03,670
+对不起
+I'm sorry.
+
+1138
+01:00:08,250 --> 01:00:10,480
+-喂  -打开收音机
+- Hello. - Turn on your radio.
+
+1139
+01:00:10,620 --> 01:00:12,580
+-怎么了  -那个孩子在热线上
+- What? - The kid is on.
+
+1140
+01:00:12,580 --> 01:00:15,210
+你害得我都开始听这破节目了  去打开收音机
+You've got me listening to this garbage. Go, turn it on.
+
+1141
+01:00:15,210 --> 01:00:16,410
+谁啊
+Who is it?
+
+1142
+01:00:17,800 --> 01:00:22,010
+是贝琪  她又和里克闹矛盾了
+It's Becky. She's having trouble with Rick again.
+
+1143
+01:00:22,010 --> 01:00:24,960
+我下楼  我下楼打电话  贝琪  我等会儿回电
+I'll go downstairs. I'll go downstairs, Becky. I'll call you back.
+
+1144
+01:00:27,640 --> 01:00:30,550
+对不起  沃尔特  你流血了吗
+I'm sorry, Walter. Are you bleeding?
+
+1145
+01:00:51,370 --> 01:00:53,500
+听上去他现在正在亲她
+Sounds he's kissing her right this minute!
+
+1146
+01:00:53,500 --> 01:00:54,500
+真的吗
+Oh, really?
+
+1147
+01:00:54,500 --> 01:00:58,420
+乔纳  说实话  你在监视你父亲吗
+Jonah, tell the truth. Are you spying on your father?
+
+1148
+01:00:58,420 --> 01:01:00,140
+他现在在亲谁
+Who is he kissing right this minute?
+
+1149
+01:01:01,620 --> 01:01:03,590
+-我得阻止他们  -你觉得...
+- I have to make them stop. - Do you think...
+
+1150
+01:01:03,590 --> 01:01:05,430
+我该怎么向沃尔特解释
+How will I explain this to Walter?
+
+1151
+01:01:05,430 --> 01:01:07,260
+她过来为我们做晚饭
+She came over and cooked dinner.
+
+1152
+01:01:07,260 --> 01:01:10,390
+她带了两袋食材  就好像要过来住上一整年
+She brought two bags of groceries like she was staying here for a year!
+
+1153
+01:01:10,390 --> 01:01:11,330
+乔纳  乔纳
+Jonah, Jonah,
+
+1154
+01:01:11,330 --> 01:01:13,070
+你父亲开始约会是好事
+it's good that your father's dating.
+
+1155
+01:01:13,070 --> 01:01:14,940
+只是你难以接受罢了
+It's just hard on you.
+
+1156
+01:01:14,940 --> 01:01:16,810
+你以为自己希望父亲开始约会
+It's something you think you want,
+
+1157
+01:01:16,820 --> 01:01:19,690
+但你父亲真的开始约会之后  又吓到了你
+but then when it happens, it scares you.
+
+1158
+01:01:19,690 --> 01:01:20,690
+不是这样的
+That's not true.
+
+1159
+01:01:20,690 --> 01:01:21,740
+好了  你想想
+Okay, now think.
+
+1160
+01:01:21,740 --> 01:01:23,650
+难道你父亲不应该自己判断
+Shouldn't your father be the judge
+
+1161
+01:01:23,660 --> 01:01:26,620
+一个人到底适不适合他吗
+of whether someone is right or wrong for him?
+
+1162
+01:01:26,620 --> 01:01:29,030
+他还不够理智  什么也判断不了
+He's not sane enough to judge anything.
+
+1163
+01:01:29,040 --> 01:01:30,950
+现在他在亲她的嘴
+Now he's kissing her on the lips.
+
+1164
+01:01:30,950 --> 01:01:33,210
+她是坏女人  我爸被坏女人迷倒了
+She's a ho. My dad's been captured by a ho!
+
+1165
+01:01:33,210 --> 01:01:34,370
+我该怎么办
+What am I going to do?
+
+1166
+01:01:34,370 --> 01:01:36,830
+冷静  乔纳  冷静
+Calm down, Jonah, calm down.
+
+1167
+01:01:36,840 --> 01:01:37,650
+明天早上
+Tomorrow morning,
+
+1168
+01:01:37,660 --> 01:01:40,000
+你和爸爸吃早饭的时候
+when you're sitting down to breakfast with your dad,
+
+1169
+01:01:40,000 --> 01:01:41,960
+告诉他你的感受
+tell him how you feel.
+
+1170
+01:01:41,970 --> 01:01:45,710
+把自己的感受闷在心里不好
+It's not good to keep your feelings inside you.
+
+1171
+01:01:50,270 --> 01:01:53,800
+身穿红衣  躲在杂物柜里  还拿着收音机
+Miss Scarlet. In the broom closet. With the radio.
+
+1172
+01:01:54,810 --> 01:01:55,660
+沃尔特
+Walter,
+
+1173
+01:01:56,620 --> 01:01:59,760
+你吓到我了  以后不许这样
+you scared me. Don't ever do that again.
+
+1174
+01:02:03,400 --> 01:02:05,280
+我好像看见了一只黑寡妇蜘蛛
+I thought I saw a black widow spider.
+
+1175
+01:02:05,280 --> 01:02:08,280
+你吓死我了  你也把维多利亚吓死了
+You scared me to death. You scared Victoria to death.
+
+1176
+01:02:08,280 --> 01:02:09,830
+就在那里
+It was right over there.
+
+1177
+01:02:09,830 --> 01:02:11,740
+下一次  你以为自己
+Next time you think you see
+
+1178
+01:02:11,740 --> 01:02:13,540
+看见黑寡妇蛛的时候  我希望你说
+a black widow spider I want you to say:
+
+1179
+01:02:13,540 --> 01:02:14,870
+"爸  打扰一下
+"Dad, excuse me,
+
+1180
+01:02:14,870 --> 01:02:17,540
+我觉得家里进了一只有毒的昆虫"
+but I believe a poisonous insect is in the house."
+
+1181
+01:02:17,540 --> 01:02:19,710
+然后我会冷静地过来处理
+And I will calmly come and take care of it.
+
+1182
+01:02:19,710 --> 01:02:21,590
+你要再这么尖叫  我就宰了你
+You scream like that again, I'll kill you.
+
+1183
+01:02:21,590 --> 01:02:24,380
+贝琪在收音机上听到一个人来电  她很肯定是里克
+Becky heard this guy on the radio, she was sure it was Rick.
+
+1184
+01:02:24,380 --> 01:02:25,920
+她气坏了
+She was completely hysterical.
+
+1185
+01:02:25,930 --> 01:02:31,880
+后来才发现这个人住在德卢斯  德卢斯在哪
+And then it turned out the guy lived in Duluth. Where's Duluth?
+
+1186
+01:02:32,180 --> 01:02:33,220
+这没道理啊
+That doesn't make any sense.
+
+1187
+01:02:33,220 --> 01:02:36,850
+我知道  沃尔特  完全没道理
+I know. I know, Walter. It doesn't make any sense at all.
+
+1188
+01:02:36,850 --> 01:02:38,660
+谢天谢地  我的生活井然有序
+Thank God my life is in place.
+
+1189
+01:02:39,660 --> 01:02:42,220
+德卢斯在北达科他州
+Duluth? That's in North Dakota.
+
+1190
+01:02:56,960 --> 01:03:00,540
+我喜欢这封信  你得给她回信
+I love this letter. You have to write to her.
+
+1191
+01:03:00,540 --> 01:03:01,780
+你真的这么想吗
+You think so?
+
+1192
+01:03:01,880 --> 01:03:05,790
+-这是「你唯希」 -是吗  那是什么意思
+- It's Y-O-H. - Yeah. What's that?
+
+1193
+01:03:06,010 --> 01:03:07,830
+你唯一的希望
+Your only hope.
+
+1194
+01:03:19,650 --> 01:03:23,140
+我想为这些电台节目做报道
+I thought I would look into doing a story on those radio shows.
+
+1195
+01:03:24,360 --> 01:03:27,100
+你大概还得去别的地方好好调查一下
+You'd probably have to go somewhere to really look into them.
+
+1196
+01:03:27,320 --> 01:03:28,350
+肯定的
+Definitely.
+
+1197
+01:03:48,340 --> 01:03:50,120
+难道你不能进行电话采访吗
+Couldn't you do a phone interview?
+
+1198
+01:03:50,390 --> 01:03:52,750
+我想做的这篇报道不行
+Not for the kind of piece I wanna do.
+
+1199
+01:03:52,800 --> 01:03:54,970
+我不会在芝加哥待太久的
+I won't be in Chicago that long.
+
+1200
+01:03:54,970 --> 01:03:57,090
+等你回来  我都走了
+When you get back, I'll be gone.
+
+1201
+01:03:57,180 --> 01:03:59,110
+那我们就纽约见
+Then I'll see you in New York.
+
+1202
+01:03:59,680 --> 01:04:01,090
+我来开门
+I'll get it.
+
+1203
+01:04:05,780 --> 01:04:10,610
+我是布朗宁机长  目前的飞行高度为10668米
+This is Captain Browning. We're cruising at 35,000 feet.
+
+1204
+01:04:10,610 --> 01:04:12,200
+西边的天气晴朗
+The weather looks clear to the west
+
+1205
+01:04:12,200 --> 01:04:15,650
+预计可以按时到达西雅图
+and we expect to arrive in Seattle on schedule.
+
+1206
+01:04:16,580 --> 01:04:19,500
+-你讨厌乘飞机吗  -讨厌
+- Don't you hate flying? - Yes, I do.
+
+1207
+01:04:19,500 --> 01:04:23,750
+{\an3}{\pos(374,247)}Flying (乘飞机)和 Lying (撒谎)
+发音有点相似
+
+1208
+01:04:19,500 --> 01:04:24,030
+我刚刚对我的未婚夫撒了一个大谎
+And I've just told the most terrible one to the man I'm about to marry.
+
+1209
+01:04:24,540 --> 01:04:26,870
+难道你不觉得任何谎言都算背叛吗
+Do you feel that any lie is a betrayal?
+
+1210
+01:04:28,300 --> 01:04:30,410
+我说的是乘飞机
+I said flying.
+
+1211
+01:04:38,270 --> 01:04:39,610
+谢谢你送我过来
+Thanks for bringing me out here.
+
+1212
+01:04:40,340 --> 01:04:42,010
+他喜欢飞机
+Well, he likes the planes.
+
+1213
+01:04:42,730 --> 01:04:45,400
+要我给你带点纪念品回来吗
+Can I bring something back for you? A souvenir?
+
+1214
+01:04:45,400 --> 01:04:47,150
+他喜欢那种雪花水晶球吗
+Does he like those little snow globes?
+
+1215
+01:04:47,150 --> 01:04:49,650
+摇一摇  就会有雪落下来的那种水晶球
+You know, you shake them up and then the snow floats down.
+
+1216
+01:04:49,650 --> 01:04:53,680
+当然  我很喜欢  非常感谢你
+Sure, I'd really like that. Thank you so much.
+
+1217
+01:04:57,540 --> 01:04:58,500
+他才八岁
+He's 8.
+
+1218
+01:04:59,050 --> 01:05:00,200
+他很有两下子
+He's good at it.
+
+1219
+01:05:00,200 --> 01:05:01,660
+我读过相关文章
+I've read an article about this.
+
+1220
+01:05:01,660 --> 01:05:03,750
+八岁的孩子都招人讨厌
+All children are hideous at the age of 8.
+
+1221
+01:05:03,750 --> 01:05:05,530
+-这是很正常的现象  -好吧
+- It's quite normal. - Well...
+
+1222
+01:05:06,250 --> 01:05:07,430
+也许等我回来之后
+Maybe when I come back,
+
+1223
+01:05:07,430 --> 01:05:10,150
+我们该享受一下二人时光
+the two of us ought to spend some time together on our own.
+
+1224
+01:05:10,780 --> 01:05:12,040
+你觉得呢
+What do you think?
+
+1225
+01:05:16,510 --> 01:05:17,320
+再见
+Bye.
+
+1226
+01:05:18,080 --> 01:05:19,390
+再见  乔纳
+Bye, Jonah.
+
+1227
+01:05:19,390 --> 01:05:20,290
+再见
+Bye.
+
+1228
+01:05:24,940 --> 01:05:25,800
+乔纳
+Jonah.
+
+1229
+01:05:27,110 --> 01:05:28,080
+听着
+Listen to me.
+
+1230
+01:05:29,470 --> 01:05:31,280
+你不了解维多利亚
+You don't know Victoria.
+
+1231
+01:05:31,280 --> 01:05:36,240
+我都不怎么了解她  她对我来说就是个谜
+I hardly know her myself. She's, in fact, a mystery to me.
+
+1232
+01:05:36,240 --> 01:05:39,270
+她经常甩头发  她为什么要这么做
+She tosses her hair a lot. Why does she do this?
+
+1233
+01:05:39,290 --> 01:05:42,290
+我不知道  她是抽搐了吗  还是需要剪头发
+I have no idea. Is it a twitch? Does she need a haircut?
+
+1234
+01:05:42,290 --> 01:05:45,690
+她能用发卡夹一下头发  别让头发挡着脸吗
+Could she use a barrette to keep her hair out of her face?
+
+1235
+01:05:47,210 --> 01:05:49,820
+我很想将这类的事情探究清楚
+These are the things I'm willing to get to the bottom of.
+
+1236
+01:05:50,510 --> 01:05:53,990
+所以我才和她约会
+That is why I am dating her.
+
+1237
+01:05:55,090 --> 01:05:56,540
+仅此而已
+That's all I'm doing.
+
+1238
+01:05:57,300 --> 01:06:00,220
+我不会和她同居  也不会娶她
+I'm not living with her. I'm not marrying her.
+
+1239
+01:06:00,220 --> 01:06:03,050
+你能体会到其中的区别吗
+Can you appreciate the difference?
+
+1240
+01:06:03,890 --> 01:06:05,800
+单身的人都会这么做
+This is what single people do.
+
+1241
+01:06:05,810 --> 01:06:08,270
+他们和别人约会  看对方是否适合自己
+They try other people on and see how they fit.
+
+1242
+01:06:08,270 --> 01:06:11,760
+但大家都在彼此适应  人无完人
+But everybody's an adjustment. Nobody's perfect.
+
+1243
+01:06:11,980 --> 01:06:14,390
+根本就没有什么完美...
+There's no such thing as a perfect...
+
+1244
+01:06:30,800 --> 01:06:31,620
+走吧
+Come on.
+
+1245
+01:06:34,840 --> 01:06:38,180
+爸爸  我那天和杰西卡聊到来生
+Dad, I was talking to Jessica about reincarnation.
+
+1246
+01:06:38,180 --> 01:06:40,800
+她说你和安妮在前世认识
+She says you knew Annie in another life.
+
+1247
+01:06:40,810 --> 01:06:42,970
+-安妮是谁  -给我们写信的人
+- Who's Annie? - The one who wrote us.
+
+1248
+01:06:42,970 --> 01:06:46,600
+但杰西卡说  你和安妮前世没能在一起
+But Jessica says, you and Annie never got together in that life.
+
+1249
+01:06:46,600 --> 01:06:49,310
+你们的心就好比残缺的拼图
+So your hearts are like puzzles with missing pieces.
+
+1250
+01:06:49,310 --> 01:06:51,440
+当你们在一起后  拼图就完整了
+And when you get together, the puzzle's complete.
+
+1251
+01:06:51,440 --> 01:06:52,890
+该死
+Goddamn it.
+
+1252
+01:06:53,110 --> 01:06:54,780
+我知道这件事  而你不知道的原因
+The reason I know this and you don't,
+
+1253
+01:06:54,780 --> 01:06:56,320
+是因为我更年轻  心灵更纯洁
+is because I'm younger and purer,
+
+1254
+01:06:56,320 --> 01:06:59,060
+所以我更能接近宇宙的力量
+so I'm more in touch with cosmic forces.
+
+1255
+01:06:59,490 --> 01:07:01,030
+这些都是谁告诉你的
+Who told you this stuff?
+
+1256
+01:07:01,030 --> 01:07:02,230
+杰西卡
+Jessica.
+
+1257
+01:07:02,540 --> 01:07:05,320
+我真心希望你不会和杰西卡结婚
+I sincerely hope you're not marrying Jessica.
+
+1258
+01:07:11,630 --> 01:07:16,300
+{\an9}♪我还记得那些数着日子过的时光♪
+♪ I remember the days of just keeping time ♪
+
+1259
+01:07:16,300 --> 01:07:22,670
+{\an9}♪那时终日慵懒  无所事事♪
+♪ of hanging around in sleepy towns forever ♪
+
+1260
+01:07:22,810 --> 01:07:27,710
+{\an9}♪几英里的小路上空无一人♪
+♪ Back roads empty for miles ♪
+
+1261
+01:07:28,690 --> 01:07:33,180
+{\an9}♪不能让梦想屈服于现实♪
+♪ Well, you can't have a dream and cut it to fit ♪
+
+1262
+01:07:33,400 --> 01:07:37,060
+{\an9}♪但当我看见你时  我就知道♪
+♪ But when I saw you, I knew ♪
+
+1263
+01:07:37,150 --> 01:07:39,170
+{\an9}♪我们天生一对♪
+♪ We'd go together ♪
+
+1264
+01:07:40,210 --> 01:07:43,730
+{\an9}♪犹如眨眼与微笑♪
+♪ like a wink and a smile ♪
+
+1265
+01:07:46,660 --> 01:07:50,360
+{\an9}♪在铁路旁♪
+♪ Leave your old jalopy ♪
+
+1266
+01:07:50,670 --> 01:07:54,660
+{\an9}♪丢掉你的旧车♪
+♪ By the railroad track ♪
+
+1267
+01:07:55,000 --> 01:07:59,170
+{\an9}♪我们去买一辆豪华的♪
+♪ We'll get a hip double-dip tip-toppy ♪
+
+1268
+01:07:59,180 --> 01:08:03,750
+{\an9}♪双座庞蒂亚克♪
+♪ Two-seat Pontiac ♪
+
+1269
+01:08:04,760 --> 01:08:09,770
+{\an9}♪你可以尽情疾驰  不用减速♪
+♪ So you can rev her up don't go slow ♪
+
+1270
+01:08:09,770 --> 01:08:13,480
+{\an9}♪一路绿灯  无拘无束♪
+♪ It's only green lights and all rights ♪
+
+1271
+01:08:13,480 --> 01:08:20,970
+{\an9}♪让我们一同前行  带着狡黠与笑意♪
+♪ Let's go together with a wink and a smile ♪
+
+1272
+01:08:33,840 --> 01:08:37,570
+{\an9}♪给我眨个眼  再微微笑♪
+♪ Give me a wink and a smile ♪
+
+1273
+01:08:48,850 --> 01:08:54,340
+{\an9}♪我们天生一对  犹如眨眼与微笑♪
+♪ We go together like a wink and a smile ♪
+
+1274
+01:08:57,360 --> 01:09:01,030
+{\an9}♪我的心中充满了旋律♪
+♪ Now my heart is music ♪
+
+1275
+01:09:01,030 --> 01:09:05,020
+{\an9}♪多么简单的一首曲子♪
+♪ Such a simple song ♪
+
+1276
+01:09:05,410 --> 01:09:09,740
+{\an9}♪再次唱响  乐章永不停息♪
+♪ Sing it again The notes never end ♪
+
+1277
+01:09:09,750 --> 01:09:13,580
+{\an9}♪这才是我的归属♪
+♪ This is where I belong ♪
+
+1278
+01:09:13,580 --> 01:09:16,130
+{\an9}♪你的声音♪
+♪ Just the sound of your voice ♪
+
+1279
+01:09:16,130 --> 01:09:18,210
+{\an9}♪你眼中的光芒♪
+♪ The light in your eyes ♪
+
+1280
+01:09:18,210 --> 01:09:22,470
+{\an9}♪我们离昨日相距甚远♪
+♪ We're so far away from yesterday ♪
+
+1281
+01:09:22,470 --> 01:09:28,960
+{\an9}♪带着眨眼与微笑  在一起吧♪
+♪ Together with a wink and a smile ♪
+
+1282
+01:09:31,270 --> 01:09:34,980
+{\an9}♪我们天生一对♪
+♪ We go together ♪
+
+1283
+01:09:34,980 --> 01:09:40,760
+{\an9}♪犹如眨眼与微笑♪
+♪ like a wink and a smile ♪
+
+1284
+01:09:48,950 --> 01:09:51,400
+我看着他在海滩上和儿子玩耍
+I watched him play with his son at the beach.
+
+1285
+01:09:51,500 --> 01:09:52,860
+你去和他说话了吗
+Did you talk to him?
+
+1286
+01:09:53,750 --> 01:09:55,150
+我办不到
+Couldn't do it.
+
+1287
+01:09:57,840 --> 01:09:59,250
+我怎么会跑来这里啊
+How did I get here?
+
+1288
+01:09:59,250 --> 01:10:01,300
+你撒了个谎  然后上了飞机
+You told a lie and got on a plane.
+
+1289
+01:10:01,300 --> 01:10:02,950
+我不是这个意思
+That's not what I mean.
+
+1290
+01:10:04,680 --> 01:10:06,910
+我明天会再次去那个地方
+I'm going back over there tomorrow
+
+1291
+01:10:06,930 --> 01:10:08,680
+然后和他说话  我会的
+and talk to him. I am.
+
+1292
+01:10:08,680 --> 01:10:12,640
+-好的  再见  -贝琪
+- Okay. Good. Goodbye. - Beck.
+
+1293
+01:10:12,640 --> 01:10:13,500
+怎么了
+What?
+
+1294
+01:10:16,270 --> 01:10:17,550
+这样做是不是疯了  
+Is this crazy?
+
+1295
+01:10:17,740 --> 01:10:20,680
+不是  这点反而是最奇怪的
+No, that's the weirdest part about it.
+
+1296
+01:10:22,070 --> 01:10:23,010
+谢谢
+Thank you.
+
+1297
+01:10:24,000 --> 01:10:26,140
+-我爱你  -我也爱你
+- I love you. - I love you too.
+
+1298
+01:10:26,530 --> 01:10:28,060
+-晚安  -再见
+- Good night. - Bye.
+
+1299
+01:11:31,390 --> 01:11:34,330
+很高兴见到你  格雷格呢
+It's so good to see you. Where's Greg?
+
+1300
+01:11:57,960 --> 01:11:58,900
+你好
+Hello.
+
+1301
+01:12:00,670 --> 01:12:01,530
+你好
+Hello.
+
+1302
+01:12:08,630 --> 01:12:12,040
+-然后发生了什么  -很显然  我离开了
+- So then what happened? - So then I left, obviously.
+
+1303
+01:12:13,100 --> 01:12:15,060
+你当时站在马路中间吗
+You were standing in the middle of the street?
+
+1304
+01:12:15,060 --> 01:12:17,430
+你知道那种赤身裸体走在大街上
+You know that dream when you're walking down the street naked
+
+1305
+01:12:17,430 --> 01:12:18,930
+然后所有人都看着你的那种梦吧
+and everyone is looking at you.
+
+1306
+01:12:18,930 --> 01:12:20,420
+我喜欢那种梦
+I love that dream.
+
+1307
+01:12:20,640 --> 01:12:24,400
+和这种羞辱比起来都不算什么  根本不算什么
+That was nothing compared to this humiliation. Nothing!
+
+1308
+01:12:24,400 --> 01:12:27,260
+-但他看见你了  对吗  -他看见我了
+- But he saw you, right? - He saw me.
+
+1309
+01:12:27,280 --> 01:12:30,150
+-你们当时面对面  -他说了"你好"
+- You were face to face. - He said hello.
+
+1310
+01:12:30,150 --> 01:12:31,820
+他说了"你好"  你说了什么
+He said hello. And what did you say?
+
+1311
+01:12:31,820 --> 01:12:33,340
+我也只能说"你好"
+And all I could say was hello.
+
+1312
+01:12:34,670 --> 01:12:36,190
+天哪
+Oh, my God.
+
+1313
+01:12:36,950 --> 01:12:41,780
+-我也只能说"你好"  -这是个预兆
+- And all I could say was hello. - It's a sign.
+
+1314
+01:12:42,750 --> 01:12:47,620
+-这代表着我看了太多遍这部电影  -安妮
+- It's a sign that I have watched this movie too many times. - Oh, Annie.
+
+1315
+01:12:47,920 --> 01:12:49,100
+太傻了
+So stupid!
+
+1316
+01:12:49,390 --> 01:12:52,840
+从我开始听那个破电台节目的那一刻起
+From the minute I listened to that stupid programme on the radio,
+
+1317
+01:12:52,840 --> 01:12:54,720
+我就成了一个彻头彻尾的混蛋
+I've been a complete jerk.
+
+1318
+01:12:54,720 --> 01:12:55,820
+你不是混蛋
+You are not a jerk.
+
+1319
+01:12:56,110 --> 01:12:58,670
+谢谢  我是白痴
+Thank you. An idiot!
+
+1320
+01:12:58,680 --> 01:13:00,600
+你不知道她是谁  安妮
+You don't know who she was, Annie.
+
+1321
+01:13:00,600 --> 01:13:02,850
+我见过她  我有她的照片
+I saw her. I have a picture of her.
+
+1322
+01:13:02,850 --> 01:13:04,600
+我给你看她的照片
+I'll show you a picture of her.
+
+1323
+01:13:04,610 --> 01:13:07,520
+那个在西雅图的侦探给我寄了一张她的照片
+That detective in Seattle sent me a picture of her.
+
+1324
+01:13:07,530 --> 01:13:11,470
+给  你看  这就是她的模样
+Here! See, that's exactly what she looks like.
+
+1325
+01:13:12,070 --> 01:13:14,280
+这不过是某个人的背影
+This is a picture of someone's back.
+
+1326
+01:13:14,280 --> 01:13:16,520
+这就是她  而且他非常爱她
+Well, it's her and he was crazy about her.
+
+1327
+01:13:17,740 --> 01:13:18,340
+这是什么
+What's this?
+
+1328
+01:13:19,220 --> 01:13:21,070
+这封信是从西雅图寄来的
+This is from Seattle.
+
+1329
+01:13:29,340 --> 01:13:30,410
+贝琪
+Becky.
+
+1330
+01:13:33,050 --> 01:13:34,540
+我把你的信寄出去了
+So I mailed your letter.
+
+1331
+01:13:37,300 --> 01:13:38,480
+"亲爱的安妮
+"Dear Annie.
+
+1332
+01:13:38,900 --> 01:13:41,640
+感谢你的来信  信写得很好
+Thanks for your letter. It was great.
+
+1333
+01:13:41,640 --> 01:13:44,050
+你似乎是个不错的人
+You sound neat.
+
+1334
+01:13:46,730 --> 01:13:48,650
+我们很期待能够在情人节当天
+We're very excited about meeting you
+
+1335
+01:13:48,650 --> 01:13:52,350
+和你在纽约见面  看看我们是不是
+in New York on Valentine's Day and seeing if we are...
+
+1336
+01:13:53,360 --> 01:13:55,640
+天对地双
+M-f-e-o.
+
+1337
+01:13:56,200 --> 01:14:00,360
+期待能和你很快见面  西雅图夜未眠先生留"
+See you soon. Sleepless in Seattle."
+
+1338
+01:14:01,120 --> 01:14:02,820
+天对地双
+M-f-e-o?
+
+1339
+01:14:06,880 --> 01:14:08,700
+天造一对  地设一双
+Made for each other.
+
+1340
+01:14:10,460 --> 01:14:11,630
+文风很可爱
+It's cute.
+
+1341
+01:14:12,230 --> 01:14:14,240
+就像给你留了一条小线索
+It's like a little clue.
+
+1342
+01:14:18,350 --> 01:14:21,760
+所以他文笔不好  多大点事
+So he can't write. Big deal.
+
+1343
+01:14:21,770 --> 01:14:24,600
+我们总是过度高估男人的语言能力
+Verbal ability is a highly overrated thing in a guy.
+
+1344
+01:14:24,600 --> 01:14:25,980
+正是对这种能力的可悲需求
+And our pathetic need for it
+
+1345
+01:14:25,980 --> 01:14:27,520
+才会让我们陷入这么多麻烦
+is what gets us into so much trouble.
+
+1346
+01:14:27,520 --> 01:14:31,520
+我要奔回沃尔特的怀抱  前提是他还要我的话
+I'm going to run back to Walter's arms, if he'll still have me.
+
+1347
+01:14:31,530 --> 01:14:32,730
+那这封信呢
+What about the letter?
+
+1348
+01:14:32,740 --> 01:14:35,240
+这封信没有任何意义  这是在我去之前写的
+It's nothing. It was written before I went out there.
+
+1349
+01:14:35,240 --> 01:14:37,100
+在他和那个坏女人好上之前
+Before the ho.
+
+1350
+01:14:40,490 --> 01:14:43,610
+唯一的问题是  她看上去不像是坏女人
+The only thing is, she didn't look like a ho.
+
+1351
+01:14:43,950 --> 01:14:46,740
+她看上去像是可以和我们做朋友的人
+She looked like somebody we would have been friends with.
+
+1352
+01:14:51,550 --> 01:14:53,550
+你在机场见过她  又在这里见到了她
+You saw her in the airport and then here?
+
+1353
+01:14:53,550 --> 01:14:54,590
+我想和她说话
+And I tried to talk to her.
+
+1354
+01:14:54,590 --> 01:14:56,840
+就好像我认识她一样  感觉很奇怪
+It was like I knew her or something. It was weird.
+
+1355
+01:14:56,840 --> 01:14:58,260
+你是指那种似曾相识的感觉吗
+You mean like a déjà-vu thing?
+
+1356
+01:14:58,260 --> 01:15:01,970
+非常法式的似曾相识感  明白吗
+It was very French déjà-vu-ish kind of thing. Oui?
+
+1357
+01:15:01,970 --> 01:15:04,270
+明白  至少你又开始约会了
+Oui. At least you're out there seeing people again.
+
+1358
+01:15:04,270 --> 01:15:05,710
+这很棒
+That's terrific.
+
+1359
+01:15:06,190 --> 01:15:08,730
+其实我只和一个人约过会
+Well, I mean, there's really just the one.
+
+1360
+01:15:08,730 --> 01:15:10,280
+维多利亚
+Victoria.
+
+1361
+01:15:11,040 --> 01:15:12,570
+你不喜欢维多利亚吗
+You don't like Victoria?
+
+1362
+01:15:12,570 --> 01:15:14,130
+她的笑声像鬣狗
+She laughs like a hyena.
+
+1363
+01:15:14,690 --> 01:15:15,820
+真的吗
+Is this true?
+
+1364
+01:15:15,820 --> 01:15:16,930
+不是
+No!
+
+1365
+01:15:18,030 --> 01:15:21,600
+有一点像吧  告诉他们你做了什么
+Sort of. Yeah, a little bit. But, tell them what you did.
+
+1366
+01:15:21,700 --> 01:15:23,490
+-爸爸  -跟他们说说电台节目的事
+- Dad... - Tell them about the radio show.
+
+1367
+01:15:23,490 --> 01:15:24,160
+-说吧  -爸爸
+- Go ahead. - Dad...
+
+1368
+01:15:24,160 --> 01:15:25,910
+他们想听  说吧  告诉他们
+They wanna hear it. Go ahead. Tell them. Tell them.
+
+1369
+01:15:25,910 --> 01:15:29,830
+平安夜那晚  他给一个电台热线节目打电话
+Christmas Eve, he phones in one of those radio call-in shows.
+
+1370
+01:15:29,830 --> 01:15:33,130
+说我需要一个新妻子
+And tells them I need a new wife.
+
+1371
+01:15:33,130 --> 01:15:34,960
+开玩笑吧
+Oh, you're kidding.
+
+1372
+01:15:34,960 --> 01:15:36,760
+真体贴
+That's so sweet.
+
+1373
+01:15:36,760 --> 01:15:39,800
+现在他对一个给我写信的女人着了迷
+Now he's obsessed with this one woman who wrote me.
+
+1374
+01:15:39,800 --> 01:15:41,090
+-没开玩笑吧  -真的
+- Are you serious? - Yeah.
+
+1375
+01:15:41,100 --> 01:15:44,060
+她想和我在帝国大厦的楼顶见面
+She wants to meet me at the top of Empire State Building.
+
+1376
+01:15:44,060 --> 01:15:46,380
+在情人节当天
+On Valentine's Day.
+
+1377
+01:15:47,140 --> 01:15:49,520
+-就像那部电影一样  -什么电影
+- It's like that movie. - What movie?
+
+1378
+01:15:49,520 --> 01:15:52,050
+《金玉盟》  你们没看过吗
+An Affair to Remember. Did you ever see it?
+
+1379
+01:15:52,440 --> 01:15:53,540
+天哪
+Oh, God.
+
+1380
+01:15:54,200 --> 01:15:56,500
+加里·格兰特和黛博拉·蔻儿主演
+Cary Grant and Deborah Kerr.
+
+1381
+01:15:56,620 --> 01:15:57,990
+是卡尔还是蔻儿
+Is that "Karr" Or "Kerr"?
+
+1382
+01:15:57,990 --> 01:15:58,970
+-蔻儿  -卡尔
+- Kerr. - Karr.
+
+1383
+01:15:59,700 --> 01:16:00,430
+好吧
+Okay.
+
+1384
+01:16:01,120 --> 01:16:03,730
+她本来会在帝国大厦的楼顶和他见面
+She's gonna meet him at the top of the Empire State Building.
+
+1385
+01:16:03,870 --> 01:16:06,270
+但她被出租车撞到了
+Only she got hit by a taxi.
+
+1386
+01:16:06,540 --> 01:16:10,990
+他一直在等  我记得好像还在下雨
+And he waited and waited. And it was raining, I think.
+
+1387
+01:16:11,670 --> 01:16:17,730
+她因为自尊心  不愿意告诉他...
+And then she's too proud to tell him that she's...
+
+1388
+01:16:20,560 --> 01:16:21,610
+自己瘸了
+crippled.
+
+1389
+01:16:22,690 --> 01:16:26,130
+他也因为自尊心  不愿意去探究她没来的原因
+And he's too proud to find out why she doesn't come.
+
+1390
+01:16:26,720 --> 01:16:27,950
+但他最终还是去见她了
+But he comes to see her anyway.
+
+1391
+01:16:28,570 --> 01:16:30,130
+我忘了原因  不过
+And I forget why, but...
+
+1392
+01:16:31,060 --> 01:16:34,360
+他去见她时的那一幕太感人了
+Oh, it's so amazing when he comes to see her.
+
+1393
+01:16:34,360 --> 01:16:37,320
+因为他都没有注意到
+Because he doesn't even notice
+
+1394
+01:16:37,320 --> 01:16:39,900
+她没有起身和他打招呼
+that she doesn't get up to say hello.
+
+1395
+01:16:39,900 --> 01:16:42,430
+他极尽挖苦与讽刺
+And he's very bitter.
+
+1396
+01:16:43,490 --> 01:16:45,520
+你以为他会直接
+And you think that he's just gonna
+
+1397
+01:16:45,950 --> 01:16:47,500
+走出那扇门
+walk out the door
+
+1398
+01:16:47,800 --> 01:16:49,580
+永远不知道她为什么没来
+and never know why.
+
+1399
+01:16:49,580 --> 01:16:51,250
+她就躺在那里
+She's just lying there, you know.
+
+1400
+01:16:51,250 --> 01:16:52,960
+躺在沙发上
+Like, on the couch with
+
+1401
+01:16:52,960 --> 01:16:57,280
+把一条小毯子盖在她萎缩的双腿上
+this little blanket over her shrivelled little legs.
+
+1402
+01:16:57,840 --> 01:16:58,700
+然后
+And...
+
+1403
+01:16:59,260 --> 01:17:00,640
+你没事吧
+Are you all right?
+
+1404
+01:17:00,760 --> 01:17:01,550
+她没事
+She's fine.
+
+1405
+01:17:01,550 --> 01:17:05,930
+突然  他说  "我看到了那幅画"
+And suddenly, he goes, "I saw the painting"
+
+1406
+01:17:05,930 --> 01:17:08,920
+然后他走进了卧室
+And he, like, goes to the bedroom.
+
+1407
+01:17:09,100 --> 01:17:11,520
+环顾四周  再走出卧室看着她
+And he looks, and he comes out and looks at her.
+
+1408
+01:17:11,520 --> 01:17:13,100
+然后他就...
+And he kind of just...
+
+1409
+01:17:13,100 --> 01:17:17,050
+他们解开了误会  相拥在一起  太感人了
+They know and hug and it's so...
+
+1410
+01:17:17,730 --> 01:17:19,000
+这是女人看的电影
+That's a chick's movie.
+
+1411
+01:17:19,710 --> 01:17:21,010
+我也这么想
+I would say so.
+
+1412
+01:17:21,530 --> 01:17:23,150
+什么样的人
+What kind of a person would
+
+1413
+01:17:23,160 --> 01:17:24,610
+会给电台节目里听到的人写信
+write to someone they heard on the radio?
+
+1414
+01:17:24,620 --> 01:17:27,740
+全国上下有成百上千个女人都给我寄了信
+I got hundreds of letters from women all over the country.
+
+1415
+01:17:27,740 --> 01:17:29,110
+饥不择食的女人
+Desperate women.
+
+1416
+01:17:29,200 --> 01:17:31,580
+那些女人只是想找个好男人
+Just because someone is looking for a nice guy,
+
+1417
+01:17:31,580 --> 01:17:32,660
+这并不代表她们就饥不择食
+it doesn't make them desperate.
+
+1418
+01:17:32,660 --> 01:17:34,420
+「贪婪而缺爱」  这个说法如何
+How about rapacious and love-starved?
+
+1419
+01:17:34,420 --> 01:17:35,120
+不行
+No.
+
+1420
+01:17:35,130 --> 01:17:37,880
+被恐怖分子杀死的几率都比在四十岁之后
+It's easier to be killed by a terrorist than to find a husband
+
+1421
+01:17:37,880 --> 01:17:40,380
+-找到丈夫的几率大  -根本不是这样
+- after the age of 40... - That is absolutely untrue!
+
+1422
+01:17:40,380 --> 01:17:42,450
+好吧  亲爱的  好吧
+Right, honey. Right.
+
+1423
+01:17:42,930 --> 01:17:45,300
+我又不是要找一个邮购新娘
+Well, I'm not looking for a mail-order bride.
+
+1424
+01:17:45,300 --> 01:17:46,120
+我只想找一个
+I just want somebody
+
+1425
+01:17:46,120 --> 01:17:49,220
+能和我在吃晚饭时好好聊天的女人
+that I can have a decent conversation with over dinner.
+
+1426
+01:17:49,220 --> 01:17:50,600
+不会因为刚看过的电影
+You know, without it falling down
+
+1427
+01:17:50,600 --> 01:17:53,810
+就哭得稀里哗啦的那种女人
+into weepy tears over some movie that she just saw.
+
+1428
+01:17:53,810 --> 01:17:54,480
+她太多愁善感了
+She's very emotional.
+
+1429
+01:17:54,480 --> 01:17:56,600
+-不过看到《十二金刚》结尾时  我也哭了  -谁不哭呢
+- Although, I cried at the end of The Dirty Dozen. - Who didn't?
+
+1430
+01:17:56,700 --> 01:18:00,320
+吉姆·布朗正往那些通风井里面扔手榴弹
+Jim Brown was throwing these hand grenades down these air shafts.
+
+1431
+01:18:00,320 --> 01:18:02,030
+然后理查德·杰克尔和李·马文
+And Richard Jaeckel and Lee Marvin
+
+1432
+01:18:02,030 --> 01:18:05,110
+坐在装甲运兵车顶上
+were sitting on top of this armoured personnel carrier.
+
+1433
+01:18:05,110 --> 01:18:07,690
+他们打扮成纳粹的样子  还有...
+They were dressed up like Nazis. And it was...
+
+1434
+01:18:08,120 --> 01:18:10,230
+-秦尼·罗柏斯  -秦尼·罗柏斯
+- Trini Lopez... - Trini Lopez...
+
+1435
+01:18:10,990 --> 01:18:12,330
+在他们空降纳粹敌后区的时候
+He busted his neck when they were
+
+1436
+01:18:12,330 --> 01:18:14,120
+他被打中了脖子
+parachuting down behind the Nazi lines.
+
+1437
+01:18:14,120 --> 01:18:15,710
+别说了
+Stop it!
+
+1438
+01:18:15,710 --> 01:18:17,250
+理查德·杰克尔  在电影开始的时候
+Richard Jaeckel, at the beginning,
+
+1439
+01:18:17,250 --> 01:18:20,250
+戴着一个亮闪闪的钢盔  因为他是宪兵
+he had on a shiny helmet, because he was an MP.
+
+1440
+01:18:20,250 --> 01:18:24,700
+别说了  天哪  我爱那部电影
+Please, no more. God, I love that movie.
+
+1441
+01:18:33,560 --> 01:18:36,230
+这是我看过的最好的电影了
+This is the best movie I've ever seen in my life.
+
+1442
+01:18:36,230 --> 01:18:38,100
+哪里好了
+What's so great about it?
+
+1443
+01:18:38,110 --> 01:18:40,730
+你得找到她  乔纳  你得去见她
+You have to find her, Jonah. You have to go to her.
+
+1444
+01:18:40,730 --> 01:18:43,530
+你知道去纽约要花多少钱吗
+Do you know how much money it costs to go to New York?
+
+1445
+01:18:43,530 --> 01:18:44,850
+没人知道
+Nobody knows.
+
+1446
+01:18:44,850 --> 01:18:47,480
+价格基本每天都在变
+It changes practically every day.
+
+1447
+01:18:47,910 --> 01:18:49,570
+你有多少钱
+How much money do you have?
+
+1448
+01:18:49,580 --> 01:18:51,160
+80块
+80 dollars.
+
+1449
+01:18:51,160 --> 01:18:54,370
+我有42块  应该够乘出租车了
+I have 42. That'll probably cover taxi cabs.
+
+1450
+01:18:54,370 --> 01:18:56,110
+但我要怎么过去呢
+But how would I get there?
+
+1451
+01:18:56,670 --> 01:18:59,210
+亲爱的  我得去给别人送票
+Honey, I have to run these tickets over to someone.
+
+1452
+01:18:59,210 --> 01:19:01,610
+在我回来之前  帮我看一下家好吗
+Can you keep an eye on things out front till I get back?
+
+1453
+01:19:01,610 --> 01:19:02,590
+好的  妈妈
+Sure, Mum.
+
+1454
+01:19:09,140 --> 01:19:14,220
+{\an9}鲍德温
+93年2月14号
+西雅图机场  至  纽约肯尼迪机场
+联合航空  班次FL1597
+
+1455
+01:19:13,880 --> 01:19:16,360
+-你要靠窗的座位还是靠过道的座位  -靠窗
+- You want a window seat or aisle? - Window.
+
+1456
+01:19:17,130 --> 01:19:19,970
+-你想要水果拼盘吗  -不知道  我会想要吗
+- You want a fruit plate? - I don't know. Do I?
+
+1457
+01:19:20,050 --> 01:19:22,250
+我宁死也不要吃飞机上的食物
+I'd rather die than eat airplane food.
+
+1458
+01:19:22,250 --> 01:19:23,260
+我会告知航空公司你已满十二岁
+I'm telling them you're 12
+
+1459
+01:19:23,260 --> 01:19:24,530
+这样你就可以单独搭乘飞机
+so you can fly unaccompanied
+
+1460
+01:19:24,530 --> 01:19:26,790
+那些空姐也不会围着你烦个不停了
+and the stewardess won't carry you around and stuff like that.
+
+1461
+01:19:26,790 --> 01:19:29,650
+你疯了吧  谁会相信我满12岁了
+Are you crazy? Who'd believe I'm 12?
+
+1462
+01:19:29,650 --> 01:19:32,420
+如果电脑上有记录  他们什么都会信
+If it's in the computer, they'll believe anything.
+
+1463
+01:19:32,420 --> 01:19:33,800
+你确定吗
+Are you sure?
+
+1464
+01:19:34,310 --> 01:19:35,180
+你希望我告知他们
+Do you want me to say
+
+1465
+01:19:35,190 --> 01:19:36,780
+和同龄人相比  你身材非常矮小
+that you're really, really short for your age,
+
+1466
+01:19:36,780 --> 01:19:37,860
+他们不该对此说什么
+and they shouldn't say anything
+
+1467
+01:19:37,860 --> 01:19:39,350
+因为这样会伤害你的感情吗
+because it would hurt your feelings?
+
+1468
+01:19:39,350 --> 01:19:41,410
+好  这主意真不错
+Yeah. That's a great idea!
+
+1469
+01:19:41,800 --> 01:19:48,700
+{\an9}♪有时  做女人难♪
+♪ Sometimes it's hard to be a woman ♪
+
+1470
+01:19:51,310 --> 01:19:58,090
+{\an9}♪只为一个男人献上你所有的爱♪
+♪ Giving all your love to just one man ♪
+
+1471
+01:19:59,140 --> 01:20:00,190
+沃尔特
+Walter.
+
+1472
+01:20:01,650 --> 01:20:02,880
+你要错过那班火车了  
+You're gonna miss the train.
+
+1473
+01:20:03,250 --> 01:20:04,720
+不  我不会
+No, I'm not.
+
+1474
+01:20:05,480 --> 01:20:07,300
+我好高兴  贝琪
+I'm so happy, Becky.
+
+1475
+01:20:07,300 --> 01:20:09,120
+我终于高兴了
+Finally, I feel happy.
+
+1476
+01:20:09,260 --> 01:20:11,150
+这样才对  这才是我的现实生活
+This is right. This is real.
+
+1477
+01:20:11,150 --> 01:20:13,950
+其他事都是因为我看了太多电影
+Everything else is what happens when you watch too many movies.
+
+1478
+01:20:13,950 --> 01:20:16,290
+从而完全忽视了真正重要的东西
+And you completely lose sight of what counts.
+
+1479
+01:20:16,530 --> 01:20:18,840
+请不要告诉别人发生了什么
+Please, don't tell anybody what happened.
+
+1480
+01:20:18,850 --> 01:20:20,890
+如果有人知道我做了什么事
+Because I would be so absolutely mortified
+
+1481
+01:20:20,890 --> 01:20:22,090
+哪怕他们只知道一点点
+if anyone knew I did anything
+
+1482
+01:20:22,090 --> 01:20:24,780
+我都会羞愧难当
+even remotely close to what I have done.
+
+1483
+01:20:24,980 --> 01:20:26,470
+谢谢  谢谢  你保证吗
+Thank you, thank you. Do you promise?
+
+1484
+01:20:26,470 --> 01:20:27,350
+我保证
+I promise.
+
+1485
+01:20:27,850 --> 01:20:30,060
+西雅图夜未眠先生已成历史
+Sleepless in Seattle is history.
+
+1486
+01:20:36,870 --> 01:20:40,700
+{\an9}♪如果你爱他♪
+♪ And if you love him ♪
+
+1487
+01:20:41,530 --> 01:20:45,630
+{\an9}♪请为他感到自豪♪
+♪ Oh, be proud of him ♪
+
+1488
+01:20:46,050 --> 01:20:52,390
+{\an9}♪毕竟  他只是一个男人♪
+♪ Cause after all he's just a man ♪
+
+1489
+01:20:55,470 --> 01:20:58,630
+{\an9}♪支持你的他♪
+♪ Stand by your man ♪
+
+1490
+01:21:01,270 --> 01:21:02,650
+-我只是...  -我只是...
+- I was just... - I was just...
+
+1491
+01:21:04,230 --> 01:21:05,810
+-说吧  -不  你先说
+- Go ahead. - No, you go.
+
+1492
+01:21:06,330 --> 01:21:10,480
+好吧  我只想说  圣诞节之后
+Okay. Well, I was just gonna say that ever since Christmas...
+
+1493
+01:21:11,780 --> 01:21:15,050
+你有点变了  有些心不在焉  和我也有些疏远了
+you've been different, kind of distracted, distant.
+
+1494
+01:21:15,050 --> 01:21:20,230
+但现在  我感觉你
+But now it feels as if you're coming back from
+
+1495
+01:21:20,240 --> 01:21:21,400
+变回了原来的自己
+wherever you were.
+
+1496
+01:21:22,430 --> 01:21:23,560
+是的
+I am.
+
+1497
+01:21:25,870 --> 01:21:27,230
+我只是...
+I was just...
+
+1498
+01:21:28,490 --> 01:21:32,180
+我只是  我觉得是我紧张了
+I just... I just got... I think I got nervous.
+
+1499
+01:21:33,110 --> 01:21:34,900
+但这很正常  对吗
+But that's normal, right?
+
+1500
+01:21:35,040 --> 01:21:39,760
+难道你没有为那件事紧张过吗
+I mean, don't you ever feel nervous about... you know?
+
+1501
+01:21:40,830 --> 01:21:41,340
+什么事
+What?
+
+1502
+01:21:43,260 --> 01:21:44,540
+永恒
+Forever.
+
+1503
+01:21:46,500 --> 01:21:47,530
+没有
+No.
+
+1504
+01:21:51,410 --> 01:21:52,440
+好吧
+Well...
+
+1505
+01:21:53,980 --> 01:21:54,630
+我紧张了
+I did.
+
+1506
+01:21:54,630 --> 01:21:57,350
+你知道我是怎么想的吗
+And... You know what I think?
+
+1507
+01:21:57,350 --> 01:22:01,810
+我感觉我们太般配了
+I think I thought it was too perfect, you know.
+
+1508
+01:22:01,990 --> 01:22:05,230
+我开始怀疑我们会不会
+I started to wonder if we were the human equivalent
+
+1509
+01:22:05,230 --> 01:22:07,310
+正正得负
+of two rights making a wrong.
+
+1510
+01:22:07,810 --> 01:22:09,280
+你知道那是什么感觉吗
+You know what it was?
+
+1511
+01:22:09,420 --> 01:22:11,530
+感觉就像命运  但也不是
+It was like kismet, but not,
+
+1512
+01:22:11,530 --> 01:22:13,130
+不知你明不明白我的意思
+if you see what I mean.
+
+1513
+01:22:14,610 --> 01:22:15,940
+你必须得长大
+You have to grow up.
+
+1514
+01:22:15,940 --> 01:22:17,080
+不能再继续抱有
+You just can't keep having
+
+1515
+01:22:17,080 --> 01:22:19,620
+那些青少年般的幻象
+all these adolescent fantasies about...
+
+1516
+01:22:19,620 --> 01:22:21,430
+比如自己今后的生活会有多刺激
+how exciting life is gonna be.
+
+1517
+01:22:21,430 --> 01:22:24,060
+别怪我  但我喜欢这花色
+Don't hate me, but I love this pattern.
+
+1518
+01:22:24,210 --> 01:22:26,070
+-不会吧  -真的
+- You couldn't. - I do.
+
+1519
+01:22:26,290 --> 01:22:29,150
+这和我外婆的瓷器一模一样
+This is just like my grandmother's china.
+
+1520
+01:22:29,170 --> 01:22:31,330
+你们要几套餐具
+How many place settings should I put down.
+
+1521
+01:22:31,690 --> 01:22:32,820
+-十套  -十套
+- Ten. - Ten.
+
+1522
+01:22:36,020 --> 01:22:40,280
+没错  八套太少  十二套又...
+Exactly. Eight is too few, twelve is...
+
+1523
+01:22:40,660 --> 01:22:41,930
+太多
+Too many.
+
+1524
+01:23:05,580 --> 01:23:06,440
+沃尔特
+Walter.
+
+1525
+01:23:07,090 --> 01:23:08,690
+这曾是我母亲的戒指
+It was my mother's.
+
+1526
+01:23:11,070 --> 01:23:12,830
+我让人把尺寸改小了
+I had them size it down.
+
+1527
+01:23:14,720 --> 01:23:16,960
+她的手指很粗
+She had really fat fingers.
+
+1528
+01:23:19,330 --> 01:23:20,720
+真好看
+It's so beautiful.
+
+1529
+01:23:20,980 --> 01:23:23,910
+如果全世界的戒指
+It's exactly what I would pick out if I had
+
+1530
+01:23:24,110 --> 01:23:27,300
+都可供我挑选  我还是会选这一枚
+every ring in the whole world to choose from.
+
+1531
+01:23:29,980 --> 01:23:31,240
+你明白我的意思了吗
+You see what I mean?
+
+1532
+01:23:31,290 --> 01:23:34,980
+有的人喜欢恋爱中充满惊喜
+There are people who would like a relationship to be full of surprises,
+
+1533
+01:23:34,980 --> 01:23:36,750
+但我不是那种人 
+but I am not one of those people.
+
+1534
+01:23:37,400 --> 01:23:38,880
+我不是
+No, siree.
+
+1535
+01:23:39,730 --> 01:23:42,210
+人们过分看重了惊喜
+Surprises are highly overrated.
+
+1536
+01:23:45,420 --> 01:23:46,870
+我明天一早就走
+I'm leaving first thing in the morning,
+
+1537
+01:23:46,870 --> 01:23:48,630
+但我只会去一个晚上
+but I'm only gonna be gone one night.
+
+1538
+01:23:48,630 --> 01:23:49,860
+克拉丽丝会来
+Clarise is gonna be here.
+
+1539
+01:23:49,860 --> 01:23:51,200
+你们可以一起看很多
+So you'll be able to see plenty of
+
+1540
+01:23:51,210 --> 01:23:54,300
+《格尔拉多》和《猛鬼街》  我不会知道的
+Geraldo and Nightmare on Elm Street 12. I will never know.
+
+1541
+01:23:54,300 --> 01:23:55,690
+你要和她一起去吗
+Are you going with her?
+
+1542
+01:23:57,380 --> 01:23:59,640
+我要和维多利亚一起去  没错
+I'm going with Victoria, yes.
+
+1543
+01:24:01,850 --> 01:24:04,400
+别想耍花招  明白吗
+Don't try anything tricky. Understand?
+
+1544
+01:24:07,580 --> 01:24:11,200
+别等我一出门就去毒藤丛里打滚
+Don't go rolling in poison ivy as soon as I leave the house.
+
+1545
+01:24:11,200 --> 01:24:12,670
+也不要把自己锁在柜子里
+Or lock yourself in the closet
+
+1546
+01:24:12,670 --> 01:24:14,220
+或者让自己受伤
+or do anything that makes you need stitches.
+
+1547
+01:24:14,220 --> 01:24:16,400
+如果你的手指断了  就会一直断着
+If your finger falls off, it's staying off.
+
+1548
+01:24:16,400 --> 01:24:18,770
+没人会帮你把断指冰敷  然后送你去医院
+No one's gonna pack it on ice and take you to hospital,
+
+1549
+01:24:18,770 --> 01:24:21,130
+好让你成为激光手术的医学奇迹
+so that you can be a breakthrough in laser surgery.
+
+1550
+01:24:22,090 --> 01:24:24,200
+是因为巴尔的摩的那个女人吗
+Is this about that woman in Baltimore?
+
+1551
+01:24:24,220 --> 01:24:25,410
+她叫安妮
+Annie.
+
+1552
+01:24:29,700 --> 01:24:32,270
+-我才不在乎你会干什么  -很好
+- I don't care what you do! - Good! Fine!
+
+1553
+01:24:32,270 --> 01:24:34,020
+告诉你我这周末会干什么
+I'll tell you what I'm doing this weekend.
+
+1554
+01:24:34,020 --> 01:24:35,200
+我要享受性生活
+I'm getting laid.
+
+1555
+01:24:35,560 --> 01:24:37,620
+进入90年代  却没人有性生活了
+1990s and nobody's getting laid.
+
+1556
+01:24:37,620 --> 01:24:40,360
+我是全美国这周末唯一有性生活的男人
+I'm the only man in the America who's getting laid this weekend.
+
+1557
+01:24:40,360 --> 01:24:42,220
+我的性生活经历可不多
+And I haven't been laid that much.
+
+1558
+01:24:42,220 --> 01:24:44,670
+大学里有过六个女孩  也许是七个
+Six girls in college. Maybe seven.
+
+1559
+01:24:46,030 --> 01:24:47,360
+你站在那里多久了
+How long have you been there?
+
+1560
+01:24:47,670 --> 01:24:48,930
+一直站着呢
+Forever.
+
+1561
+01:24:48,980 --> 01:24:50,220
+你听到我说什么了
+What did you hear me just say?
+
+1562
+01:24:50,220 --> 01:24:52,700
+"大学里有过六个女孩  也许是七个"
+"Six girls in college. Maybe seven."
+
+1563
+01:24:52,920 --> 01:24:55,730
+七个  八个  还有玛丽·凯利
+Seven. Eight! Mary Kelly.
+
+1564
+01:24:55,730 --> 01:24:57,630
+我就喜欢她
+This is the one I like.
+
+1565
+01:25:00,090 --> 01:25:03,880
+乔纳  事实上  你不会喜欢上任何女人
+Jonah, the fact is, you're not gonna like any woman,
+
+1566
+01:25:03,880 --> 01:25:05,450
+因为她们不是你妈妈
+because it isn't your mother.
+
+1567
+01:25:05,450 --> 01:25:06,720
+你怎么知道
+How do you know?
+
+1568
+01:25:07,220 --> 01:25:11,090
+-安妮哪里不好了  -乔纳  闭嘴
+- What's wrong with Annie? - Oh, Jonah, shut up!
+
+1569
+01:25:11,170 --> 01:25:15,390
+闭嘴  闭嘴  妈妈从来没对我说过闭嘴
+Shut up? Shut up? Mum never said shut up to me.
+
+1570
+01:25:15,400 --> 01:25:16,850
+妈妈从来不对我大吼大叫
+Mum never yelled at me.
+
+1571
+01:25:16,850 --> 01:25:19,990
+-谈话到此结束  -我们为什么不能去纽约
+- This conversation is finished. - Why can't we go to New York?
+
+1572
+01:25:19,990 --> 01:25:22,830
+我们不可能乘上飞机
+There is no way that we are going on a plane
+
+1573
+01:25:22,830 --> 01:25:25,380
+去见一个可能是疯子的女人
+to meet some woman who could be a crazy, sick lunatic.
+
+1574
+01:25:25,380 --> 01:25:26,750
+难道你没看过《致命诱惑》吗 
+Didn't you see Fatal Attraction?
+
+1575
+01:25:26,750 --> 01:25:28,120
+你不让我看
+You wouldn't let me.
+
+1576
+01:25:28,120 --> 01:25:30,630
+我看过  那电影把我吓死了
+Well, I saw it! And it scared the shit out of me.
+
+1577
+01:25:30,630 --> 01:25:33,090
+把全美国所有的男人都吓死了
+It scared the shit out of every man in America!
+
+1578
+01:25:34,670 --> 01:25:37,160
+你不同意  我就不走
+I'm not leaving till you say yes.
+
+1579
+01:25:42,740 --> 01:25:44,840
+我恨你  我恨你  我恨你
+I hate you! I hate you! I hate you!
+
+1580
+01:25:44,840 --> 01:25:47,400
+很好  你可以好好和奥普拉说说[著名脱口秀主持人]That's good! You'll have a lot to tell Oprah
+
+1581
+01:25:47,400 --> 01:25:48,840
+你爸爸是怎么毁了你的一生
+how your dad destroyed your life
+
+1582
+01:25:48,840 --> 01:25:50,880
+就因为他要享受一个特别的周末
+because he had to go off for a weekend special
+
+1583
+01:25:50,920 --> 01:25:52,700
+去假日旅馆享受
+at the Holiday Inn!
+
+1584
+01:26:08,050 --> 01:26:11,290
+乔纳  克拉丽丝来了  我得走了
+Jonah, Clarise is here and I've got to go.
+
+1585
+01:26:13,390 --> 01:26:14,680
+乔纳
+Hey, Jonah.
+
+1586
+01:26:17,890 --> 01:26:19,030
+乔纳
+Jonah?
+
+1587
+01:26:22,030 --> 01:26:25,620
+好吧  乔纳  听着  我得走了
+All right. Jonah, listen, I've got to go.
+
+1588
+01:26:29,400 --> 01:26:31,850
+乔纳
+Jonah.
+
+1589
+01:26:34,480 --> 01:26:35,690
+乔纳
+Hey, Jonah.
+
+1590
+01:26:39,640 --> 01:26:40,710
+乔纳
+Jonah!
+
+1591
+01:26:42,830 --> 01:26:44,030
+乔纳
+Jonah.
+
+1592
+01:26:46,560 --> 01:26:48,110
+乔纳
+Jonah.
+
+1593
+01:26:55,190 --> 01:26:57,910
+杰西卡  亲爱的  你得告诉我们他在哪
+Jessica, honey. You have tell us where he is.
+
+1594
+01:26:57,910 --> 01:27:00,200
+乔纳的爸爸很着急
+Jonah's daddy is very upset.
+
+1595
+01:27:00,810 --> 01:27:02,610
+杰西卡  我是你爸爸
+Jessica, this is your father.
+
+1596
+01:27:03,000 --> 01:27:05,380
+赶紧告诉我们他在哪
+Tell us where he is. Right this minute!
+
+1597
+01:27:08,620 --> 01:27:11,010
+-NY  -什么意思
+- NY - What is that?
+
+1598
+01:27:11,010 --> 01:27:11,920
+"没门"
+"No way."
+
+1599
+01:27:11,920 --> 01:27:13,340
+"没门"的缩写是MM
+That's N-W!
+
+1600
+01:27:15,040 --> 01:27:19,150
+纽约  他已经在去纽约的路上了
+New York. He's on his way to New York.
+
+1601
+01:27:19,150 --> 01:27:20,490
+-什么  -怎么去的
+- What? - How?
+
+1602
+01:27:20,490 --> 01:27:23,810
+-联合航空597号航班  -杰西卡
+- United, 597. - Jessica.
+
+1603
+01:27:23,810 --> 01:27:25,850
+-什么时候起飞  -7点半
+- When does it leave? - Seven thirty.
+
+1604
+01:27:33,270 --> 01:27:35,180
+给  送你一个别针
+Here you go. Here's a nice pin for you
+
+1605
+01:27:35,180 --> 01:27:37,000
+-感谢搭乘我们的航班  -谢谢
+- for flying with us. - Thank you.
+
+1606
+01:27:37,000 --> 01:27:39,730
+-不客气  需要我帮你拿包吗  -不用
+- You're welcome. Can I take this for you? - No.
+
+1607
+01:27:56,150 --> 01:27:58,300
+-孩子  去哪  -帝国大厦
+- Where to, kid? - Empire State Building.
+
+1608
+01:27:58,300 --> 01:27:59,260
+等等
+Hold on.
+
+1609
+01:28:00,000 --> 01:28:01,260
+帝国大厦
+Empire State Building.
+
+1610
+01:28:01,260 --> 01:28:03,550
+下次别站得离路边这么近
+Get a little further away from the curb next time, mac.
+
+1611
+01:28:03,890 --> 01:28:04,430
+去吧
+Come on.
+
+1612
+01:28:06,620 --> 01:28:07,870
+到了
+There it is.
+
+1613
+01:28:08,450 --> 01:28:11,830
+你要上去干什么  从楼顶往下吐口水吗
+What are you going to do up there? Spit off the top?
+
+1614
+01:28:11,830 --> 01:28:12,570
+不
+No,
+
+1615
+01:28:13,280 --> 01:28:15,270
+我要去见我的新妈妈
+I'm going to meet my new mother.
+
+1616
+01:28:19,770 --> 01:28:23,030
+{\an8}前往观景台
+
+1617
+01:28:28,070 --> 01:28:32,490
+{\an8}帝国大厦
+
+1618
+01:28:35,360 --> 01:28:38,250
+打扰了  我是乔纳  你是安妮吗
+Excuse me. I'm Jonah. Are you Annie?
+
+1619
+01:28:38,250 --> 01:28:40,510
+不  我是辛西娅
+No, I'm Cynthia.
+
+1620
+01:28:47,730 --> 01:28:50,190
+打扰了  你是安妮吗
+Excuse me, are you Annie?
+
+1621
+01:29:28,680 --> 01:29:30,410
+桌子的位置很不错  谢谢
+Great table. Thanks.
+
+1622
+01:29:33,000 --> 01:29:34,200
+有什么问题吗
+Is something wrong?
+
+1623
+01:29:35,880 --> 01:29:37,730
+要来点喝的吗
+Can I get you a drink?
+
+1624
+01:29:37,740 --> 01:29:39,020
+要香槟吗
+Some champagne?
+
+1625
+01:29:40,240 --> 01:29:41,820
+好的  好的
+Fine. Fine.
+
+1626
+01:29:42,860 --> 01:29:46,650
+能给我们上一瓶多姆·德路易斯[演员]吗
+Can we have a bottle of Dom DeLuise.
+
+1627
+01:29:49,670 --> 01:29:51,210
+-开玩笑的  -这是个笑话
+- Just kidding. - It was a joke.
+
+1628
+01:29:51,210 --> 01:29:54,080
+-他指的是唐培里侬香槟王  -知道了
+- He meant Dom Perignon. - I got it.
+
+1629
+01:29:57,730 --> 01:29:59,220
+景色真美  不是吗
+Beautiful view, isn't it.
+
+1630
+01:29:59,990 --> 01:30:01,120
+沃尔特
+Walter...
+
+1631
+01:30:02,970 --> 01:30:05,030
+有些话我必须告诉你
+There's something I have to tell you.
+
+1632
+01:30:19,340 --> 01:30:21,690
+抱歉  我有急事
+Hey! Sorry, I have an emergency.
+
+1633
+01:30:23,540 --> 01:30:25,240
+钱  钱  钱  看到了吗
+Money, money, money, see?
+
+1634
+01:31:42,470 --> 01:31:46,790
+所以他现在可能在帝国大厦楼顶
+So he could be on top of the Empire State Building now?
+
+1635
+01:31:47,370 --> 01:31:48,410
+不
+No.
+
+1636
+01:31:49,210 --> 01:31:50,700
+我想可能会吧
+I guess he could be.
+
+1637
+01:31:51,280 --> 01:31:52,330
+不
+No.
+
+1638
+01:31:53,890 --> 01:31:56,340
+和他无关  沃尔特  是我的原因
+It's not him, Walter. It's me.
+
+1639
+01:31:58,110 --> 01:31:59,810
+我做不到
+I can't do this.
+
+1640
+01:32:01,640 --> 01:32:05,760
+安妮  我爱你
+Look, Annie, I love you.
+
+1641
+01:32:06,160 --> 01:32:08,140
+但先别扯这个吧
+But let's leave that out of this.
+
+1642
+01:32:09,360 --> 01:32:12,230
+我不希望成为你将就的对象
+I don't want to be someone that you're settling for.
+
+1643
+01:32:12,230 --> 01:32:16,410
+我不希望成为任何人将就的对象
+I don't want to be someone that anyone settles for.
+
+1644
+01:32:18,190 --> 01:32:19,500
+婚姻本身就已经足够艰难
+Marriage is hard enough
+
+1645
+01:32:19,500 --> 01:32:22,900
+更不用说在期望如此之低的情况下
+without bringing such low expectations into it.
+
+1646
+01:32:23,770 --> 01:32:24,830
+不是吗
+Isn't it?
+
+1647
+01:32:25,920 --> 01:32:28,080
+沃尔特  我配不上你
+Walter, I don't deserve you.
+
+1648
+01:32:29,260 --> 01:32:31,470
+不  我觉得这么说不合适
+No, I wouldn't put it that way.
+
+1649
+01:32:33,170 --> 01:32:35,260
+不过  我接受
+But...okay.
+
+1650
+01:32:51,790 --> 01:32:52,880
+你没事吗
+You okay?
+
+1651
+01:32:53,980 --> 01:32:54,980
+没事
+Yeah.
+
+1652
+01:33:01,090 --> 01:33:03,040
+-怎么了  -看
+- What? - Look.
+
+1653
+01:33:11,740 --> 01:33:13,200
+这是个预兆
+It's a sign.
+
+1654
+01:33:13,370 --> 01:33:15,020
+谁需要预兆
+Who needed a sign?
+
+1655
+01:33:15,280 --> 01:33:16,240
+沃尔特
+Walter,
+
+1656
+01:33:18,330 --> 01:33:19,730
+我得走了
+I have to go.
+
+1657
+01:33:33,010 --> 01:33:34,140
+乔纳
+Jonah!
+
+1658
+01:33:36,290 --> 01:33:37,560
+乔纳
+Jonah!
+
+1659
+01:33:38,750 --> 01:33:41,120
+-爸  爸  -乔纳
+- Dad! Dad! - Jonah?
+
+1660
+01:33:54,930 --> 01:33:56,370
+如果你出事了怎么办
+What if something happened to you?
+
+1661
+01:33:57,620 --> 01:33:59,590
+如果我找不到你怎么办
+What if I couldn't get to you?
+
+1662
+01:33:59,600 --> 01:34:02,080
+对不起  对不起
+I'm sorry. I'm sorry.
+
+1663
+01:34:04,310 --> 01:34:06,080
+那我该怎么办
+What would I have done?
+
+1664
+01:34:07,100 --> 01:34:10,150
+你是我的家人  是我的一切
+You are my family. You're all I've got.
+
+1665
+01:34:10,150 --> 01:34:12,390
+我以为她会在这  我以为她会来
+I thought she'd be here. I thought she'd come.
+
+1666
+01:34:12,390 --> 01:34:14,480
+我们过得挺好的  不是吗  我们挺好的吧
+We're doing okay, aren't we? I mean, are we okay?
+
+1667
+01:34:14,480 --> 01:34:15,120
+我们不是过得挺好的吗 
+Aren't we all right?
+
+1668
+01:34:15,120 --> 01:34:17,380
+到目前为止  我做过蠢事吗
+So far, have I done anything really stupid?
+
+1669
+01:34:17,380 --> 01:34:18,360
+没有
+No.
+
+1670
+01:34:18,670 --> 01:34:20,220
+我有没有毁了我们的生活
+Have I screwed it up for the both of us?
+
+1671
+01:34:20,220 --> 01:34:21,240
+没有
+No.
+
+1672
+01:35:05,310 --> 01:35:06,300
+{\an8}帝国大厦
+
+1673
+01:35:14,290 --> 01:35:17,230
+-能去观景台吗  -抱歉  女士  已经太晚了
+- Observation deck? - Sorry, ma'am, but it's too late.
+
+1674
+01:35:18,780 --> 01:35:21,100
+不  求求你  我真的得上去
+No, please. I really need to get up there.
+
+1675
+01:35:21,100 --> 01:35:23,120
+我们要关门了  今晚不搭客了
+We're closing up. No more runs tonight.
+
+1676
+01:35:29,320 --> 01:35:30,440
+听我说
+Listen...
+
+1677
+01:35:31,590 --> 01:35:35,200
+我能去看一眼吗  我本该和一个人在上面见面
+Can I just take a look? There's someone I was supposed to meet.
+
+1678
+01:35:35,200 --> 01:35:36,450
+他很可能不在
+He's probably not there,
+
+1679
+01:35:36,450 --> 01:35:39,790
+但我要是不看一眼  我永远都不会甘心
+but if I don't at least look, I'll always wonder about it.
+
+1680
+01:35:40,510 --> 01:35:42,180
+加里·格兰特  对吗
+Cary Grant, right?
+
+1681
+01:35:42,280 --> 01:35:43,790
+你知道那部电影
+You know that movie?
+
+1682
+01:35:44,860 --> 01:35:46,670
+我妻子的最爱之一
+It's one of my wife's favourites.
+
+1683
+01:35:55,940 --> 01:35:58,740
+也许等我们回家之后  我们可以养条狗
+Maybe when we get home, we'll get a dog.
+
+1684
+01:35:59,120 --> 01:36:00,370
+好吧
+Okay.
+
+1685
+01:36:00,460 --> 01:36:01,940
+"好吧"是什么意思
+What do you mean, okay?
+
+1686
+01:36:02,510 --> 01:36:03,660
+你不想养狗吗
+Wouldn't you like to have a dog?
+
+1687
+01:36:04,330 --> 01:36:05,660
+当然想
+Sure.
+
+1688
+01:36:18,430 --> 01:36:20,950
+抱歉  女士  空无一人
+I'm sorry, ma'am. Empty.
+
+1689
+01:36:23,590 --> 01:36:24,890
+能让我待一会吗
+Can I take a minute?
+
+1690
+01:36:26,570 --> 01:36:27,840
+去吧
+Go ahead.
+
+1691
+01:37:41,710 --> 01:37:43,870
+我把包落在望远镜旁了
+I left it by the telescopes.
+
+1692
+01:38:10,910 --> 01:38:12,970
+-是你  -是我
+- It's you. - It's me.
+
+1693
+01:38:13,320 --> 01:38:16,550
+我在马路上见过你
+I saw you in the street.
+
+1694
+01:38:16,550 --> 01:38:17,180
+你是安妮吗
+Are you Annie?
+
+1695
+01:38:19,680 --> 01:38:20,780
+没错
+Yes.
+
+1696
+01:38:23,830 --> 01:38:25,150
+你就是安妮
+You're Annie?
+
+1697
+01:38:28,440 --> 01:38:29,680
+这肯定是你的熊
+This must be yours.
+
+1698
+01:38:30,600 --> 01:38:31,800
+我是乔纳
+I'm Jonah.
+
+1699
+01:38:32,520 --> 01:38:34,910
+这是我爸爸  他叫萨姆
+This is my dad. His name is Sam.
+
+1700
+01:38:34,910 --> 01:38:36,080
+你好  乔纳
+Hi, Jonah.
+
+1701
+01:38:38,730 --> 01:38:39,980
+萨姆
+Sam.
+
+1702
+01:38:44,700 --> 01:38:46,820
+-它叫什么  -霍华德
+- And who's this? - Howard.
+
+1703
+01:38:46,820 --> 01:38:48,030
+霍华德  
+Oh, Howard.
+
+1704
+01:38:48,030 --> 01:38:49,730
+你好  霍华德
+Hello, Howard.
+
+1705
+01:39:05,200 --> 01:39:06,400
+我们该走了
+We'd better go.
+
+1706
+01:39:14,090 --> 01:39:15,340
+好吗
+Shall we?
+
+1707
+01:39:47,500 --> 01:39:51,480
+{\an9}♪让某个人幸福  这很重要♪
+♪ It's so important to make someone happy ♪
+
+1708
+01:39:51,830 --> 01:39:55,650
+{\an9}♪让那个人幸福♪
+♪ Make just one someone happy ♪
+
+1709
+01:39:55,980 --> 01:39:59,560
+{\an9}♪让你和她心心相印♪
+♪ Make just one heart to heart you ♪
+
+1710
+01:40:02,100 --> 01:40:03,060
+萨姆  
+Sam,
+
+1711
+01:40:04,770 --> 01:40:06,380
+很高兴认识你
+it's nice to meet you.
+
+1712
+01:40:08,460 --> 01:40:12,470
+{\an9}♪见到你时  只有那张脸庞因你而点亮♪
+♪ One face that lights when it nears you ♪
+
+1713
+01:40:12,530 --> 01:40:19,250
+{\an9}♪对那个女孩来说  你就是一切♪
+♪ One girl you're, you're everything to ♪
+
+1714
+01:40:20,190 --> 01:40:24,990
+{\an9}♪当你赢得  它即衰竭♪
+♪ Fail if you win it ♪
+
+1715
+01:40:25,090 --> 01:40:28,790
+{\an9}♪来去只在一瞬之间♪
+♪ Comes and goes in a minute ♪
+
+1716
+01:40:29,310 --> 01:40:36,280
+{\an9}♪ 生活中真正可以依赖的东西是什么♪
+♪ Where's the real stuff in life to cling to ♪
+
+1717
+01:40:37,150 --> 01:40:41,730
+{\an9}♪答案就是爱♪
+♪ Love is the answer ♪
+
+1718
+01:40:41,850 --> 01:40:45,950
+{\an9}♪答案就是  一个爱人♪
+♪ Someone to love is the answer ♪
+
+1719
+01:40:46,300 --> 01:40:49,820
+{\an9}♪一旦你找到她♪
+♪ Once you've found her ♪
+
+1720
+01:40:50,450 --> 01:40:54,100
+{\an9}♪围绕她建立你的小世界♪
+♪ Build your world around her ♪
+
+1721
+01:40:54,640 --> 01:40:58,650
+{\an9}♪让某个人幸福♪
+♪ Make someone happy ♪
+
+1722
+01:40:58,910 --> 01:41:02,930
+{\an9}♪让那个人幸福♪
+♪ Make just one someone happy ♪
+
+1723
+01:41:03,160 --> 01:41:08,750
+{\an9}♪那么你也会感到幸福♪
+♪ And you will be happy too ♪
+
+1724
+01:41:38,980 --> 01:41:44,720
+{\an9}♪当我坠入爱河♪
+♪ When I fall in love ♪
+
+1725
+01:41:45,800 --> 01:41:51,370
+{\an9}♪那必将是永恒♪
+♪ It will be forever ♪
+
+1726
+01:41:52,660 --> 01:42:00,640
+{\an9}♪否则我永远不碰爱情♪
+♪ Or I'll never fall in love ♪
+
+1727
+01:42:00,640 --> 01:42:08,870
+{\an9}♪在一个浮躁的世界  我永远不碰爱情♪
+♪ I'll never, never fall in love in a restless world ♪
+
+1728
+01:42:08,870 --> 01:42:11,950
+{\an9}♪如同现在这样的世界♪
+♪ Like this is ♪
+
+1729
+01:42:12,060 --> 01:42:18,470
+{\an9}♪爱情尚未开始就结束了♪
+♪ Love is ended before it's begun ♪
+
+1730
+01:42:18,880 --> 01:42:25,590
+{\an9}♪太多月光下的吻♪
+♪ And too many moonlight kisses ♪
+
+1731
+01:42:25,680 --> 01:42:33,670
+{\an9}♪在日光之下  就会冷却♪
+♪ Seem to cool in the warmth of the sun ♪
+
+1732
+01:42:34,440 --> 01:42:39,290
+{\an9}♪当我交出我的心♪
+♪ When I give my heart ♪
+
+1733
+01:42:41,260 --> 01:42:46,440
+{\an9}♪那必将是彻底交出♪
+♪ It will be completely ♪
+
+1734
+01:42:47,750 --> 01:42:59,470
+{\an9}♪否则我将永远不交出我的心♪
+♪ Or I'll never give my heart ♪
+
+1735
+01:42:59,640 --> 01:43:05,490
+{\an9}♪当我可以感受到♪
+♪ And the moment I can feel ♪
+
+1736
+01:43:05,490 --> 01:43:13,410
+{\an9}♪你也是同样的想法♪
+♪ That you feel that way too ♪
+
+1737
+01:43:16,720 --> 01:43:21,620
+{\an9}♪就是我坠入爱河的时候♪
+♪ Is when I fall in love ♪
+
+1738
+01:43:23,430 --> 01:43:29,610
+{\an9}♪当我坠入爱河♪
+♪ When I fall in love ♪
+
+1739
+01:43:30,390 --> 01:43:45,970
+{\an9}♪当我爱上你♪
+♪ When I fall in love with you ♪
+
+1740
+01:43:56,090 --> 01:44:02,740
+{\an9}♪给我个吻  让我魂牵梦绕♪
+♪ Give me a kiss to build a dream on and my imagination ♪
+
+1741
+01:44:02,740 --> 01:44:05,520
+{\an9}♪那个吻将让我欢欣鼓舞♪
+♪ Will thrive upon that kiss ♪
+
+1742
+01:44:06,950 --> 01:44:10,880
+{\an9}♪亲爱的  我的要求仅限于此♪
+♪ Sweetheart I ask no more than this, ♪
+
+1743
+01:44:10,930 --> 01:44:14,160
+{\an9}♪一个让我可以魂牵梦绕的吻♪
+♪ A kiss to build a dream on ♪
+
+1744
+01:44:18,010 --> 01:44:21,760
+{\an9}♪在离开我之前  给我一个吻吧♪
+♪ Give me a kiss before you leave me ♪
+
+1745
+01:44:21,820 --> 01:44:27,960
+{\an9}♪魂牵梦绕  将慰藉我心♪
+♪ And my imagination will feed my hungry heart ♪
+
+1746
+01:44:28,930 --> 01:44:32,240
+{\an9}♪在我们分别前  给我留点念想♪
+♪ Leave me one thing before we part ♪
+
+1747
+01:44:32,770 --> 01:44:36,220
+{\an9}♪一个让我可以魂牵梦绕的吻♪
+♪ A kiss to build a dream on ♪
+
