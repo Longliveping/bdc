@@ -5,7 +5,8 @@ from app.models import Word, Article, Sentence, SentenceWord, ArticleWord, Sente
 import os
 import re
 import time
-from utility.words import get_sentence, get_file_tokens,get_tokens, read_text, get_file_by_name, create_txt
+from utility.words import create_sentence_json, get_file_tokens,get_tokens, \
+    read_text, get_file_by_name, create_txt
 
 class Timer:
     def __enter__(self):
@@ -145,12 +146,12 @@ def import_sentence(filename):
         article = db.session.query(Article).filter(Article.article == filename).first()
 
         sl = []
-        sentences = get_sentence(get_file_by_name(filename))
+        sentences = create_sentence_json(get_file_by_name(filename))
         tokens_all = get_file_tokens(filename)
         words_all = db.session.query(Word).filter(Word.word.in_(tokens_all)).all()
-        for sentence in sentences:
-            tokens = get_tokens(sentence)
-            s = Sentence(sentence=sentence, article=article)
+        for sen,trans in sentences.items():
+            tokens = get_tokens(sen)
+            s = Sentence(sentence=sen, translation=trans,article=article)
             w = [w for w in words_all if w.word in tokens]
             sw = [SentenceWord(word=i) for i in w]
             s.sentencewords = sw
@@ -236,7 +237,7 @@ def words_upper(sentence):
     return sentence
 
 def import_file(file):
-    create_txt(file)
+    # create_txt(file)
     basename = os.path.basename(file)
     filename = basename.split('.')[0]
     import_article(filename)

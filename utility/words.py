@@ -1,4 +1,4 @@
-import re
+import re, json
 from collections import Counter
 import PyPDF2 as pdf
 import os
@@ -31,9 +31,33 @@ def get_english_chinese(file):
         lines = f.read()
     lines = lines.split('\n')
     pttn = re.compile(r'(.*)[\s.!?]([\u4e00-\u9fa5].*)')
-    line = [re.search(pttn,x).groups() for x in lines]
-    return line
+    lines = [re.search(pttn,x) for x in lines]
+    lines = filter(lambda x: x, lines)
+    lines = [x.groups() for x in lines]
+    return lines
 
+def create_sentence_json(file):
+    with open(file) as f:
+        lines = f.readlines()
+    lines = filter(lambda x: x.strip(), lines)
+    lines = [x.lstrip() for x in lines]
+    lines = [x for x in lines if not x.startswith('CHAPTER')]
+
+    pttn = re.compile(r'(.*)[\s.!?]([\u4e00-\u9fa5].*)')
+    lines = [re.search(pttn,x) for x in lines]
+    lines = filter(lambda x: x, lines)
+    lines = [x.groups() for x in lines]
+    word_list = lines
+    json_words = {}
+    for count in range(len(word_list)):
+        json_words[word_list[count][0].strip()] = word_list[count][1]
+    dirname = os.path.dirname(file)
+    basename = os.path.basename(file)
+    filename = basename.split('.')[0]
+    wfile = os.path.join(dirname, secure_filename(filename)+'.json')
+    with open(wfile,'w',encoding='utf8') as f:
+        json.dump(json_words,f,indent=4, ensure_ascii=False)
+    return json_words
 
 def split_sentence(string):
     pttn = f'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s'
@@ -247,6 +271,7 @@ def update_target(sourcedir):
     create_token_target(sourcedir)
 
 if __name__ == '__main__':
+    create_sentence_json(os.path.join(os.path.curdir, 'upload/conversation2.txt'))
     pass
     # get_sentence('/Users/longliping/Developer/PyCharmProject/bdc/utility/upload/conv.txt', 'you')
     # str = 'chris wallace: (01:09:00)and what would you do about that?president donald j. trump: (01:09:01)theyõre not equippedé these people arenõt equipped to handle it, number one. number two, they cheat. they cheat. hey, they found ballots in a wastepaper basket three days ago, and they all had the name military ballots. there were military. they all had the name trump on them.chris wallace: (01:09:17)vice president biden-president donald j. trump: (01:09:17)you think thatõs good?chris wallace: (01:09:18)vice president biden, final question for you. will you urge your supporters to stay calm while the vote is counted? and will you pledge not to declare victory until the election is independently certified?vice president joe biden: (01:09:30)yes. and hereõs the deal. we count the ballots, as you pointed out. some of these ballots in some states canõt even be opened until election day. and if thereõs thousands of ballots, itõs going to take time to do it. and by the way, our militaryé theyõve been voting by ballots since the end of the civil war, in effect. and thatõs whatõs going to happen. why is it, for them, somehow not fraudulent. itõs the same process. itõs honest. no one has established at all that there is fraud related to mail-in ballots, that somehow itõs a fraudulent process.president donald j. trump: (01:10:07)itõs already been established. take a look at carolyn maloneyõs race-chris wallace: (01:10:10)i asked you. you had an opportunity to respond [crosstalk 01:10:13]. go ahead [crosstalk 01:10:14]. vice president biden, go ahead.vice president joe biden: (01:10:15)he has no idea what heõs talking about. hereõs the deal. the fact is, i will accept it, and he will too. you know why? because once the winner is declared after all the ballots are counted, all the votes are counted, thatõll be the end of it. thatõll be the end of it. and if itõs me, in fact, fine. if itõs not me, iõll support the outcome. and iõll be a president, not just for the democrats. iõll be a president for democrats and republicans. and this guy-president donald j. trump: (01:10:41)i want to see an honest ballot cut-chris wallace: (01:10:43)'
