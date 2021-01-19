@@ -21,11 +21,11 @@ class WordsTestCase(unittest.TestCase):
         cls.app_context.pop()
 
     def test_001_extract_text(self):
-        file = os.path.join(current_app.config.get('TESTING_FOLDER'), 'Conversation.docx')
+        file = os.path.join(current_app.config.get('TESTING_FOLDER'), 'Sleepless_in_Seattle.srt')
         extract_text(file)
 
     def test_002_create_sentence_json(self):
-        file = read_file_by_name('Conversation')
+        file = read_file_by_name('Sleepless')
         basename = os.path.basename(file)
         dirname = os.path.dirname(file)
         json_file = os.path.join(dirname,basename.split('.')[0]+'_sentence.json')
@@ -34,7 +34,7 @@ class WordsTestCase(unittest.TestCase):
 
     # @unittest.skip('it takes time')
     def test_003_create_word_json(self):
-        file = read_file_by_name('Conversation')
+        file = read_file_by_name('Sleepless')
         basename = os.path.basename(file)
         dirname = os.path.dirname(file)
         json_file = os.path.join(dirname,basename.split('.')[0]+'_word.json')
@@ -42,11 +42,11 @@ class WordsTestCase(unittest.TestCase):
         self.assertTrue(os.path.exists(json_file))
 
     def test_004_get_word_json(self):
-        json_file = read_word_json_file('Conversation')
+        json_file = read_word_json_file('Sleepless')
         words = read_token_json(json_file)
         self.assertTrue(len(words) == 1102)
 
     def test_005_get_sentence_json(self):
-        json_file = read_sentence_json_file('Conversation')
+        json_file = read_sentence_json_file('Sleepless')
         sentences = read_sentence_json(json_file)
         self.assertTrue(len(sentences) == 1425)

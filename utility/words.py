@@ -6,6 +6,9 @@ import docx
 from werkzeug import secure_filename
 from flask import current_app
 
+def extract_srt(file):
+    pass
+
 def extract_text(file):
     if file == '' or not allowed_file(file): return ''
     dirname = os.path.dirname(file)
@@ -16,6 +19,10 @@ def extract_text(file):
     if file[-4:] == '.txt':
         with open(file, 'r') as f:
             fullText = f.readlines()
+    # elif file[-4:] == '.srt':
+    #     with open(file, 'r') as f:
+    #         fullText = f.readlines()
+    #         print(fullText)
     elif file[-4:] == '.pdf':
         with open(file, 'rb') as f:
             pdfReader = pdf.PdfFileReader(f)
@@ -38,10 +45,6 @@ def extract_text(file):
     with open(wfile, 'w+') as f:
         f.writelines(lines)
     return wfile
-
-def create_file_json(file):
-    create_sentence_json(file)
-    create_word_json(file)
 
 def create_word_json(file):
     with open(file, 'r') as f:
