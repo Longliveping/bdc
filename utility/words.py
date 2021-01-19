@@ -6,143 +6,150 @@ import docx
 from werkzeug import secure_filename
 from flask import current_app
 
-ALLOWED_EXTENSIONS = {'txt', 'pdf', 'docx'}
-
-def remove_empty_lines(file):
-    if not os.path.isfile(file):
-        print("{} does not exist ".format(file))
-        return
-
-    with open(file) as filehandle:
-        lines = filehandle.readlines()
-
-    lines = filter(lambda x: x.strip(), lines)
-    lines = [x.lstrip() for x in lines]
-    lines = [x for x in lines if not x.startswith('CHAPTER')]
-
-    with open(file, 'w') as filehandle:
-        filehandle.writelines(lines)
-
-def get_english_chinese(file):
-    if not os.path.isfile(file):
-        print("{} does not exist ".format(file))
-        return
-    with open(file, 'r') as f:
-        lines = f.read()
-    lines = lines.split('\n')
-    pttn = re.compile(r'(.*)[\s.!?]([\u4e00-\u9fa5].*)')
-    lines = [re.search(pttn,x) for x in lines]
-    lines = filter(lambda x: x, lines)
-    lines = [x.groups() for x in lines]
-    return lines
-
-def create_sentence_json(file):
-    with open(file) as f:
-        lines = f.readlines()
-    lines = filter(lambda x: x.strip(), lines)
-    lines = [x.lstrip() for x in lines]
-    lines = [x for x in lines if not x.startswith('CHAPTER')]
-
-    pttn = re.compile(r'(.*)[\s.!?]([\u4e00-\u9fa5].*)')
-    lines = [re.search(pttn,x) for x in lines]
-    lines = filter(lambda x: x, lines)
-    lines = [x.groups() for x in lines]
-    word_list = lines
-    json_words = {}
-    for count in range(len(word_list)):
-        json_words[word_list[count][0].strip()] = word_list[count][1]
+def extract_text(file):
+    if file == '' or not allowed_file(file): return ''
     dirname = os.path.dirname(file)
     basename = os.path.basename(file)
     filename = basename.split('.')[0]
-    wfile = os.path.join(dirname, secure_filename(filename)+'.json')
-    with open(wfile,'w',encoding='utf8') as f:
-        json.dump(json_words,f,indent=4, ensure_ascii=False)
-    return json_words
-
-def split_sentence(string):
-    pttn = f'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s'
-    sentences = re.split(pttn, string)
-    ss = '\n'.join(sentences)
-    with open('temp.txt','w') as f:
-        f.write(ss)
-    return ss
-
-
-def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
-
-def get_text(filename):
-    if filename =='' or not allowed_file(filename):
-        return ''
+    wfile = os.path.join(dirname, secure_filename(filename)+'.txt')
     fullText = []
-    if filename[-4:] == '.txt':
-        with open(filename,'r') as f:
+    if file[-4:] == '.txt':
+        with open(file, 'r') as f:
             fullText = f.readlines()
-        return '\n'.join(fullText)
-
-    if filename[-4:] == '.pdf':
-        with open(filename,'rb') as f:
+    elif file[-4:] == '.pdf':
+        with open(file, 'rb') as f:
             pdfReader = pdf.PdfFileReader(f)
             print(pdfReader.numPages)
             for pagenumber in range(pdfReader.numPages):
                 pageObj = pdfReader.getPage(pagenumber)
                 fullText.append(pageObj.extractText().lower())
-        return '\n'.join(fullText)
-
-    if filename[-4:] == 'docx':
-        doc = docx.Document(filename)
-
+    elif file[-4:] == 'docx':
+        doc = docx.Document(file)
         for para in doc.paragraphs:
             fullText.append(para.text)
-        return '\n'.join(fullText)
 
-    return ''
+    lines = fullText
+    lines = filter(lambda x: x.strip(), lines)
+    lines = [x.strip() for x in lines]
+    lines = '\n'.join(lines)
+    pttn = re.compile(r"[a-zA-Z].*", re.I)
+    lines = re.findall(pttn, lines)
+    lines = '\n'.join(lines)
+    with open(wfile, 'w+') as f:
+        f.writelines(lines)
+    return wfile
 
-def read_text(filename):
-    with open(filename, 'r') as f:
+def create_file_json(file):
+    create_sentence_json(file)
+    create_word_json(file)
+
+def create_word_json(file):
+    with open(file, 'r') as f:
         text = f.read()
-    return text
+    word_list = get_valid_tokens(text)
+    json_words = {}
+    for count in range(len(word_list)):
+        json_words[word_list[count].strip()] = 1
+    dirname = os.path.dirname(file)
+    basename = os.path.basename(file)
+    filename = basename.split('.')[0]
+    wfile = os.path.join(dirname, secure_filename(filename)+'_word.json')
+    with open(wfile,'w',encoding='utf8') as f:
+        json.dump(json_words,f,indent=4, ensure_ascii=False)
+    return json_words
 
-def get_sentence(file):
+def read_token_json(file):
+    with open(file, 'r') as f:
+        j = json.load(f)
+    tokens = j.keys()
+    return tokens
+
+def read_token_filename(filename):
+    tokens = get_tokens(read_text(read_file_by_name(filename)))
+    return tokens
+
+def read_token_file(file):
+    tokens = get_tokens(read_text(file))
+    return tokens
+
+def get_tokens(text):
+    tokens = re.findall('[a-z]+', text.lower())
+    tokens = list(dict.fromkeys(tokens))
+    return tokens
+
+def get_valid_tokens(text):
+    tokens = re.findall('[a-z]+', text.lower())
+    tokens = list(dict.fromkeys(tokens))
+    words_alpha = os.path.join(current_app.config.get('MYWORD_FOLDER'),'words_alpha.txt')
+    with open(words_alpha,'r') as f:
+        word = f.read()
+        words = word.split('\n')
+    tokens = [x for x in tokens if x in words]
+    return tokens
+
+def create_sentence_json(file):
+    with open(file) as f:
+        lines = f.readlines()
+
+    pttn = re.compile(r'(.*)[\s.!?]([\u4e00-\u9fa5].*)')
+    lines = [re.search(pttn,x) for x in lines]
+    lines = filter(lambda x: x, lines)
+    lines = [x.groups() for x in lines]
+    sentence_list = lines
+    json_words = {}
+    for count in range(len(sentence_list)):
+        json_words[sentence_list[count][0].strip()] = sentence_list[count][1]
+    dirname = os.path.dirname(file)
+    basename = os.path.basename(file)
+    filename = basename.split('.')[0]
+    wfile = os.path.join(dirname, secure_filename(filename)+'_sentence.json')
+    with open(wfile,'w',encoding='utf8') as f:
+        json.dump(json_words,f,indent=4, ensure_ascii=False)
+    return json_words
+
+def create_sentence_english_json(file):
+    with open(file) as f:
+        lines = f.read()
+    pttn = r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?|!|\n)'
+    lines = re.split(pttn, lines)
+    lines = filter(lambda x: len(x)>15, lines)
+    lines = [re.sub(r'^[^\w]*','',x) for x in lines]
+    json_words = {}
+    for line in lines:
+        json_words[line] = '1'
+    dirname = os.path.dirname(file)
+    basename = os.path.basename(file)
+    filename = basename.split('.')[0]
+    wfile = os.path.join(dirname, secure_filename(filename)+'_sentence.json')
+    with open(wfile,'w') as f:
+        json.dump(json_words,f,indent=4)
+    return json_words
+
+def read_sentence_json(file):
+    with open(file, 'r') as f:
+        j = json.load(f)
+    return j
+
+def read_sentence(file):
     with open(file, 'r') as f:
         text = f.read()
     pttn = re.compile(r"[a-zA-Z].*", re.I)
     sentences = re.findall(pttn, text)
     return sentences
 
-def get_file_tokens(filename):
-    tokens = get_tokens(read_text(get_file_by_name(filename)))
-    return tokens
+def allowed_file(filename):
+    ALLOWED_EXTENSIONS = {'txt','srt', 'pdf', 'docx'}
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-def get_tokens(text):
-    tokens = re.findall('[a-z]+', text.lower())
-    token = list(dict.fromkeys(tokens))
-    return token
-
-def create_token(file):
-    csvfile = f'{file.split(".")[0]}.csv'
-    text = read_text(file)
-    token = get_tokens(text)
-    count = Counter(token)
-
-    token_new = []
-    counter = 0
-    with open(csvfile, 'w') as f:
-        for c in (count.most_common()):
-            counter += c[1]
-            token_new.append(c)
-            f.write(c[0]+', '+str(c[1])+'\n')
-    return csvfile
-
-def read_tokens(file):
+def read_text(file):
     with open(file, 'r') as f:
         text = f.read()
-    return get_tokens(text)
+    return text
 
 
-def get_file_by_type(filetype):
+# looking for file
+def read_file_by_type(filetype):
     sourcedir = current_app.config.get('TESTING_FOLDER')
     for basename in os.listdir(sourcedir):
         file = os.path.join(sourcedir, basename)
@@ -151,10 +158,10 @@ def get_file_by_type(filetype):
         if extention == filetype:
             return file
 
-def get_file_by_name(filename):
+def read_file_by_name(filename):
     if current_app.config.get('DEVELOPMENT'):
         sourcedir = current_app.config.get('UPLOAD_FOLDER')
-    elif current_app.config.get('TEST'):
+    elif current_app.config.get('TESTING'):
         sourcedir = current_app.config.get('TESTING_FOLDER')
     for basename in os.listdir(sourcedir):
         if basename.endswith('txt'):
@@ -164,39 +171,33 @@ def get_file_by_name(filename):
                 return file
     return None
 
+def read_word_json_file(filename):
+    if current_app.config.get('DEVELOPMENT'):
+        sourcedir = current_app.config.get('UPLOAD_FOLDER')
+    elif current_app.config.get('TESTING'):
+        sourcedir = current_app.config.get('TESTING_FOLDER')
+    for basename in os.listdir(sourcedir):
+        if basename.endswith('word.json'):
+            file = os.path.join(sourcedir, basename)
+            basename = os.path.basename(file)
+            if basename.startswith(filename):
+                return file
+    return None
 
-def generate_sentence(key, statements ,file):
-    text = read_text(file)
-    with open(f'{file.split(".")[0]}_sentence.txt', 'a') as f:
-        f.write(f'------------{key}-------------\n')
-        for statement in statements:
-            pttn = re.compile(r".*\b%s\b.*"%statement[0], re.I)
-            # print(pttn)
-            sentences = ((re.findall(pttn, text)))
-            for sentence in sentences:
-                f.write(sentence + '\n')
+def read_sentence_json_file(filename):
+    if current_app.config.get('DEVELOPMENT'):
+        sourcedir = current_app.config.get('UPLOAD_FOLDER')
+    elif current_app.config.get('TESTING'):
+        sourcedir = current_app.config.get('TESTING_FOLDER')
+    for basename in os.listdir(sourcedir):
+        if basename.endswith('sentence.json'):
+            file = os.path.join(sourcedir, basename)
+            basename = os.path.basename(file)
+            if basename.startswith(filename):
+                return file
+    return None
 
-def generate_statement(key, file):
-    text = read_text(file)
-    pttn = re.compile(r"\b%s\b\W\w*"%key, re.IGNORECASE)
-    statements = Counter(re.findall(pttn, text.lower()))
-    with open(f'{file.split(".")[0]}_statement.txt', 'a') as f:
-        f.write(f'------------{key}-------------\n')
-        for s in statements.most_common():
-            f.write(s[0] + '\n')
-    return statements.most_common()
 
-def generate(file):
-    tokens = read_tokens(f'{file.split(".")[0]}_token.txt')
-    f = open(f'{file.split(".")[0]}_sentence.txt', 'w')
-    f.write('')
-    f.close()
-    f = open(f'{file.split(".")[0]}_statement.txt', 'w')
-    f.write('')
-    f.close()
-    for token in tokens:
-        statement = generate_statement(token, file)
-        generate_sentence(token, statement, file)
 
 def update_target_folder(sourcedir):
     enddirs = folder_sub(sourcedir)
@@ -204,7 +205,6 @@ def update_target_folder(sourcedir):
         path = os.path.join(dir, 'target')
         if not os.path.exists(path):
             os.makedirs(path)
-
 
 def folder_sub(root,list=[]):
     #递归函数,返回所有叶节点source目录
@@ -228,20 +228,6 @@ def folder_nosub(root):
     else:
         return True
 
-def create_txt(file):
-    if os.path.isdir(file): return
-    dirname = os.path.dirname(file)
-    basename = os.path.basename(file)
-    filename = basename.split('.')[0]
-    wfile = os.path.join(dirname, secure_filename(filename)+'.txt')
-    lines = get_text(file)
-    with open(wfile, 'w') as f:
-        pttn = f'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s'
-        sentences = re.split(pttn, lines)
-        ss = '\n'.join(sentences)
-        f.write(ss)
-    return wfile
-
 def create_txt_from_target(sourcedir):
     dirs = folder_sub(sourcedir, [])
     for dir in dirs:
@@ -252,10 +238,25 @@ def create_txt_from_target(sourcedir):
                 filename = basename.split('.')[0]
                 wfile = os.path.join(dirname,'target', secure_filename(filename)+'.txt')
                 with open(wfile, 'a') as f:
-                    lines = get_text(file)
+                    lines = extract_text(file)
                     pttn = f'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s'
                     sentences = re.split(pttn, lines)
                     f.write('\n'.join(sentences))
+
+def create_token(file):
+    csvfile = f'{file.split(".")[0]}.csv'
+    text = read_text(file)
+    token = get_tokens(text)
+    count = Counter(token)
+
+    token_new = []
+    counter = 0
+    with open(csvfile, 'w') as f:
+        for c in (count.most_common()):
+            counter += c[1]
+            token_new.append(c)
+            f.write(c[0]+', '+str(c[1])+'\n')
+    return csvfile
 
 def create_token_target(sourcedir):
     for dir in folder_sub(sourcedir):

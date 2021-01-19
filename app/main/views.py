@@ -2,7 +2,7 @@ from flask import render_template, session, redirect, url_for, current_app,reque
 from sqlalchemy import distinct
 from .. import db
 from ..models import Word, Sentence, Article, SentenceWord, WordReview, MyWord, SentenceReview, MySentence
-from ..controller import show_artile_words,show_artile_sentences, import_myword, import_file, words_upper, update_myword
+from ..controller import import_srt,show_artile_words,show_artile_sentences, import_myword, import_file, words_upper, update_myword
 from . import main
 from .forms import KnownForm, ImportsForm, TryingForm, QueryForm, SentenceKnownForm, UpdateMywordForm
 from datetime import datetime
@@ -230,6 +230,15 @@ def importfile():
     file = os.path.join(current_app.config.get('UPLOAD_FOLDER'),secure_filename(f.filename))
     f.save(file)
     import_file(file)
+    session['upload_file'] = file
+    return redirect(url_for('main.updatemyword'))
+
+@main.route('/importsrt', methods=['POST'])
+def importsrt():
+    f = request.files['filename']
+    file = os.path.join(current_app.config.get('UPLOAD_FOLDER'),secure_filename(f.filename))
+    f.save(file)
+    import_srt(file)
     session['upload_file'] = file
     return redirect(url_for('main.updatemyword'))
 

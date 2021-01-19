@@ -23,6 +23,15 @@
 </div>
 
 <div>
+    <H3>Import srt</H3>
+    <form enctype="multipart/form-data" action="/importsrt" method="POST">
+        <input type="file" name="filename">
+        <br>
+        <button type="submit" name="importsrt" class="btn btn-success" value="import srt">Import srt</button>
+    </form>
+</div>
+
+<div>
     <H3>Import my word</H3>
     <form action="/importmyword" method="POST">
         <button type="submit" name="importmyword" class="btn btn-success" value="import my word">Import my word</button>
