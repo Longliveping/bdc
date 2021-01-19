@@ -11,6 +11,9 @@ from werkzeug import secure_filename
 import os, time
 import pyttsx3
 from threading import Thread
+import urllib3
+import certifi
+import textract
 
 def speak(sentence, rate):
     engine = pyttsx3.init()
@@ -245,20 +248,18 @@ def importsrt():
 @main.route('/importurl', methods=['POST'])
 def importurl():
     url = request.form["url"]
-    import urllib3
-    import certifi
-    import textract
     http = urllib3.PoolManager(ca_certs=certifi.where())
     req = http.request('GET', url)
-    htmlfile = os.path.join(current_app.config.get('UPLOAD_FOLDER'),f"{url.split('/')[-1]}.html")
+    htmlfile = os.path.join(current_app.config.get('UPLOAD_FOLDER'),f"{secure_filename(url.split('/')[-1])}.html")
     with open(htmlfile, 'wb') as f:
         f.write(req.data)
     text = textract.process(htmlfile)
-    textfile = os.path.join(current_app.config.get('UPLOAD_FOLDER'),f"{url.split('/')[-1]}.txt")
-    with open(textfile,'wb') as f:
+    file = os.path.join(current_app.config.get('UPLOAD_FOLDER'),f"{secure_filename(url.split('/')[-1])}.txt")
+    with open(file,'wb') as f:
         f.write(text)
-    import_file(textfile)
-    return redirect(url_for('main.imports'))
+    import_file(file)
+    session['upload_file'] = file
+    return redirect(url_for('main.updatemyword'))
 
 @main.route('/updatemyword', methods=['GET', 'POST'])
 def updatemyword():

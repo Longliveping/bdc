@@ -5,9 +5,11 @@ from app.models import Word, Article, Sentence, SentenceWord, ArticleWord, Sente
 import os
 import re
 import time
-from utility.words import create_sentence_json,read_token_file, read_token_filename, \
+from utility.words import create_sentence_srt_json,read_token_file, read_token_filename, \
     read_token_json, get_valid_tokens,  get_tokens, \
-    read_text, read_file_by_name, extract_text, read_sentence_json, read_sentence_json_file, read_sentence
+    read_text, read_file_by_name, extract_text, read_sentence_json, \
+    read_sentence_json_file, read_sentence, read_sentence_json, \
+    create_sentence_english_json, create_word_json, read_word_json_file
 
 class Timer:
     def __enter__(self):
@@ -53,10 +55,12 @@ def import_sentence(filename):
         article = db.session.query(Article).filter(Article.article == filename).first()
 
         sl = []
-        sentences = read_sentence(read_file_by_name(filename))
-        tokens_all = read_token_filename(filename)
+        print(filename)
+        print(read_sentence_json_file(filename))
+        sentences = read_sentence_json(read_sentence_json_file(filename))
+        tokens_all = set(read_token_json(read_word_json_file(filename)))
         words_all = db.session.query(Word).filter(Word.word.in_(tokens_all)).all()
-        for sentence in sentences:
+        for sentence,_ in sentences.items():
             tokens = get_tokens(sentence)
             s = Sentence(sentence=sentence, article=article)
             w = [w for w in words_all if w.word in tokens]
@@ -68,7 +72,7 @@ def import_sentence(filename):
 
     print("took", timer.duration, "seconds")
 
-def import_sentence_json(filename):
+def import_sentence_srt(filename):
     basename = os.path.basename(read_file_by_name(filename))
     filename = basename.split('.')[0]
     a = db.session.query(Sentence).join(Article).filter(Article.article == filename).first()
@@ -82,7 +86,7 @@ def import_sentence_json(filename):
 
         sl = []
         sentences = read_sentence_json(read_sentence_json_file(filename))
-        tokens_all = read_token_filename(filename)
+        tokens_all = set(read_token_json(read_word_json_file(filename)))
         words_all = db.session.query(Word).filter(Word.word.in_(tokens_all)).all()
         for sen,trans in sentences.items():
             tokens = get_tokens(sen)
@@ -172,26 +176,30 @@ def words_upper(sentence):
     return sentence
 
 def import_file(file):
-    extract_text(file)
+    file = extract_text(file)
+    create_sentence_english_json(file)
+    create_word_json(file)
     basename = os.path.basename(file)
     filename = basename.split('.')[0]
     import_article(filename)
-    # import_word(filename)
     import_sentence(filename)
     import_articleword(filename)
 
 def import_srt(file):
-    extract_text(file)
+    file = extract_text(file)
+    create_sentence_srt_json(file)
+    create_word_json(file)
     basename = os.path.basename(file)
     filename = basename.split('.')[0]
     import_article(filename)
-    import_word(filename)
-    import_sentence(filename)
+    import_sentence_srt(filename)
     import_articleword(filename)
 
 def update_myword(file):
-    extract_text(file)
-    tokens = set(get_tokens(read_text(file)))
+    # extract_text(file)
+    basename = os.path.basename(file)
+    filename = basename.split('.')[0]
+    tokens = set(read_token_json(read_word_json_file(filename)))
     myword = db.session.query(MyWord.word).all()
     mywords =  set([w[0] for w in myword])
     un_known = tokens - mywords

@@ -87,7 +87,7 @@ def get_valid_tokens(text):
     tokens = [x for x in tokens if x in words]
     return tokens
 
-def create_sentence_json(file):
+def create_sentence_srt_json(file):
     with open(file) as f:
         lines = f.readlines()
 
@@ -112,7 +112,7 @@ def create_sentence_english_json(file):
         lines = f.read()
     pttn = r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?|!|\n)'
     lines = re.split(pttn, lines)
-    lines = filter(lambda x: len(x)>15, lines)
+    lines = filter(lambda x: len(x)>15 and len(x)<100, lines)
     lines = [re.sub(r'^[^\w]*','',x) for x in lines]
     json_words = {}
     for line in lines:
@@ -237,11 +237,12 @@ def create_txt_from_target(sourcedir):
                 dirname = os.path.dirname(file)
                 filename = basename.split('.')[0]
                 wfile = os.path.join(dirname,'target', secure_filename(filename)+'.txt')
-                with open(wfile, 'a') as f:
-                    lines = extract_text(file)
-                    pttn = f'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s'
-                    sentences = re.split(pttn, lines)
-                    f.write('\n'.join(sentences))
+                extract_text(wfile)
+                # with open(wfile, 'a') as f:
+                #     lines = extract_text(file)
+                #     pttn = f'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s'
+                #     sentences = re.split(pttn, lines)
+                #     f.write('\n'.join(sentences))
 
 def create_token(file):
     csvfile = f'{file.split(".")[0]}.csv'
