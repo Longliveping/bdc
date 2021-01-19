@@ -7,7 +7,26 @@ from werkzeug import secure_filename
 from flask import current_app
 
 def extract_srt(file):
-    pass
+    if file == '' or not allowed_file(file): return ''
+    dirname = os.path.dirname(file)
+    basename = os.path.basename(file)
+    filename = basename.split('.')[0]
+    wfile = os.path.join(dirname, secure_filename(filename)+'.txt')
+    fullText = []
+    if file[-4:] == '.srt':
+        with open(file, 'r', encoding='utf8') as f:
+            fullText = f.read()
+            print(fullText)
+    lines = fullText
+    lines = filter(lambda x: x.strip(), lines)
+    lines = [x.strip() for x in lines]
+    lines = '\n'.join(lines)
+    pttn = re.compile(r"[a-zA-Z].*", re.I)
+    lines = re.findall(pttn, lines)
+    lines = '\n'.join(lines)
+    with open(wfile, 'w+') as f:
+        f.writelines(lines)
+    return wfile
 
 def extract_text(file):
     if file == '' or not allowed_file(file): return ''
@@ -19,10 +38,6 @@ def extract_text(file):
     if file[-4:] == '.txt':
         with open(file, 'r') as f:
             fullText = f.readlines()
-    # elif file[-4:] == '.srt':
-    #     with open(file, 'r') as f:
-    #         fullText = f.readlines()
-    #         print(fullText)
     elif file[-4:] == '.pdf':
         with open(file, 'rb') as f:
             pdfReader = pdf.PdfFileReader(f)

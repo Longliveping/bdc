@@ -4,7 +4,7 @@ from app import create_app
 from flask import current_app
 from utility.words import create_sentence_srt_json,create_word_json,\
     read_file_by_name, read_word_json_file, read_token_json,read_text, \
-    read_sentence_json_file,read_sentence_json, extract_text, read_file_by_type
+    read_sentence_json_file,read_sentence_json, extract_srt, read_file_by_type
 
 
 
@@ -22,7 +22,7 @@ class WordsTestCase(unittest.TestCase):
 
     def test_001_extract_text(self):
         file = os.path.join(current_app.config.get('TESTING_FOLDER'), 'Sleepless_in_Seattle.srt')
-        extract_text(file)
+        extract_srt(file)
 
     def test_002_create_sentence_json(self):
         file = read_file_by_name('Sleepless')
@@ -32,7 +32,7 @@ class WordsTestCase(unittest.TestCase):
         create_sentence_srt_json(file)
         self.assertTrue(os.path.exists(json_file))
 
-    # @unittest.skip('it takes time')
+    @unittest.skip('it takes time')
     def test_003_create_word_json(self):
         file = read_file_by_name('Sleepless')
         basename = os.path.basename(file)
@@ -41,11 +41,13 @@ class WordsTestCase(unittest.TestCase):
         create_word_json(file)
         self.assertTrue(os.path.exists(json_file))
 
+    @unittest.skip('it takes time')
     def test_004_get_word_json(self):
         json_file = read_word_json_file('Sleepless')
         words = read_token_json(json_file)
         self.assertTrue(len(words) == 1102)
 
+    @unittest.skip('it takes time')
     def test_005_get_sentence_json(self):
         json_file = read_sentence_json_file('Sleepless')
         sentences = read_sentence_json(json_file)
