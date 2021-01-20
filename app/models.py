@@ -35,12 +35,14 @@ class Word(db.Model):
     __tablename__ = 'words'
     id = db.Column(db.Integer, primary_key=True)
     word = db.Column(db.String(64), unique=True)
+    frequency = db.Column(db.Integer)
 
     def __init__(self, **kwargs):
         super(Word, self).__init__(**kwargs)
 
     def __repr__(self):
         return f'<Word:{self.id}-{self.word}>'
+
 
 class Dictionary(db.Model):
     __tablename__ = 'dictionaries'
@@ -71,7 +73,7 @@ class Lemma(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     word_id = db.Column(db.Integer, db.ForeignKey('words.id'))
     word = db.relationship('Word', backref='lemmas')
-    lemma = db.Column(db.String(64), unique=True)
+    lemma = db.Column(db.String(64))
 
     def __init__(self, **kwargs):
         super(Lemma, self).__init__(**kwargs)

@@ -3,7 +3,8 @@ from app import create_app, db
 from app.models import Word, Article, Sentence, SentenceWord, ArticleWord, SentenceReview, WordReview, MyWord, MySentence
 import os
 from utility.words import read_token_filename,get_tokens, read_text, read_file_by_name
-from app.controller import import_word, import_myword, import_sentence, import_article, import_articleword, DropTable, show_artile_words
+from app.controller import import_word, import_myword, import_sentence, \
+    import_article, import_articleword, show_artile_words,db_init_word
 
 class WordsTestCase(unittest.TestCase):
 
@@ -63,6 +64,10 @@ class WordsTestCase(unittest.TestCase):
             db.session.commit()
         except :
             print('error')
+
+    def test_db_init(self):
+        db_init_word()
+
 
 
 

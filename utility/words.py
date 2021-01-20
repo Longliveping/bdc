@@ -1,7 +1,7 @@
 import re, json
 from collections import Counter
 import PyPDF2 as pdf
-import os
+import os, sys
 import docx
 from werkzeug import secure_filename
 from flask import current_app
@@ -303,12 +303,181 @@ def update_target(sourcedir):
     create_txt_from_target(sourcedir)
     create_token_target(sourcedir)
 
+class LemmaDB (object):
+
+    def __init__ (self):
+        self._stems = {}
+        self._words = {}
+        self._frqs = {}
+
+    # 读取数据
+    def load (self, filename, encoding = None):
+        content = open(filename, 'rb').read()
+        if content[:3] == b'\xef\xbb\xbf':
+            content = content[3:].decode('utf-8', 'ignore')
+        elif encoding is not None:
+            text = content.decode(encoding, 'ignore')
+        else:
+            text = None
+            match = ['utf-8', sys.getdefaultencoding(), 'ascii']
+            for encoding in match + ['gbk', 'latin1']:
+                try:
+                    text = content.decode(encoding)
+                    break
+                except:
+                    pass
+            if text is None:
+                text = content.decode('utf-8', 'ignore')
+        number = 0
+        for line in text.split('\n'):
+            number += 1
+            line = line.strip('\r\n ')
+            if (not line) or (line[:1] == ';'):
+                continue
+            pos = line.find('->')
+            if not pos:
+                continue
+            stem = line[:pos].strip()
+            p1 = stem.find('/')
+            frq = 0
+            if p1 >= 0:
+                frq = int(stem[p1 + 1:].strip())
+                stem = stem[:p1].strip()
+            if not stem:
+                continue
+            if frq > 0:
+                self._frqs[stem] = frq
+            for word in line[pos + 2:].strip().split(','):
+                p1 = word.find('/')
+                if p1 >= 0:
+                    word = word[:p1].strip()
+                if not word:
+                    continue
+                self.add(stem, word.strip())
+        return True
+
+    # 保存数据文件
+    def save (self, filename, encoding = 'utf-8'):
+        stems = list(self._stems.keys())
+        stems.sort(key = lambda x: x.lower())
+        import codecs
+        fp = codecs.open(filename, 'w', encoding)
+        output = []
+        for stem in stems:
+            words = self.get(stem)
+            if not words:
+                continue
+            frq = self._frqs.get(stem, 0)
+            if frq > 0:
+                stem = '%s/%d'%(stem, frq)
+            output.append((-frq, u'%s -> %s'%(stem, ','.join(words))))
+        output.sort()
+        for _, text in output:
+            fp.write(text + '\n')
+        fp.close()
+        return True
+
+    # 添加一个词根的一个衍生词
+    def add (self, stem, word):
+        if stem not in self._stems:
+            self._stems[stem] = {}
+        if word not in self._stems[stem]:
+            self._stems[stem][word] = len(self._stems[stem])
+        if word not in self._words:
+            self._words[word] = {}
+        if stem not in self._words[word]:
+            self._words[word][stem] = len(self._words[word])
+        return True
+
+    # 删除一个词根的一个衍生词
+    def remove (self, stem, word):
+        count = 0
+        if stem in self._stems:
+            if word in self._stems[stem]:
+                del self._stems[stem][word]
+                count += 1
+            if not self._stems[stem]:
+                del self._stems[stem]
+        if word in self._words:
+            if stem in self._words[word]:
+                del self._words[word][stem]
+                count += 1
+            if not self._words[word]:
+                del self._words[word]
+        return (count > 0) and True or False
+
+    # 清空数据库
+    def reset (self):
+        self._stems = {}
+        self._words = {}
+        return True
+
+    def get_stems(self):
+        stems = list(self._stems.keys())
+        stems.sort(key = lambda x: x.lower())
+        output = []
+        for stem in stems:
+            words = self.get(stem)
+            if not words:
+                continue
+            frq = self._frqs.get(stem, 0)
+            output.append((frq, stem, ','.join(words)))
+        output.sort(reverse=True)
+        return output
+
+    # 根据词根找衍生，或者根据衍生反向找词根
+    def get (self, word, reverse = False):
+        if not reverse:
+            if word not in self._stems:
+                if word in self._words:
+                    return [word]
+                return None
+            words = [ (v, k) for (k, v) in self._stems[word].items() ]
+        else:
+            if word not in self._words:
+                if word in self._stems:
+                    return [word]
+                return None
+            words = [ (v, k) for (k, v) in self._words[word].items() ]
+        words.sort()
+        return [ k for (v, k) in words ]
+
+    # 知道一个单词求它的词根
+    def word_stem (self, word):
+        return self.get(word, reverse = True)
+
+    # 总共多少条词根数据
+    def stem_size (self):
+        return len(self._stems)
+
+    # 总共多少条衍生数据
+    def word_size (self):
+        return len(self._words)
+
+    def dump (self, what = 'ALL'):
+        words = {}
+        what = what.lower()
+        if what in ('all', 'stem'):
+            for word in self._stems:
+                words[word] = 1
+        if what in ('all', 'word'):
+            for word in self._words:
+                words[word] = 1
+        return words
+
+    def __len__ (self):
+        return len(self._stems)
+
+    def __getitem__ (self, stem):
+        return self.get(stem)
+
+    def __contains__ (self, stem):
+        return (stem in self._stems)
+
+    def __iter__ (self):
+        return self._stems.__iter__()
+
+
 if __name__ == '__main__':
-    create_sentence_json(os.path.join(os.path.curdir, 'upload/conversation2.txt'))
     pass
-    # get_sentence('/Users/longliping/Developer/PyCharmProject/bdc/utility/upload/conv.txt', 'you')
-    # str = 'chris wallace: (01:09:00)and what would you do about that?president donald j. trump: (01:09:01)theyõre not equippedé these people arenõt equipped to handle it, number one. number two, they cheat. they cheat. hey, they found ballots in a wastepaper basket three days ago, and they all had the name military ballots. there were military. they all had the name trump on them.chris wallace: (01:09:17)vice president biden-president donald j. trump: (01:09:17)you think thatõs good?chris wallace: (01:09:18)vice president biden, final question for you. will you urge your supporters to stay calm while the vote is counted? and will you pledge not to declare victory until the election is independently certified?vice president joe biden: (01:09:30)yes. and hereõs the deal. we count the ballots, as you pointed out. some of these ballots in some states canõt even be opened until election day. and if thereõs thousands of ballots, itõs going to take time to do it. and by the way, our militaryé theyõve been voting by ballots since the end of the civil war, in effect. and thatõs whatõs going to happen. why is it, for them, somehow not fraudulent. itõs the same process. itõs honest. no one has established at all that there is fraud related to mail-in ballots, that somehow itõs a fraudulent process.president donald j. trump: (01:10:07)itõs already been established. take a look at carolyn maloneyõs race-chris wallace: (01:10:10)i asked you. you had an opportunity to respond [crosstalk 01:10:13]. go ahead [crosstalk 01:10:14]. vice president biden, go ahead.vice president joe biden: (01:10:15)he has no idea what heõs talking about. hereõs the deal. the fact is, i will accept it, and he will too. you know why? because once the winner is declared after all the ballots are counted, all the votes are counted, thatõll be the end of it. thatõll be the end of it. and if itõs me, in fact, fine. if itõs not me, iõll support the outcome. and iõll be a president, not just for the democrats. iõll be a president for democrats and republicans. and this guy-president donald j. trump: (01:10:41)i want to see an honest ballot cut-chris wallace: (01:10:43)'
-    # pttn = f'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s'
-    # split = re.split(pttn, str)
-    # print(split)
 

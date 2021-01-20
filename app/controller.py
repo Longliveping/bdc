@@ -1,7 +1,7 @@
 import unittest
 from flask import current_app
 from app import create_app, db
-from app.models import Word, Article, Sentence, SentenceWord, ArticleWord, SentenceReview, WordReview, MyWord, MySentence
+from app.models import Word, Lemma,Dictionary, Article, Sentence, SentenceWord, ArticleWord, SentenceReview, WordReview, MyWord, MySentence
 import os
 import re
 import time
@@ -9,7 +9,7 @@ from utility.words import create_sentence_srt_json,read_token_file, read_token_f
     read_token_json, get_valid_tokens,  get_tokens, \
     read_text, read_file_by_name, extract_text,extract_srt, read_sentence_json, \
     read_sentence_json_file, read_sentence, read_sentence_json, \
-    create_sentence_english_json, create_word_json, read_word_json_file
+    create_sentence_english_json, create_word_json, read_word_json_file, LemmaDB
 
 class Timer:
     def __enter__(self):
@@ -118,8 +118,44 @@ def import_myword():
         db.session.commit()
     print("took", timer.duration, "seconds")
 
+def db_init_word():
+    with Timer() as timer:
+        sourcedir = current_app.config.get('MYWORD_FOLDER')
+        file = os.path.join(sourcedir, 'import/lemma.en.txt' )
+        lemma = LemmaDB()
+        lemma.load(file)
+        data = lemma.get_stems()
+        for d in data:
+            print(d)
+            w = Word(word=d[1], frequency=d[0])
+            db.session.add(w)
+            for x in d[2].split(','):
+                print(x)
+                l = Lemma(word=w, lemma=x)
+                db.session.add(l)
+        db.session.commit()
+    print("took", timer.duration, "seconds")
+
+def import_lemma():
+    with Timer() as timer:
+        sourcedir = current_app.config.get('MYWORD_FOLDER')
+        file = os.path.join(sourcedir, 'import/myword.txt' )
+        tokens = set(read_token_file((file)))
+        exist = db.session.query(MyWord.word).all()
+        exists = set([e[0] for e in exist])
+        not_exists = tokens - exists
+        for t in not_exists:
+            m = MyWord(word=t)
+            db.session.add(m)
+        db.session.commit()
+
+        file = os.path.join(sourcedir, 'import/remove.txt' )
+        remove_tokens = set(read_token_file((file)))
+        db.session.query(MyWord).filter(MyWord.word.in_(remove_tokens)).delete(synchronize_session='fetch')
+        db.session.commit()
+    print("took", timer.duration, "seconds")
+
 def import_articleword(filename):
-    import_word(filename)
     basename = os.path.basename(read_file_by_name(filename))
     filename = basename.split('.')[0]
     a = db.session.query(ArticleWord).join(Article).filter(Article.article == filename).first()
