@@ -1,10 +1,13 @@
 import re, json
 from collections import Counter
 import PyPDF2 as pdf
-import os, sys
+import os, sys, time
 import docx
 from werkzeug import secure_filename
 from flask import current_app
+from app.models import db, Word, Lemma
+from sqlalchemy import or_
+
 
 def extract_srt(file):
     if not file or not allowed_file(file): return
@@ -20,21 +23,21 @@ def extract_srt(file):
 
     pttn = re.compile(r'\d{1,4}\n.*\n(.*)\n(.*)\n', re.M)
     lines = re.findall(pttn,lines)
-    json_words = {}
+    json_sentences = {}
     for count in range(len(lines)):
         key = re.sub(r'^[^\w]*','',lines[count][1])
         value = re.sub(r'[^\u4e00-\u9fa5]*','',lines[count][0])
         if re.match(r'^[A-Za-z]', key):
-            json_words[key] = value
+            json_sentences[key] = value
     with open(sfile,'w',encoding='utf8') as f:
-        json.dump(json_words,f,indent=4, ensure_ascii=False)
+        json.dump(json_sentences,f,indent=4, ensure_ascii=False)
 
-    word_list = '\n'.join(list(dict.fromkeys(json_words)))
+    word_str = '\n'.join(list(dict.fromkeys(json_sentences)))
+    word_list = list(get_valid_token(word_str))
+    word_str = '\n'.join(word_list)
     with open(tfile,'w',encoding='utf8') as f:
-        f.writelines(word_list)
+        f.writelines(word_str)
 
-    word_list = ' '.join(list(dict.fromkeys(json_words)))
-    word_list = re.findall(r'[a-z]+', word_list.lower())
     json_words = {}
     for count in range(len(word_list)):
         json_words[word_list[count].strip()] = 1
@@ -77,7 +80,7 @@ def extract_text(file):
 def create_word_json(file):
     with open(file, 'r') as f:
         text = f.read()
-    word_list = get_valid_tokens(text)
+    word_list = get_tokens(text)
     json_words = {}
     for count in range(len(word_list)):
         json_words[word_list[count].strip()] = 1
@@ -103,20 +106,25 @@ def read_token_file(file):
     tokens = get_tokens(read_text(file))
     return tokens
 
+def get_valid_token(text):
+    with Timer() as timer:
+        tokens = re.findall('[a-z]+', text.lower())
+        tokens = set(list(dict.fromkeys(tokens)))
+        print(len(tokens))
+        tokens = db.session.query(Word.word).join(Lemma).filter(or_(
+            Lemma.lemma.in_(tokens),
+            Word.word.in_(tokens)
+        )).all()
+        tokens = ([x[0] for x in tokens])
+        print(len((tokens)))
+    print('get valid token takes', timer.duration, 'seconds')
+    return tokens
+
 def get_tokens(text):
     tokens = re.findall('[a-z]+', text.lower())
     tokens = list(dict.fromkeys(tokens))
     return tokens
 
-def get_valid_tokens(text):
-    tokens = re.findall('[a-z]+', text.lower())
-    tokens = list(dict.fromkeys(tokens))
-    words_alpha = os.path.join(current_app.config.get('MYWORD_FOLDER'),'words_alpha.txt')
-    with open(words_alpha,'r') as f:
-        word = f.read()
-        words = word.split('\n')
-    tokens = [x for x in tokens if x in words]
-    return tokens
 
 def create_sentence_srt_json(file):
     with open(file) as f:
@@ -161,12 +169,6 @@ def read_sentence_json(file):
         j = json.load(f)
     return j
 
-def read_sentence(file):
-    with open(file, 'r') as f:
-        text = f.read()
-    pttn = re.compile(r"[a-zA-Z].*", re.I)
-    sentences = re.findall(pttn, text)
-    return sentences
 
 def allowed_file(filename):
     ALLOWED_EXTENSIONS = {'txt','srt', 'pdf', 'docx'}
@@ -190,6 +192,7 @@ def read_file_by_type(filetype):
             return file
 
 def read_file_by_name(filename):
+    sourcedir =[]
     if current_app.config.get('DEVELOPMENT'):
         sourcedir = current_app.config.get('UPLOAD_FOLDER')
     elif current_app.config.get('TESTING'):
@@ -203,6 +206,7 @@ def read_file_by_name(filename):
     return None
 
 def read_word_json_file(filename):
+    sourcedir =[]
     if current_app.config.get('DEVELOPMENT'):
         sourcedir = current_app.config.get('UPLOAD_FOLDER')
     elif current_app.config.get('TESTING'):
@@ -216,6 +220,7 @@ def read_word_json_file(filename):
     return None
 
 def read_sentence_json_file(filename):
+    sourcedir =[]
     if current_app.config.get('DEVELOPMENT'):
         sourcedir = current_app.config.get('UPLOAD_FOLDER')
     elif current_app.config.get('TESTING'):
@@ -477,6 +482,13 @@ class LemmaDB (object):
     def __iter__ (self):
         return self._stems.__iter__()
 
+class Timer:
+    def __enter__(self):
+        self.start = time.time()
+        return self
+
+    def __exit__(self, exc_type, value, tb):
+        self.duration = time.time() - self.start
 
 if __name__ == '__main__':
     pass

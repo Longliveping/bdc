@@ -6,9 +6,9 @@ import os
 import re
 import time
 from utility.words import create_sentence_srt_json,read_token_file, read_token_filename, \
-    read_token_json, get_valid_tokens,  get_tokens, \
+    read_token_json, get_tokens,get_valid_token, \
     read_text, read_file_by_name, extract_text,extract_srt, read_sentence_json, \
-    read_sentence_json_file, read_sentence, read_sentence_json, \
+    read_sentence_json_file, read_sentence_json, \
     create_sentence_english_json, create_word_json, read_word_json_file, LemmaDB
 
 class Timer:
@@ -25,7 +25,7 @@ def import_article(filename):
     filename = basename.split('.')[0]
     a = db.session.query(Article).filter(Article.article == filename).first()
     if not a:
-        a1 = Article(article=filename)
+        a1 = Article(article=filename, word_count=0, sentence_count=0)
         db.session.add(a1)
         db.session.commit()
 
@@ -58,6 +58,13 @@ def import_sentence(filename):
         print(read_sentence_json_file(filename))
         sentences = read_sentence_json(read_sentence_json_file(filename))
         tokens_all = set(read_token_json(read_word_json_file(filename)))
+
+        a = db.session.query(Article).filter(Article.article == article).first()
+        a.word_count = len(show_artile_words(article))
+        a.sentence_count = len(sentences)
+        db.session.add(a)
+        db.session.commit()
+
         words_all = db.session.query(Word).filter(Word.word.in_(tokens_all)).all()
         for sentence,_ in sentences.items():
             tokens = get_tokens(sentence)
@@ -69,7 +76,7 @@ def import_sentence(filename):
         db.session.add_all(sl)
         db.session.commit()
 
-    print("took", timer.duration, "seconds")
+    print("import sentence took", timer.duration, "seconds")
 
 def import_sentence_srt(filename):
     basename = os.path.basename(read_file_by_name(filename))
@@ -86,6 +93,13 @@ def import_sentence_srt(filename):
         sl = []
         sentences = read_sentence_json(read_sentence_json_file(filename))
         tokens_all = set(read_token_json(read_word_json_file(filename)))
+
+        a = db.session.query(Article).filter(Article.article == article).first()
+        a.word_count = len(show_artile_words(article))
+        a.sentence_count = len(sentences)
+        db.session.add(a)
+        db.session.commit()
+
         words_all = db.session.query(Word).filter(Word.word.in_(tokens_all)).all()
         for sen,trans in sentences.items():
             tokens = get_tokens(sen)
@@ -103,7 +117,7 @@ def import_myword():
     with Timer() as timer:
         sourcedir = current_app.config.get('MYWORD_FOLDER')
         file = os.path.join(sourcedir, 'import/myword.txt' )
-        tokens = set(read_token_file((file)))
+        tokens = set(get_valid_token(read_text((file))))
         exist = db.session.query(MyWord.word).all()
         exists = set([e[0] for e in exist])
         not_exists = tokens - exists
@@ -114,8 +128,9 @@ def import_myword():
 
         file = os.path.join(sourcedir, 'import/remove.txt' )
         remove_tokens = set(read_token_file((file)))
-        db.session.query(MyWord).filter(MyWord.word.in_(remove_tokens)).delete(synchronize_session='fetch')
-        db.session.commit()
+        if remove_tokens:
+            db.session.query(MyWord).filter(MyWord.word.in_(remove_tokens)).delete(synchronize_session='fetch')
+            db.session.commit()
     print("took", timer.duration, "seconds")
 
 def db_init_word():
@@ -126,11 +141,9 @@ def db_init_word():
         lemma.load(file)
         data = lemma.get_stems()
         for d in data:
-            print(d)
             w = Word(word=d[1], frequency=d[0])
             db.session.add(w)
             for x in d[2].split(','):
-                print(x)
                 l = Lemma(word=w, lemma=x)
                 db.session.add(l)
         db.session.commit()
@@ -204,7 +217,7 @@ def show_my_words():
 
 def words_upper(sentence):
     mywords = show_my_words()
-    sw = set(get_tokens(sentence))
+    sw = set(get_valid_token(sentence))
     words = sw - mywords
     for w in words:
         sentence = sentence.replace(w, w.upper())

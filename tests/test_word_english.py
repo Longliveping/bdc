@@ -34,7 +34,7 @@ class WordsTestCase(unittest.TestCase):
         create_sentence_english_json(file)
         self.assertTrue(os.path.exists(json_file))
 
-    # @unittest.skip('it takes time')
+    @unittest.skip('it takes time')
     def test_003_create_word_json(self):
         file = read_file_by_name('103')
         basename = os.path.basename(file)

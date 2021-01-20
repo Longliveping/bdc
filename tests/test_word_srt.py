@@ -56,4 +56,3 @@ class WordsTestCase(unittest.TestCase):
 
     def test_006_read_file_by_name(self):
         file = read_file_by_name('Sleep')
-        print(file)

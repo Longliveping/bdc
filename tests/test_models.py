@@ -1,9 +1,11 @@
 import unittest
 from app import create_app, db
+from flask import current_app
 from app.models import Word, Article, Sentence, SentenceWord, ArticleWord, SentenceReview, WordReview, MyWord, MySentence
 import os
-from utility.words import read_token_filename,get_tokens, read_text, read_file_by_name
-from app.controller import import_word, import_myword, import_sentence, \
+from utility.words import read_token_filename,get_tokens, \
+    read_text, read_file_by_name, read_token_file, get_valid_token
+from app.controller import Timer,import_word, import_myword, import_sentence, \
     import_article, import_articleword, show_artile_words,db_init_word
 
 class WordsTestCase(unittest.TestCase):
@@ -65,8 +67,22 @@ class WordsTestCase(unittest.TestCase):
         except :
             print('error')
 
-    def test_db_init(self):
+    @unittest.skip('just init')
+    def test_db_init_word_lemma(self):
         db_init_word()
+
+    @unittest.skip('')
+    def test_get_valid_token(self):
+        with Timer() as timer:
+            sourcedir = current_app.config.get('MYWORD_FOLDER')
+            file = os.path.join(sourcedir, 'import/myword.txt' )
+            with open(file, 'r') as f:
+                tokens = get_valid_token(f.read())
+        print("took", timer.duration, "seconds")
+
+    @unittest.skip('')
+    def test_db_init_myword(self):
+        import_myword()
 
 
 

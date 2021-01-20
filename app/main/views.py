@@ -8,7 +8,7 @@ from .forms import KnownForm, ImportsForm, TryingForm, QueryForm, SentenceKnownF
 from datetime import datetime
 from utility.translation import get_word, get_sentence
 from werkzeug import secure_filename
-import os, time
+import os, time, re
 import pyttsx3
 from threading import Thread
 import urllib3
@@ -38,12 +38,9 @@ def index():
     deck = []
     articles = db.session.query(Article).all()
     for a in articles[::-1]:
-        words = show_artile_words(a.article)
-        cw = len(words)
-        sentences = show_artile_sentences(a.article)
-        cs = len(sentences)
-        # cs = db.session.query(Sentence).join(Article).filter(Article.article==a.article).count()
-        if cw > 0 or cs > 0:
+        cw = a.word_count
+        cs = a.sentence_count
+        if not a.noshow:
             deck.append([a.article, cw, cs])
 
     return render_template('index.html', deck=deck)
@@ -87,6 +84,10 @@ def study(article):
 
     if form.validate_on_submit():
         if form.exit.data:
+            a = db.session.query(Article).filter(Article.article == article).first()
+            a.word_count = len(show_artile_words(article))
+            db.session.add(a)
+            db.session.commit()
             return redirect(url_for('main.index'))
         # if form.query.data:
         #     session['study'] = article
@@ -107,6 +108,7 @@ def study(article):
             mw = MyWord(word=word)
             db.session.add(mw)
             db.session.commit()
+
         session[f'index_{article}'] = next_item_index+1
         return redirect(url_for('main.study', article=article))
     else:
@@ -143,6 +145,10 @@ def study_sentence(article):
         session['show'] = bool(form.show.data)
         session['speed'] = form.speed.data
         if form.exit.data:
+            a = db.session.query(Article).filter(Article.article == article).first()
+            a.sentence_count = len(show_artile_sentences(article))
+            db.session.add(a)
+            db.session.commit()
             return redirect(url_for('main.index'))
         # if form.query.data:
         #     session['study'] = article
@@ -250,11 +256,13 @@ def importurl():
     url = request.form["url"]
     http = urllib3.PoolManager(ca_certs=certifi.where())
     req = http.request('GET', url)
-    htmlfile = os.path.join(current_app.config.get('UPLOAD_FOLDER'),f"{secure_filename(url.split('/')[-1])}.html")
+    filename = secure_filename(url.split('/')[-1])
+    filename = re.sub(r'[^A-Za-z]','',filename)[:25]
+    htmlfile = os.path.join(current_app.config.get('UPLOAD_FOLDER'),f"{filename}.html")
     with open(htmlfile, 'wb') as f:
         f.write(req.data)
     text = textract.process(htmlfile)
-    file = os.path.join(current_app.config.get('UPLOAD_FOLDER'),f"{secure_filename(url.split('/')[-1])}.txt")
+    file = os.path.join(current_app.config.get('UPLOAD_FOLDER'),f"{filename}.txt")
     with open(file,'wb') as f:
         f.write(text)
     import_file(file)
