@@ -46,9 +46,9 @@ class WordsTestCase(unittest.TestCase):
     def test_004_get_word_json(self):
         json_file = read_word_json_file('103')
         words = read_token_json(json_file)
-        self.assertTrue(len(words) == 738)
+        self.assertTrue(len(words) > 700)
 
     def test_005_get_sentence_json(self):
         json_file = read_sentence_json_file('103')
         sentences = read_sentence_json(json_file)
-        self.assertTrue(len(sentences) == 385)
+        self.assertTrue(len(sentences) > 300)

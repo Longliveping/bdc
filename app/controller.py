@@ -7,7 +7,7 @@ import re
 import time
 from utility.words import create_sentence_srt_json,read_token_file, read_token_filename, \
     read_token_json, get_valid_tokens,  get_tokens, \
-    read_text, read_file_by_name, extract_text, read_sentence_json, \
+    read_text, read_file_by_name, extract_text,extract_srt, read_sentence_json, \
     read_sentence_json_file, read_sentence, read_sentence_json, \
     create_sentence_english_json, create_word_json, read_word_json_file
 
@@ -18,7 +18,6 @@ class Timer:
 
     def __exit__(self, exc_type, value, tb):
         self.duration = time.time() - self.start
-
 
 
 def import_article(filename):
@@ -186,9 +185,7 @@ def import_file(file):
     import_articleword(filename)
 
 def import_srt(file):
-    file = extract_text(file)
-    create_sentence_srt_json(file)
-    create_word_json(file)
+    extract_srt(file)
     basename = os.path.basename(file)
     filename = basename.split('.')[0]
     import_article(filename)

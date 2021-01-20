@@ -24,6 +24,7 @@ class WordsTestCase(unittest.TestCase):
         file = os.path.join(current_app.config.get('TESTING_FOLDER'), 'Sleepless_in_Seattle.srt')
         extract_srt(file)
 
+    @unittest.skip('it takes time')
     def test_002_create_sentence_json(self):
         file = read_file_by_name('Sleepless')
         basename = os.path.basename(file)
@@ -52,3 +53,7 @@ class WordsTestCase(unittest.TestCase):
         json_file = read_sentence_json_file('Sleepless')
         sentences = read_sentence_json(json_file)
         self.assertTrue(len(sentences) == 1425)
+
+    def test_006_read_file_by_name(self):
+        file = read_file_by_name('Sleep')
+        print(file)

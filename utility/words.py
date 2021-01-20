@@ -7,33 +7,46 @@ from werkzeug import secure_filename
 from flask import current_app
 
 def extract_srt(file):
-    if file == '' or not allowed_file(file): return ''
+    if not file or not allowed_file(file): return
     dirname = os.path.dirname(file)
     basename = os.path.basename(file)
     filename = basename.split('.')[0]
-    wfile = os.path.join(dirname, secure_filename(filename)+'.txt')
-    fullText = []
+    sfile = os.path.join(dirname, secure_filename(filename)+'_sentence.json')
+    wfile = os.path.join(dirname, secure_filename(filename)+'_word.json')
+    tfile = os.path.join(dirname, secure_filename(filename)+'.tmp')
     if file[-4:] == '.srt':
         with open(file, 'r', encoding='utf8') as f:
-            fullText = f.read()
-            print(fullText)
-    lines = fullText
-    lines = filter(lambda x: x.strip(), lines)
-    lines = [x.strip() for x in lines]
-    lines = '\n'.join(lines)
-    pttn = re.compile(r"[a-zA-Z].*", re.I)
-    lines = re.findall(pttn, lines)
-    lines = '\n'.join(lines)
-    with open(wfile, 'w+') as f:
-        f.writelines(lines)
-    return wfile
+            lines = f.read()
+
+    pttn = re.compile(r'\d{1,4}\n.*\n(.*)\n(.*)\n', re.M)
+    lines = re.findall(pttn,lines)
+    json_words = {}
+    for count in range(len(lines)):
+        key = re.sub(r'^[^\w]*','',lines[count][1])
+        value = re.sub(r'[^\u4e00-\u9fa5]*','',lines[count][0])
+        if re.match(r'^[A-Za-z]', key):
+            json_words[key] = value
+    with open(sfile,'w',encoding='utf8') as f:
+        json.dump(json_words,f,indent=4, ensure_ascii=False)
+
+    word_list = '\n'.join(list(dict.fromkeys(json_words)))
+    with open(tfile,'w',encoding='utf8') as f:
+        f.writelines(word_list)
+
+    word_list = ' '.join(list(dict.fromkeys(json_words)))
+    word_list = re.findall(r'[a-z]+', word_list.lower())
+    json_words = {}
+    for count in range(len(word_list)):
+        json_words[word_list[count].strip()] = 1
+    with open(wfile,'w',encoding='utf8') as f:
+        json.dump(json_words,f,indent=4, ensure_ascii=False)
 
 def extract_text(file):
     if file == '' or not allowed_file(file): return ''
     dirname = os.path.dirname(file)
     basename = os.path.basename(file)
     filename = basename.split('.')[0]
-    wfile = os.path.join(dirname, secure_filename(filename)+'.txt')
+    tfile = os.path.join(dirname, secure_filename(filename)+'.tmp')
     fullText = []
     if file[-4:] == '.txt':
         with open(file, 'r') as f:
@@ -57,9 +70,9 @@ def extract_text(file):
     pttn = re.compile(r"[a-zA-Z].*", re.I)
     lines = re.findall(pttn, lines)
     lines = '\n'.join(lines)
-    with open(wfile, 'w+') as f:
+    with open(tfile, 'w+') as f:
         f.writelines(lines)
-    return wfile
+    return tfile
 
 def create_word_json(file):
     with open(file, 'r') as f:
@@ -182,7 +195,7 @@ def read_file_by_name(filename):
     elif current_app.config.get('TESTING'):
         sourcedir = current_app.config.get('TESTING_FOLDER')
     for basename in os.listdir(sourcedir):
-        if basename.endswith('txt'):
+        if basename.endswith('tmp'):
             file = os.path.join(sourcedir, basename)
             basename = os.path.basename(file)
             if basename.startswith(filename):
