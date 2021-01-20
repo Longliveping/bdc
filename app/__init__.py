@@ -3,7 +3,7 @@ from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from flask_moment import Moment
 from config import config
-from sqlalchemy_batch_inserts import enable_batch_inserting
+from utility.sqlalchemy_batch_inserts import enable_batch_inserting
 from flask_sqlalchemy import SignallingSession
 import logging
 

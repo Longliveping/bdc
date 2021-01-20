@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import os
 from app import create_app, db
-from app.controller import DropTable
 from flask_script import Manager, Shell
 from flask_migrate import Migrate, MigrateCommand, upgrade
 import unittest
