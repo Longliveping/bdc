@@ -44,11 +44,15 @@ def extract_srt(file):
     with open(wfile,'w',encoding='utf8') as f:
         json.dump(json_words,f,indent=4, ensure_ascii=False)
 
+    return True
+
 def extract_text(file):
     if file == '' or not allowed_file(file): return ''
     dirname = os.path.dirname(file)
     basename = os.path.basename(file)
     filename = basename.split('.')[0]
+    sfile = os.path.join(dirname, secure_filename(filename)+'_sentence.json')
+    wfile = os.path.join(dirname, secure_filename(filename)+'_word.json')
     tfile = os.path.join(dirname, secure_filename(filename)+'.tmp')
     fullText = []
     if file[-4:] == '.txt':
@@ -57,7 +61,6 @@ def extract_text(file):
     elif file[-4:] == '.pdf':
         with open(file, 'rb') as f:
             pdfReader = pdf.PdfFileReader(f)
-            print(pdfReader.numPages)
             for pagenumber in range(pdfReader.numPages):
                 pageObj = pdfReader.getPage(pagenumber)
                 fullText.append(pageObj.extractText().lower())
@@ -66,12 +69,40 @@ def extract_text(file):
         for para in doc.paragraphs:
             fullText.append(para.text)
 
-    lines = fullText
-    lines = filter(lambda x: x.strip(), lines)
-    lines = [x.strip() for x in lines]
-    lines = '\n'.join(lines)
-    pttn = re.compile(r"[a-zA-Z].*", re.I)
-    lines = re.findall(pttn, lines)
+    fullText = '\n'.join(fullText)
+    pttn = re.compile(r'([\w]+.*?[\.\?\!\n])', re.M)
+    lines = re.findall(pttn,fullText)
+    lines = [re.sub(r'\n','',x) for x in lines if len(x)>15]
+    fullText = '\n'.join(lines)
+    with open(tfile, 'w') as f:
+        f.writelines(fullText)
+
+    json_words = {}
+    for line in lines:
+        json_words[line] = '1'
+    with open(sfile,'w',encoding='utf8') as f:
+        json.dump(json_words,f,indent=4, ensure_ascii=False)
+
+    word_list = get_valid_token(fullText)
+    json_words = {}
+    for count in range(len(word_list)):
+        json_words[word_list[count].strip()] = 1
+    with open(wfile,'w',encoding='utf8') as f:
+        json.dump(json_words,f,indent=4, ensure_ascii=False)
+
+    return True
+
+def create_sentence(file):
+    if file == '' or not allowed_file(file): return ''
+    dirname = os.path.dirname(file)
+    basename = os.path.basename(file)
+    filename = basename.split('.')[0]
+    tfile = os.path.join(dirname, secure_filename(filename)+'.tmp')
+    with open(file, 'r') as f:
+        fullText = f.read()
+    pttn = re.compile(r'([\w]+.*?)(?=[\.\?\!\n])', re.M)
+    lines = re.findall(pttn,fullText)
+    lines = [re.sub(r'\n','',x) for x in lines if len(x)>15]
     lines = '\n'.join(lines)
     with open(tfile, 'w+') as f:
         f.writelines(lines)
@@ -80,14 +111,15 @@ def extract_text(file):
 def create_word_json(file):
     with open(file, 'r') as f:
         text = f.read()
-    word_list = get_tokens(text)
-    json_words = {}
-    for count in range(len(word_list)):
-        json_words[word_list[count].strip()] = 1
     dirname = os.path.dirname(file)
     basename = os.path.basename(file)
     filename = basename.split('.')[0]
     wfile = os.path.join(dirname, secure_filename(filename)+'_word.json')
+    word_list = get_tokens(text)
+    json_words = {}
+    for count in range(len(word_list)):
+        json_words[word_list[count].strip()] = 1
+
     with open(wfile,'w',encoding='utf8') as f:
         json.dump(json_words,f,indent=4, ensure_ascii=False)
     return json_words
@@ -110,13 +142,11 @@ def get_valid_token(text):
     with Timer() as timer:
         tokens = re.findall('[a-z]+', text.lower())
         tokens = set(list(dict.fromkeys(tokens)))
-        print(len(tokens))
         tokens = db.session.query(Word.word).join(Lemma).filter(or_(
             Lemma.lemma.in_(tokens),
             Word.word.in_(tokens)
         )).all()
-        tokens = ([x[0] for x in tokens])
-        print(len((tokens)))
+        tokens = list(set([x[0] for x in tokens]))
     print('get valid token takes', timer.duration, 'seconds')
     return tokens
 
@@ -129,19 +159,21 @@ def get_tokens(text):
 def create_sentence_srt_json(file):
     with open(file) as f:
         lines = f.readlines()
+    dirname = os.path.dirname(file)
+    basename = os.path.basename(file)
+    filename = basename.split('.')[0]
+    wfile = os.path.join(dirname, secure_filename(filename)+'_sentence.json')
 
     pttn = re.compile(r'(.*)[\s.!?]([\u4e00-\u9fa5].*)')
     lines = [re.search(pttn,x) for x in lines]
     lines = filter(lambda x: x, lines)
     lines = [x.groups() for x in lines]
+
     sentence_list = lines
     json_words = {}
     for count in range(len(sentence_list)):
         json_words[sentence_list[count][0].strip()] = sentence_list[count][1]
-    dirname = os.path.dirname(file)
-    basename = os.path.basename(file)
-    filename = basename.split('.')[0]
-    wfile = os.path.join(dirname, secure_filename(filename)+'_sentence.json')
+
     with open(wfile,'w',encoding='utf8') as f:
         json.dump(json_words,f,indent=4, ensure_ascii=False)
     return json_words

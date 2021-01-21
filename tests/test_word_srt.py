@@ -20,6 +20,7 @@ class WordsTestCase(unittest.TestCase):
     def tearDownClass(cls):
         cls.app_context.pop()
 
+    @unittest.skip('it takes time')
     def test_001_extract_text(self):
         file = os.path.join(current_app.config.get('TESTING_FOLDER'), 'Sleepless_in_Seattle.srt')
         extract_srt(file)
@@ -54,5 +55,6 @@ class WordsTestCase(unittest.TestCase):
         sentences = read_sentence_json(json_file)
         self.assertTrue(len(sentences) == 1425)
 
+    @unittest.skip('it takes time')
     def test_006_read_file_by_name(self):
         file = read_file_by_name('Sleep')

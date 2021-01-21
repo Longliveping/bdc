@@ -14,6 +14,7 @@ from threading import Thread
 import urllib3
 import certifi
 import textract
+import random
 
 def speak(sentence, rate):
     engine = pyttsx3.init()
@@ -224,7 +225,7 @@ def importmyword():
 def exportmyword():
     myword = db.session.query(MyWord).all()
     file = os.path.join(current_app.config.get('MYWORD_FOLDER'),'export/myword.txt')
-    with open(file,'w') as f:
+    with open(file,'w+') as f:
         for w in myword:
             f.write(w.word+'\n')
     return redirect(url_for('main.imports'))
@@ -254,20 +255,28 @@ def importsrt():
 @main.route('/importurl', methods=['POST'])
 def importurl():
     url = request.form["url"]
-    http = urllib3.PoolManager(ca_certs=certifi.where())
-    req = http.request('GET', url)
-    filename = secure_filename(url.split('/')[-1])
-    filename = re.sub(r'[^A-Za-z]','',filename)[:25]
-    htmlfile = os.path.join(current_app.config.get('UPLOAD_FOLDER'),f"{filename}.html")
-    with open(htmlfile, 'wb') as f:
-        f.write(req.data)
-    text = textract.process(htmlfile)
-    file = os.path.join(current_app.config.get('UPLOAD_FOLDER'),f"{filename}.txt")
-    with open(file,'wb') as f:
-        f.write(text)
-    import_file(file)
-    session['upload_file'] = file
-    return redirect(url_for('main.updatemyword'))
+
+    http = urllib3.contrib.socks.SOCKSProxyManager('socks5h://localhost:12345',ca_certs=certifi.where())
+    try:
+        req = http.request('GET', url)
+        filename = secure_filename(url.split('/')[-1])
+        if not filename:
+            filename = secure_filename(url.split('/')[-2])
+        filename = re.sub(r'[^\w_\-]','',filename)[:25]
+        filename = filename + str(random.randrange(1000,10000))
+        htmlfile = os.path.join(current_app.config.get('UPLOAD_FOLDER'),f"{filename}.html")
+        with open(htmlfile, 'wb') as f:
+            f.write(req.data)
+        text = textract.process(htmlfile)
+        file = os.path.join(current_app.config.get('UPLOAD_FOLDER'),f"{filename}.txt")
+        with open(file,'wb') as f:
+            f.write(text)
+        import_file(file)
+        session['upload_file'] = file
+        return redirect(url_for('main.updatemyword'))
+    except:
+        return redirect(url_for('main.imports'))
+
 
 @main.route('/updatemyword', methods=['GET', 'POST'])
 def updatemyword():

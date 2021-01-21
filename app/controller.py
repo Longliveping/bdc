@@ -1,10 +1,16 @@
 import unittest
-from flask import current_app
+from flask import current_app, request
 from app import create_app, db
 from app.models import Word, Lemma,Dictionary, Article, Sentence, SentenceWord, ArticleWord, SentenceReview, WordReview, MyWord, MySentence
 import os
 import re
 import time
+from datetime import datetime
+from werkzeug import secure_filename
+import urllib3
+import certifi
+import textract
+import random
 from utility.words import create_sentence_srt_json,read_token_file, read_token_filename, \
     read_token_json, get_tokens,get_valid_token, \
     read_text, read_file_by_name, extract_text,extract_srt, read_sentence_json, \
@@ -54,16 +60,8 @@ def import_sentence(filename):
         article = db.session.query(Article).filter(Article.article == filename).first()
 
         sl = []
-        print(filename)
-        print(read_sentence_json_file(filename))
         sentences = read_sentence_json(read_sentence_json_file(filename))
         tokens_all = set(read_token_json(read_word_json_file(filename)))
-
-        a = db.session.query(Article).filter(Article.article == article).first()
-        a.word_count = len(show_artile_words(article))
-        a.sentence_count = len(sentences)
-        db.session.add(a)
-        db.session.commit()
 
         words_all = db.session.query(Word).filter(Word.word.in_(tokens_all)).all()
         for sentence,_ in sentences.items():
@@ -77,6 +75,15 @@ def import_sentence(filename):
         db.session.commit()
 
     print("import sentence took", timer.duration, "seconds")
+
+def update_article_count(filename):
+    basename = os.path.basename(read_file_by_name(filename))
+    filename = basename.split('.')[0]
+    article = db.session.query(Article).filter(Article.article == filename).first()
+    article.sentence_count = len(show_artile_sentences(filename))
+    article.word_count = len(show_artile_words(filename))
+    db.session.add(article)
+    db.session.commit()
 
 def import_sentence_srt(filename):
     basename = os.path.basename(read_file_by_name(filename))
@@ -93,12 +100,6 @@ def import_sentence_srt(filename):
         sl = []
         sentences = read_sentence_json(read_sentence_json_file(filename))
         tokens_all = set(read_token_json(read_word_json_file(filename)))
-
-        a = db.session.query(Article).filter(Article.article == article).first()
-        a.word_count = len(show_artile_words(article))
-        a.sentence_count = len(sentences)
-        db.session.add(a)
-        db.session.commit()
 
         words_all = db.session.query(Word).filter(Word.word.in_(tokens_all)).all()
         for sen,trans in sentences.items():
@@ -224,14 +225,13 @@ def words_upper(sentence):
     return sentence
 
 def import_file(file):
-    file = extract_text(file)
-    create_sentence_english_json(file)
-    create_word_json(file)
+    extract_text(file)
     basename = os.path.basename(file)
     filename = basename.split('.')[0]
     import_article(filename)
     import_sentence(filename)
     import_articleword(filename)
+    update_article_count(filename)
 
 def import_srt(file):
     extract_srt(file)
@@ -240,9 +240,9 @@ def import_srt(file):
     import_article(filename)
     import_sentence_srt(filename)
     import_articleword(filename)
+    update_article_count(filename)
 
 def update_myword(file):
-    # extract_text(file)
     basename = os.path.basename(file)
     filename = basename.split('.')[0]
     tokens = set(read_token_json(read_word_json_file(filename)))
@@ -252,3 +252,22 @@ def update_myword(file):
     known = tokens - un_known
     return (list(un_known), list(known))
 
+def import_url(url):
+    http = urllib3.contrib.socks.SOCKSProxyManager('socks5h://localhost:12345',ca_certs=certifi.where())
+    try:
+        req = http.request('GET', url)
+        filename = secure_filename(url.split('/')[-1])
+        if not filename:
+            filename = secure_filename(url.split('/')[-2])
+        filename = re.sub(r'[^\w_\-]','',filename)[:25]
+        filename = filename + str(random.randrange(0,256))
+        htmlfile = os.path.join(current_app.config.get('UPLOAD_FOLDER'),f"{filename}.html")
+        with open(htmlfile, 'wb') as f:
+            f.write(req.data)
+        text = textract.process(htmlfile)
+        file = os.path.join(current_app.config.get('UPLOAD_FOLDER'),f"{filename}.txt")
+        with open(file,'wb') as f:
+            f.write(text)
+        import_file(file)
+    except:
+        pass

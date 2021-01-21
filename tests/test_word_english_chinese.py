@@ -19,11 +19,11 @@ class WordsTestCase(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         cls.app_context.pop()
-
+    @unittest.skip('it takes time')
     def test_001_extract_text(self):
         file = os.path.join(current_app.config.get('TESTING_FOLDER'), 'Conversation.docx')
         extract_text(file)
-
+    @unittest.skip('it takes time')
     def test_002_create_sentence_json(self):
         file = read_file_by_name('Conversation')
         basename = os.path.basename(file)
@@ -40,12 +40,12 @@ class WordsTestCase(unittest.TestCase):
         json_file = os.path.join(dirname,basename.split('.')[0]+'_word.json')
         create_word_json(file)
         self.assertTrue(os.path.exists(json_file))
-
+    @unittest.skip('it takes time')
     def test_004_get_word_json(self):
         json_file = read_word_json_file('Conversation')
         words = read_token_json(json_file)
         self.assertTrue(len(words) == 1102)
-
+    @unittest.skip('it takes time')
     def test_005_get_sentence_json(self):
         json_file = read_sentence_json_file('Conversation')
         sentences = read_sentence_json(json_file)
