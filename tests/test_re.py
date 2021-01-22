@@ -3,8 +3,8 @@ from app import create_app, db
 from flask import current_app
 from app.models import Word, Article, Sentence, SentenceWord, ArticleWord, SentenceReview, WordReview, MyWord, MySentence
 import os
-from utility.words import read_token_filename,get_tokens, \
-    read_text, read_file_by_name, read_token_file, get_valid_token, create_sentence
+from utility.words import get_token, \
+    read_text, read_file_by_name, read_token_from_file, get_valid_token, _create_sentence
 from app.controller import Timer,import_word, import_myword, import_sentence, \
     import_article, import_articleword, show_artile_words,db_init_word, import_url
 
@@ -24,7 +24,7 @@ class WordsTestCase(unittest.TestCase):
     @unittest.skip('it takes time')
     def test_re(self):
         file = os.path.join(current_app.config.get('UPLOAD_FOLDER'), '2020s-most-popular-topics32.txt')
-        create_sentence(file)
+        _create_sentence(file)
 
     # @unittest.skip('it takes time')
     def test_import_url(self):

@@ -3,10 +3,10 @@ from app import create_app, db
 from flask import current_app
 from app.models import Word, Article, Sentence, SentenceWord, ArticleWord, SentenceReview, WordReview, MyWord, MySentence
 import os
-from utility.words import read_token_filename,get_tokens, \
-    read_text, read_file_by_name, read_token_file, get_valid_token
+from utility.words import get_token, \
+    read_text, read_file_by_name, read_token_from_file, get_valid_token
 from app.controller import Timer,import_word, import_myword, import_sentence, \
-    import_article, import_articleword, show_artile_words,db_init_word
+    import_article, import_articleword, show_artile_words,db_init_word, db_init_myword
 
 class WordsTestCase(unittest.TestCase):
 
@@ -71,6 +71,9 @@ class WordsTestCase(unittest.TestCase):
     def test_db_init_word_lemma(self):
         db_init_word()
 
+    def test_db_init_myword(self):
+        db_init_myword()
+
     @unittest.skip('')
     def test_get_valid_token(self):
         with Timer() as timer:
@@ -81,7 +84,7 @@ class WordsTestCase(unittest.TestCase):
         print("took", timer.duration, "seconds")
 
     @unittest.skip('')
-    def test_db_init_myword(self):
+    def test_db_import_myword(self):
         import_myword()
 
 

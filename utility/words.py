@@ -46,6 +46,7 @@ def extract_srt(file):
 
     return True
 
+
 def extract_text(file):
     if file == '' or not allowed_file(file): return ''
     dirname = os.path.dirname(file)
@@ -72,7 +73,7 @@ def extract_text(file):
     fullText = '\n'.join(fullText)
     pttn = re.compile(r'([\w]+.*?[\.\?\!\n])', re.M)
     lines = re.findall(pttn,fullText)
-    lines = [re.sub(r'\n','',x) for x in lines if len(x)>15]
+    lines = [re.sub(r'\n','',x) for x in lines]
     fullText = '\n'.join(lines)
     with open(tfile, 'w') as f:
         f.writelines(fullText)
@@ -92,50 +93,25 @@ def extract_text(file):
 
     return True
 
-def create_sentence(file):
-    if file == '' or not allowed_file(file): return ''
-    dirname = os.path.dirname(file)
-    basename = os.path.basename(file)
-    filename = basename.split('.')[0]
-    tfile = os.path.join(dirname, secure_filename(filename)+'.tmp')
-    with open(file, 'r') as f:
-        fullText = f.read()
-    pttn = re.compile(r'([\w]+.*?)(?=[\.\?\!\n])', re.M)
-    lines = re.findall(pttn,fullText)
-    lines = [re.sub(r'\n','',x) for x in lines if len(x)>15]
-    lines = '\n'.join(lines)
-    with open(tfile, 'w+') as f:
-        f.writelines(lines)
-    return tfile
 
-def create_word_json(file):
-    with open(file, 'r') as f:
-        text = f.read()
-    dirname = os.path.dirname(file)
-    basename = os.path.basename(file)
-    filename = basename.split('.')[0]
-    wfile = os.path.join(dirname, secure_filename(filename)+'_word.json')
-    word_list = get_tokens(text)
-    json_words = {}
-    for count in range(len(word_list)):
-        json_words[word_list[count].strip()] = 1
-
-    with open(wfile,'w',encoding='utf8') as f:
-        json.dump(json_words,f,indent=4, ensure_ascii=False)
-    return json_words
-
-def read_token_json(file):
-    with open(file, 'r') as f:
-        j = json.load(f)
-    tokens = j.keys()
+def read_token_from_word_json(file):
+    file = _read_word_json_file(file)
+    tokens = _read_token_json(file)
     return tokens
 
-def read_token_filename(filename):
-    tokens = get_tokens(read_text(read_file_by_name(filename)))
+
+def read_token_from_sentence_json(file):
+    file = _read_sentence_json_file(file)
+    j = _read_sentence_json(file)
+    return j
+
+
+def read_token_from_file(file):
+    tokens = get_token(read_text(file))
     return tokens
 
-def read_token_file(file):
-    tokens = get_tokens(read_text(file))
+def read_valid_token_from_file(file):
+    tokens = get_valid_token(read_text(file))
     return tokens
 
 def get_valid_token(text):
@@ -150,7 +126,8 @@ def get_valid_token(text):
     print('get valid token takes', timer.duration, 'seconds')
     return tokens
 
-def get_tokens(text):
+
+def get_token(text):
     tokens = re.findall('[a-z]+', text.lower())
     tokens = list(dict.fromkeys(tokens))
     return tokens
@@ -178,6 +155,7 @@ def create_sentence_srt_json(file):
         json.dump(json_words,f,indent=4, ensure_ascii=False)
     return json_words
 
+
 def create_sentence_english_json(file):
     with open(file) as f:
         lines = f.read()
@@ -196,16 +174,12 @@ def create_sentence_english_json(file):
         json.dump(json_words,f,indent=4)
     return json_words
 
-def read_sentence_json(file):
-    with open(file, 'r') as f:
-        j = json.load(f)
-    return j
-
 
 def allowed_file(filename):
     ALLOWED_EXTENSIONS = {'txt','srt', 'pdf', 'docx'}
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 
 def read_text(file):
     with open(file, 'r') as f:
@@ -223,6 +197,7 @@ def read_file_by_type(filetype):
         if extention == filetype:
             return file
 
+
 def read_file_by_name(filename):
     sourcedir =[]
     if current_app.config.get('DEVELOPMENT'):
@@ -237,6 +212,7 @@ def read_file_by_name(filename):
                 return file
     return None
 
+
 def read_word_json_file(filename):
     sourcedir =[]
     if current_app.config.get('DEVELOPMENT'):
@@ -250,6 +226,7 @@ def read_word_json_file(filename):
             if basename.startswith(filename):
                 return file
     return None
+
 
 def read_sentence_json_file(filename):
     sourcedir =[]
@@ -266,6 +243,71 @@ def read_sentence_json_file(filename):
     return None
 
 
+def _create_sentence(file):
+    if file == '' or not allowed_file(file): return ''
+    dirname = os.path.dirname(file)
+    basename = os.path.basename(file)
+    filename = basename.split('.')[0]
+    tfile = os.path.join(dirname, secure_filename(filename)+'.tmp')
+    with open(file, 'r') as f:
+        fullText = f.read()
+    pttn = re.compile(r'([\w]+.*?)(?=[\.\?\!\n])', re.M)
+    lines = re.findall(pttn,fullText)
+    lines = [re.sub(r'\n','',x) for x in lines if len(x)>15]
+    lines = '\n'.join(lines)
+    with open(tfile, 'w+') as f:
+        f.writelines(lines)
+    return tfile
+
+
+def _create_word_json(file):
+    with open(file, 'r') as f:
+        text = f.read()
+    dirname = os.path.dirname(file)
+    basename = os.path.basename(file)
+    filename = basename.split('.')[0]
+    wfile = os.path.join(dirname, secure_filename(filename)+'_word.json')
+    word_list = get_token(text)
+    json_words = {}
+    for count in range(len(word_list)):
+        json_words[word_list[count].strip()] = 1
+
+    with open(wfile,'w',encoding='utf8') as f:
+        json.dump(json_words,f,indent=4, ensure_ascii=False)
+    return json_words
+
+
+def _read_token_json(file):
+    print('read token from json', file)
+    with open(file, 'r') as f:
+        j = json.load(f)
+    tokens = j.keys()
+    return tokens
+
+
+def _read_sentence_json(file):
+    with open(file, 'r') as f:
+        j = json.load(f)
+    return j
+
+
+def _read_word_json_file(file):
+    filename = os.path.basename(file).split('.')[0]
+    dirname = os.path.dirname(file)
+    wfile = os.path.join(dirname, filename+'_word.json')
+    if os.path.isfile(wfile):
+        return wfile
+    return None
+
+
+def _read_sentence_json_file(file):
+    filename = os.path.basename(file).split('.')[0]
+    dirname = os.path.dirname(file)
+    sfile = os.path.join(dirname, filename+'_sentence.json')
+    if os.path.isfile(sfile):
+        return sfile
+    return None
+
 
 def update_target_folder(sourcedir):
     enddirs = folder_sub(sourcedir)
@@ -274,17 +316,19 @@ def update_target_folder(sourcedir):
         if not os.path.exists(path):
             os.makedirs(path)
 
-def folder_sub(root,list=[]):
+
+def folder_sub(root, l=[]):
     #递归函数,返回所有叶节点source目录
     if folder_nosub(root):
         if os.path.isdir(root):
-            list.append(root)
-        return list
+            l.append(root)
+        return l
     else:
         for dir in os.listdir(root):
             path = os.path.join(root, dir)
-            folder_sub(path, list)
-    return list
+            folder_sub(path, l)
+    return l
+
 
 def folder_nosub(root):
     if os.path.isdir(root):
@@ -295,6 +339,7 @@ def folder_nosub(root):
         return True
     else:
         return True
+
 
 def create_txt_from_target(sourcedir):
     dirs = folder_sub(sourcedir, [])
@@ -312,10 +357,11 @@ def create_txt_from_target(sourcedir):
                 #     sentences = re.split(pttn, lines)
                 #     f.write('\n'.join(sentences))
 
+
 def create_token(file):
     csvfile = f'{file.split(".")[0]}.csv'
     text = read_text(file)
-    token = get_tokens(text)
+    token = get_token(text)
     count = Counter(token)
 
     token_new = []
@@ -327,6 +373,7 @@ def create_token(file):
             f.write(c[0]+', '+str(c[1])+'\n')
     return csvfile
 
+
 def create_token_target(sourcedir):
     for dir in folder_sub(sourcedir):
         target_dir = os.path.join(dir,'target')
@@ -335,10 +382,12 @@ def create_token_target(sourcedir):
                 wfile = os.path.join(target_dir, file)
                 create_token(wfile)
 
+
 def update_target(sourcedir):
     update_target_folder(sourcedir)
     create_txt_from_target(sourcedir)
     create_token_target(sourcedir)
+
 
 class LemmaDB (object):
 
@@ -514,6 +563,7 @@ class LemmaDB (object):
     def __iter__ (self):
         return self._stems.__iter__()
 
+
 class Timer:
     def __enter__(self):
         self.start = time.time()
@@ -521,6 +571,7 @@ class Timer:
 
     def __exit__(self, exc_type, value, tb):
         self.duration = time.time() - self.start
+
 
 if __name__ == '__main__':
     pass

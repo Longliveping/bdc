@@ -2,9 +2,9 @@ import unittest
 import os
 from app import create_app
 from flask import current_app
-from utility.words import create_sentence_english_json,create_word_json,\
-    read_file_by_name, read_word_json_file, read_token_json,read_text, \
-    read_sentence_json_file,read_sentence_json, extract_text, \
+from utility.words import create_sentence_english_json,_create_word_json,\
+    read_file_by_name, read_word_json_file, _read_token_json,read_text, \
+    read_sentence_json_file,_read_sentence_json, extract_text, \
     read_file_by_type, create_sentence_english_json
 
 
@@ -39,15 +39,15 @@ class WordsTestCase(unittest.TestCase):
         basename = os.path.basename(file)
         dirname = os.path.dirname(file)
         json_file = os.path.join(dirname,basename.split('.')[0]+'_word.json')
-        create_word_json(file)
+        _create_word_json(file)
         self.assertTrue(os.path.exists(json_file))
     @unittest.skip('it takes time')
     def test_004_get_word_json(self):
         json_file = read_word_json_file('103')
-        words = read_token_json(json_file)
+        words = _read_token_json(json_file)
         self.assertTrue(len(words) > 700)
     @unittest.skip('it takes time')
     def test_005_get_sentence_json(self):
         json_file = read_sentence_json_file('103')
-        sentences = read_sentence_json(json_file)
+        sentences = _read_sentence_json(json_file)
         self.assertTrue(len(sentences) > 300)

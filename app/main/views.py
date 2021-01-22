@@ -15,6 +15,7 @@ import urllib3
 import certifi
 import textract
 import random
+from utility.words import extract_text
 
 def speak(sentence, rate):
     engine = pyttsx3.init()
@@ -218,6 +219,7 @@ def imports():
 @main.route('/importmyword', methods=['GET', 'POST'])
 def importmyword():
     file = os.path.join(current_app.config.get('MYWORD_FOLDER'), 'import/myword.txt')
+    extract_text(file)
     session['upload_file'] = file
     return redirect(url_for('main.updatemyword'))
 
