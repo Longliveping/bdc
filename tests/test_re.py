@@ -4,7 +4,7 @@ from flask import current_app
 from app.models import Word, Article, Sentence, SentenceWord, ArticleWord, SentenceReview, WordReview, MyWord, MySentence
 import os
 from utility.words import get_token, \
-    read_text, read_file_by_name, read_token_from_file, get_valid_token, _create_sentence
+    read_text, read_file_by_name, read_word_by_file, get_valid_token, _create_sentence
 from app.controller import Timer,import_word, import_myword, import_sentence, \
     import_article, import_articleword, show_artile_words,db_init_word, import_url
 

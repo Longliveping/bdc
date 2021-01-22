@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, widgets, SelectField, BooleanField, FieldList, SelectMultipleField
+from wtforms import StringField, SubmitField, widgets, SelectField, \
+    BooleanField, FieldList, SelectMultipleField, TextAreaField
 from wtforms.validators import DataRequired, Length
 
 class KnownForm(FlaskForm):
@@ -48,4 +49,7 @@ class UpdateMywordForm(FlaskForm):
     submit = SubmitField("Update my word")
     exit = SubmitField("Exit")
 
-
+class UpdateTextForm(FlaskForm):
+    title = StringField('', validators=[DataRequired()])
+    text = TextAreaField('',render_kw={'class': 'form-control', 'rows': 20}, validators=[DataRequired()])
+    submit = SubmitField('Update')

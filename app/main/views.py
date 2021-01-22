@@ -4,7 +4,7 @@ from .. import db
 from ..models import Word, Sentence, Article, SentenceWord, WordReview, MyWord, SentenceReview, MySentence
 from ..controller import import_srt,show_artile_words,show_artile_sentences, import_myword, import_file, words_upper, update_myword
 from . import main
-from .forms import KnownForm, ImportsForm, TryingForm, QueryForm, SentenceKnownForm, UpdateMywordForm
+from .forms import KnownForm, ImportsForm, TryingForm, QueryForm, SentenceKnownForm, UpdateMywordForm, UpdateTextForm
 from datetime import datetime
 from utility.translation import get_word, get_sentence
 from werkzeug import secure_filename
@@ -15,7 +15,7 @@ import urllib3
 import certifi
 import textract
 import random
-from utility.words import extract_text
+from utility.words import extract_text, extract_srt, read_file_tmp
 
 def speak(sentence, rate):
     engine = pyttsx3.init()
@@ -241,18 +241,20 @@ def importfile():
     f = request.files['filename']
     file = os.path.join(current_app.config.get('UPLOAD_FOLDER'),secure_filename(f.filename))
     f.save(file)
-    import_file(file)
+    extract_text(file)
     session['upload_file'] = file
-    return redirect(url_for('main.updatemyword'))
+    return redirect(url_for('main.updatetext'))
+    # return redirect(url_for('main.updatemyword'))
 
 @main.route('/importsrt', methods=['POST'])
 def importsrt():
     f = request.files['filename']
     file = os.path.join(current_app.config.get('UPLOAD_FOLDER'),secure_filename(f.filename))
     f.save(file)
-    import_srt(file)
+    extract_srt(file)
     session['upload_file'] = file
-    return redirect(url_for('main.updatemyword'))
+    return redirect(url_for('main.updatetext'))
+    # return redirect(url_for('main.updatemyword'))
 
 @main.route('/importurl', methods=['POST'])
 def importurl():
@@ -264,8 +266,8 @@ def importurl():
         filename = secure_filename(url.split('/')[-1])
         if not filename:
             filename = secure_filename(url.split('/')[-2])
-        filename = re.sub(r'[^\w_\-]','',filename)[:25]
-        filename = filename + str(random.randrange(1000,10000))
+        filename = re.sub(r'[^\w_\-]','',filename)[:50]
+        filename = filename + str(random.randrange(10,100))
         htmlfile = os.path.join(current_app.config.get('UPLOAD_FOLDER'),f"{filename}.html")
         with open(htmlfile, 'wb') as f:
             f.write(req.data)
@@ -273,12 +275,31 @@ def importurl():
         file = os.path.join(current_app.config.get('UPLOAD_FOLDER'),f"{filename}.txt")
         with open(file,'wb') as f:
             f.write(text)
-        import_file(file)
+        extract_text(file)
         session['upload_file'] = file
-        return redirect(url_for('main.updatemyword'))
+        return redirect(url_for('main.updatetext'))
     except:
         return redirect(url_for('main.imports'))
 
+@main.route('/updatetext', methods=['GET', 'POST'])
+def updatetext():
+    form = UpdateTextForm()
+    file = session.get('upload_file')
+    file = read_file_tmp(file)
+    if form.validate_on_submit():
+        dirname = os.path.dirname(file)
+        file = os.path.join(dirname, form.title.data)
+        current_app.logger.debug('update to file',file)
+        with open(file, 'w') as f:
+            f.write(form.text.data)
+        import_file(file)
+        session['upload_file'] = file
+        return redirect(url_for('main.updatemyword'))
+    else:
+        form.title.data = os.path.basename(file)
+        with open(file, 'r') as f:
+            form.text.data = f.read()
+        return render_template('updatetext.html', form=form)
 
 @main.route('/updatemyword', methods=['GET', 'POST'])
 def updatemyword():
@@ -291,7 +312,6 @@ def updatemyword():
     if form.validate_on_submit():
         if form.exit.data:
             return redirect(url_for('main.imports'))
-        current_app.logger.debug(form.choices.data)
         sourcedir = current_app.config.get('MYWORD_FOLDER')
         file = os.path.join(sourcedir, 'import/myword.txt' )
         with open(file, 'w') as f:

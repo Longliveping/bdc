@@ -11,12 +11,12 @@ import urllib3
 import certifi
 import textract
 import random
-from utility.words import create_sentence_srt_json,read_token_from_file,  \
+from utility.words import create_sentence_srt_json,read_word_by_file,  \
     get_token,get_valid_token, \
     read_text, read_file_by_name, extract_text,extract_srt,  \
     read_sentence_json_file,  \
     create_sentence_english_json, _create_word_json, read_word_json_file, LemmaDB, \
-    read_token_from_word_json, read_token_from_sentence_json, read_valid_token_from_file
+    read_word, read_sentence, read_valid_word_from_file, read_sentence_by_filename, read_word_by_filename
 
 
 class Timer:
@@ -39,7 +39,7 @@ def import_article(filename):
 
 def import_word(filename):
     with Timer() as timer:
-        tokens = set(read_token_from_word_json(read_word_json_file(filename)))
+        tokens = set(read_word(read_word_json_file(filename)))
         exist = db.session.query(Word.word).all()
         exists =  set([e[0] for e in exist])
         not_exist = tokens - exists
@@ -62,8 +62,8 @@ def import_sentence(filename):
         article = db.session.query(Article).filter(Article.article == filename).first()
 
         sl = []
-        sentences = read_token_from_sentence_json(read_sentence_json_file(filename))
-        tokens_all = set(read_token_from_word_json(read_word_json_file(filename)))
+        sentences = read_sentence_by_filename(filename)
+        tokens_all = set(read_word_by_filename(filename))
 
         words_all = db.session.query(Word).filter(Word.word.in_(tokens_all)).all()
         for sentence,_ in sentences.items():
@@ -100,8 +100,8 @@ def import_sentence_srt(filename):
         article = db.session.query(Article).filter(Article.article == filename).first()
 
         sl = []
-        sentences = read_token_from_sentence_json(read_sentence_json_file(filename))
-        tokens_all = set(read_token_from_word_json(read_word_json_file(filename)))
+        sentences = read_sentence(read_sentence_json_file(filename))
+        tokens_all = set(read_word(read_word_json_file(filename)))
 
         words_all = db.session.query(Word).filter(Word.word.in_(tokens_all)).all()
         for sen,trans in sentences.items():
@@ -120,7 +120,7 @@ def import_myword():
     with Timer() as timer:
         sourcedir = current_app.config.get('MYWORD_FOLDER')
         file = os.path.join(sourcedir, 'import/myword.txt' )
-        tokens = set(read_valid_token_from_file(file))
+        tokens = set(read_valid_word_from_file(file))
         exist = db.session.query(MyWord.word).all()
         exists = set([e[0] for e in exist])
         not_exists = tokens - exists
@@ -130,7 +130,7 @@ def import_myword():
         db.session.commit()
 
         file = os.path.join(sourcedir, 'import/remove.txt' )
-        remove_tokens = set(read_token_from_file((file)))
+        remove_tokens = set(read_word_by_file((file)))
         if remove_tokens:
             db.session.query(MyWord).filter(MyWord.word.in_(remove_tokens)).delete(synchronize_session='fetch')
             db.session.commit()
@@ -156,7 +156,7 @@ def db_init_myword():
     with Timer() as timer:
         sourcedir = current_app.config.get('MYWORD_FOLDER')
         file = os.path.join(sourcedir, 'import/myword.txt' )
-        tokens = set(read_valid_token_from_file(file))
+        tokens = set(read_valid_word_from_file(file))
         db.session.query(MyWord).delete(synchronize_session='fetch')
         db.session.commit()
         for t in tokens:
@@ -170,7 +170,7 @@ def import_lemma():
     with Timer() as timer:
         sourcedir = current_app.config.get('MYWORD_FOLDER')
         file = os.path.join(sourcedir, 'import/myword.txt' )
-        tokens = set(read_token_from_file((file)))
+        tokens = set(read_word_by_file((file)))
         exist = db.session.query(MyWord.word).all()
         exists = set([e[0] for e in exist])
         not_exists = tokens - exists
@@ -180,7 +180,7 @@ def import_lemma():
         db.session.commit()
 
         file = os.path.join(sourcedir, 'import/remove.txt' )
-        remove_tokens = set(read_token_from_file((file)))
+        remove_tokens = set(read_word_by_file((file)))
         db.session.query(MyWord).filter(MyWord.word.in_(remove_tokens)).delete(synchronize_session='fetch')
         db.session.commit()
     print("took", timer.duration, "seconds")
@@ -196,7 +196,7 @@ def import_articleword(filename):
         # insert ArticleWords
         db.session.remove()
         article = db.session.query(Article).filter(Article.article == filename).first()
-        tokens = set(read_token_from_word_json(read_word_json_file(filename)))
+        tokens = set(read_word_by_filename(filename))
         words = db.session.query(Word).filter(Word.word.in_(tokens)).all()
         aw = [ArticleWord(article=article, word=w) for w in words]
         db.session.add_all(aw)
@@ -258,10 +258,11 @@ def import_srt(file):
     import_articleword(filename)
     update_article_count(filename)
 
+
 def update_myword(file):
     # basename = os.path.basename(file)
     # filename = basename.split('.')[0]
-    tokens = set(read_token_from_word_json(file))
+    tokens = set(read_word(file))
     myword = db.session.query(MyWord.word).all()
     mywords = set([w[0] for w in myword])
     un_known = tokens - mywords

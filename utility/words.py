@@ -20,6 +20,9 @@ def extract_srt(file):
     if file[-4:] == '.srt':
         with open(file, 'r', encoding='utf8') as f:
             lines = f.read()
+    if file[-4:] == '.tmp':
+        with open(file, 'r', encoding='utf8') as f:
+            lines = f.read()
 
     pttn = re.compile(r'\d{1,4}\n.*\n(.*)\n(.*)\n', re.M)
     lines = re.findall(pttn,lines)
@@ -29,15 +32,18 @@ def extract_srt(file):
         value = re.sub(r'[^\u4e00-\u9fa5]*','',lines[count][0])
         if re.match(r'^[A-Za-z]', key):
             json_sentences[key] = value
+
+    word_list = [f'{key} : {value}' for key, value in json_sentences.items()]
+    word_str = '\n'.join(word_list)
+    with open(tfile,'w',encoding='utf8') as f:
+        f.writelines(word_str)
+
+
     with open(sfile,'w',encoding='utf8') as f:
         json.dump(json_sentences,f,indent=4, ensure_ascii=False)
 
     word_str = '\n'.join(list(dict.fromkeys(json_sentences)))
     word_list = list(get_valid_token(word_str))
-    word_str = '\n'.join(word_list)
-    with open(tfile,'w',encoding='utf8') as f:
-        f.writelines(word_str)
-
     json_words = {}
     for count in range(len(word_list)):
         json_words[word_list[count].strip()] = 1
@@ -59,6 +65,9 @@ def extract_text(file):
     if file[-4:] == '.txt':
         with open(file, 'r') as f:
             fullText = f.readlines()
+    elif file[-4:] == '.tmp':
+        with open(file, 'r') as f:
+            fullText = f.readlines()
     elif file[-4:] == '.pdf':
         with open(file, 'rb') as f:
             pdfReader = pdf.PdfFileReader(f)
@@ -78,39 +87,54 @@ def extract_text(file):
     with open(tfile, 'w') as f:
         f.writelines(fullText)
 
-    json_words = {}
-    for line in lines:
-        json_words[line] = '1'
-    with open(sfile,'w',encoding='utf8') as f:
-        json.dump(json_words,f,indent=4, ensure_ascii=False)
+    if file[-4:] == '.tmp':
+        json_words = {}
+        for line in lines:
+            json_words[line] = '1'
+        with open(sfile,'w',encoding='utf8') as f:
+            json.dump(json_words,f,indent=4, ensure_ascii=False)
 
-    word_list = get_valid_token(fullText)
-    json_words = {}
-    for count in range(len(word_list)):
-        json_words[word_list[count].strip()] = 1
-    with open(wfile,'w',encoding='utf8') as f:
-        json.dump(json_words,f,indent=4, ensure_ascii=False)
+        word_list = get_valid_token(fullText)
+        json_words = {}
+        for count in range(len(word_list)):
+            json_words[word_list[count].strip()] = 1
+        with open(wfile,'w',encoding='utf8') as f:
+            json.dump(json_words,f,indent=4, ensure_ascii=False)
 
     return True
 
 
-def read_token_from_word_json(file):
+def read_word(file):
     file = _read_word_json_file(file)
     tokens = _read_token_json(file)
     return tokens
 
 
-def read_token_from_sentence_json(file):
+def read_word_by_filename(filename):
+    file = read_file_by_name(filename)
+    file = _read_word_json_file(file)
+    tokens = _read_token_json(file)
+    return tokens
+
+
+def read_sentence(file):
     file = _read_sentence_json_file(file)
     j = _read_sentence_json(file)
     return j
 
 
-def read_token_from_file(file):
+def read_sentence_by_filename(filename):
+    file = read_file_by_name(filename)
+    file = _read_sentence_json_file(file)
+    j = _read_sentence_json(file)
+    return j
+
+
+def read_word_by_file(file):
     tokens = get_token(read_text(file))
     return tokens
 
-def read_valid_token_from_file(file):
+def read_valid_word_from_file(file):
     tokens = get_valid_token(read_text(file))
     return tokens
 
@@ -176,7 +200,7 @@ def create_sentence_english_json(file):
 
 
 def allowed_file(filename):
-    ALLOWED_EXTENSIONS = {'txt','srt', 'pdf', 'docx'}
+    ALLOWED_EXTENSIONS = {'txt', 'tmp','srt', 'pdf', 'docx'}
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
@@ -196,6 +220,12 @@ def read_file_by_type(filetype):
         extention = basename.split('.')[1]
         if extention == filetype:
             return file
+
+def read_file_tmp(file):
+    filename = os.path.basename(file).split('.')[0]
+    dirname = os.path.dirname(file)
+    tfile = os.path.join(dirname, filename+'.tmp')
+    return tfile
 
 
 def read_file_by_name(filename):
