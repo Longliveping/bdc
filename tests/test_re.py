@@ -26,7 +26,7 @@ class WordsTestCase(unittest.TestCase):
         file = os.path.join(current_app.config.get('UPLOAD_FOLDER'), '2020s-most-popular-topics32.txt')
         _create_sentence(file)
 
-    # @unittest.skip('it takes time')
+    @unittest.skip('it takes time')
     def test_import_url(self):
         url = 'https://blog.khanacademy.org/2020s-most-popular-topics-courses-conversations-on-khan-academy/'
         import_url(url)

@@ -15,7 +15,7 @@ import urllib3
 import certifi
 import textract
 import random
-from utility.words import extract_text, extract_srt, read_file_tmp
+from utility.words import extract_text, extract_srt, read_file_tmp, article_file
 
 def speak(sentence, rate):
     engine = pyttsx3.init()
@@ -241,8 +241,9 @@ def importfile():
     f = request.files['filename']
     file = os.path.join(current_app.config.get('UPLOAD_FOLDER'),secure_filename(f.filename))
     f.save(file)
-    extract_text(file)
-    session['upload_file'] = file
+    article_file.load(file)
+    # extract_text(file)
+    # session['upload_file'] = file
     return redirect(url_for('main.updatetext'))
     # return redirect(url_for('main.updatemyword'))
 
@@ -284,27 +285,33 @@ def importurl():
 @main.route('/updatetext', methods=['GET', 'POST'])
 def updatetext():
     form = UpdateTextForm()
-    file = session.get('upload_file')
-    file = read_file_tmp(file)
+    # file = session.get('upload_file')
+    # file = read_file_tmp(file)
     if form.validate_on_submit():
-        dirname = os.path.dirname(file)
-        file = os.path.join(dirname, form.title.data)
-        current_app.logger.debug('update to file',file)
-        with open(file, 'w') as f:
-            f.write(form.text.data)
-        import_file(file)
-        session['upload_file'] = file
+        # dirname = os.path.dirname(file)
+        # file = os.path.join(dirname, form.title.data)
+        # current_app.logger.debug('update to file',file)
+        # with open(file, 'w') as f:
+        #     f.write(form.text.data)
+        # import_file(file)
+        # session['upload_file'] = file
+        article_file.set_filename(form.title.data)
+        article_file.update_text(form.text.data)
+        article_file.import_file()
         return redirect(url_for('main.updatemyword'))
     else:
-        form.title.data = os.path.basename(file)
-        with open(file, 'r') as f:
-            form.text.data = f.read()
+        form.title.data = article_file.get_filename()
+        form.text.data = article_file.get_text()
+        # form.title.data = os.path.basename(file)
+        # with open(file, 'r') as f:
+        #     form.text.data = f.read()
         return render_template('updatetext.html', form=form)
 
 @main.route('/updatemyword', methods=['GET', 'POST'])
 def updatemyword():
     form = UpdateMywordForm()
-    (un_known, known) = update_myword(session.get('upload_file'))
+    # (un_known, known) = update_myword(session.get('upload_file'))
+    (un_known, known) = update_myword(article_file.get_token())
     choices = un_known + known
     choice = [(id, value) for id,value in enumerate(choices)]
     form.choices.choices = choice

@@ -71,6 +71,7 @@ class WordsTestCase(unittest.TestCase):
     def test_db_init_word_lemma(self):
         db_init_word()
 
+    @unittest.skip('')
     def test_db_init_myword(self):
         db_init_myword()
 

@@ -5,9 +5,207 @@ import os, sys, time
 import docx
 from werkzeug import secure_filename
 from flask import current_app
-from app.models import db, Word, Lemma
+from app.models import db, Word, Lemma, MyWord, Article,\
+    ArticleWord,Dictionary,SentenceWord,Sentence,SentenceReview,MySentence
 from sqlalchemy import or_
 
+class My_Word(object):
+
+    def __init__(self):
+        self._word = []
+
+    def get_myword(self):
+        if not self._word:
+            myword = db.session.query(MyWord.word).all()
+            self._myowrd = [w[0] for w in myword]
+        return self._myowrd
+
+
+class ArticleFile(object):
+
+    def __init__(self):
+        self._file = None
+        self._dirname = None
+        self._basename = None
+        self._filename = None
+        self._file_extension = None
+        # self._tmp_file = None
+        self._text = ''
+        self._token = []
+        self._sentence = {}
+        self._word = {}
+
+    def load(self, file):
+        if file:
+            self._file = file
+            self._dirname = os.path.dirname(file)
+            self._basename = os.path.basename(file)
+            self._filename = self._basename.split('.')[0]
+            self._file_extension = self._basename.split('.')[1]
+            self._tmp_file = os.path.join(self._dirname, self._filename + '.tmp')
+            self._extract_text()
+
+    def get_sentence(self):
+        return self._sentence
+
+    def get_word(self):
+        return self._word
+
+    def get_token(self):
+        return self._token
+
+    def get_text(self):
+        return self._text
+
+    def get_filename(self):
+        return self._filename
+
+    def set_filename(self, filename):
+        self._filename = filename
+
+    def _extract_text(self):
+        if self._allowed_file_extenstion():
+            fullText = []
+            if self._file_extension == ('txt' or 'tmp'):
+                with open(self._file, 'r') as f:
+                    fullText = f.readlines()
+            elif self._file_extension == 'pdf':
+                with open(self._file, 'rb') as f:
+                    pdfReader = pdf.PdfFileReader(f)
+                    for pagenumber in range(pdfReader.numPages):
+                        pageObj = pdfReader.getPage(pagenumber)
+                        fullText.append(pageObj.extractText().lower())
+            elif self._file_extension == 'docx':
+                doc = docx.Document(self._file)
+                for para in doc.paragraphs:
+                    fullText.append(para.text)
+
+            fullText = '\n'.join(fullText)
+            pttn = re.compile(r'([A-Za-z]+.*?[\.\?\!\n])', re.M)
+            lines = re.findall(pttn,fullText)
+            lines = [re.sub(r'\n','',x) for x in lines]
+
+            fullText = '\n'.join(lines)
+            self._text = fullText
+            # with open(self._tmp_file, 'w') as f:
+            #     f.writelines(fullText)
+
+    def update_text(self, text):
+        self._text = text
+        lines = text.split('\n')
+
+        for line in lines:
+            self._sentence[line] = '1'
+
+        self._token = self._get_valid_token(text)
+        for count in range(len(self._token)):
+            self._word[self._token[count].strip()] = 1
+
+    def _allowed_file_extenstion(self):
+        EXTENSIONS = {'txt','srt', 'pdf', 'docx'}
+        if self._file_extension in EXTENSIONS:
+            return True
+        else:
+            return False
+
+    def _get_valid_token(self, text):
+        with Timer() as timer:
+            tokens = re.findall('[a-z]+', text.lower())
+            tokens = set(list(dict.fromkeys(tokens)))
+            tokens = db.session.query(Word.word).join(Lemma).filter(or_(
+                Lemma.lemma.in_(tokens),
+                Word.word.in_(tokens)
+            )).all()
+            tokens = list(set([x[0] for x in tokens]))
+        print('get valid token took', timer.duration, 'seconds')
+        return tokens
+
+    def import_file(self):
+        self._import_article()
+        self._import_sentence()
+        self._import_articleword()
+        self._update_article_count()
+
+    def _import_article(self):
+        a = db.session.query(Article).filter(Article.article == self._filename).first()
+        if not a:
+            a1 = Article(article=self._filename, word_count=0, sentence_count=0)
+            db.session.add(a1)
+            db.session.commit()
+
+    def _import_sentence(self):
+        a = db.session.query(Sentence).join(Article).filter(Article.article == self._filename).first()
+        if a:
+            return
+
+        with Timer() as timer:
+            # insert SentenceWords
+            db.session.remove()
+            article = db.session.query(Article).filter(Article.article == self._filename).first()
+
+            sl = []
+            words_all = db.session.query(Word).filter(Word.word.in_(self._token)).all()
+            for sentence in self._sentence:
+                tokens = get_token(sentence)
+                s = Sentence(sentence=sentence, article=article)
+                w = [w for w in words_all if w.word in tokens]
+                sw = [SentenceWord(word=i) for i in w]
+                s.sentencewords = sw
+                sl.append(s)
+            db.session.add_all(sl)
+            db.session.commit()
+
+        print("import sentence took", timer.duration, "seconds")
+
+    def _import_articleword(self):
+        a = db.session.query(ArticleWord).join(Article).filter(Article.article == self._filename).first()
+        if a:
+            return
+
+        with Timer() as timer:
+            # insert ArticleWords
+            db.session.remove()
+            article = db.session.query(Article).filter(Article.article == self._filename).first()
+            words = db.session.query(Word).filter(Word.word.in_(self._token)).all()
+            aw = [ArticleWord(article=article, word=w) for w in words]
+            db.session.add_all(aw)
+            db.session.commit()
+        print("took", timer.duration, "seconds")
+
+    def _update_article_count(self):
+        article = db.session.query(Article).filter(Article.article == self._filename).first()
+        article.sentence_count = len(self._show_artile_sentences())
+        article.word_count = len(self._show_artile_words())
+        db.session.add(article)
+        db.session.commit()
+
+    def _show_artile_words(self):
+        myword = db.session.query(MyWord.word).all()
+        mywords = set([w[0] for w in myword])
+
+        article_word = db.session.query(Word.word).join(ArticleWord).join(Article).filter(
+            Article.article == self._filename,
+            Word.word.notin_(mywords)
+        ).order_by(Word.id).all()
+
+        article_words = [w[0] for w in article_word]
+        return article_words
+
+    def _show_artile_sentences(self):
+        mysentence = db.session.query(MySentence.sentence).all()
+        mysentences = set([w[0] for w in mysentence])
+
+        article_sentence = db.session.query(Sentence.sentence).join(Article).filter(
+            Article.article == self._filename,
+            Sentence.sentence.notin_(mysentences)
+        ).order_by(Sentence.id).all()
+
+        article_sentences = [w[0] for w in article_sentence]
+        return article_sentences
+
+
+article_file = ArticleFile()
+my_word = My_Word()
 
 def extract_srt(file):
     if not file or not allowed_file(file): return
@@ -33,7 +231,7 @@ def extract_srt(file):
         if re.match(r'^[A-Za-z]', key):
             json_sentences[key] = value
 
-    word_list = [f'{key} : {value}' for key, value in json_sentences.items()]
+    word_list = [f'{key} :: {value}' for key, value in json_sentences.items()]
     word_str = '\n'.join(word_list)
     with open(tfile,'w',encoding='utf8') as f:
         f.writelines(word_str)

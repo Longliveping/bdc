@@ -11,7 +11,8 @@ import urllib3
 import certifi
 import textract
 import random
-from utility.words import create_sentence_srt_json,read_word_by_file,  \
+from utility.words import my_word, article_file, \
+    create_sentence_srt_json,read_word_by_file,  \
     get_token,get_valid_token, \
     read_text, read_file_by_name, extract_text,extract_srt,  \
     read_sentence_json_file,  \
@@ -259,12 +260,14 @@ def import_srt(file):
     update_article_count(filename)
 
 
-def update_myword(file):
+def update_myword(token):
     # basename = os.path.basename(file)
     # filename = basename.split('.')[0]
-    tokens = set(read_word(file))
-    myword = db.session.query(MyWord.word).all()
-    mywords = set([w[0] for w in myword])
+    # tokens = set(read_word(file))
+    tokens = set(token)
+    mywords = set(my_word.get_myword())
+    # myword = db.session.query(MyWord.word).all()
+    # mywords = set([w[0] for w in myword])
     un_known = tokens - mywords
     known = tokens - un_known
     return (list(un_known), list(known))
