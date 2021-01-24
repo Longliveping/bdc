@@ -1,21 +1,19 @@
 from flask import render_template, session, redirect, url_for, current_app,request
-from sqlalchemy import distinct
 from .. import db
 from ..models import Word, Sentence, Article, SentenceWord, WordReview, MyWord, SentenceReview, MySentence
-from ..controller import import_srt,show_artile_words,show_artile_sentences, import_myword, import_file, words_upper, update_myword
+from ..controller import show_artile_words,show_artile_sentences, words_upper
 from . import main
 from .forms import KnownForm, ImportsForm, TryingForm, QueryForm, SentenceKnownForm, UpdateMywordForm, UpdateTextForm
 from datetime import datetime
 from utility.translation import get_word, get_sentence
 from werkzeug import secure_filename
-import os, time, re
+import os, re
 import pyttsx3
 from threading import Thread
 import urllib3
 import certifi
 import textract
-import random
-from utility.words import extract_text, extract_srt, read_file_tmp, article_file
+from utility.words import article_file, my_word, get_token
 
 def speak(sentence, rate):
     engine = pyttsx3.init()
@@ -219,9 +217,12 @@ def imports():
 @main.route('/importmyword', methods=['GET', 'POST'])
 def importmyword():
     file = os.path.join(current_app.config.get('MYWORD_FOLDER'), 'import/myword.txt')
-    extract_text(file)
-    session['upload_file'] = file
-    return redirect(url_for('main.updatemyword'))
+    # extract_text(file)
+    # session['upload_file'] = file
+    # article_file()
+    with open(file,'r') as f:
+        my_word.add_myword(get_token(f.read()))
+    return redirect(url_for('main.imports'))
 
 @main.route('/exportmyword', methods=['GET', 'POST'])
 def exportmyword():
@@ -242,25 +243,19 @@ def importfile():
     file = os.path.join(current_app.config.get('UPLOAD_FOLDER'),secure_filename(f.filename))
     f.save(file)
     article_file.load(file)
-    # extract_text(file)
-    # session['upload_file'] = file
     return redirect(url_for('main.updatetext'))
-    # return redirect(url_for('main.updatemyword'))
 
 @main.route('/importsrt', methods=['POST'])
 def importsrt():
     f = request.files['filename']
     file = os.path.join(current_app.config.get('UPLOAD_FOLDER'),secure_filename(f.filename))
     f.save(file)
-    extract_srt(file)
-    session['upload_file'] = file
+    article_file.load(file)
     return redirect(url_for('main.updatetext'))
-    # return redirect(url_for('main.updatemyword'))
 
 @main.route('/importurl', methods=['POST'])
 def importurl():
     url = request.form["url"]
-
     http = urllib3.contrib.socks.SOCKSProxyManager('socks5h://localhost:12345',ca_certs=certifi.where())
     try:
         req = http.request('GET', url)
@@ -268,7 +263,6 @@ def importurl():
         if not filename:
             filename = secure_filename(url.split('/')[-2])
         filename = re.sub(r'[^\w_\-]','',filename)[:50]
-        filename = filename + str(random.randrange(10,100))
         htmlfile = os.path.join(current_app.config.get('UPLOAD_FOLDER'),f"{filename}.html")
         with open(htmlfile, 'wb') as f:
             f.write(req.data)
@@ -276,8 +270,7 @@ def importurl():
         file = os.path.join(current_app.config.get('UPLOAD_FOLDER'),f"{filename}.txt")
         with open(file,'wb') as f:
             f.write(text)
-        extract_text(file)
-        session['upload_file'] = file
+        article_file.load(file)
         return redirect(url_for('main.updatetext'))
     except:
         return redirect(url_for('main.imports'))
@@ -285,16 +278,7 @@ def importurl():
 @main.route('/updatetext', methods=['GET', 'POST'])
 def updatetext():
     form = UpdateTextForm()
-    # file = session.get('upload_file')
-    # file = read_file_tmp(file)
     if form.validate_on_submit():
-        # dirname = os.path.dirname(file)
-        # file = os.path.join(dirname, form.title.data)
-        # current_app.logger.debug('update to file',file)
-        # with open(file, 'w') as f:
-        #     f.write(form.text.data)
-        # import_file(file)
-        # session['upload_file'] = file
         article_file.set_filename(form.title.data)
         article_file.update_text(form.text.data)
         article_file.import_file()
@@ -302,16 +286,12 @@ def updatetext():
     else:
         form.title.data = article_file.get_filename()
         form.text.data = article_file.get_text()
-        # form.title.data = os.path.basename(file)
-        # with open(file, 'r') as f:
-        #     form.text.data = f.read()
         return render_template('updatetext.html', form=form)
 
 @main.route('/updatemyword', methods=['GET', 'POST'])
 def updatemyword():
     form = UpdateMywordForm()
-    # (un_known, known) = update_myword(session.get('upload_file'))
-    (un_known, known) = update_myword(article_file.get_token())
+    (un_known, known) = my_word.diff_myword(article_file.get_token())
     choices = un_known + known
     choice = [(id, value) for id,value in enumerate(choices)]
     form.choices.choices = choice
@@ -319,18 +299,26 @@ def updatemyword():
     if form.validate_on_submit():
         if form.exit.data:
             return redirect(url_for('main.imports'))
-        sourcedir = current_app.config.get('MYWORD_FOLDER')
-        file = os.path.join(sourcedir, 'import/myword.txt' )
-        with open(file, 'w') as f:
-            for c in choice:
-                if c[0] in form.choices.data:
-                    f.write(c[1]+'\n')
-        file = os.path.join(sourcedir, 'import/remove.txt' )
-        with open(file, 'w') as f:
-            for c in choice:
-                if c[0] not in form.choices.data:
-                    f.write(c[1]+'\n')
-        import_myword()
+        add_word = []
+        rm_word = []
+        # sourcedir = current_app.config.get('MYWORD_FOLDER')
+        # file = os.path.join(sourcedir, 'import/myword.txt' )
+        # with open(file, 'w') as f:
+        for c in choice:
+            if c[0] in form.choices.data:
+                add_word.append(c[1])
+            else:
+                rm_word.append(c[1])
+                    # f.write(c[1]+'\n')
+        # file = os.path.join(sourcedir, 'import/remove.txt' )
+        # with open(file, 'w') as f:
+        # for c in choice:
+        #     if c[0] not in form.choices.data:
+        #         rm_word.append(c[1])
+                    # f.write(c[1]+'\n')
+
+        my_word.add_myword(add_word)
+        my_word.rm_myword(rm_word)
         return redirect(url_for('main.updatemyword'))
     else:
         form.choices.data = [len(un_known)+id for id,value in enumerate(known)]

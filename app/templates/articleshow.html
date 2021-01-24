@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Words{% endblock %}
+
+<body>
+{% block page_content %}
+
+<div class="page-header">
+    <div class="w3-container w3-content  w3-padding-64 w3-light-grey w3-card" style="max-width:1200px" id="Sentences">
+        <H1 class="w3-wide">Update your word libary!</H1>
+    </div>
+</div>
+
+{% block content_main %}
+<div class="content-section">
+    <form method="POST" action="">
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+            {{ form.exit(class="btn btn-outline-info") }}
+        </div>
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">User Choices</legend>
+            {% if form.choices.errors %}
+            <div class="invalid-feedback">
+                {% for error in form.choices.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% for choice in form.choices %}
+            <div class="form-check">
+                {{ choice(class="form-check-input") }}
+                {{ choice.label(class="form-check-label") }}
+            </div>
+            {% endfor %}
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+            {{ form.exit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+{% endblock content_main %}
+
+{% endblock %}
+</body>
