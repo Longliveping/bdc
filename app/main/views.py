@@ -3,7 +3,8 @@ from .. import db
 from ..models import Word, Sentence, Article, SentenceWord, WordReview, MyWord, SentenceReview, MySentence
 from ..controller import show_artile_words,show_artile_sentences, words_upper
 from . import main
-from .forms import KnownForm, ImportsForm, TryingForm, QueryForm, SentenceKnownForm, UpdateMywordForm, UpdateTextForm
+from .forms import KnownForm, ImportsForm, TryingForm, QueryForm, \
+    SentenceKnownForm, UpdateMywordForm, UpdateTextForm, UpdateArticleShowForm
 from datetime import datetime
 from utility.translation import get_word, get_sentence
 from werkzeug import secure_filename
@@ -13,7 +14,7 @@ from threading import Thread
 import urllib3
 import certifi
 import textract
-from utility.words import article_file, my_word, get_token
+from utility.words import article_file, my_word, get_token, articles
 
 def speak(sentence, rate):
     engine = pyttsx3.init()
@@ -245,13 +246,28 @@ def importfile():
     article_file.load(file)
     return redirect(url_for('main.updatetext'))
 
-@main.route('/importsrt', methods=['POST'])
-def importsrt():
-    f = request.files['filename']
-    file = os.path.join(current_app.config.get('UPLOAD_FOLDER'),secure_filename(f.filename))
-    f.save(file)
-    article_file.load(file)
-    return redirect(url_for('main.updatetext'))
+@main.route('/updatearticleshow', methods=['GET', 'POST'])
+def updatearticleshow():
+    form = UpdateArticleShowForm()
+    articles.get_articles()
+    (un_known, known) = articles.diff_noshow()
+    choices = un_known + known
+    choice = [(id, value) for id,value in enumerate(choices)]
+    form.choices.choices = choice
+
+    if form.validate_on_submit():
+        show = []
+        no_show = []
+        for c in choice:
+            if c[0] in form.choices.data:
+                show.append(c[1])
+            else:
+                no_show.append(c[1])
+        articles.set_noshow(show, no_show)
+        return redirect(url_for('main.index'))
+    else:
+        form.choices.data = [len(un_known)+id for id,value in enumerate(known)]
+        return render_template('articleshow.html', form=form)
 
 @main.route('/importurl', methods=['POST'])
 def importurl():
@@ -301,21 +317,11 @@ def updatemyword():
             return redirect(url_for('main.imports'))
         add_word = []
         rm_word = []
-        # sourcedir = current_app.config.get('MYWORD_FOLDER')
-        # file = os.path.join(sourcedir, 'import/myword.txt' )
-        # with open(file, 'w') as f:
         for c in choice:
             if c[0] in form.choices.data:
                 add_word.append(c[1])
             else:
                 rm_word.append(c[1])
-                    # f.write(c[1]+'\n')
-        # file = os.path.join(sourcedir, 'import/remove.txt' )
-        # with open(file, 'w') as f:
-        # for c in choice:
-        #     if c[0] not in form.choices.data:
-        #         rm_word.append(c[1])
-                    # f.write(c[1]+'\n')
 
         my_word.add_myword(add_word)
         my_word.rm_myword(rm_word)

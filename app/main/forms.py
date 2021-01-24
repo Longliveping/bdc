@@ -49,6 +49,11 @@ class UpdateMywordForm(FlaskForm):
     submit = SubmitField("Update my word")
     exit = SubmitField("Exit")
 
+class UpdateArticleShowForm(FlaskForm):
+    choices = MultiCheckboxField('Routes', coerce=int)
+    submit = SubmitField("Update article no show")
+    exit = SubmitField("Exit")
+
 class UpdateTextForm(FlaskForm):
     title = StringField('', validators=[DataRequired()])
     text = TextAreaField('',render_kw={'class': 'form-control', 'rows': 20}, validators=[DataRequired()])

@@ -1,13 +1,11 @@
-import re, json
-from collections import Counter
+import re
 import PyPDF2 as pdf
 import os, sys, time
 import docx
-from werkzeug import secure_filename
-from flask import current_app
 from app.models import db, Word, Lemma, MyWord, Article,\
     ArticleWord,Dictionary,SentenceWord,Sentence,SentenceReview,MySentence
 from sqlalchemy import or_
+
 
 class My_Word(object):
 
@@ -65,12 +63,14 @@ class ArticleFile(object):
 
     def __init__(self):
         self._file = None
+        self._article = None
         self._dirname = None
         self._basename = None
         self._filename = None
         self._file_extension = None
         self._text = ''
         self._token = []
+        self._words_all = {}
         self._sentence = {}
         self._word = {}
 
@@ -82,6 +82,7 @@ class ArticleFile(object):
             self._filename = self._basename.split('.')[0]
             self._file_extension = self._basename.split('.')[1]
             self._extract_text()
+
 
     def get_sentence(self):
         return self._sentence
@@ -142,6 +143,14 @@ class ArticleFile(object):
                 sentence_list = '\n'.join(sentence_list)
                 self._text = sentence_list
 
+    def _get_word_all(self):
+        words = db.session.query(Word).filter(Word.word.in_(self._token)).all()
+        for w in words:
+            self._words_all[w.word] = w
+
+    def _get_article(self):
+        self._article = db.session.query(Article).filter(Article.article == self._filename).first()
+
     def update_text(self, text):
         self._text = text
         lines = text.split('\n')
@@ -199,25 +208,20 @@ class ArticleFile(object):
         with Timer() as timer:
             # insert SentenceWords
             db.session.remove()
-            article = db.session.query(Article).filter(Article.article == self._filename).first()
-
+            self._get_word_all()
+            self._get_article()
             sl = []
-            words_all = db.session.query(Word).filter(Word.word.in_(self._token)).all()
-            if self._file_extension == 'srt':
-                for sentence, translation in self._sentence.items():
-                    s = Sentence(sentence=sentence,translation=translation, article=article)
-                    w = [w for w in words_all if w.word in get_token(sentence)]
-                    sw = [SentenceWord(word=i) for i in w]
-                    s.sentencewords = sw
-                    sl.append(s)
-            else:
-                for sentence in self._sentence.keys():
-                    s = Sentence(sentence=sentence, article=article)
-                    w = [w for w in words_all if w.word in get_token(sentence)]
-                    sw = [SentenceWord(word=i) for i in w]
-                    s.sentencewords = sw
-                    sl.append(s)
-            db.session.add_all(sl)
+            for sentence, translation in self._sentence.items():
+                if self._file_extension == 'srt':
+                    s = Sentence(sentence=sentence,translation=translation, article=self._article)
+                else:
+                    s = Sentence(sentence=sentence, article=self._article)
+
+                w = [self._words_all[t] for t in get_token(sentence) if t in self._token]
+                sw = [SentenceWord(word=i) for i in w]
+                s.sentencewords = sw
+                sl.append(s)
+                db.session.add_all(sl)
             db.session.commit()
 
         print("import sentence took", timer.duration, "seconds")
@@ -269,417 +273,47 @@ class ArticleFile(object):
         return article_sentences
 
 
-article_file = ArticleFile()
-my_word = My_Word()
-#
-# def extract_srt(file):
-#     if not file or not allowed_file(file): return
-#     dirname = os.path.dirname(file)
-#     basename = os.path.basename(file)
-#     filename = basename.split('.')[0]
-#     sfile = os.path.join(dirname, secure_filename(filename)+'_sentence.json')
-#     wfile = os.path.join(dirname, secure_filename(filename)+'_word.json')
-#     tfile = os.path.join(dirname, secure_filename(filename)+'.tmp')
-#     if file[-4:] == '.srt':
-#         with open(file, 'r', encoding='utf8') as f:
-#             lines = f.read()
-#     if file[-4:] == '.tmp':
-#         with open(file, 'r', encoding='utf8') as f:
-#             lines = f.read()
-#
-#     pttn = re.compile(r'\d{1,4}\n.*\n(.*)\n(.*)\n', re.M)
-#     lines = re.findall(pttn,lines)
-#     json_sentences = {}
-#     for count in range(len(lines)):
-#         key = re.sub(r'^[^\w]*','',lines[count][1])
-#         value = re.sub(r'[^\u4e00-\u9fa5]*','',lines[count][0])
-#         if re.match(r'^[A-Za-z]', key):
-#             json_sentences[key] = value
-#
-#     word_list = [f'{key} ::: {value}' for key, value in json_sentences.items()]
-#     word_str = '\n'.join(word_list)
-#     with open(tfile,'w',encoding='utf8') as f:
-#         f.writelines(word_str)
-#
-#
-#     with open(sfile,'w',encoding='utf8') as f:
-#         json.dump(json_sentences,f,indent=4, ensure_ascii=False)
-#
-#     word_str = '\n'.join(list(dict.fromkeys(json_sentences)))
-#     word_list = list(get_valid_token(word_str))
-#     json_words = {}
-#     for count in range(len(word_list)):
-#         json_words[word_list[count].strip()] = 1
-#     with open(wfile,'w',encoding='utf8') as f:
-#         json.dump(json_words,f,indent=4, ensure_ascii=False)
-#
-#     return True
+class Articles(object):
 
-#
-# def extract_text(file):
-#     if file == '' or not allowed_file(file): return ''
-#     dirname = os.path.dirname(file)
-#     basename = os.path.basename(file)
-#     filename = basename.split('.')[0]
-#     sfile = os.path.join(dirname, secure_filename(filename)+'_sentence.json')
-#     wfile = os.path.join(dirname, secure_filename(filename)+'_word.json')
-#     tfile = os.path.join(dirname, secure_filename(filename)+'.tmp')
-#     fullText = []
-#     if file[-4:] == '.txt':
-#         with open(file, 'r') as f:
-#             fullText = f.readlines()
-#     elif file[-4:] == '.tmp':
-#         with open(file, 'r') as f:
-#             fullText = f.readlines()
-#     elif file[-4:] == '.pdf':
-#         with open(file, 'rb') as f:
-#             pdfReader = pdf.PdfFileReader(f)
-#             for pagenumber in range(pdfReader.numPages):
-#                 pageObj = pdfReader.getPage(pagenumber)
-#                 fullText.append(pageObj.extractText().lower())
-#     elif file[-4:] == 'docx':
-#         doc = docx.Document(file)
-#         for para in doc.paragraphs:
-#             fullText.append(para.text)
-#
-#     fullText = '\n'.join(fullText)
-#     pttn = re.compile(r'([\w]+.*?[\.\?\!\n])', re.M)
-#     lines = re.findall(pttn,fullText)
-#     lines = [re.sub(r'\n','',x) for x in lines]
-#     fullText = '\n'.join(lines)
-#     with open(tfile, 'w') as f:
-#         f.writelines(fullText)
-#
-#     if file[-4:] == '.tmp':
-#         json_words = {}
-#         for line in lines:
-#             json_words[line] = '1'
-#         with open(sfile,'w',encoding='utf8') as f:
-#             json.dump(json_words,f,indent=4, ensure_ascii=False)
-#
-#         word_list = get_valid_token(fullText)
-#         json_words = {}
-#         for count in range(len(word_list)):
-#             json_words[word_list[count].strip()] = 1
-#         with open(wfile,'w',encoding='utf8') as f:
-#             json.dump(json_words,f,indent=4, ensure_ascii=False)
-#
-#     return True
-#
-#
-# def read_word(file):
-#     file = _read_word_json_file(file)
-#     tokens = _read_token_json(file)
-#     return tokens
-#
-#
-# def read_word_by_filename(filename):
-#     file = read_file_by_name(filename)
-#     file = _read_word_json_file(file)
-#     tokens = _read_token_json(file)
-#     return tokens
-#
-#
-# def read_sentence(file):
-#     file = _read_sentence_json_file(file)
-#     j = _read_sentence_json(file)
-#     return j
-#
-#
-# def read_sentence_by_filename(filename):
-#     file = read_file_by_name(filename)
-#     file = _read_sentence_json_file(file)
-#     j = _read_sentence_json(file)
-#     return j
-#
-#
-# def read_word_by_file(file):
-#     tokens = get_token(read_text(file))
-#     return tokens
-#
-# def read_valid_word_from_file(file):
-#     tokens = get_valid_token(read_text(file))
-#     return tokens
-#
-# def get_valid_token(text):
-#     with Timer() as timer:
-#         tokens = re.findall('[a-z]+', text.lower())
-#         tokens = set(list(dict.fromkeys(tokens)))
-#         tokens = db.session.query(Word.word).join(Lemma).filter(or_(
-#             Lemma.lemma.in_(tokens),
-#             Word.word.in_(tokens)
-#         )).all()
-#         tokens = list(set([x[0] for x in tokens]))
-#     print('get valid token takes', timer.duration, 'seconds')
-#     return tokens
-#
-#
-def get_token(text):
-    tokens = re.findall('[a-z]+', text.lower())
-    tokens = list(dict.fromkeys(tokens))
-    return tokens
-#
-#
-# def create_sentence_srt_json(file):
-#     with open(file) as f:
-#         lines = f.readlines()
-#     dirname = os.path.dirname(file)
-#     basename = os.path.basename(file)
-#     filename = basename.split('.')[0]
-#     wfile = os.path.join(dirname, secure_filename(filename)+'_sentence.json')
-#
-#     pttn = re.compile(r'(.*)[\s.!?]([\u4e00-\u9fa5].*)')
-#     lines = [re.search(pttn,x) for x in lines]
-#     lines = filter(lambda x: x, lines)
-#     lines = [x.groups() for x in lines]
-#
-#     sentence_list = lines
-#     json_words = {}
-#     for count in range(len(sentence_list)):
-#         json_words[sentence_list[count][0].strip()] = sentence_list[count][1]
-#
-#     with open(wfile,'w',encoding='utf8') as f:
-#         json.dump(json_words,f,indent=4, ensure_ascii=False)
-#     return json_words
-#
-#
-# def create_sentence_english_json(file):
-#     with open(file) as f:
-#         lines = f.read()
-#     pttn = r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?|!|\n)'
-#     lines = re.split(pttn, lines)
-#     lines = filter(lambda x: len(x)>15 and len(x)<100, lines)
-#     lines = [re.sub(r'^[^\w]*','',x) for x in lines]
-#     json_words = {}
-#     for line in lines:
-#         json_words[line] = '1'
-#     dirname = os.path.dirname(file)
-#     basename = os.path.basename(file)
-#     filename = basename.split('.')[0]
-#     wfile = os.path.join(dirname, secure_filename(filename)+'_sentence.json')
-#     with open(wfile,'w') as f:
-#         json.dump(json_words,f,indent=4)
-#     return json_words
-#
-#
-# def allowed_file(filename):
-#     ALLOWED_EXTENSIONS = {'txt', 'tmp','srt', 'pdf', 'docx'}
-#     return '.' in filename and \
-#            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-#
-#
-# def read_text(file):
-#     with open(file, 'r') as f:
-#         text = f.read()
-#     return text
-#
-#
-# # looking for file
-# def read_file_by_type(filetype):
-#     sourcedir = current_app.config.get('TESTING_FOLDER')
-#     for basename in os.listdir(sourcedir):
-#         file = os.path.join(sourcedir, basename)
-#         basename = os.path.basename(file)
-#         extention = basename.split('.')[1]
-#         if extention == filetype:
-#             return file
-#
-# def read_file_tmp(file):
-#     filename = os.path.basename(file).split('.')[0]
-#     dirname = os.path.dirname(file)
-#     tfile = os.path.join(dirname, filename+'.tmp')
-#     return tfile
-#
-#
-# def read_file_by_name(filename):
-#     sourcedir =[]
-#     if current_app.config.get('DEVELOPMENT'):
-#         sourcedir = current_app.config.get('UPLOAD_FOLDER')
-#     elif current_app.config.get('TESTING'):
-#         sourcedir = current_app.config.get('TESTING_FOLDER')
-#     for basename in os.listdir(sourcedir):
-#         if basename.endswith('tmp'):
-#             file = os.path.join(sourcedir, basename)
-#             basename = os.path.basename(file)
-#             if basename.startswith(filename):
-#                 return file
-#     return None
-#
-#
-# def read_word_json_file(filename):
-#     sourcedir =[]
-#     if current_app.config.get('DEVELOPMENT'):
-#         sourcedir = current_app.config.get('UPLOAD_FOLDER')
-#     elif current_app.config.get('TESTING'):
-#         sourcedir = current_app.config.get('TESTING_FOLDER')
-#     for basename in os.listdir(sourcedir):
-#         if basename.endswith('word.json'):
-#             file = os.path.join(sourcedir, basename)
-#             basename = os.path.basename(file)
-#             if basename.startswith(filename):
-#                 return file
-#     return None
-#
-#
-# def read_sentence_json_file(filename):
-#     sourcedir =[]
-#     if current_app.config.get('DEVELOPMENT'):
-#         sourcedir = current_app.config.get('UPLOAD_FOLDER')
-#     elif current_app.config.get('TESTING'):
-#         sourcedir = current_app.config.get('TESTING_FOLDER')
-#     for basename in os.listdir(sourcedir):
-#         if basename.endswith('sentence.json'):
-#             file = os.path.join(sourcedir, basename)
-#             basename = os.path.basename(file)
-#             if basename.startswith(filename):
-#                 return file
-#     return None
-#
-#
-# def _create_sentence(file):
-#     if file == '' or not allowed_file(file): return ''
-#     dirname = os.path.dirname(file)
-#     basename = os.path.basename(file)
-#     filename = basename.split('.')[0]
-#     tfile = os.path.join(dirname, secure_filename(filename)+'.tmp')
-#     with open(file, 'r') as f:
-#         fullText = f.read()
-#     pttn = re.compile(r'([\w]+.*?)(?=[\.\?\!\n])', re.M)
-#     lines = re.findall(pttn,fullText)
-#     lines = [re.sub(r'\n','',x) for x in lines if len(x)>15]
-#     lines = '\n'.join(lines)
-#     with open(tfile, 'w+') as f:
-#         f.writelines(lines)
-#     return tfile
-#
-#
-# def _create_word_json(file):
-#     with open(file, 'r') as f:
-#         text = f.read()
-#     dirname = os.path.dirname(file)
-#     basename = os.path.basename(file)
-#     filename = basename.split('.')[0]
-#     wfile = os.path.join(dirname, secure_filename(filename)+'_word.json')
-#     word_list = get_token(text)
-#     json_words = {}
-#     for count in range(len(word_list)):
-#         json_words[word_list[count].strip()] = 1
-#
-#     with open(wfile,'w',encoding='utf8') as f:
-#         json.dump(json_words,f,indent=4, ensure_ascii=False)
-#     return json_words
-#
-#
-# def _read_token_json(file):
-#     print('read token from json', file)
-#     with open(file, 'r') as f:
-#         j = json.load(f)
-#     tokens = j.keys()
-#     return tokens
-#
-#
-# def _read_sentence_json(file):
-#     with open(file, 'r') as f:
-#         j = json.load(f)
-#     return j
-#
-#
-# def _read_word_json_file(file):
-#     filename = os.path.basename(file).split('.')[0]
-#     dirname = os.path.dirname(file)
-#     wfile = os.path.join(dirname, filename+'_word.json')
-#     if os.path.isfile(wfile):
-#         return wfile
-#     return None
-#
-#
-# def _read_sentence_json_file(file):
-#     filename = os.path.basename(file).split('.')[0]
-#     dirname = os.path.dirname(file)
-#     sfile = os.path.join(dirname, filename+'_sentence.json')
-#     if os.path.isfile(sfile):
-#         return sfile
-#     return None
-#
-#
-# def update_target_folder(sourcedir):
-#     enddirs = folder_sub(sourcedir)
-#     for dir in enddirs:
-#         path = os.path.join(dir, 'target')
-#         if not os.path.exists(path):
-#             os.makedirs(path)
-#
-#
-# def folder_sub(root, l=[]):
-#     #递归函数,返回所有叶节点source目录
-#     if folder_nosub(root):
-#         if os.path.isdir(root):
-#             l.append(root)
-#         return l
-#     else:
-#         for dir in os.listdir(root):
-#             path = os.path.join(root, dir)
-#             folder_sub(path, l)
-#     return l
-#
-#
-# def folder_nosub(root):
-#     if os.path.isdir(root):
-#         for o in os.listdir(root):
-#             path = os.path.join(root,o)
-#             if os.path.isdir(path) and o != 'target':
-#                 return False
-#         return True
-#     else:
-#         return True
-#
-#
-# def create_txt_from_target(sourcedir):
-#     dirs = folder_sub(sourcedir, [])
-#     for dir in dirs:
-#         for basename in os.listdir(dir):
-#             file = os.path.join(dir, basename)
-#             if os.path.isfile(file):
-#                 dirname = os.path.dirname(file)
-#                 filename = basename.split('.')[0]
-#                 wfile = os.path.join(dirname,'target', secure_filename(filename)+'.txt')
-#                 extract_text(wfile)
-#                 # with open(wfile, 'a') as f:
-#                 #     lines = extract_text(file)
-#                 #     pttn = f'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s'
-#                 #     sentences = re.split(pttn, lines)
-#                 #     f.write('\n'.join(sentences))
-#
-#
-# def create_token(file):
-#     csvfile = f'{file.split(".")[0]}.csv'
-#     text = read_text(file)
-#     token = get_token(text)
-#     count = Counter(token)
-#
-#     token_new = []
-#     counter = 0
-#     with open(csvfile, 'w') as f:
-#         for c in (count.most_common()):
-#             counter += c[1]
-#             token_new.append(c)
-#             f.write(c[0]+', '+str(c[1])+'\n')
-#     return csvfile
-#
-#
-# def create_token_target(sourcedir):
-#     for dir in folder_sub(sourcedir):
-#         target_dir = os.path.join(dir,'target')
-#         for file in os.listdir(target_dir):
-#             if file[-3:] == 'txt':
-#                 wfile = os.path.join(target_dir, file)
-#                 create_token(wfile)
-#
-#
-# def update_target(sourcedir):
-#     update_target_folder(sourcedir)
-#     create_txt_from_target(sourcedir)
-#     create_token_target(sourcedir)
+    def __init__(self):
+        self._articles = []
+        self._articlename = {}
+        self._show = {}
+        self._noshow = {}
+        self._wordcount = {}
+
+    def get_articles(self):
+        articles = db.session.query(Article).all()
+        self._articles = articles
+        for a in articles:
+            self._articlename[a.id] = a.article
+            self._noshow[a.article] = a.noshow
+            self._wordcount[a.id] = a.word_count
+        return self._articles
+
+    def get_articlename(self):
+        return self._articlename
+
+    def get_noshow(self):
+        return self._noshow
+
+    def get_wordcount(self):
+        return self._wordcount
+
+    def set_noshow(self, show, no_show):
+        for a in no_show:
+            self._noshow[a] = True
+        for a in show:
+            self._noshow[a] = False
+        for article in self._articles:
+            article.noshow = self._noshow[article.article]
+            db.session.add(article)
+        db.session.commit()
+
+    def diff_noshow(self):
+        show = [key for key, value in self._noshow.items() if not value]
+        no_show = [key for key, value in self._noshow.items() if value]
+        return (no_show, show)
 
 
 class LemmaDB (object):
@@ -866,6 +500,12 @@ class Timer:
         self.duration = time.time() - self.start
 
 
-if __name__ == '__main__':
-    pass
+def get_token(text):
+    tokens = re.findall('[a-z]+', text.lower())
+    tokens = list(dict.fromkeys(tokens))
+    return tokens
 
+
+articles = Articles()
+article_file = ArticleFile()
+my_word = My_Word()
