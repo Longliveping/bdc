@@ -14,7 +14,7 @@ from threading import Thread
 import urllib3
 import certifi
 import textract
-from utility.words import article_file, my_word, get_token, articles
+from utility.words import article_file, my_word, get_token, articles, aritcle_sentences
 
 def speak(sentence, rate):
     engine = pyttsx3.init()
@@ -35,7 +35,6 @@ def speak(sentence, rate):
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
-    session['check'] = False
     deck = []
     articles = db.session.query(Article).all()
     for a in articles[::-1]:
@@ -46,8 +45,8 @@ def index():
 
     return render_template('index.html', deck=deck)
 
-@main.route('/study/<article>', methods=['GET', 'POST'])
-def study(article):
+@main.route('/studyword/<article>', methods=['GET', 'POST'])
+def study_word(article):
     form = KnownForm()
     words = show_artile_words(article)
     count = len(words)
@@ -67,22 +66,6 @@ def study(article):
 
     word = words[next_item_index]
 
-    word_trans = ''
-    sent_trans = ''
-    if request.method == 'GET' :
-        word_trans = get_word(word)
-
-        if session.get('check'):
-            ss = db.session.query(Sentence.sentence).join(SentenceWord).join(Word).join(Article).filter(
-                Article.article == article,
-                Word.word == word).all()
-            sentences = [s[0] for s in ss]
-            sents = []
-            for s in sentences[:2]:
-                sents.append(s)
-            sents = '\n'.join(sents)
-            sent_trans = get_sentence(sents,word)
-
     if form.validate_on_submit():
         if form.exit.data:
             a = db.session.query(Article).filter(Article.article == article).first()
@@ -94,7 +77,8 @@ def study(article):
         #     session['study'] = article
         #     return redirect(url_for('main.query', word=word))
 
-        session['check'] = bool(form.check.data)
+        session['show_wordsentence'] = bool(form.show_sentence.data)
+        session['show_wordtranslaiton'] = bool(form.show_translation.data)
         w = db.session.query(Word).filter(Word.word==word).first()
         wordreview = WordReview(word=w)
         wordreview.timestamp = datetime.utcnow()
@@ -111,16 +95,33 @@ def study(article):
             db.session.commit()
 
         session[f'index_{article}'] = next_item_index+1
-        return redirect(url_for('main.study', article=article))
+        return redirect(url_for('main.study_word', article=article))
     else:
-        form.check.data = bool(session.get('check'))
-        return render_template('study.html', form=form, word=word, translation=word_trans, sentences=sent_trans,
+        sent_trans = ''
+        word_trans = get_word(word)
+        if not session.get('show_wordtranslaiton'):
+            word_trans['chinese'] = []
+        if session.get('show_wordsentence'):
+            ss = db.session.query(Sentence.sentence).join(SentenceWord).join(Word).join(Article).filter(
+                Article.article == article,
+                Word.word == word).all()
+            sentences = [s[0] for s in ss]
+            sents = []
+            for s in sentences[:2]:
+                sents.append(s)
+            sents = '\n'.join(sents)
+            sent_trans = get_sentence(sents,word)
+        form.show_sentence.data = bool(session.get('show_wordsentence'))
+        form.show_translation.data = bool(session.get('show_wordtranslaiton'))
+        return render_template('study_word.html', form=form, word=word, translation=word_trans, sentences=sent_trans,
                            next_item_index=next_item_index)
 
 @main.route('/studysentence/<article>', methods=['GET', 'POST'])
 def study_sentence(article):
     form = SentenceKnownForm()
-    sentences = show_artile_sentences(article)
+    aritcle_sentences.load(article)
+    sentences = aritcle_sentences.get_sentence()
+    meanings = aritcle_sentences.get_translation()
     count = len(sentences)
     if count == 0:
         return redirect(url_for('main.index'))
@@ -135,19 +136,16 @@ def study_sentence(article):
 
     sentence = sentences[next_item_index]
     sentence = words_upper(sentence)
-
-    sent_trans = []
-    if request.method == 'GET' and session.get('show'):
-        sents = [sentence]
-        sents = '\n'.join(sents)
-        sent_trans = get_sentence(sents.title(),'i')
+    meaning = meanings[next_item_index]
 
     if form.validate_on_submit():
-        session['show'] = bool(form.show.data)
+        session['show_translation'] = bool(form.show_translation.data)
+        session['show_meaning'] = bool(form.show_meaning.data)
+        session['show_sentence'] = bool(form.show_sentence.data)
         session['speed'] = form.speed.data
         if form.exit.data:
             a = db.session.query(Article).filter(Article.article == article).first()
-            a.sentence_count = len(show_artile_sentences(article))
+            a.sentence_count = aritcle_sentences.get_sentence_count()
             db.session.add(a)
             db.session.commit()
             return redirect(url_for('main.index'))
@@ -175,11 +173,22 @@ def study_sentence(article):
         session[f'index_s{article}'] = next_item_index+1
         return redirect(url_for('main.study_sentence', article=article))
     else:
-        form.show.data = bool(session.get('show'))
+        if not bool(session.get('show_meaning')):
+            meaning = ''
+        if not bool(session.get('show_sentence')):
+            sentence = ''
+        sent_trans = []
+        if bool(session.get('show_sentence')) and session.get('show_translation'):
+            sents = [sentence]
+            sents = '\n'.join(sents)
+            sent_trans = get_sentence(sents.title(),'i')
+        form.show_translation.data = bool(session.get('show_translation'))
+        form.show_meaning.data = bool(session.get('show_meaning'))
+        form.show_sentence.data = bool(session.get('show_sentence'))
         rate = form.speed.data = session.get('speed')
         speaker = Thread(target=speak,args=(sentence,rate,))
         speaker.start()
-        return render_template('study_sentence.html', form=form, sentence=sentence, sentences=sent_trans, next_item_index=next_item_index)
+        return render_template('study_sentence.html', form=form, sentence=sentence, meaning=meaning, sentence_translation=sent_trans, next_item_index=next_item_index)
 
 @main.route('/query/<word>', methods=['GET', 'POST'])
 def query(word):

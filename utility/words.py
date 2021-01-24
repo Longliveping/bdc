@@ -282,6 +282,7 @@ class Articles(object):
         self._noshow = {}
         self._wordcount = {}
 
+
     def get_articles(self):
         articles = db.session.query(Article).all()
         self._articles = articles
@@ -315,6 +316,38 @@ class Articles(object):
         no_show = [key for key, value in self._noshow.items() if value]
         return (no_show, show)
 
+
+
+class ArticleSentences(object):
+
+    def __init__(self):
+        self._article = None
+        self._sentence = []
+        self._translation = []
+        self._sentence_count = 0
+
+    def load(self,article):
+        self._article = article
+        mysentence = db.session.query(MySentence.sentence).all()
+        mysentences = set([w[0] for w in mysentence])
+        article_sentence = db.session.query(Sentence.sentence, Sentence.translation).join(Article).filter(
+            Article.article == article,
+            Sentence.sentence.notin_(mysentences)
+        ).order_by(Sentence.id).all()
+        sentences = [w[0] for w in article_sentence]
+        translations = [w[1] for w in article_sentence]
+        self._sentence = sentences
+        self._translation = translations
+        self._sentence_count = len(sentences)
+
+    def get_sentence(self):
+        return self._sentence
+
+    def get_translation(self):
+        return self._translation
+
+    def get_sentence_count(self):
+        return self._sentence_count
 
 class LemmaDB (object):
 
@@ -506,6 +539,7 @@ def get_token(text):
     return tokens
 
 
+aritcle_sentences = ArticleSentences()
 articles = Articles()
 article_file = ArticleFile()
 my_word = My_Word()

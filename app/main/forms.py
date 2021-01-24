@@ -10,7 +10,8 @@ class KnownForm(FlaskForm):
     noshow = SubmitField(label='No show')
     # query = SubmitField(label='Query')
     exit = SubmitField()
-    check = BooleanField('Show Sentence')
+    show_translation = BooleanField('Show Translation')
+    show_sentence = BooleanField('Show Sentence')
 
 class SentenceKnownForm(FlaskForm):
     known = SubmitField(label='Known')
@@ -20,13 +21,15 @@ class SentenceKnownForm(FlaskForm):
     repeat = SubmitField(label='Repeat')
     # query = SubmitField(label='Query')
     exit = SubmitField()
-    show = BooleanField('Show translation')
+    show_sentence = BooleanField('原文')
+    show_translation = BooleanField('直译')
+    show_meaning = BooleanField('意译')
     speed = SelectField(label='Speed',
                         choices=[('200','1x'),('100','0.5x'),('300','1.5x'),('400','2x'),('600','3x')],
                         validators=[DataRequired(), Length(1,64)])
 
 class ImportsForm(FlaskForm):
-    importfolder = SubmitField(label="Import folder")
+    # importfolder = SubmitField(label="Import folder")
     exit = SubmitField()
 
 class TryingForm(FlaskForm):

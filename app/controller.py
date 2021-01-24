@@ -37,13 +37,14 @@ def show_artile_sentences(article_name):
     mysentence = db.session.query(MySentence.sentence).all()
     mysentences = set([w[0] for w in mysentence])
 
-    article_sentence = db.session.query(Sentence.sentence).join(Article).filter(
+    article_sentence = db.session.query(Sentence.sentence, Sentence.translation).join(Article).filter(
         Article.article == article_name,
         Sentence.sentence.notin_(mysentences)
     ).order_by(Sentence.id).all()
 
-    article_sentences = [w[0] for w in article_sentence]
-    return article_sentences
+    sentences = [w[0] for w in article_sentence]
+    meanings = [w[1] for w in article_sentence]
+    return sentences,meanings
 
 def show_my_words():
     myword = db.session.query(MyWord.word).all()

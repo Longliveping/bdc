@@ -9,8 +9,9 @@
 <div class="page-header">
     <div class="w3-container w3-content  w3-padding-64 w3-light-grey w3-card" style="max-width:1200px" id="Sentences">
         <H4 class="w3-wide">{{sentence}}</H4>
-        {%for s in sentences%}
-        <H5 class="w3-opacity">{{s[1]}}</H5>
+        <H4 class="w3-wide">{{meaning}}</H4>
+        {%for s in sentence_translation%}
+        <H5 class="w3-opacity">直译：{{s[1]}}</H5>
         {%endfor%}
     </div>
 
