@@ -3,8 +3,8 @@ from wtforms import StringField, SubmitField, widgets, SelectField, \
     BooleanField, FieldList, SelectMultipleField, TextAreaField
 from wtforms.validators import DataRequired, Length
 
-class KnownForm(FlaskForm):
-    known = SubmitField(label='Known')
+class WordKnownForm(FlaskForm):
+    favorite = SubmitField(label='Favorite')
     blurry = SubmitField(label='Blurry')
     unknown = SubmitField(label='Unknown')
     noshow = SubmitField(label='No show')
@@ -14,7 +14,7 @@ class KnownForm(FlaskForm):
     show_sentence = BooleanField('Show Sentence')
 
 class SentenceKnownForm(FlaskForm):
-    known = SubmitField(label='Known')
+    favoriate = SubmitField(label='Favorite')
     blurry = SubmitField(label='Blurry')
     unknown = SubmitField(label='Unknown')
     noshow = SubmitField(label='No show')

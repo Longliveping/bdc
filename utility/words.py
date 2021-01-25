@@ -2,10 +2,11 @@ import re
 import PyPDF2 as pdf
 import os, sys, time
 import docx
+# from app.controller import show_artile_words
 from app.models import db, Word, Lemma, MyWord, Article,\
-    ArticleWord,Dictionary,SentenceWord,Sentence,SentenceReview,MySentence
-from sqlalchemy import or_
-
+    ArticleWord,Dictionary,SentenceWord,Sentence,SentenceReview,MySentence, WordReview
+from sqlalchemy import or_, distinct
+import pyttsx3
 
 class My_Word(object):
 
@@ -59,7 +60,7 @@ class My_Word(object):
         return (list(un_known), list(known))
 
 
-class ArticleFile(object):
+class Article_File(object):
 
     def __init__(self):
         self._file = None
@@ -227,7 +228,7 @@ class ArticleFile(object):
         print("import sentence took", timer.duration, "seconds")
 
     def _import_articleword(self):
-        a = db.session.query(ArticleWord).join(Article).filter(Article.article == self._filename).first()
+        a = db.session.query(Article_Word).join(Article).filter(Article.article == self._filename).first()
         if a:
             return
 
@@ -236,7 +237,7 @@ class ArticleFile(object):
             db.session.remove()
             article = db.session.query(Article).filter(Article.article == self._filename).first()
             words = db.session.query(Word).filter(Word.word.in_(self._token)).all()
-            aw = [ArticleWord(article=article, word=w) for w in words]
+            aw = [Article_Word(article=article, word=w) for w in words]
             db.session.add_all(aw)
             db.session.commit()
         print("took", timer.duration, "seconds")
@@ -252,7 +253,7 @@ class ArticleFile(object):
         myword = db.session.query(MyWord.word).all()
         mywords = set([w[0] for w in myword])
 
-        article_word = db.session.query(Word.word).join(ArticleWord).join(Article).filter(
+        article_word = db.session.query(Word.word).join(Article_Word).join(Article).filter(
             Article.article == self._filename,
             Word.word.notin_(mywords)
         ).order_by(Word.id).all()
@@ -273,7 +274,7 @@ class ArticleFile(object):
         return article_sentences
 
 
-class Articles(object):
+class Article_s(object):
 
     def __init__(self):
         self._articles = []
@@ -317,14 +318,16 @@ class Articles(object):
         return (no_show, show)
 
 
-
-class ArticleSentences(object):
+class Article_Sentence(object):
 
     def __init__(self):
         self._article = None
         self._sentence = []
         self._translation = []
         self._sentence_count = 0
+        self._favorite_sentence = []
+        self._favorite_translation = []
+        self._favorite_sentence_count = 0
 
     def load(self,article):
         self._article = article
@@ -340,6 +343,19 @@ class ArticleSentences(object):
         self._translation = translations
         self._sentence_count = len(sentences)
 
+        favorite_sentence = db.session.query(distinct(Sentence.sentence), Sentence.translation).join(Article).join(SentenceReview).filter(
+            Article.article == self._article,
+            SentenceReview.known == True
+        ).order_by(Sentence.sentence).all()
+
+        self._favorite_sentence = [w[0] for w in favorite_sentence]
+        self._favorite_translation = [w[1] for w in favorite_sentence]
+        self._favorite_sentence_count = len(self._favorite_sentence)
+
+        print(self._favorite_sentence)
+        print(self._favorite_translation)
+        print(self._favorite_sentence_count)
+
     def get_sentence(self):
         return self._sentence
 
@@ -348,6 +364,61 @@ class ArticleSentences(object):
 
     def get_sentence_count(self):
         return self._sentence_count
+
+    def get_favorite_sentence(self):
+        return self._favorite_sentence
+
+    def get_favorite_translation(self):
+        return self._favorite_translation
+
+    def get_favorite_sentence_count(self):
+        return self._favorite_sentence_count
+
+
+class Article_Word():
+
+    def __init__(self):
+        self._article = ''
+        self._new_word = []
+        self._favorite_word = []
+        self._new_word_count = 0
+        self._favorite_word_count = 0
+
+    def load(self, article):
+        self._article = article
+        self._show_artile_words()
+
+    def get_new_word(self):
+        return self._new_word
+
+    def get_new_word_count(self):
+        return self._new_word_count
+
+    def get_favorite_word(self):
+        return self._favorite_word
+
+    def get_favorite_word_count(self):
+        return self._favorite_word_count
+
+    def _show_artile_words(self):
+        myword = db.session.query(MyWord.word).all()
+        mywords = set([w[0] for w in myword])
+        nword = db.session.query(Word.word).join(ArticleWord).join(Article).filter(
+            Article.article == self._article,
+            Word.word.notin_(mywords)
+        ).order_by(Word.id).all()
+        self._new_word = [w[0] for w in nword]
+        self._new_word_count = len(self._new_word)
+
+        favorite_word = db.session.query(distinct(Word.word)).join(ArticleWord).join(Article).join(WordReview).filter(
+            Article.article == self._article,
+            WordReview.known == True
+        ).order_by(Word.word).all()
+
+        self._favorite_word = [w[0] for w in favorite_word]
+        self._favorite_word_count = len(self._favorite_word)
+
+
 
 class LemmaDB (object):
 
@@ -539,7 +610,36 @@ def get_token(text):
     return tokens
 
 
-aritcle_sentences = ArticleSentences()
-articles = Articles()
-article_file = ArticleFile()
+def speak(sentence, rate):
+    engine = pyttsx3.init()
+    # print(engine.getProperty('rate'))
+    # print(engine.getProperty('voice'))
+    try:
+        engine.setProperty('rate',int(rate))
+    except:
+        pass
+    def onEnd():
+        engine.endLoop()
+    engine.connect('finished-utterance', onEnd)
+    engine.say(sentence)
+    try:
+        engine.startLoop()
+    except:
+        engine.endLoop()
+
+
+def words_upper(sentence):
+    myword = db.session.query(MyWord.word).all()
+    mywords = set([w[0] for w in myword])
+    sw = set(get_token(sentence))
+    words = sw - mywords
+    for w in words:
+        sentence = sentence.replace(w, w.upper())
+    return sentence
+
+
+article_word = Article_Word()
+aritcle_sentence = Article_Sentence()
+articles = Article_s()
+article_file = Article_File()
 my_word = My_Word()

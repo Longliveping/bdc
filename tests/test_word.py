@@ -24,7 +24,7 @@ class WordsTestCase(unittest.TestCase):
         self.article.update_text(self.article.get_text())
         self.assertTrue(self.article.get_token())
         print(len(self.article.get_token()))
-        print(len(self.article.get_word()))
+        print(len(self.article.get_new_word()))
         print(len(self.article.get_sentence()))
 
     def test_002_articles(self):

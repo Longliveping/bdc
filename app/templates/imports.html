@@ -7,45 +7,51 @@
 <div class="page-header">
     <H1> IMPORT </H1>
 </div>
-<!--<H3>Import url</H3>-->
-<form action="/importurl" method="POST">
-    <input type="url" name="url"> <p> </p>
-    <button type="submit" name="importurl" class="btn btn-success" value="importrul">Import URL</button>
-</form>
+<ul class="w3-ul w3-card-4">
+    <li class="w3-bar">
+        <div class="w3-bar-item">
+        <!--<H3>Import url</H3>-->
+            <form action="/importurl" method="POST">
+                <input type="url" name="url"> <p> </p>
+                <button type="submit" name="importurl" class="btn btn-success" value="importrul">Import URL</button>
+            </form>
+        </div>
+    </li>
 
-<br>
+    <li class="w3-bar">
+        <div class="w3-bar-item">
+    <!--    <H3>Import a file</H3>-->
+            <form enctype="multipart/form-data" action="/importfile" method="POST">
+                <input type="file" name="filename"> <p> </p>
+                <button type="submit" name="importfile" class="btn btn-success" value="import file">Import File</button>
+            </form>
+        </div>
+    </li>
 
-<div>
-<!--    <H3>Import a file</H3>-->
-    <form enctype="multipart/form-data" action="/importfile" method="POST">
-        <input type="file" name="filename"> <p> </p>
-        <button type="submit" name="importfile" class="btn btn-success" value="import file">Import File</button>
-    </form>
-</div>
 
-<br>
+    <li class="w3-bar">
+    <!--    <H3>Import my word</H3>-->
+        <div class="w3-bar-item">
+            <form action="/importmyword" method="POST">
+                <button type="submit" name="importmyword" class="btn btn-success" value="import my word">Import MyWord</button>
+            </form>
+        </div>
+    </li>
 
-<div>
-<!--    <H3>Import my word</H3>-->
-    <form action="/importmyword" method="POST">
-        <button type="submit" name="importmyword" class="btn btn-success" value="import my word">Import MyWord</button>
-    </form>
 
-</div>
-
-<br>
-
-<div>
-<!--    <H3>Export my word</H3>-->
-    <form action="/exportmyword" method="POST">
-        <button type="submit" name="exportmyword" class="btn btn-success" value="export my word">Export MyWord</button>
-    </form>
-</div>
-
-<br>
-
-<div>
-<!--    <H3>Import batch initially</H3>-->
+    <li class="w3-bar">
+    <!--    <H3>Export my word</H3>-->
+        <div class="w3-bar-item">
+            <form action="/exportmyword" method="POST">
+                <button type="submit" name="exportmyword" class="btn btn-success" value="export my word">Export MyWord</button>
+            </form>
+        </div>
+    </li>
+</ul>
+<br><br>
+<div class="w3-bar-item">
+    <!--    <H3>Import batch initially</H3>-->
     {{wtf.quick_form(form)}}
 </div>
+
 {% endblock %}

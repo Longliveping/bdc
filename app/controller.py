@@ -2,7 +2,7 @@ from flask import current_app, request
 from app import create_app, db
 from app.models import Word, Lemma,Dictionary, Article, Sentence, SentenceWord, ArticleWord, SentenceReview, WordReview, MyWord, MySentence
 import os
-from utility.words import my_word, LemmaDB, get_token, Timer
+from utility.words import LemmaDB, Timer
 
 
 def db_init_word():
@@ -21,40 +21,30 @@ def db_init_word():
         db.session.commit()
     print("took", timer.duration, "seconds")
 
-def show_artile_words(article_name):
-    myword = db.session.query(MyWord.word).all()
-    mywords = set([w[0] for w in myword])
+# def show_artile_words(article_name):
+#     myword = db.session.query(MyWord.word).all()
+#     mywords = set([w[0] for w in myword])
+#
+#     article_word = db.session.query(Word.word).join(ArticleWord).join(Article).filter(
+#         Article.article == article_name,
+#         Word.word.notin_(mywords)
+#     ).order_by(Word.id).all()
+#
+#     article_words = [w[0] for w in article_word]
+#     return article_words
 
-    article_word = db.session.query(Word.word).join(ArticleWord).join(Article).filter(
-        Article.article == article_name,
-        Word.word.notin_(mywords)
-    ).order_by(Word.id).all()
+# def show_artile_sentences(article_name):
+#     mysentence = db.session.query(MySentence.sentence).all()
+#     mysentences = set([w[0] for w in mysentence])
+#
+#     article_sentence = db.session.query(Sentence.sentence, Sentence.translation).join(Article).filter(
+#         Article.article == article_name,
+#         Sentence.sentence.notin_(mysentences)
+#     ).order_by(Sentence.id).all()
+#
+#     sentences = [w[0] for w in article_sentence]
+#     meanings = [w[1] for w in article_sentence]
+#     return sentences,meanings
 
-    article_words = [w[0] for w in article_word]
-    return article_words
 
-def show_artile_sentences(article_name):
-    mysentence = db.session.query(MySentence.sentence).all()
-    mysentences = set([w[0] for w in mysentence])
 
-    article_sentence = db.session.query(Sentence.sentence, Sentence.translation).join(Article).filter(
-        Article.article == article_name,
-        Sentence.sentence.notin_(mysentences)
-    ).order_by(Sentence.id).all()
-
-    sentences = [w[0] for w in article_sentence]
-    meanings = [w[1] for w in article_sentence]
-    return sentences,meanings
-
-def show_my_words():
-    myword = db.session.query(MyWord.word).all()
-    mywords = set([w[0] for w in myword])
-    return mywords
-
-def words_upper(sentence):
-    mywords = show_my_words()
-    sw = set(get_token(sentence))
-    words = sw - mywords
-    for w in words:
-        sentence = sentence.replace(w, w.upper())
-    return sentence

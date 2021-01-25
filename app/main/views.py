@@ -1,55 +1,45 @@
 from flask import render_template, session, redirect, url_for, current_app,request
 from .. import db
 from ..models import Word, Sentence, Article, SentenceWord, WordReview, MyWord, SentenceReview, MySentence
-from ..controller import show_artile_words,show_artile_sentences, words_upper
 from . import main
-from .forms import KnownForm, ImportsForm, TryingForm, QueryForm, \
+from .forms import WordKnownForm, ImportsForm, TryingForm, QueryForm, \
     SentenceKnownForm, UpdateMywordForm, UpdateTextForm, UpdateArticleShowForm
 from datetime import datetime
 from utility.translation import get_word, get_sentence
 from werkzeug import secure_filename
 import os, re
-import pyttsx3
 from threading import Thread
 import urllib3
 import certifi
 import textract
-from utility.words import article_file, my_word, get_token, articles, aritcle_sentences
+from utility.words import article_file, my_word, get_token, articles, \
+    aritcle_sentence, speak, words_upper, article_word
 
-def speak(sentence, rate):
-    engine = pyttsx3.init()
-    # print(engine.getProperty('rate'))
-    # print(engine.getProperty('voice'))
-    try:
-        engine.setProperty('rate',int(rate))
-    except:
-        pass
-    def onEnd():
-        engine.endLoop()
-    engine.connect('finished-utterance', onEnd)
-    engine.say(sentence)
-    try:
-        engine.startLoop()
-    except:
-        engine.endLoop()
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
     deck = []
     articles = db.session.query(Article).all()
     for a in articles[::-1]:
-        cw = a.word_count
-        cs = a.sentence_count
         if not a.noshow:
-            deck.append([a.article, cw, cs])
+            article_word.load(a.article)
+            aritcle_sentence.load(a.article)
+            deck.append([a.article, article_word.get_new_word_count(), article_word.get_favorite_word_count(),
+                         aritcle_sentence.get_sentence_count(), aritcle_sentence.get_favorite_sentence_count()])
 
     return render_template('index.html', deck=deck)
 
-@main.route('/studyword/<article>', methods=['GET', 'POST'])
-def study_word(article):
-    form = KnownForm()
-    words = show_artile_words(article)
-    count = len(words)
+@main.route('/studyword/<article>/<type>', methods=['GET', 'POST'])
+def study_word(article, type):
+    form = WordKnownForm()
+    article_word.load(article)
+    if type == 'new':
+        words = article_word.get_new_word()
+        count = article_word.get_new_word_count()
+    else:
+        words = article_word.get_favorite_word()
+        count = article_word.get_favorite_word_count()
+
     if count == 0:
         return redirect(url_for('main.index'))
 
@@ -61,15 +51,12 @@ def study_word(article):
     else:
         next_item_index = 0
 
-    if count:
-        redirect(url_for('main.index'))
-
     word = words[next_item_index]
 
     if form.validate_on_submit():
         if form.exit.data:
             a = db.session.query(Article).filter(Article.article == article).first()
-            a.word_count = len(show_artile_words(article))
+            a.word_count = article_word.get_new_word_count()
             db.session.add(a)
             db.session.commit()
             return redirect(url_for('main.index'))
@@ -82,7 +69,7 @@ def study_word(article):
         w = db.session.query(Word).filter(Word.word==word).first()
         wordreview = WordReview(word=w)
         wordreview.timestamp = datetime.utcnow()
-        wordreview.known = bool(form.known.data)
+        wordreview.known = bool(form.favorite.data)
         wordreview.unknown = bool(form.unknown.data)
         wordreview.blurry = bool(form.blurry.data)
         wordreview.noshow = bool(form.noshow.data)
@@ -95,7 +82,7 @@ def study_word(article):
             db.session.commit()
 
         session[f'index_{article}'] = next_item_index+1
-        return redirect(url_for('main.study_word', article=article))
+        return redirect(url_for('main.study_word', article=article, type=type))
     else:
         sent_trans = ''
         word_trans = get_word(word)
@@ -113,16 +100,26 @@ def study_word(article):
             sent_trans = get_sentence(sents,word)
         form.show_sentence.data = bool(session.get('show_wordsentence'))
         form.show_translation.data = bool(session.get('show_wordtranslaiton'))
-        return render_template('study_word.html', form=form, word=word, translation=word_trans, sentences=sent_trans,
-                           next_item_index=next_item_index)
+        return render_template('study_word.html',
+                               form=form,
+                               word=word,
+                               translation=word_trans,
+                               sentences=sent_trans,
+                               next_item_index=next_item_index)
 
-@main.route('/studysentence/<article>', methods=['GET', 'POST'])
-def study_sentence(article):
+@main.route('/studysentence/<article>/<type>', methods=['GET', 'POST'])
+def study_sentence(article, type):
     form = SentenceKnownForm()
-    aritcle_sentences.load(article)
-    sentences = aritcle_sentences.get_sentence()
-    meanings = aritcle_sentences.get_translation()
-    count = len(sentences)
+    aritcle_sentence.load(article)
+    if type == 'new':
+        sentences = aritcle_sentence.get_sentence()
+        meanings = aritcle_sentence.get_translation()
+        count = aritcle_sentence.get_sentence_count()
+    else:
+        sentences = aritcle_sentence.get_favorite_sentence()
+        meanings = aritcle_sentence.get_favorite_translation()
+        count = aritcle_sentence.get_favorite_sentence_count()
+
     if count == 0:
         return redirect(url_for('main.index'))
 
@@ -145,7 +142,7 @@ def study_sentence(article):
         session['speed'] = form.speed.data
         if form.exit.data:
             a = db.session.query(Article).filter(Article.article == article).first()
-            a.sentence_count = aritcle_sentences.get_sentence_count()
+            a.sentence_count = aritcle_sentence.get_sentence_count()
             db.session.add(a)
             db.session.commit()
             return redirect(url_for('main.index'))
@@ -155,14 +152,14 @@ def study_sentence(article):
         s = db.session.query(Sentence).filter(Sentence.sentence==sentence).first()
         sentencereview = SentenceReview(sentence=s)
         sentencereview.timestamp = datetime.utcnow()
-        sentencereview.known = bool(form.known.data)
+        sentencereview.known = bool(form.favoriate.data)
         sentencereview.unknown = bool(form.unknown.data)
         sentencereview.blurry = bool(form.blurry.data)
         sentencereview.noshow = bool(form.noshow.data)
         db.session.add(sentencereview)
         db.session.commit()
         if form.repeat.data:
-            return redirect(url_for('main.study_sentence', article=article))
+            return redirect(url_for('main.study_sentence', article=article, type=type))
         if form.noshow.data:
             mw = MySentence(sentence=sentence)
             db.session.add(mw)
@@ -171,7 +168,7 @@ def study_sentence(article):
             except:
                 pass
         session[f'index_s{article}'] = next_item_index+1
-        return redirect(url_for('main.study_sentence', article=article))
+        return redirect(url_for('main.study_sentence', article=article, type=type))
     else:
         if not bool(session.get('show_meaning')):
             meaning = ''
