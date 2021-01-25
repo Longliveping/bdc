@@ -149,7 +149,7 @@ def study_sentence(article, type):
         # if form.query.data:
         #     session['study'] = article
         #     return redirect(url_for('main.query', word='i'))
-        s = db.session.query(Sentence).filter(Sentence.sentence==sentence).first()
+        s = db.session.query(Sentence).filter(Sentence.sentence.ilike(f"{sentence}")).first()
         sentencereview = SentenceReview(sentence=s)
         sentencereview.timestamp = datetime.utcnow()
         sentencereview.known = bool(form.favoriate.data)

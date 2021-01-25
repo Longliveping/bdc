@@ -343,7 +343,7 @@ class Article_Sentence(object):
         self._translation = translations
         self._sentence_count = len(sentences)
 
-        favorite_sentence = db.session.query(distinct(Sentence.sentence), Sentence.translation).join(Article).join(SentenceReview).filter(
+        favorite_sentence = db.session.query(distinct(Sentence.sentence), Sentence.translation).join(SentenceReview).filter(
             Article.article == self._article,
             SentenceReview.known == True
         ).order_by(Sentence.sentence).all()
