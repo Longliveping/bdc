@@ -422,9 +422,12 @@ class Article_Word():
     def _show_artile_words(self):
         myword = db.session.query(MyWord.word).all()
         mywords = set([w[0] for w in myword])
+        lemma = db.session.query(Lemma.lemma).filter(Lemma.word in mywords).all()
+        lemmas = set(w[0] for w in lemma)
+
         nword = db.session.query(Word.word).join(ArticleWord).join(Article).filter(
             Article.article == self._article,
-            Word.word.notin_(mywords)
+            Word.word.notin_(mywords or lemmas)
         ).order_by(Word.id).all()
         self._new_word = [w[0] for w in nword]
         self._new_word_count = len(self._new_word)
@@ -648,13 +651,9 @@ def speak(sentence, rate):
 
 
 def words_upper(sentence):
-    myword = db.session.query(MyWord.word).all()
-    mywords = set([w[0] for w in myword])
-    sw = set(get_token(sentence))
-    words = sw - mywords
-    for w in words:
-        # sentence = sentence.replace(w, w.upper())
-        sentence = re.sub(r'\b{w}\b',w.upper, sentence)
+    new_words = set(article_word.get_new_word())
+    for w in new_words:
+        sentence = sentence.replace(w, w.upper())
     return sentence
 
 

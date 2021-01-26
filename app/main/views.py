@@ -89,9 +89,12 @@ def study_word(article, type):
         if not session.get('show_wordtranslaiton'):
             word_trans['chinese'] = []
         if session.get('show_wordsentence'):
-            ss = db.session.query(Sentence.sentence).join(SentenceWord).join(Word).join(Article).filter(
+            # ss = db.session.query(Sentence.sentence).join(SentenceWord).join(Word).join(Article).filter(
+            #     Article.article == article,
+            #     Word.word == word).all()
+            ss = db.session.query(Sentence.sentence).join(Article).filter(
                 Article.article == article,
-                Word.word == word).all()
+                Sentence.sentence.like(f"%{word}%")).all()
             sentences = [s[0] for s in ss]
             sents = []
             for s in sentences[:2]:
