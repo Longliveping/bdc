@@ -11,10 +11,10 @@
         <li class="w3-bar">
             <div class="w3-bar-item">
                 <p class="w3-justify w3-large">{{d[0]}}</p>
-                <span class="w3-justify "><a href="/studyword/{{d[0]}}/new">New Words: {{ d[1] }} ::: </a></span>
-                <span class="w3-justify "><a href="/studyword/{{d[0]}}/favorite">Favorite Words: {{ d[2] }} </a></span><br>
-                <span class="w3-justify "><a href="/studysentence/{{d[0]}}/new">New Sentences: {{d[3]}} :::</a></span>
-                <span class="w3-justify "><a href="/studysentence/{{d[0]}}/favorite">Favorite Sentences: {{d[4]}} </a></span>
+                <span class="w3-justify ">Words&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/studyword/{{d[0]}}/new">New: {{ d[1] }}</a></span>
+                <span class="w3-justify ">&nbsp;&nbsp;<a href="/studyword/{{d[0]}}/favorite">Favorite: {{ d[2] }} </a></span><br>
+                <span class="w3-justify ">Sentences&nbsp;&nbsp;<a href="/studysentence/{{d[0]}}/new">New: {{d[3]}} </a></span>
+                <span class="w3-justify ">&nbsp;&nbsp;<a href="/studysentence/{{d[0]}}/favorite">Favorite: {{d[4]}} </a></span>
             </div>
         </li>
         {%endfor%}
