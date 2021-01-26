@@ -322,9 +322,11 @@ class Article_Sentence(object):
 
     def __init__(self):
         self._article = None
+        self._sentence_id = 0
         self._sentence = []
         self._translation = []
         self._sentence_count = 0
+        self._favorite_sentence_id = 0
         self._favorite_sentence = []
         self._favorite_translation = []
         self._favorite_sentence_count = 0
@@ -333,28 +335,37 @@ class Article_Sentence(object):
         self._article = article
         mysentence = db.session.query(MySentence.sentence).all()
         mysentences = set([w[0] for w in mysentence])
-        article_sentence = db.session.query(Sentence.sentence, Sentence.translation).join(Article).filter(
+        article_sentence = db.session.query(Sentence.id, Sentence.sentence, Sentence.translation).join(Article).filter(
             Article.article == article,
             Sentence.sentence.notin_(mysentences)
         ).order_by(Sentence.id).all()
-        sentences = [w[0] for w in article_sentence]
-        translations = [w[1] for w in article_sentence]
+
+        sentences_id = [w[0] for w in article_sentence]
+        sentences = [w[1] for w in article_sentence]
+        translations = [w[2] for w in article_sentence]
+
+        self._sentence_id = sentences_id
         self._sentence = sentences
         self._translation = translations
         self._sentence_count = len(sentences)
 
-        favorite_sentence = db.session.query(distinct(Sentence.sentence), Sentence.translation).join(SentenceReview).filter(
+        favorite_sentence = db.session.query(distinct(Sentence.id), Sentence.sentence, Sentence.translation).join(Article).join(SentenceReview).filter(
             Article.article == self._article,
             SentenceReview.known == True
-        ).order_by(Sentence.sentence).all()
+        ).order_by(Sentence.id).all()
 
-        self._favorite_sentence = [w[0] for w in favorite_sentence]
-        self._favorite_translation = [w[1] for w in favorite_sentence]
+        self._favorite_sentence_id = [w[0] for w in favorite_sentence]
+        self._favorite_sentence = [w[1] for w in favorite_sentence]
+        self._favorite_translation = [w[2] for w in favorite_sentence]
         self._favorite_sentence_count = len(self._favorite_sentence)
 
-        print(self._favorite_sentence)
-        print(self._favorite_translation)
-        print(self._favorite_sentence_count)
+        # print(self._favorite_sentence_id)
+        # print(self._favorite_sentence)
+        # print(self._favorite_translation)
+        # print(self._favorite_sentence_count)
+
+    def get_sentence_id(self):
+        return self._sentence_id
 
     def get_sentence(self):
         return self._sentence
@@ -364,6 +375,9 @@ class Article_Sentence(object):
 
     def get_sentence_count(self):
         return self._sentence_count
+
+    def get_favorite_sentence_id(self):
+        return self._favorite_sentence_id
 
     def get_favorite_sentence(self):
         return self._favorite_sentence

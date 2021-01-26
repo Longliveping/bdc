@@ -112,10 +112,12 @@ def study_sentence(article, type):
     form = SentenceKnownForm()
     aritcle_sentence.load(article)
     if type == 'new':
+        sentences_id = aritcle_sentence.get_sentence_id()
         sentences = aritcle_sentence.get_sentence()
         meanings = aritcle_sentence.get_translation()
         count = aritcle_sentence.get_sentence_count()
     else:
+        sentences_id = aritcle_sentence.get_favorite_sentence_id()
         sentences = aritcle_sentence.get_favorite_sentence()
         meanings = aritcle_sentence.get_favorite_translation()
         count = aritcle_sentence.get_favorite_sentence_count()
@@ -131,6 +133,7 @@ def study_sentence(article, type):
     else:
         next_item_index = 0
 
+    sentence_id = sentences_id[next_item_index]
     sentence = sentences[next_item_index]
     sentence = words_upper(sentence)
     meaning = meanings[next_item_index]
@@ -149,7 +152,7 @@ def study_sentence(article, type):
         # if form.query.data:
         #     session['study'] = article
         #     return redirect(url_for('main.query', word='i'))
-        s = db.session.query(Sentence).filter(Sentence.sentence.ilike(f"{sentence}")).first()
+        s = db.session.query(Sentence).filter(Sentence.id == sentence_id).first()
         sentencereview = SentenceReview(sentence=s)
         sentencereview.timestamp = datetime.utcnow()
         sentencereview.known = bool(form.favoriate.data)
