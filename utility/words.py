@@ -7,6 +7,7 @@ from app.models import db, Word, Lemma, MyWord, Article,\
     ArticleWord,Dictionary,SentenceWord,Sentence,SentenceReview,MySentence, WordReview
 from sqlalchemy import or_, distinct
 import pyttsx3
+from werkzeug import secure_filename
 
 class My_Word(object):
 
@@ -101,7 +102,7 @@ class Article_File(object):
         return self._filename
 
     def set_filename(self, filename):
-        self._filename = filename
+        self._filename = secure_filename(filename)
 
     def _extract_text(self):
         if self._allowed_file_extenstion():
@@ -153,8 +154,12 @@ class Article_File(object):
         self._article = db.session.query(Article).filter(Article.article == self._filename).first()
 
     def update_text(self, text):
-        self._text = text
-        lines = text.split('\n')
+        fullText = text
+        pttn = re.compile(r'([A-Za-z]+.*?[\.\?\!\n])', re.M)
+        lines = re.findall(pttn,fullText)
+        lines = [re.sub(r'\n','',x) for x in lines]
+        self._text = '\n'.join(lines)
+
         if self._file_extension == 'srt':
             for line in lines:
                 key = line.split(':::')[0]
@@ -228,7 +233,7 @@ class Article_File(object):
         print("import sentence took", timer.duration, "seconds")
 
     def _import_articleword(self):
-        a = db.session.query(Article_Word).join(Article).filter(Article.article == self._filename).first()
+        a = db.session.query(ArticleWord).join(Article).filter(Article.article == self._filename).first()
         if a:
             return
 
@@ -237,7 +242,7 @@ class Article_File(object):
             db.session.remove()
             article = db.session.query(Article).filter(Article.article == self._filename).first()
             words = db.session.query(Word).filter(Word.word.in_(self._token)).all()
-            aw = [Article_Word(article=article, word=w) for w in words]
+            aw = [ArticleWord(article=article, word=w) for w in words]
             db.session.add_all(aw)
             db.session.commit()
         print("took", timer.duration, "seconds")
@@ -253,7 +258,7 @@ class Article_File(object):
         myword = db.session.query(MyWord.word).all()
         mywords = set([w[0] for w in myword])
 
-        article_word = db.session.query(Word.word).join(Article_Word).join(Article).filter(
+        article_word = db.session.query(Word.word).join(ArticleWord).join(Article).filter(
             Article.article == self._filename,
             Word.word.notin_(mywords)
         ).order_by(Word.id).all()
@@ -648,7 +653,8 @@ def words_upper(sentence):
     sw = set(get_token(sentence))
     words = sw - mywords
     for w in words:
-        sentence = sentence.replace(w, w.upper())
+        # sentence = sentence.replace(w, w.upper())
+        sentence = re.sub(r'\b{w}\b',w.upper, sentence)
     return sentence
 
 

@@ -8,6 +8,37 @@
 ; If you have any questions or comments about this lemma list, feel free 
 ; to contact me (skywind3000@163.com), at any time..
 ;
+for/10000000-> for
+of/10000000-> of
+the/10000000-> the
+a/10000000-> a
+b/10000000-> b
+c/10000000-> c
+d/10000000-> d
+e/10000000-> e
+f/10000000-> f
+g/10000000-> g
+h/10000000-> h
+i/10000000-> i
+j/10000000-> j
+k/10000000-> k
+l/10000000-> l
+m/10000000-> m
+n/10000000-> n
+o/10000000-> o
+p/10000000-> p
+q/10000000-> q
+r/10000000-> r
+s/10000000-> s
+t/10000000-> t
+u/10000000-> u
+v/10000000-> v
+w/10000000-> w
+x/10000000-> x
+y/10000000-> y
+z/10000000-> z
+on/10000000-> on
+to/10000000-> to
 be/4109826 -> is,was,are,were,'s,been,being,'re,'m,am,m
 have/1315648 -> had,has,'ve,having,'s,'d,d,ve
 it/1213224 -> its,they
